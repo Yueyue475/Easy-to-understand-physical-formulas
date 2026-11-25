@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 5 课 · 只靠能量和动量能推出什么？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="2-2" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 5 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>只靠能量和动量能推出什么？</h1>
+        <p class="lede">单摆几乎是最简单的振动。可一旦用牛顿定律，你就得同时处理重力的两个分量，和一根大小随摆角变化的绳子。拉格朗日换了一个起点：先写能量。</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>单摆的结构简单到可以画在一张便利贴上：一根不计质量的绳，末端一个质点。可正是这种“简单”，把牛顿方法的麻烦暴露得特别清楚。</p>
+        <p>用牛顿定律，第一件事是分解力。重力 mg 竖直向下，它在绳方向的分量是 mg cosθ，在切向的分量是 mg sinθ；绳的张力 F<span class="sub">绳</span> 沿绳指向悬点。于是你得到两个方程：切向的 mLθ̈=−mg sinθ，径向的 F<span class="sub">绳</span>−mg cosθ=mLθ̇²。</p>
+        <p>第二个方程里的 F<span class="sub">绳</span> 是未知的，而且它随 θ 和 θ̇ 一起变，不能当成常数。要把这个张力消掉，你得联立两个方程，还得时刻盯住符号。双摆、弹簧摆、在曲面上滑动的珠子，每加一个约束就多一个未知的约束力；约束越多，越容易在分解力的过程中漏项。问题不在单摆难，而在这套写法把“约束”当成了额外负担。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>拉格朗日手上有三样东西，都是标量，不需要画箭头。第一样是动能：T=½mv²。第二样是重力势能：V=mgh，h 是相对某个基准的高度。第三样是把两者相减得到的拉格朗日量 L=T−V。这里的 L 是拉格朗日量，不是长度，也不是角动量，读的时候要按上下文分清。</p>
+        <p>把这些量拼起来以后，配一个方程就能生成运动方程：欧拉-拉格朗日方程。它的样子是“对速度的偏导再对时间求导，减去对位置的偏导，等于零”。听起来绕，但代进去以后只有机械的几步。下一节会逐项算给你看。</p>
+        <p>这套写法不是凭空出现的。欧拉在 1740 年代处理变分问题时已经摸到了它的雏形；1788 年，拉格朗日在《分析力学》里把它整理成一套完整的力学语言。他的出发点不是“力”，而是“虚功”和“能量”：只统计那些真正让系统发生允许位移的力。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：θ̇ 到底是什么？</summary>
+          <div class="mathbox-body">
+            <p>θ 是摆角，θ̇ 读作“theta dot”，意思是 θ 随时间的变化率。通俗地说，它是<strong>角速度</strong>：每秒转过的角度，单位是弧度每秒（rad/s）。转一圈是 2π 弧度，所以每秒转一圈就是 2π rad/s。</p>
+            <p>它和摆球的线速度不是一回事。摆球沿圆弧走，走一段弧长等于半径乘转角：Δs=LΔθ。两边除以 Δt，就得到 v=Lθ̇。角度变化得越快，摆球沿弧线跑得越快；摆越长，同样的角速度对应更大的线速度。</p>
+            <svg viewBox="0 0 340 200" role="img" aria-label="单摆的摆角与线速度方向示意图">
+              <line x1="40" y1="26" x2="300" y2="26" stroke="rgba(143,166,196,.35)" stroke-width="2"/>
+              <line x1="170" y1="26" x2="170" y2="170" stroke="rgba(143,166,196,.3)" stroke-width="1" stroke-dasharray="4 5"/>
+              <line x1="170" y1="26" x2="232" y2="132" stroke="#ffb03d" stroke-width="2"/>
+              <circle cx="170" cy="26" r="4" fill="#8fa6c4"/>
+              <circle cx="232" cy="132" r="9" fill="#35e0c8"/>
+              <path d="M 170 76 A 50 50 0 0 1 195 70" fill="none" stroke="#a98bff" stroke-width="2"/>
+              <text x="196" y="86" fill="#a98bff" font-size="12" font-family="monospace">θ</text>
+              <line x1="232" y1="132" x2="266" y2="112" stroke="#35e0c8" stroke-width="2"/>
+              <text x="270" y="108" fill="#35e0c8" font-size="12" font-family="monospace">v = Lθ̇</text>
+              <text x="238" y="150" fill="rgba(143,166,196,.85)" font-size="11" font-family="monospace">m</text>
+              <text x="176" y="120" fill="rgba(143,166,196,.85)" font-size="11" font-family="monospace">L</text>
+            </svg>
+            <p class="caption">θ 从竖直方向量起；θ̇ 是这条线转动的快慢。摆球的线速度沿着圆弧切线，大小是 L 乘 θ̇。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>接下来的五步只做一件事：把“受力”换成“能量”，看看张力是不是真的会自己消失。每一步都可以在纸上跟着算。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>单摆的摆球只能沿一段圆弧运动。它的位置本来需要两个坐标 (x, y)，但这两个坐标被绳长锁住了：x²+y²=L²。既然只有一个自由度，就只用一个角 θ 来描述：x=L sinθ，y=−L cosθ（取悬点为原点，y 向上为正）。</p>
+            <p>用 θ 的好处是，约束被这个参数化自动满足了。你写下的每一个 θ，都对应一个合法的位置，不会跑到圆外去。速度也能直接算：对时间求导，两个分量合起来正好是 Lθ̇。</p>
+            <div class="eq">v <span class="op">=</span> L θ̇</div>
+            <p class="readas">读作：摆球的线速度等于摆长乘角速度。θ̇ 是每秒转过的弧度，不是每秒转过的度数。</p>
+            <ul class="vars">
+              <li><b>v</b><span>摆球沿圆弧的线速度，单位 m/s</span></li>
+              <li><b>L</b><span>摆长，单位 m</span></li>
+              <li><b>θ̇</b><span>角速度，单位 rad/s</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>有了速度，动能就是熟面孔：T=½mv²=½mL²θ̇²。势能要看高度。把最低点定为零势能，摆球比最低点高出的距离是 L−L cosθ，也就是 L(1−cosθ)。</p>
+            <div class="eq">T <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> m L<span class="sup">2</span> θ̇<span class="sup">2</span>　　V <span class="op">=</span> m g L (1 <span class="op">−</span> cos θ)</div>
+            <p class="readas">读作：动能是二分之一乘质量乘摆长平方再乘角速度平方；势能是质量乘重力加速度乘摆长，再乘“一减余弦”。摆到最低点时 cosθ=1，势能为零。</p>
+            <ul class="vars">
+              <li><b>T</b><span>动能，单位 J</span></li>
+              <li><b>V</b><span>重力势能，单位 J；最低点取为零</span></li>
+              <li><b>m</b><span>摆球质量，单位 kg</span></li>
+              <li><b>g</b><span>重力加速度，约 9.8 m/s²</span></li>
+            </ul>
+            <p>这里已经能看出一个好处：动能只跟 θ̇ 有关，势能只跟 θ 有关，两者都是标量。没有方向，没有分量，也就不存在“分解错了”这回事。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把两者相减，得到拉格朗日量：</p>
+            <div class="eq">L <span class="op">=</span> T <span class="op">−</span> V <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> m L<span class="sup">2</span> θ̇<span class="sup">2</span> <span class="op">−</span> m g L (1 <span class="op">−</span> cos θ)</div>
+            <p class="readas">读作：拉格朗日量等于动能减势能，等于二分之一 mL²θ̇² 减去 mgL(1−cosθ)。</p>
+            <ul class="vars">
+              <li><b>L</b><span>拉格朗日量，单位 J；与摆长 L 同形，靠上下文区分</span></li>
+            </ul>
+            <p>关键的一点是：L 里只有 θ 和 θ̇，没有张力。张力不是被忽略，也不是被假设为零。它沿绳方向，而摆球被约束在圆弧上，允许的位移垂直于绳；约束力不做虚功，所以它不会进入拉格朗日量。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>现在套欧拉-拉格朗日方程。它的一般形式是：</p>
+            <div class="eq"><span class="frac"><span class="num">d</span><span class="den">dt</span></span> ( <span class="frac"><span class="num">∂L</span><span class="den">∂θ̇</span></span> ) <span class="op">−</span> <span class="frac"><span class="num">∂L</span><span class="den">∂θ</span></span> <span class="op">=</span> 0</div>
+            <p class="readas">读作：先把拉格朗日量对 θ̇ 求偏导，得到的一个量再对时间求导；然后减去拉格朗日量对 θ 的偏导；两者相减等于零。</p>
+            <p>逐项算。对 θ̇ 求偏导时，θ 当作常数，只剩 ½mL²θ̇² 这一项，得到 mL²θ̇；再对时间求导，得到 mL²θ̈。对 θ 求偏导时，θ̇ 当作常数，只剩 −mgL(1−cosθ) 这一项；cosθ 的导数是 −sinθ，所以这一项给出 −mgL sinθ。</p>
+            <p>代进方程，负号再变一次号：</p>
+            <div class="eq">m L<span class="sup">2</span> θ̈ <span class="op">+</span> m g L sin θ <span class="op">=</span> 0</div>
+            <p class="readas">读作：质量乘摆长平方再乘角加速度，加上质量乘重力加速度乘摆长再乘正弦，等于零。</p>
+            <ul class="vars">
+              <li><b>θ̈</b><span>角加速度，单位 rad/s²</span></li>
+              <li><b>∂</b><span>偏导数，意思是“只对一个变量求导，其他变量先当常数”</span></li>
+            </ul>
+            <p>张力从未出现。这不是因为它小，而是因为它被坐标选择消化掉了。你选了一个只沿允许方向变化的坐标，约束力的方向恰好与这个方向垂直，于是它在方程里没有位置。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>两边同时除以 mL²。质量 m 约掉了，摆长还剩一个：</p>
+            <div class="eq">θ̈ <span class="op">=</span> <span class="op">−</span> <span class="frac"><span class="num">g</span><span class="den">L</span></span> sin θ</div>
+            <p class="readas">读作：角加速度等于负的重力加速度除以摆长，再乘正弦。负号表示它总想把摆球拉回最低点。</p>
+            <p>这是单摆的精确方程，没有做任何近似。它是非线性的，解不能用简单的正弦函数写出来；但当 θ 很小的时候，sinθ 和 θ（用弧度）几乎相等。θ 小于 0.2 rad（约 11.5°）时，两者的差别不到 1%。把 sinθ 换成 θ：</p>
+            <div class="eq">θ̈ <span class="op">=</span> <span class="op">−</span> <span class="frac"><span class="num">g</span><span class="den">L</span></span> θ　<span class="op">⇒</span>　T <span class="op">=</span> 2π <span class="sqrt">L / g</span></div>
+            <p class="readas">读作：角加速度与摆角成正比、方向相反，这就是简谐振动；它的周期等于二倍圆周率乘根号下摆长除以重力加速度。</p>
+            <ul class="vars">
+              <li><b>T</b><span>振动周期，单位 s</span></li>
+              <li><b>π</b><span>圆周率，约 3.1416</span></li>
+            </ul>
+            <p>“加速度与位移成正比、方向相反”，这是简谐振动的定义。周期只由 L 和 g 决定，与摆球质量无关，在小振幅下也与振幅无关。牛顿方法要联立两个方程才能得到的结论，这里只用了能量和一个方程。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>上面的演示用精确方程 θ̈=−(g/L)sinθ 做数值积分，不是小角度近似。下面的相图把同一段运动画成一条闭合曲线：横轴是角度，纵轴是角速度。</p>
+
+        <div class="lab-grid" style="grid-template-columns:1fr">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 拖起摆球，松手</span>
+              <span class="demo-tag">θ̈ = −(g/L) sin θ</span>
+            </div>
+            <p class="demo-desc">按住青色摆球，把它拖到一侧，松手。摆球会按精确方程摆动，右边三根能量条显示动能 T、势能 V 和总能 E。拖动摆长滑块，看周期怎么变。</p>
+            <canvas id="pendulumCanvas" data-height="340" aria-label="单摆运动与能量守恒演示"></canvas>
+            <div id="lenSlider"></div>
+            <div class="readout" id="lenReadout"></div>
+            <div class="demo-controls">
+              <div class="anim-mount" id="pendAnimMount"></div>
+            </div>
+            <p class="hint">试试：把摆球拖到约 30° 再松手，盯住三根能量条——T 和 V 此消彼长，E 几乎不动。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 相图上的闭合曲线</span>
+              <span class="demo-tag">θ – θ̇</span>
+            </div>
+            <p class="demo-desc">每走一步，就在图上留下一个点。没有摩擦时，摆来回一次，曲线正好闭合；摆长改变，曲线的形状也跟着变。</p>
+            <canvas id="phaseCanvas" data-height="300" aria-label="单摆的相图演示"></canvas>
+            <div class="readout" id="phaseReadout"></div>
+            <p class="hint">试试：把摆长从 1 m 调到 0.25 m，周期减半；同样的摆角对应更大的角速度，相图在纵向被拉长。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>取 g=9.8 m/s²。把 L=1 m 代进周期公式：</p>
+        <div class="eq">T <span class="op">=</span> 2π <span class="sqrt">1 / 9.8</span> <span class="op">≈</span> 2.0 <span class="dim">s</span>　；　L <span class="op">=</span> 0.25 m <span class="op">→</span> T <span class="op">≈</span> 1.0 <span class="dim">s</span></div>
+        <p class="readas">读作：一米长的摆，周期约两秒；四分之一米长的摆，周期约一秒。</p>
+        <p>这解释了摆钟为什么常把摆长做成一米左右：周期两秒，单程一秒，秒针每格正好对应一次半摆。惠更斯 1656 年造出第一台摆钟，靠的就是“周期只由摆长决定”；当时巴黎的秒摆约 0.994 米。</p>
+        <p>把摆长变成 4 倍，周期变 2 倍；变成 1/4，周期变 1/2。L=1 m 是 2.0 s，L=4 m 就是 4.0 s。质量不在公式里，换更重的摆球，周期不变。</p>
+        <p>上面的 2.0 s 是小角度结果。拖到 30°，真实周期约长 1.7%；角度越大差得越多。摆钟摆幅只有几度，小角度公式足够准。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>1788 年，拉格朗日的《分析力学》出版。序言里说，这本书里没有一张图。这句话的分量在于：力学可以不靠受力图，而是靠选坐标、写能量、套方程。约束不再需要额外处理，而是坐标选择时顺手完成的事。</p>
+        <p>这套语言也回答了标题里的“动量”。∂L/∂θ̇ 叫广义动量，对单摆就是角动量 mL²θ̇。若拉格朗日量不显含某个坐标，对应动量守恒。单摆的 L 含 cosθ，角动量不守恒；但 L 不显含时间，能量守恒。哪些量守恒取决于对称性——诺特 1918 年把它写成定理。</p>
+        <p>1830 年代，哈密顿把它改写成一阶方程组，成了量子力学的入口；今天机器人动力学、分子模拟、轨道计算仍在用这套流程。单摆只是最小的练习场。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 指针拖拽小工具 ---------- */
+    function bindPointer(el, onDown, onMove, onUp) {
+      var active = false;
+
+      function pointOf(e) {
+        var rect = el.getBoundingClientRect();
+        var p = e;
+        if (e.touches && e.touches.length) p = e.touches[0];
+        else if (e.changedTouches && e.changedTouches.length) p = e.changedTouches[0];
+        return { x: p.clientX - rect.left, y: p.clientY - rect.top };
+      }
+
+      function down(e) {
+        var p = pointOf(e);
+        if (onDown(p) === false) return;
+        active = true;
+        if (el.setPointerCapture && e.pointerId != null) {
+          try { el.setPointerCapture(e.pointerId); } catch (err) { /* 忽略 */ }
+        }
+        if (e.cancelable) e.preventDefault();
+      }
+
+      function move(e) {
+        if (!active) return;
+        onMove(pointOf(e));
+        if (e.cancelable) e.preventDefault();
+      }
+
+      function up() {
+        if (!active) return;
+        active = false;
+        if (onUp) onUp();
+      }
+
+      if (window.PointerEvent) {
+        el.addEventListener('pointerdown', down);
+        el.addEventListener('pointermove', move);
+        el.addEventListener('pointerup', up);
+        el.addEventListener('pointercancel', up);
+      } else {
+        el.addEventListener('mousedown', down);
+        window.addEventListener('mousemove', move);
+        window.addEventListener('mouseup', up);
+        el.addEventListener('touchstart', down, { passive: false });
+        el.addEventListener('touchmove', move, { passive: false });
+        el.addEventListener('touchend', up);
+      }
+    }
+
+    /* ---------- 单摆状态 ---------- */
+    var G = 9.8;
+    var MASS = 1;
+    var STEP_H = 1 / 240;
+    var state = { L: 1.0, th: 0.55, om: 0, dragging: false, trace: [] };
+    var pgeo = { cx: 0, cy: 0, pxPerM: 1, bx: 0, by: 0 };
+    var acc = 0;
+    var traceTick = 0;
+
+    var pendC = PH.canvas('pendulumCanvas');
+    var phaseC = PH.canvas('phaseCanvas');
+    var lenReadout = document.getElementById('lenReadout');
+    var phaseReadout = document.getElementById('phaseReadout');
+
+    function energyNow() {
+      var Tk = 0.5 * MASS * state.L * state.L * state.om * state.om;
+      var Vp = MASS * G * state.L * (1 - Math.cos(state.th));
+      return { T: Tk, V: Vp, E: Tk + Vp };
+    }
+
+    function fmt(v, d) {
+      return Number(v).toFixed(d);
+    }
+
+    /* ---------- 单摆 + 能量条 ---------- */
+    function arrow(ctx, x1, y1, x2, y2, color) {
+      var ang = Math.atan2(y2 - y1, x2 - x1);
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - 8 * Math.cos(ang - 0.4), y2 - 8 * Math.sin(ang - 0.4));
+      ctx.lineTo(x2 - 8 * Math.cos(ang + 0.4), y2 - 8 * Math.sin(ang + 0.4));
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawPendulum() {
+      if (!pendC) return;
+      var ctx = pendC.ctx;
+      var w = pendC.w;
+      var h = pendC.h;
+      var split = Math.round(w * 0.62);
+      var cx = split / 2;
+      var cy = 34;
+      var pxPerM = Math.min((h - 100) / 2.0, (split / 2 - 22) / (2.0 * Math.sin(1.45)));
+      var Lpx = state.L * pxPerM;
+      var bx = cx + Lpx * Math.sin(state.th);
+      var by = cy + Lpx * Math.cos(state.th);
+      var en = energyNow();
+      var i;
+
+      pgeo.cx = cx;
+      pgeo.cy = cy;
+      pgeo.pxPerM = pxPerM;
+      pgeo.bx = bx;
+      pgeo.by = by;
+
+      pendC.clear();
+
+      /* 天花板 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.35)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(10, cy);
+      ctx.lineTo(split - 10, cy);
+      ctx.stroke();
+      for (i = 0; i < 8; i++) {
+        ctx.strokeStyle = 'rgba(143,166,196,.16)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(18 + i * (split - 40) / 7, cy);
+        ctx.lineTo(26 + i * (split - 40) / 7, cy - 8);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 竖直参考线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.3)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx, cy + Math.max(Lpx + 18, 70));
+      ctx.stroke();
+      ctx.restore();
+
+      /* 角度弧 */
+      var arcR = Math.max(24, Math.min(64, Lpx * 0.5));
+      ctx.save();
+      ctx.strokeStyle = 'rgba(169,139,255,.85)';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.arc(cx, cy, arcR, Math.PI / 2, Math.PI / 2 - state.th, state.th > 0);
+      ctx.stroke();
+      var mid = Math.PI / 2 - state.th / 2;
+      ctx.fillStyle = 'rgba(169,139,255,.95)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('θ', cx + (arcR + 12) * Math.cos(mid), cy + (arcR + 12) * Math.sin(mid));
+      ctx.restore();
+
+      /* 摆线 */
+      ctx.save();
+      ctx.strokeStyle = '#ffb03d';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(bx, by);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 悬点 */
+      ctx.save();
+      ctx.fillStyle = '#8fa6c4';
+      ctx.beginPath();
+      ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 速度箭头 */
+      if (Math.abs(state.om) > 0.04) {
+        var vlen = Math.min(54, 18 * Math.abs(state.om));
+        var sgn = state.om > 0 ? 1 : -1;
+        arrow(ctx, bx, by, bx + sgn * vlen * Math.cos(state.th), by - sgn * vlen * Math.sin(state.th), '#35e0c8');
+      }
+
+      /* 摆球 */
+      ctx.save();
+      ctx.fillStyle = '#35e0c8';
+      ctx.shadowColor = '#35e0c8';
+      ctx.shadowBlur = 16;
+      ctx.beginPath();
+      ctx.arc(bx, by, 12, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* ---- 能量条 ---- */
+      var areaX = split + 10;
+      var areaW = w - areaX - 12;
+      var barTop = 56;
+      var barBot = h - 58;
+      var barH = Math.max(40, barBot - barTop);
+      var barW = areaW > 180 ? 24 : 16;
+      var gap = areaW > 180 ? 30 : 14;
+      var totalW = 3 * barW + 2 * gap;
+      var startX = areaX + (areaW - totalW) / 2;
+      var labels = ['T', 'V', 'E'];
+      var colors = ['#ffb03d', '#a98bff', '#35e0c8'];
+      var vals = [en.T, en.V, en.E];
+      var ref = en.E > 1e-9 ? en.E : 1;
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('能量（J）', areaX + 2, 24);
+      ctx.restore();
+
+      for (i = 0; i < 3; i++) {
+        var x = startX + i * (barW + gap);
+        var frac = vals[i] / ref;
+        if (frac < 0) frac = 0;
+        if (frac > 1) frac = 1;
+
+        ctx.save();
+        ctx.fillStyle = 'rgba(143,166,196,.12)';
+        ctx.fillRect(x, barTop, barW, barH);
+
+        ctx.fillStyle = colors[i];
+        ctx.shadowColor = colors[i];
+        ctx.shadowBlur = 8;
+        ctx.fillRect(x, barTop + barH * (1 - frac), barW, barH * frac);
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = 'rgba(214,230,255,.85)';
+        ctx.font = '11px ui-monospace, Consolas, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(labels[i], x + barW / 2, barBot + 16);
+        ctx.fillStyle = 'rgba(143,166,196,.9)';
+        ctx.font = '10px ui-monospace, Consolas, monospace';
+        ctx.fillText(fmt(vals[i], 2), x + barW / 2, barTop - 8);
+        ctx.restore();
+      }
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('L = ' + fmt(state.L, 2) + ' m', areaX + 2, h - 12);
+      ctx.restore();
+    }
+
+    /* ---------- 相图 ---------- */
+    function drawPhase() {
+      if (!phaseC) return;
+      var ctx = phaseC.ctx;
+      var w = phaseC.w;
+      var h = phaseC.h;
+      var padL = 50;
+      var padR = 18;
+      var padT = 18;
+      var padB = 36;
+      var pw = Math.max(10, w - padL - padR);
+      var ph = Math.max(10, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var TH_MAX = 1.6;
+      var OM_MAX = 6.0;
+      var i;
+
+      function X(th) { return x0 + pw * (th + TH_MAX) / (2 * TH_MAX); }
+      function Y(om) { return y0 - ph * (om + OM_MAX) / (2 * OM_MAX); }
+
+      phaseC.clear();
+
+      /* 网格 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var gx = x0 + pw * i / 4;
+        var gy = padT + ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(gx, padT);
+        ctx.lineTo(gx, y0);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x0, gy);
+        ctx.lineTo(x0 + pw, gy);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 坐标轴 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x0, Y(0));
+      ctx.lineTo(x0 + pw, Y(0));
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(X(0), padT);
+      ctx.lineTo(X(0), y0);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 轨迹 */
+      if (state.trace.length > 1) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(x0, padT, pw, ph);
+        ctx.clip();
+        ctx.strokeStyle = 'rgba(53,224,200,.55)';
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        for (i = 0; i < state.trace.length; i++) {
+          var px = X(state.trace[i].t);
+          var py = Y(state.trace[i].w);
+          if (i === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      /* 当前点 */
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(x0, padT, pw, ph);
+      ctx.clip();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(X(state.th), Y(state.om), 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 轴说明 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('θ̇（rad/s）', x0 + 2, padT - 6);
+      ctx.fillText('θ（rad）', x0 + pw - 54, y0 + 24);
+      ctx.fillText('0', X(0) - 10, Y(0) - 8);
+      ctx.restore();
+    }
+
+    function render() {
+      drawPendulum();
+      drawPhase();
+
+      var en = energyNow();
+      var period = 2 * Math.PI * Math.sqrt(state.L / G);
+      if (lenReadout) {
+        lenReadout.textContent = 'L = ' + fmt(state.L, 2) + ' m　小角度周期 ' + fmt(period, 2) +
+          ' s　θ = ' + fmt(state.th, 2) + ' rad（' + fmt(state.th * 180 / Math.PI, 1) + '°）';
+      }
+      if (phaseReadout) {
+        phaseReadout.textContent = 'θ̇ = ' + fmt(state.om, 2) + ' rad/s　E = ' + fmt(en.E, 2) +
+          ' J（T = ' + fmt(en.T, 2) + ' J，V = ' + fmt(en.V, 2) + ' J）';
+      }
+    }
+
+    function step(h) {
+      state.om += -(G / state.L) * Math.sin(state.th) * h;
+      state.th += state.om * h;
+      traceTick += 1;
+      if (traceTick % 4 === 0) {
+        state.trace.push({ t: state.th, w: state.om });
+        if (state.trace.length > 1600) state.trace.shift();
+      }
+    }
+
+    var pendAnim = PH.anim(function (t, dt) {
+      if (!state.dragging) {
+        acc += Math.min(dt || 0, 0.05);
+        var guard = 0;
+        while (acc >= STEP_H && guard < 30) {
+          step(STEP_H);
+          acc -= STEP_H;
+          guard += 1;
+        }
+      }
+      render();
+    }, { mount: '#pendAnimMount', autoplay: true });
+
+    /* ---------- 拖摆球 ---------- */
+    function setFromPoint(p) {
+      var dx = p.x - pgeo.cx;
+      var dy = p.y - pgeo.cy;
+      if (dy < 8) dy = 8;
+      var th = Math.atan2(dx, dy);
+      if (th > 1.45) th = 1.45;
+      if (th < -1.45) th = -1.45;
+      state.th = th;
+      state.om = 0;
+      state.trace = [];
+      traceTick = 0;
+      acc = 0;
+      render();
+    }
+
+    if (pendC) {
+      pendC.canvas.style.touchAction = 'none';
+      pendC.canvas.style.cursor = 'grab';
+
+      bindPointer(pendC.canvas, function (p) {
+        var d = Math.sqrt((p.x - pgeo.bx) * (p.x - pgeo.bx) + (p.y - pgeo.by) * (p.y - pgeo.by));
+        if (d > 46) return false;
+        state.dragging = true;
+        pendC.canvas.style.cursor = 'grabbing';
+        if (pendAnim) pendAnim.stop();
+        setFromPoint(p);
+        return true;
+      }, function (p) {
+        setFromPoint(p);
+      }, function () {
+        state.dragging = false;
+        pendC.canvas.style.cursor = 'grab';
+        acc = 0;
+        if (pendAnim) pendAnim.start();
+      });
+    }
+
+    /* ---------- 摆长滑块 ---------- */
+    var lenSlider = PH.slider({
+      mount: '#lenSlider',
+      label: '摆长 L',
+      min: 0.2,
+      max: 2.0,
+      step: 0.01,
+      value: 1.0,
+      unit: 'm',
+      fmt: function (v) { return v.toFixed(2); },
+      onInput: function (v) {
+        state.L = v;
+        state.trace = [];
+        traceTick = 0;
+        acc = 0;
+        render();
+      }
+    });
+
+    render();
+    if (pendC) {
+      pendC.onResize(function () { render(); });
+    }
+    if (phaseC) {
+      phaseC.onResize(function () { render(); });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '为什么拉格朗日法可以完全不管绳子的张力？',
+        options: [
+          { text: '张力是约束力，沿绳方向；摆球被约束在圆弧上，允许的位移垂直于绳，张力不做虚功，因此不进拉格朗日量。', correct: true, why: '选 θ 作广义坐标后，约束被参数化自动满足。约束力垂直于允许位移，不贡献虚功，所以方程里没有它。' },
+          { text: '张力很小，相比之下可以忽略。', correct: false, why: '张力并不小。摆到最低点时它甚至大于重力。它不出现，是因为方向不对，不是因为数值小。' },
+          { text: '张力总是被重力完全抵消。', correct: false, why: '只有在最低点、速度为零的瞬间，张力才等于重力。其他位置两者并不相等。' },
+          { text: '因为拉格朗日量里根本没有“力”这个概念，所以所有力都消失了。', correct: false, why: '重力并没有消失，它通过势能 V 进入了拉格朗日量。消失的只是不做虚功的约束力。' }
+        ]
+      },
+      {
+        q: '小角度近似 sinθ≈θ 对应下面哪幅图像？',
+        options: [
+          { text: '加速度与摆角成正比、方向相反，摆做简谐振动，相图是闭合的椭圆。', correct: true, why: 'θ̈=−(g/L)θ 正是简谐振动的形式。小角度下周期恒定，相图是一条闭合曲线。' },
+          { text: '摆球做匀速圆周运动，角速度保持不变。', correct: false, why: '单摆的角速度一直在变，最低点最快、两侧为零，不是匀速圆周运动。' },
+          { text: '摆角按抛物线增长，越摆越快。', correct: false, why: '抛物线是恒加速度下的位置图像。单摆的回复力随角度变，位置不是抛物线。' },
+          { text: '摆长越短，周期越长。', correct: false, why: '周期 T=2π√(L/g) 随摆长增加而变长。摆长越短，周期越短。' }
+        ]
+      },
+      {
+        q: '把摆长变成原来的 4 倍，周期会变成原来的几倍？',
+        options: [
+          { text: '2 倍', correct: true, why: 'T 正比于 √L。摆长乘 4，根号后乘 2，所以周期变为 2 倍。' },
+          { text: '4 倍', correct: false, why: '周期与摆长不是线性关系。4 倍摆长只给出 2 倍周期。' },
+          { text: '16 倍', correct: false, why: '16 倍相当于把 T∝L²，那是把平方根关系记反了。' },
+          { text: '不变', correct: false, why: '周期依赖摆长。只有质量和小振幅下的振幅不影响周期。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

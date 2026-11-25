@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 6 课 · 热是物质还是运动？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="3-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 6 课 / 共 27 课 · 约 10 分钟</p>
+        <h1>热是物质还是运动？</h1>
+        <p class="lede">1798 年，一个人在兵工厂里钻炮筒。钻着钻着，他发现自己快要推翻一门流传了半个世纪的学问，而全部证据只是：水一直在变热。</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>18 世纪末，如果你问一位有学问的人“热是什么”，最可能听到的答案是：热是一种流体。它没有重量，看不见，能钻进物体，也能从物体里流出来。人们给它起了个名字，叫<strong>热质</strong>（caloric）。</p>
+        <p>这套说法相当好用。物体温度高，说明里面含的热质多；两块东西贴在一起，热质就从多的地方流到少的地方，直到两边一样多。摩擦为什么生热？因为摩擦把藏在物体里的热质挤了出来，就像挤海绵里的水。更妙的是，热质总量守恒——混合、传导、摩擦，都只是把它搬来搬去，不会凭空多出来，也不会凭空消失。</p>
+        <p>但热质说有一个不能细想的地方。海绵里的水是有限的，挤一会儿就干了。如果热真是被挤出来的流体，那么一块金属被反复钻削，迟早会被“挤干”。到那时，无论再怎么用力，它都不该继续变热。这个预言非常清楚，也非常容易检验。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>1798 年，伦福德（本杰明·汤普森）在慕尼黑兵工厂监督钻造炮筒。他手上的东西很朴素：几匹马、一根钻头、一支温度计，还有一大箱用来冷却的水。</p>
+        <p>钻炮筒本来就要用水降温，否则金属会热得没法碰。伦福德注意到，只要钻头还在转，水就一直是热的。他没有放过这个细节，而是把装置改得更适合提问：让炮筒整个浸在水箱里，用马匹拉动钝钻头，把温度计插进水里。</p>
+        <p>这样一改，“热”就被关进了一个可以称量的容器。水的质量固定，温度计能读出升高了多少，而让 1 kg 水升温 1 ℃ 需要多少热，当时已经有人测过。剩下的问题只有一个：这些热是从哪里来的。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：比热容——把“热”换成可以相加的数</summary>
+          <div class="mathbox-body">
+            <p>把 1 kg 水的温度升高 1 ℃，需要吸收大约 4186 J 的热。这个数叫水的比热容，记作 c。质量越大、升温越多，需要的热就越多，三者成正比：</p>
+            <div class="eq">Q <span class="op">=</span> mcΔT</div>
+            <p class="readas">读作：吸收或放出的热量，等于质量、比热容与温度变化三者的乘积。</p>
+            <ul class="vars">
+              <li><b>Q</b><span>吸收或放出的热量，单位焦耳</span></li>
+              <li><b>m</b><span>物体的质量，单位千克</span></li>
+              <li><b>c</b><span>比热容，水约为 4186 J/(kg·K)</span></li>
+              <li><b>ΔT</b><span>温度的变化量，单位开尔文或摄氏度</span></li>
+            </ul>
+            <p>这条式子本身不偏向任何一种热学理论。热质说和“热是运动”都承认它成立，区别只在于：Q 到底是什么东西。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>伦福德的实验之所以有杀伤力，不在于他测到了某个新数字，而在于他把热质说逼到了一个可以被推翻的位置。下面五步，就是他当时的思路。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>先把热质说按它自己的逻辑推到尽头。按这个说法，炮筒和钻头里本来含着一定量的热质，总量固定。摩擦不能创造热质，只能把它从金属里挤到水里。挤一点，少一点。</p>
+            <div class="eq">Q<span class="sub">放出</span> <span class="op">≤</span> Q<span class="sub">热质总量</span></div>
+            <p class="readas">读作：摩擦放出的总热量，不可能超过物体原本含有的热质总量。</p>
+            <ul class="vars">
+              <li><b>Q放出</b><span>摩擦过程中累计传给水的热量</span></li>
+              <li><b>Q热质总量</b><span>按热质说，金属与钻头里储存的热质总和</span></li>
+            </ul>
+            <p>这是一个可以被检验的预言：钻得足够久，发热总会停下来。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>伦福德让马一圈一圈地走。水温升高，他就换一箱冷水；再升高，再换。他一次又一次地记录，发现只要钻头还在转，水就会继续升温，完全看不出“快挤干了”的迹象。</p>
+            <p>如果热质的总量真的固定，总有一刻金属会被榨干，温度曲线会变平。这个时刻始终没有到来。发热不是“挤出来的一点存货”，更像是只要还在做功，就会被持续生产出来的东西。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>还有一个更省事的解释：热来自切屑。金属被削下来，碎屑飞溅，摩擦总是热的，所以看起来像是钻削在生热。</p>
+            <p>伦福德专门换了一支钝钻头。刃口几乎削不下金属，只剩下摩擦。按“切屑生热”的猜测，这样应该几乎不发热。结果是发热照旧，水温照样往上爬。</p>
+            <p>于是两个候选解释同时出局：热既不来自被削下来的金属，也不是藏在金属里的热质被挤了出来。剩下的可能，只有运动本身。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>结论是：热不是一种物质，而是物质内部微粒的运动。钻头做的机械功，通过摩擦传给了金属和水里的微粒，让它们振动得更剧烈。你摸到的“热”，是这场微观运动的宏观表现。</p>
+            <p>这个说法有一个热质说比不了的好处：它天然地解释了“取之不尽”。运动不需要库存，只要还有功输入，微粒就会继续被搅动。培根和玻意耳都猜过类似的东西，但伦福德第一次把它放在了可以重复的实验面前。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>不过伦福德的论证是定性的：他证明了热质说站不住，却没有回答“多少功换多少热”。这一步要等到焦耳。</p>
+            <p>1843 年，焦耳用重物下落带动桨轮，在量热器里搅水。重物下落做的功可以从质量和高度算出来，水温上升可以从温度计读出来。两笔账一对，他得到了一个固定的兑换率。</p>
+            <div class="eq">1 <span class="dim">kcal</span> <span class="op">≈</span> 4186 <span class="dim">J</span></div>
+            <p class="readas">读作：一千卡的热，大约等于四千一百八十六焦耳的机械功。反过来也成立，机械功可以按这个比例变成热。</p>
+            <p>这个数叫热功当量。它的意思是：热和机械功不是两种东西，而是同一本能量账上的两种记法。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下面两个演示把伦福德的装置拆成两半：一半看“钻多久、水多热”，一半看“这些热到底值多少功”。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 摇钻与水温</span>
+              <span class="demo-tag">W → Q，4186 J/kcal</span>
+            </div>
+            <p class="demo-desc">按住“摇钻”，马匹带着钝钻头转起来。摩擦做的功不断送进水箱，水温跟着上升。橙色虚线是热质说的预测：热质挤干之后，温度就该停住。</p>
+            <canvas id="rotCanvas" data-height="380" aria-label="摇钻使水温上升，并与热质说预测对比"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn primary" id="drillBtn">按住摇钻</button>
+              <button type="button" class="btn" id="autoBtn">自动摇钻：关</button>
+              <button type="button" class="btn ghost" id="resetBtn">重来</button>
+            </div>
+            <div class="readout" id="rumReadout">累计机械功 W = 0 J　水温 T = 20.0 ℃</div>
+            <div class="readout" id="calNote" style="color:#8fa6c4;font-size:13px;">热质说：剩余热质 100%，预测水温最终停在 27.6 ℃</div>
+            <p class="hint">试试：按住摇钻 20 秒。热质储量早已见底，水温却还在往上走——这条不肯变平的曲线，就是热质说的死因。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 这些热能举多重</span>
+              <span class="demo-tag">mgh = Q</span>
+            </div>
+            <p class="demo-desc">1 kg 水从 20 ℃ 烧到 100 ℃，吸收的热是固定的。如果把它全部换成功，能把多重的物体举多高？拖动重物质量看看。</p>
+            <canvas id="liftCanvas" data-height="300" aria-label="热量换算成举高重物的高度"></canvas>
+            <div id="liftSlider"></div>
+            <div class="readout" id="liftReadout">Q = 3.35×10⁵ J　→　把 33 kg 举高 1036 m</div>
+            <p class="hint">试试：把质量拖到 100 kg，高度掉到约 340 m。热量一点没少，只是分给了更重的物体。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>先把比热容这笔账算清楚。水的比热容是 4186 J/(kg·K)，意思是 1 kg 水每升温 1 K（也就是 1 ℃），要吸收 4186 J。</p>
+        <div class="eq">Q <span class="op">=</span> mcΔT <span class="op">=</span> 1 <span class="op">×</span> 4186 <span class="op">×</span> 80 <span class="op">≈</span> 3.35<span class="op">×</span>10<span class="sup">5</span> <span class="dim">J</span></div>
+        <p class="readas">读作：1 千克水升温 80 摄氏度，需要吸收约三十三万五千焦耳的热。</p>
+        <p>三十多万焦耳有多大？把它换成功：把 33 kg 的重物举高 1 km，重力势能是</p>
+        <div class="eq">mgh <span class="op">=</span> 33 <span class="op">×</span> 9.8 <span class="op">×</span> 1000 <span class="op">≈</span> 3.2<span class="op">×</span>10<span class="sup">5</span> <span class="dim">J</span></div>
+        <p class="readas">读作：质量乘重力加速度再乘高度，约等于三十二万焦耳。</p>
+        <p>两者几乎一样。也就是说，烧开一壶水所需的能量，约等于把一个 33 kg 的行李箱扛到一千米高的山顶。换成人的尺度更直观：一个 70 kg 的人爬 500 m 的山，重力势能增加约 3.4×10⁵ J，和烧开这 1 kg 水差不多。</p>
+        <p>这也解释了为什么烧水看起来平平无奇，实际却是一笔不小的开销。用一台 2000 W 的电磁炉，不考虑损耗，烧开这 1 kg 水要 3.35×10⁵ ÷ 2000 ≈ 168 s，接近三分钟。焦耳测出的那个 4186，看着只是一个换算系数，背后是这样一整套日常经验。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>伦福德没有写出公式，也没有测出热功当量。他做的是更难的一件事：让一个所有人都觉得理所当然的模型显得可疑。科学史上，这往往比多算对一位小数更重要。</p>
+        <p>值得一提的是，卡诺在 1824 年写下热机理论时，仍然沿用热质说的语言。他的结论却是对的——因为他的推理只依赖“热从高温流向低温”这一件事，而不依赖热究竟是什么。一个模型即使解释错了，也可能在局部给出正确的结果。</p>
+        <p>焦耳的工作补上了定量的一环。1850 年前后，克劳修斯和开尔文把“热是能量的一种形式”写进了热力学第一定律。从那以后，热不再是某种神秘流体，而是和功一样，可以被记账、被转换、被追踪。</p>
+        <p>下一步的问题自然就来了：既然热和功可以互换，那么一台机器把热变成功，最多能变多少？</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示 A：摇钻与水温 ---------- */
+    var rot = PH.canvas('rotCanvas');
+    var rumReadout = document.getElementById('rumReadout');
+    var calNote = document.getElementById('calNote');
+    var drillBtn = document.getElementById('drillBtn');
+    var autoBtn = document.getElementById('autoBtn');
+    var resetBtn = document.getElementById('resetBtn');
+
+    var W_MAX = 40000;            /* 横轴上限，J */
+    var W_SAT = 8000;             /* 热质说认为“挤干”时的累计功 */
+    var POWER = 600;              /* 摇钻的功率，W */
+    var HEAT_CAP = 0.25 * 4186;   /* 0.25 kg 水，约 1046.5 J/K */
+    var T0 = 20;
+    var T_PRED = T0 + W_SAT / HEAT_CAP;
+
+    var work = 0;
+    var drilling = false;
+    var auto = false;
+    var spin = 0;
+    var rafId = null;
+    var lastTs = 0;
+    var raf = window.requestAnimationFrame || function (cb) {
+      return window.setTimeout(function () { cb(Date.now()); }, 16);
+    };
+
+    function tempNow() {
+      return Math.min(99.5, T0 + work / HEAT_CAP);
+    }
+
+    function fmtInt(v) {
+      return String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function drawRot() {
+      if (!rot) return;
+      var ctx = rot.ctx;
+      var w = rot.w;
+      var h = rot.h;
+      var T = tempNow();
+      var f = Math.max(0, Math.min(1, (T - 20) / 75));
+      var water = 'rgb(' + Math.round(78 + 177 * f) + ',' +
+        Math.round(168 - 30 * f) + ',' + Math.round(255 - 194 * f) + ')';
+      var vx = 22;
+      var vw = Math.min(140, w * 0.34);
+      var vy = 42;
+      var vh = 94;
+      var i;
+
+      rot.clear();
+
+      /* 水箱 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.55)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.rect(vx, vy, vw, vh);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 水 */
+      ctx.save();
+      ctx.globalAlpha = 0.55;
+      ctx.fillStyle = water;
+      ctx.fillRect(vx + 2, vy + 14, vw - 4, vh - 16);
+      ctx.restore();
+
+      /* 水面波纹 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,255,255,.35)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (i = 0; i <= 20; i++) {
+        var wx = vx + 2 + (vw - 4) * i / 20;
+        var wy = vy + 14 + Math.sin(i * 0.9 + spin) * 1.6;
+        if (i === 0) ctx.moveTo(wx, wy);
+        else ctx.lineTo(wx, wy);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 钻杆与钻头 */
+      var tipX = vx + vw * 0.58;
+      var tipY = vy + vh * 0.62;
+      ctx.save();
+      ctx.strokeStyle = '#9fb3cc';
+      ctx.lineWidth = 5;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(vx + vw - 4, vy - 24);
+      ctx.lineTo(tipX, tipY);
+      ctx.stroke();
+      ctx.strokeStyle = drilling ? '#ffb03d' : 'rgba(255,176,61,.55)';
+      ctx.lineWidth = 2;
+      for (i = -1; i <= 1; i++) {
+        var a = spin + i * 1.05;
+        ctx.beginPath();
+        ctx.moveTo(tipX, tipY);
+        ctx.lineTo(tipX + Math.cos(a) * 9, tipY + Math.sin(a) * 9);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 水汽 */
+      if (T > 82) {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,138,61,' + (0.25 + 0.25 * f) + ')';
+        ctx.lineWidth = 1.5;
+        for (i = 0; i < 3; i++) {
+          var sx = vx + vw * (0.3 + i * 0.2);
+          ctx.beginPath();
+          ctx.moveTo(sx, vy - 4);
+          ctx.bezierCurveTo(sx - 6, vy - 14, sx + 6, vy - 22, sx - 2, vy - 32);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      /* 温度计 */
+      var tx = vx + vw + 18;
+      var ty = vy + 2;
+      var th = vh - 16;
+      var colH = Math.max(0, Math.min(1, T / 100)) * (th - 6);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.5)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.rect(tx, ty, 10, th);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(tx + 5, ty + th + 6, 6, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = T > 55 ? '#ff8a3d' : '#ff5f6d';
+      ctx.fillRect(tx + 2, ty + th - colH - 2, 6, colH);
+      ctx.beginPath();
+      ctx.arc(tx + 5, ty + th + 6, 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 热质储量条 */
+      var bx = tx + 34;
+      var bw = Math.max(70, w - bx - 14);
+      var by = 54;
+      var remain = Math.max(0, 1 - work / W_SAT);
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.85)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('热质储量', bx, by - 7);
+      ctx.fillStyle = 'rgba(143,166,196,.16)';
+      ctx.fillRect(bx, by, bw, 12);
+      ctx.fillStyle = '#ffb03d';
+      ctx.fillRect(bx, by, bw * remain, 12);
+      ctx.fillStyle = remain > 0 ? 'rgba(255,176,61,.95)' : 'rgba(255,95,109,.95)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText(Math.round(remain * 100) + '%', bx, by + 28);
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.fillText(w < 360 ? '预测封顶 ' + T_PRED.toFixed(1) + ' ℃' : '热质说预测：封顶 ' + T_PRED.toFixed(1) + ' ℃', bx, by + 46);
+      ctx.fillStyle = '#ff8a3d';
+      ctx.fillText(w < 360 ? '实测 ' + T.toFixed(1) + ' ℃' : '实测水温：' + T.toFixed(1) + ' ℃', bx, by + 64);
+      ctx.restore();
+
+      /* P-V 式的 W-T 曲线 */
+      var px0 = 54;
+      var px1 = w - 16;
+      var pyT = 168;
+      var pyB = h - 34;
+      var T_LO = 15;
+      var T_HI = 65;
+
+      function gx(v) { return px0 + (px1 - px0) * v / W_MAX; }
+      function gy(t) { return pyB - (pyB - pyT) * (t - T_LO) / (T_HI - T_LO); }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.16)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var gxx = px0 + (px1 - px0) * i / 4;
+        var gyy = pyB - (pyB - pyT) * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(gxx, pyT);
+        ctx.lineTo(gxx, pyB);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(px0, gyy);
+        ctx.lineTo(px1, gyy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(px0, pyT);
+      ctx.lineTo(px0, pyB);
+      ctx.lineTo(px1, pyB);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 热质说预测曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#ffb03d';
+      ctx.lineWidth = 1.8;
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath();
+      ctx.moveTo(gx(0), gy(T0));
+      ctx.lineTo(gx(W_SAT), gy(T0 + W_SAT / HEAT_CAP));
+      ctx.lineTo(gx(W_MAX), gy(T0 + W_SAT / HEAT_CAP));
+      ctx.stroke();
+      ctx.restore();
+
+      /* 实测曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      var N = 80;
+      for (i = 0; i <= N; i++) {
+        var ww = work * i / N;
+        var tt = T0 + ww / HEAT_CAP;
+        if (i === 0) ctx.moveTo(gx(0), gy(T0));
+        else ctx.lineTo(gx(ww), gy(tt));
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 光标点 */
+      if (work > 0) {
+        ctx.save();
+        ctx.fillStyle = '#ff8a3d';
+        ctx.shadowColor = '#ff8a3d';
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        ctx.arc(gx(work), gy(T), 4.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      /* 坐标标签 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('20', px0 - 18, pyB + 4);
+      ctx.fillText('65', px0 - 18, pyT + 4);
+      ctx.fillText('0', px0 - 4, pyB + 14);
+      ctx.fillText('20', gx(20000) - 6, pyB + 14);
+      ctx.fillText('40 kJ', px1 - 30, pyB + 14);
+      ctx.fillText('水温 (℃)', px0 - 6, pyT - 8);
+      ctx.fillText('累计功 W (kJ)', (px0 + px1) / 2 - 34, pyB + 28);
+      ctx.restore();
+
+      /* 图例 */
+      ctx.save();
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('实测', px0 + 8, pyT + 14);
+      ctx.strokeStyle = '#ffb03d';
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(px0 + 40, pyT + 10);
+      ctx.lineTo(px0 + 58, pyT + 10);
+      ctx.stroke();
+      ctx.fillStyle = '#ffb03d';
+      ctx.fillText('热质说', px0 + 64, pyT + 14);
+      ctx.restore();
+    }
+
+    function updateRum() {
+      var T = tempNow();
+      var remain = Math.max(0, 1 - work / W_SAT);
+      if (rumReadout) {
+        rumReadout.textContent = '累计机械功 W = ' + fmtInt(work) + ' J　水温 T = ' + T.toFixed(1) + ' ℃';
+      }
+      if (calNote) {
+        calNote.textContent = remain > 0
+          ? '热质说：剩余热质 ' + Math.round(remain * 100) + '%，预测水温最终停在 ' + T_PRED.toFixed(1) + ' ℃'
+          : '热质说：热质已耗尽（0%），可水温仍在上升 —— 预测失败';
+        calNote.style.color = remain > 0 ? '#8fa6c4' : '#ff5f6d';
+      }
+    }
+
+    function tick(ts) {
+      if (!lastTs) lastTs = ts;
+      var dt = (ts - lastTs) / 1000;
+      lastTs = ts;
+      if (dt < 0) dt = 0;
+      if (dt > 0.08) dt = 0.08;
+      if ((drilling || auto) && work < W_MAX) {
+        work = Math.min(W_MAX, work + POWER * dt);
+        spin += dt * 14;
+      }
+      drawRot();
+      updateRum();
+      if (drilling || auto) {
+        rafId = raf(tick);
+      } else {
+        rafId = null;
+      }
+    }
+
+    function kick() {
+      if (rafId === null) {
+        lastTs = 0;
+        rafId = raf(tick);
+      }
+    }
+
+    function setDrill(on) {
+      drilling = on;
+      if (on) kick();
+    }
+
+    if (drillBtn) {
+      if (window.PointerEvent) {
+        drillBtn.addEventListener('pointerdown', function (e) {
+          e.preventDefault();
+          setDrill(true);
+        });
+        window.addEventListener('pointerup', function () { setDrill(false); });
+        window.addEventListener('pointercancel', function () { setDrill(false); });
+      } else {
+        drillBtn.addEventListener('mousedown', function (e) {
+          e.preventDefault();
+          setDrill(true);
+        });
+        window.addEventListener('mouseup', function () { setDrill(false); });
+        drillBtn.addEventListener('touchstart', function (e) {
+          e.preventDefault();
+          setDrill(true);
+        });
+        window.addEventListener('touchend', function () { setDrill(false); });
+      }
+      drillBtn.addEventListener('pointerleave', function () { setDrill(false); });
+      drillBtn.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    }
+
+    if (autoBtn) {
+      autoBtn.addEventListener('click', function () {
+        auto = !auto;
+        autoBtn.textContent = '自动摇钻：' + (auto ? '开' : '关');
+        if (auto) {
+          autoBtn.classList.add('is-done');
+          kick();
+        } else {
+          autoBtn.classList.remove('is-done');
+        }
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        work = 0;
+        spin = 0;
+        drawRot();
+        updateRum();
+      });
+    }
+
+    drawRot();
+    updateRum();
+    if (rot) rot.onResize(function () { drawRot(); });
+
+    /* ---------- 演示 B：热量能举多重 ---------- */
+    var lift = PH.canvas('liftCanvas');
+    var liftReadout = document.getElementById('liftReadout');
+    var Q_LIFT = 3.35e5;
+    var H_MAX = 1800;
+
+    function drawLift(m) {
+      if (!lift) return;
+      var ctx = lift.ctx;
+      var w = lift.w;
+      var h = lift.h;
+      var hgt = Q_LIFT / (m * 9.8);
+      var ground = h - 36;
+      var top = 40;
+      var scale = (ground - top) / H_MAX;
+      var hpx = Math.min(ground - top, hgt * scale);
+      var cx = w * 0.34;
+      var i;
+
+      lift.clear();
+
+      /* 地面 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(14, ground);
+      ctx.lineTo(w - 14, ground);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 标尺 */
+      var rx = w * 0.72;
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.35)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(rx, ground);
+      ctx.lineTo(rx, top);
+      ctx.stroke();
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      for (i = 0; i <= 1800; i += 300) {
+        var ry = ground - i * scale;
+        ctx.beginPath();
+        ctx.moveTo(rx, ry);
+        ctx.lineTo(rx + 6, ry);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(143,166,196,.7)';
+        ctx.fillText(i + ' m', rx + 10, ry + 3);
+      }
+      ctx.restore();
+
+      /* 1 km 参考线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.4)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(cx - 44, ground - 1000 * scale);
+      ctx.lineTo(rx, ground - 1000 * scale);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255,176,61,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('1 km', cx - 42, ground - 1000 * scale - 6);
+      ctx.restore();
+
+      /* 绳与重物 */
+      var by = ground - hpx;
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.5)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(cx, 22);
+      ctx.lineTo(cx, by - 13);
+      ctx.stroke();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = 'rgba(255,176,61,.55)';
+      ctx.shadowBlur = 10;
+      ctx.fillRect(cx - 20, by - 13, 40, 26);
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('m = ' + Math.round(m) + ' kg', cx + 28, by - 2);
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('h ≈ ' + Math.round(hgt) + ' m', cx + 28, by + 16);
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.fillText('Q = 3.35×10⁵ J 全部转成功', 14, 24);
+      ctx.restore();
+    }
+
+    var liftSlider = PH.slider({
+      mount: '#liftSlider',
+      label: '重物质量 m',
+      min: 20,
+      max: 100,
+      step: 1,
+      value: 33,
+      unit: 'kg',
+      fmt: function (v) { return String(Math.round(v)); },
+      onInput: function (v) {
+        drawLift(v);
+        if (liftReadout) {
+          var hgt = Q_LIFT / (v * 9.8);
+          liftReadout.textContent = 'Q = 3.35×10⁵ J　→　把 ' + Math.round(v) + ' kg 举高 ' + Math.round(hgt) + ' m';
+        }
+      }
+    });
+
+    drawLift(33);
+    if (liftReadout) {
+      liftReadout.textContent = 'Q = 3.35×10⁵ J　→　把 33 kg 举高 ' + Math.round(Q_LIFT / (33 * 9.8)) + ' m';
+    }
+    if (lift) lift.onResize(function () {
+      drawLift(liftSlider ? liftSlider.value : 33);
+    });
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '哪一条观察最致命地打击了热质说？',
+        options: [
+          { text: '钻头摩擦之后变热了。', correct: false, why: '热质说本来就能解释这一点：摩擦把物体里的热质挤出来。这个现象对两套理论都成立，不是判决性证据。' },
+          { text: '只要持续钻，水温就一直上升，换水之后还能继续加热，看不到耗尽的迹象。', correct: true, why: '热质说预言“挤干就停”。伦福德反复换水、持续钻削，热却源源不断，直接违反了“热质总量固定”这个前提。' },
+          { text: '水到了 100 ℃ 会沸腾。', correct: false, why: '沸腾是状态变化，热质说也能描述：热质进入后水变成蒸汽。它并不能区分两种理论。' },
+          { text: '金属比水更容易导热。', correct: false, why: '导热快慢只是一个物性差异，和“热是什么”没有直接冲突。' }
+        ]
+      },
+      {
+        q: '伦福德为什么特意强调自己用的是钝钻头？',
+        options: [
+          { text: '钝钻头更容易把炮筒钻穿。', correct: false, why: '钝钻头恰恰更难钻孔。他关心的不是效率，而是排除干扰因素。' },
+          { text: '钝钻头几乎不产生切屑，可以排除“热来自被削下来的金属”这个解释。', correct: true, why: '如果热来自切屑，切屑少了热就该少。实际发热照旧，于是“切屑生热”也被排除，只剩下摩擦与运动本身。' },
+          { text: '钝钻头摩擦更小，可以保护水箱。', correct: false, why: '钝钻头摩擦反而更大、发热更多。这与他的目的正好相反。' },
+          { text: '钝钻头能让水温升得更快，方便观察。', correct: false, why: '升温快慢不是重点。即使升温很慢，只要“热一直有、没有耗尽”，结论同样成立。' }
+        ]
+      },
+      {
+        q: '1 kcal 等于多少焦耳？',
+        options: [
+          { text: '4.186 J', correct: false, why: '这是 1 cal 的数值。kcal 是千卡，还差一千倍。' },
+          { text: '418.6 J', correct: false, why: '差了十倍。把 1 cal ≈ 4.186 J 乘以 1000，应该得到 4186 J。' },
+          { text: '4186 J', correct: true, why: '1 cal ≈ 4.186 J，1 kcal = 1000 cal ≈ 4186 J。这正是焦耳测出的热功当量。' },
+          { text: '41860 J', correct: false, why: '大了十倍。常见的混淆是把 4.186 的小数点又挪错一位。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 6 阶段 · 场本身能被量子化吗？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="6-2" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 20 课 / 共 27 课 · 约 11 分钟</p>
+        <h1>场本身能被量子化吗？</h1>
+        <p class="lede">麦克斯韦方程里的场是连续的波，光电效应里的光却是一份一份的。连续的东西怎么会长出“份”？答案不在光那边，而在场这边：场本身就是一堆振子，每个振子的能量只能一档一档地跳。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>1900 年，普朗克为了拟合黑体辐射谱，被迫假设振子的能量只能取 hν 的整数倍。1905 年，爱因斯坦把这个“份”推到光本身：光的发射和吸收，是一份一份进行的。1916 年密立根的光电效应实验、1923 年康普顿的 X 射线散射，都支持这个图像。</p>
+        <p>可这就留下一道难看的分裂。麦克斯韦的理论把光写成连续的电磁场：电场和磁场在空间里平滑起伏，能量密度正比于 E²+B²，可以取任意小的值。一个连续的场，凭什么只能整份地交出能量？如果光是波，振幅减小一点点，能量就该减小一点点，不该存在“最小的一份”。</p>
+        <p>1920 年代中期的量子力学也没接上。它处理的是“一个粒子在势场里怎么运动”，波函数描述这个粒子的概率。可光子的难处在于数目本身会变：原子可以发一个光子，也可以发两个；光子可以被吸收而消失。这已经超出“一个粒子”的框架。要说清楚，只能把场本身当成量子对象。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是简谐振子。一根弹簧挂一个质量，偏离平衡位置越远，回复力越大；经典情况下能量连续，振幅多大能量就多大。1925—1926 年，海森堡和薛定谔分别给出了它的量子解：能量不能连续变，只能取一档一档的值，相邻两档的间隔是固定的。</p>
+        <p>第二件工具是普朗克-爱因斯坦关系：能量等于 h 乘频率；而频率与角频率只差一个 2π，所以一份能量也等于 ħ 乘角频率。</p>
+        <p>第三件是傅里叶的想法：任何一段复杂的波，都能拆成一堆简单正弦波的叠加。每一列正弦波有固定的波长和频率，就像一个独立的振子。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：一个场为什么像一堆弹簧</summary>
+          <div class="mathbox-body">
+            <p>把空间划成许多小格，每格放一个场值。场值偏离零，就像弹簧被拉开，需要储存能量；相邻格子的场值不一样，互相拉扯，这一份拉扯也储存能量。</p>
+            <p>然后把整段场按正弦波拆开。每一列正弦波是一个“模式”，波长固定，频率也就固定；分解之后，各个模式互不耦合，每一个都单独地做简谐振动。</p>
+            <p>于是连续的场被拆成了一串互不干扰的振子。量子化一个场，就是量子化这串振子。</p>
+            <svg viewBox="0 0 340 130" role="img" aria-label="场格点上的振子链与一个正弦模式">
+              <line x1="26" y1="72" x2="314" y2="72" stroke="rgba(143,166,196,.22)" stroke-dasharray="3 5"/>
+              <path d="M61 52 l6 -8 l10 16 l10 -16 l10 16 l10 -16 l6 8" fill="none" stroke="#8fa6c4" stroke-width="1.3"/>
+              <path d="M127 52 l6 -8 l10 16 l10 -16 l10 16 l10 -16 l6 8" fill="none" stroke="#8fa6c4" stroke-width="1.3"/>
+              <path d="M193 52 l6 -8 l10 16 l10 -16 l10 16 l10 -16 l6 8" fill="none" stroke="#8fa6c4" stroke-width="1.3"/>
+              <circle cx="54" cy="52" r="7" fill="#0e1726" stroke="#35e0c8" stroke-width="1.6"/>
+              <circle cx="120" cy="52" r="7" fill="#0e1726" stroke="#35e0c8" stroke-width="1.6"/>
+              <circle cx="186" cy="52" r="7" fill="#0e1726" stroke="#35e0c8" stroke-width="1.6"/>
+              <circle cx="252" cy="52" r="7" fill="#0e1726" stroke="#35e0c8" stroke-width="1.6"/>
+              <path d="M30 104 q22 -18 44 0 t44 0 t44 0 t44 0 t44 0 t44 0" fill="none" stroke="#a98bff" stroke-width="1.5"/>
+              <text x="170" y="124" fill="#8fa6c4" font-size="10" text-anchor="middle" font-family="monospace">整列振子同相振动 = 一个模式</text>
+            </svg>
+            <p class="caption">每个格点挂一个振子，相邻振子用弹簧相连。一个正弦模式，就是整列振子以同一个频率一起摆动。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面五步，从“场像弹簧”这个图像出发，走到“光子是场的激发”。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>先做一次拆解。想象空间被划成许多小格，每格有一个场值。场值为零时这格没有能量；场值偏离零，就像弹簧被拉开，要储存能量。相邻格子的场值不一样，互相拉扯，这一份拉扯也储存能量。麦克斯韦方程描述的，正是这种“每格一个振子、格子之间用弹簧相连”的系统。</p>
+            <p>连续场只是格子无限细的极限。做法是把这个由无数耦合振子组成的系统按正弦波分解。每一列正弦波是一个“模式”，有确定的波长，也就有确定的频率。分解之后各模式互不耦合，每一个都单独做简谐振动。到这里，场的问题变成了一堆独立弹簧的问题。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>现在把每个模式当成一个量子谐振子。经典弹簧的能量可以连续取任意值；量子弹簧不行。它的能级是等间距的，间隔为 ħω，最低一档不是零，而是 ½ħω。</p>
+            <div class="eq">E<span class="sub">n</span> <span class="op">=</span> ( n <span class="op">+</span> ½ ) ħω<span class="dim">，n = 0, 1, 2 …</span></div>
+            <p class="readas">读作：第 n 档的能量，等于 n 加二分之一，再乘 ħ 和角频率。n 只能取非负整数，所以能量只能一格一格地排。</p>
+            <ul class="vars">
+              <li><b>Eₙ</b><span>第 n 档的能量</span></li>
+              <li><b>n</b><span>能级编号，也是光子数</span></li>
+              <li><b>ħ</b><span>约化普朗克常数，约 1.055×10⁻³⁴ J·s</span></li>
+              <li><b>ω</b><span>这个模式的角频率</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>相邻两档差多少？把 n 换成 n+1 再相减，多出来的正好是 ħω。也就是说，要让这个模式从第 n 档升到第 n+1 档，必须一次交给它 ħω；少一点不行，多一点会直接跳到更高档。反过来，降一档就交出 ħω。</p>
+            <div class="eq">E<span class="sub">n+1</span> <span class="op">−</span> E<span class="sub">n</span> <span class="op">=</span> ħω</div>
+            <p class="readas">读作：相邻两档的能量差恒等于 ħω，与 n 无关。所有台阶一样高，不存在“半级台阶”可走。</p>
+            <p>台阶高度只由频率决定：频率越高，升一档要付的能量越多。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>这个“一档”在实验上是什么？它就是光子。角频率与频率的关系是 ν=ω/2π，于是 ħω=hν。模式升一档，场里多出一份 hν 的能量；在探测器上，这份能量表现为一个频率为 ν 的光子被吸收。降一档，就是放出一个光子。</p>
+            <div class="eq">E <span class="op">=</span> ħω <span class="op">=</span> hν</div>
+            <p class="readas">读作：一档的能量等于 ħ 乘角频率，也等于 h 乘频率。两种写法只差一个 2π，说的是同一份能量。</p>
+            <p>于是“光子”不是一颗小钢珠，而是电磁场某个模式被激发了一档。模式有无数个，频率各不相同，所以光子的能量可以不同：红光的光子能量小，蓝光的大，γ 射线更大。但在同一个模式里，光子只能整份加上去或减下来。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>还有个细节不能漏：n=0 时能量不是零。最低档是 ½ħω，叫零点能。它不对应“半个光子”，也不能被拿走——你能做的最多是把 n 从 1 降到 0，交出的仍然是 ħω。零点能在 1948 年由卡西米尔提出，1997 年由兰莫勒用扭摆做了精确测量：两块靠得很近的金属板之间，允许的场模式比外面少，零点能就产生微小压力，把两块板往一起推。</p>
+            <p>于是“光子数 n”有了清楚的含义：它数的是这个模式被激发到了第几档。n 从 0 变到 1、2、3……，每次变化一格，对应吸收或放出一个光子。n 不是“场里有几个小球”，而是“这个振子爬到了第几级台阶”。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>左边是振子的能级阶梯，台阶高度按 (n+½)ħω 排布，间距处处相同。右边是同一个振子的弹簧模型：n 越大，能量越高，振幅越大。点下面的按钮让振子升一档或降一档，看两边的读数一起变。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 场的振子：升一档 = 一个光子</span>
+              <span class="demo-tag">Eₙ = (n + ½)ħω</span>
+            </div>
+            <p class="demo-desc">ħω 取 532 纳米绿光的值，即 2.33 eV。每按一次“吸收”，n 加 1，振子振幅变大，能量增加一个 2.33 eV；按“发射”则相反。n=0 时振幅不为零，因为零点能还在。</p>
+            <canvas id="fieldCanvas" data-height="360" aria-label="场振子的能级阶梯与弹簧振幅演示"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn primary" id="absorbBtn">吸收一个光子</button>
+              <button type="button" class="btn" id="emitBtn">发射一个光子</button>
+              <span class="view-state" id="fieldState">当前：n = 0</span>
+            </div>
+            <div class="readout" id="fieldReadout"></div>
+            <p class="hint">试试：连按八次“吸收”，看阶梯上的亮点一级一级往上爬，弹簧越摆越大；再按“发射”，能量一次减掉 2.33 eV，n=0 之后按不动了。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>拿一束绿光算一算。波长 532 纳米，是倍频 Nd:YAG 激光的典型波长，绿色激光笔都用它。</p>
+        <div class="eq">E <span class="op">=</span> <span class="frac"><span class="num">h c</span><span class="den">λ</span></span> <span class="op">=</span> <span class="frac"><span class="num">1240</span><span class="den">532</span></span> <span class="dim">eV·nm / nm</span> <span class="op">≈</span> 2.33 <span class="dim">eV</span></div>
+        <p class="readas">读作：光子能量等于 hc 除以波长。hc 约等于 1240 电子伏乘纳米，除以 532 纳米，得到 2.33 电子伏。</p>
+        <p>2.33 eV 是什么概念？可见光的能量大致在 1.8 到 3.1 eV 之间，2.33 eV 落在中间偏绿的位置；一节 1.5 伏干电池给电子加速，能量才 1.5 eV。单个光子的能量，和单个电子经过几伏电压获得的能量是同一量级。</p>
+        <p>再看功率。1 瓦的绿光激光每秒输出 1 焦耳。每个光子 2.33 eV，换成焦耳是 2.33×1.602×10⁻¹⁹，约 3.73×10⁻¹⁹ 焦耳。</p>
+        <div class="eq">N <span class="op">=</span> <span class="frac"><span class="num">P</span><span class="den">E</span></span> <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">3.73×10<span class="sup">−19</span></span></span> <span class="op">≈</span> 2.7×10<span class="sup">18</span> <span class="dim">个/秒</span></div>
+        <p class="readas">读作：每秒光子数等于功率除以单个光子的能量，约 2.7 乘 10 的 18 次方个。这个数字比地球上的人口多十亿倍。</p>
+        <p>数量级的意思在这里：日常光源的光子多到数不清，所以光看起来是连续的；到了极弱的光，光子就一颗一颗显形。生理实验估计，人眼在充分暗适应后，几十个光子就能引起一次微弱的光感。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>场量子化是量子场论的起点。1927 年，狄拉克把电磁场写成量子振子的集合，第一次定量算出原子对光子的吸收与发射；爱因斯坦 1916 年用半经典论证得到的自发辐射系数，在这里被推导了出来。1928—1929 年，这套方法被推广到电子场和更一般的场。</p>
+        <p>这套语言后来成了标准模型的地基。电子场、夸克场、希格斯场，全都是“每一点挂一个振子”的场；粒子的产生与湮灭，就是振子升一档、降一档。2012 年发现的希格斯玻色子，本质上就是希格斯场被激发了一档。</p>
+        <p>它还改变了“真空”这个概念。n=0 的真空不是“什么都没有”：每个模式都保留着 ½ħω 的零点能，还可能有场的短暂涨落。真空成了一个有结构的对象。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示：能级阶梯 + 弹簧振子 ---------- */
+    var fc = PH.canvas('fieldCanvas');
+    var fieldReadout = document.getElementById('fieldReadout');
+    var fieldState = document.getElementById('fieldState');
+    var absorbBtn = document.getElementById('absorbBtn');
+    var emitBtn = document.getElementById('emitBtn');
+
+    var N_MAX = 8;
+    var HBAR_W_EV = 2.33;
+    var nLevel = 0;
+    var phase = 0;
+    var lastMsg = 'ħω = 2.33 eV（532 nm 绿光）';
+
+    function ampFor(n) {
+      return Math.sqrt((n + 0.5) / (N_MAX + 0.5));
+    }
+
+    var ampNow = ampFor(0);
+    var ampTarget = ampFor(0);
+
+    function levelY(n, bottom, unit) {
+      return bottom - (n + 0.5) * unit;
+    }
+
+    function drawField() {
+      if (!fc) return;
+      var ctx = fc.ctx;
+      var w = fc.w;
+      var h = fc.h;
+      var padT = 30;
+      var padB = 52;
+      var ladderX0 = 40;
+      var ladderX1 = Math.min(w * 0.4, 260);
+      var bottom = h - padB;
+      var unit = (bottom - padT) / (N_MAX + 0.5);
+      var i;
+
+      fc.clear();
+
+      /* 能级阶梯 */
+      for (i = 0; i <= N_MAX; i++) {
+        var y = levelY(i, bottom, unit);
+        var active = i === nLevel;
+        ctx.save();
+        ctx.strokeStyle = active ? '#ffb03d' : 'rgba(143,166,196,.26)';
+        ctx.lineWidth = active ? 2.6 : 1;
+        if (active) {
+          ctx.shadowColor = '#ffb03d';
+          ctx.shadowBlur = 12;
+        }
+        ctx.beginPath();
+        ctx.moveTo(ladderX0, y);
+        ctx.lineTo(ladderX1, y);
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.fillStyle = active ? '#ffb03d' : 'rgba(143,166,196,.55)';
+        ctx.font = '10.5px ui-monospace, Consolas, monospace';
+        ctx.fillText('n=' + i, 8, y + 3.5);
+
+        if (active) {
+          ctx.save();
+          ctx.fillStyle = '#ffb03d';
+          ctx.shadowColor = '#ffb03d';
+          ctx.shadowBlur = 14;
+          ctx.beginPath();
+          ctx.arc(ladderX1 - 4, y, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('能量 E / ħω', ladderX0, padT - 12);
+      ctx.restore();
+
+      /* 弹簧振子 */
+      var wallX = Math.max(ladderX1 + 56, w * 0.52);
+      var eqX = wallX + Math.min(110, w * 0.15);
+      var cy = h * 0.44;
+      var disp = ampNow * 30 * Math.sin(phase);
+      var massX = eqX + disp;
+      var massW = 30;
+      var massLeft = massX - massW / 2;
+
+      /* 平衡位置 */
+      ctx.save();
+      ctx.setLineDash([4, 5]);
+      ctx.strokeStyle = 'rgba(143,166,196,.3)';
+      ctx.beginPath();
+      ctx.moveTo(eqX, cy - 56);
+      ctx.lineTo(eqX, cy + 56);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 墙 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.22)';
+      ctx.fillRect(wallX - 8, cy - 46, 8, 92);
+      ctx.restore();
+
+      /* 弹簧 */
+      ctx.save();
+      ctx.strokeStyle = '#8fa6c4';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(wallX, cy);
+      var len = Math.max(20, massLeft - wallX);
+      var coils = 10;
+      for (i = 1; i < coils; i++) {
+        var xx = wallX + len * i / coils;
+        var yy = cy + (i % 2 === 0 ? 9 : -9);
+        ctx.lineTo(xx, yy);
+      }
+      ctx.lineTo(massLeft, cy);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 质量块 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(53,224,200,.14)';
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(massLeft, cy - 24, massW, 48, 6);
+      else ctx.rect(massLeft, cy - 24, massW, 48);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#d6e6ff';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('m', massX - 4, cy + 4);
+      ctx.restore();
+
+      /* 右侧标注 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.72)';
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('振幅 ∝ √(n + ½)', wallX - 6, cy - 66);
+      ctx.fillStyle = '#ffb03d';
+      ctx.font = '15px ui-monospace, Consolas, monospace';
+      ctx.fillText('n = ' + nLevel, wallX - 2, cy + 86);
+      ctx.fillStyle = 'rgba(143,166,196,.6)';
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('E = ' + (nLevel + 0.5).toFixed(1) + ' ħω', wallX + 62, cy + 86);
+      ctx.restore();
+    }
+
+    function updateField() {
+      ampTarget = ampFor(nLevel);
+      if (fieldState) fieldState.textContent = '当前：n = ' + nLevel;
+      if (absorbBtn) absorbBtn.disabled = nLevel >= N_MAX;
+      if (emitBtn) emitBtn.disabled = nLevel <= 0;
+      if (fieldReadout) {
+        fieldReadout.textContent = 'n = ' + nLevel + '　E = (' + nLevel + ' + ½)ħω = ' +
+          (nLevel + 0.5).toFixed(1) + ' ħω = ' + ((nLevel + 0.5) * HBAR_W_EV).toFixed(2) +
+          ' eV　｜　' + lastMsg;
+      }
+      drawField();
+    }
+
+    if (absorbBtn) {
+      absorbBtn.addEventListener('click', function () {
+        if (nLevel >= N_MAX) return;
+        nLevel += 1;
+        lastMsg = '刚吸收一个光子：+2.33 eV';
+        updateField();
+      });
+    }
+
+    if (emitBtn) {
+      emitBtn.addEventListener('click', function () {
+        if (nLevel <= 0) return;
+        nLevel -= 1;
+        lastMsg = '刚放出一个光子：−2.33 eV';
+        updateField();
+      });
+    }
+
+    updateField();
+    if (fc) fc.onResize(function () { drawField(); });
+
+    PH.anim(function (t, dt) {
+      phase += dt * 5;
+      ampNow += (ampTarget - ampNow) * 0.12;
+      drawField();
+    }, { autoplay: true });
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '为什么场的能量只能一档一档地取？',
+        options: [
+          { text: '因为场是由一颗颗不连续的小球拼成的。', correct: false, why: '场本身是连续的。分档不是空间上的颗粒感，而是每个模式的能量取值被量子化条件限制住了。' },
+          { text: '因为场的每个模式都是一个量子谐振子，而量子谐振子的能级是等间距的。', correct: true, why: '场按正弦模式分解后，每个模式独立地做简谐振动。量子谐振子只能取 (n+½)ħω，所以场的能量也就一档一档地排。' },
+          { text: '因为麦克斯韦方程本身就是不连续的差分方程。', correct: false, why: '麦克斯韦方程是连续的微分方程，它描述的场处处平滑。分档来自量子化，不是来自方程的形式。' },
+          { text: '因为测量仪器的分辨率有限，看起来像是一档一档的。', correct: false, why: '分档是理论的预言，与仪器分辨率无关。再精密的探测器也测不到“半个 ħω”的台阶。' }
+        ]
+      },
+      {
+        q: '“光子数 n”到底在数什么？',
+        options: [
+          { text: '数这个模式里装了多少颗实心的小球。', correct: false, why: '光子不是小球。n 是振子的能级编号，不是空间里的颗粒个数。' },
+          { text: '数这个模式被激发到了第几档；n 每加 1，能量就加 ħω。', correct: true, why: 'n 从 0 升到 1、2、3，对应场振子爬上一级级台阶，每一级正好是一个光子的能量。' },
+          { text: '数这个模式里光子的频率。', correct: false, why: '频率由模式本身决定，与 n 无关。同一个模式里，无论 n 是几，ħω 都不变。' },
+          { text: '数零点能的大小。', correct: false, why: '零点能对应 n=0，是一个固定值 ½ħω；它与 n 的大小是两回事。' }
+        ]
+      },
+      {
+        q: 'n=0 时，这个模式还有能量吗？',
+        options: [
+          { text: '没有，n=0 就是完全空无一物。', correct: false, why: 'n=0 只是没有“激发”，并不等于零能量。最低一档是 ½ħω，也就是零点能。' },
+          { text: '有 ½ħω 的零点能，它拿不走；卡西米尔效应是它的实验证据。', correct: true, why: '把 n 从 1 降到 0，交出的仍是 ħω，零点能留在原地。两块靠得很近的金属板之间的模式更少，零点能差就表现为吸引力。' },
+          { text: '有无限大的能量。', correct: false, why: '单个模式的零点能是有限的 ½ħω。把所有模式加起来确实会发散，但那是另一件事，需要靠重整化处理。' },
+          { text: '能量为负，所以真空不稳定。', correct: false, why: '零点能是正的 ½ħω，真空在这个意义上是稳定的，不会自发衰变。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

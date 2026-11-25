@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 1 课 · 行星为什么这样运行？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="1-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 1 课 / 共 27 课 · 约 10 分钟</p>
+        <h1>行星为什么这样运行？</h1>
+        <p class="lede">天上的行星走得好好的，为什么会突然倒退一段？还有，它们凭什么“知道”自己该走哪条路？</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>在开普勒之前，最流行的答案是托勒密给出的。他把地球放在宇宙的中心，让太阳、月亮和行星都绕着地球转。可行星在天空中的位置并不老实：有时快，有时慢，有时候还会停下来，倒退一段，再继续往前走。为了把这些“不老实”都算进去，托勒密给每颗行星安排了一个大圆，叫均轮；再在大圆上套一个小圆，叫本轮，让行星沿着小圆转。</p>
+        <p>圆套圆确实有效。只要肯往上加圆，托勒密的模型就能把观测位置算得很准，准到肉眼几乎看不出差别。但它的代价是：你得接受几十个大小不一、方向各异的圆，而且没人说得清行星为什么必须走这些圆。它能“算得准”，却不能“讲得通”。更麻烦的是逆行——火星在星空背景上倒着走的那几周，托勒密只能用本轮去凑，却回答不了一个更朴素的问题：火星到底有没有真的倒退？</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>转机来自第谷·布拉赫。他在丹麦的天文台里，用肉眼和大型的金属仪器，连续观测了二十年。没有望远镜，他就靠把仪器做大、把刻度做细，硬是把行星位置的精度做到了大约 1 到 2 角分。1 角分是 1 度的六十分之一；你可以把手臂伸直，一根头发在视线里张开的角度，差不多就是这个量级。</p>
+        <p>这个精度很要命。它不足以让你看见行星的表面，却足以分辨“圆”和“不太圆”。第谷去世后，这批数据交到了开普勒手里。开普勒手上还有两样东西：圆规和直尺能画出的几何，以及一个不太合群的念头——行星的轨道，也许根本不是圆。他试了十几年，最后拿出的答案，是一个你在纸上就能画出来的图形：椭圆。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：什么是椭圆？——两枚图钉一根绳</summary>
+          <div class="mathbox-body">
+            <p>在纸上钉两枚图钉，把一根绳子的两端分别系在钉子上。用笔尖把绳子绷紧，绕着两枚钉子走一圈，画出来的封闭曲线就是一个椭圆。两枚图钉所在的位置，叫椭圆的<strong>焦点</strong>。</p>
+            <p>绳子的长度没有变，所以椭圆上任意一点到两个焦点的距离之和，永远是一个常数。这个常数正好等于椭圆最长那条直径的长度，记作 2a；其中 a 叫<strong>半长轴</strong>，也就是从椭圆中心到最远端的距离。</p>
+            <svg viewBox="0 0 340 190" role="img" aria-label="椭圆示意图：两个焦点与半长轴">
+              <line x1="24" y1="95" x2="316" y2="95" stroke="rgba(143,166,196,.35)" stroke-dasharray="4 5"/>
+              <ellipse cx="170" cy="95" rx="120" ry="72" fill="none" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="74" y1="95" x2="170" y2="23" stroke="#ffb03d" stroke-width="1.2" stroke-dasharray="3 4"/>
+              <line x1="266" y1="95" x2="170" y2="23" stroke="#ffb03d" stroke-width="1.2" stroke-dasharray="3 4"/>
+              <circle cx="74" cy="95" r="5" fill="#ffb03d"/>
+              <circle cx="266" cy="95" r="5" fill="#ffb03d"/>
+              <circle cx="170" cy="23" r="4" fill="#4ea8ff"/>
+              <text x="58" y="118" fill="#ffb03d" font-size="12" font-family="monospace">F₁</text>
+              <text x="270" y="118" fill="#ffb03d" font-size="12" font-family="monospace">F₂</text>
+              <text x="176" y="20" fill="#4ea8ff" font-size="12" font-family="monospace">P</text>
+              <text x="170" y="181" fill="#8fa6c4" font-size="12" text-anchor="middle" font-family="monospace">PF₁ + PF₂ = 2a</text>
+            </svg>
+            <p class="caption">太阳不在椭圆的中心，而在其中一个焦点上。这就是椭圆和圆最关键的区别。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>现在跟着开普勒走一遍。他手里没有牛顿的定律，也没有微积分；他能做的，是把第谷的数据一遍遍地和几何图形对照。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第谷的数据里藏着一个很小的偏差。如果行星走的是完美的圆，那么按圆算出来的位置，和观测位置最多只该差 2 角分左右——那已经是仪器的极限。可开普勒反复核对，偏差总是稳定在 8 角分。这个数字不大，却总是出现，说明它不是手抖造成的观测误差，而是“圆”这个假设本身出了问题。</p>
+            <div class="eq">Δθ <span class="op">≈</span> 8′ <span class="op">&gt;</span> 2′</div>
+            <p class="readas">读作：圆轨道预测与实测位置的偏差约为 8 角分，明显大于第谷数据 2 角分的精度上限。</p>
+            <ul class="vars">
+              <li><b>Δθ</b><span>理论与观测之间的角度差</span></li>
+              <li><b>2′</b><span>第谷观测精度的大致上限</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>圆被排除以后，开普勒换成椭圆。椭圆有一个圆没有的性质：行星离太阳近的时候走得快，离太阳远的时候走得慢。这正好对上了第谷记录里“近处快、远处慢”的细节。1609 年，他在《新天文学》里写下第一条定律：行星沿椭圆运行，太阳位于椭圆的一个焦点上。</p>
+            <div class="eq">PF<span class="sub">1</span> <span class="op">+</span> PF<span class="sub">2</span> <span class="op">=</span> 2a</div>
+            <p class="readas">读作：椭圆上任意一点 P 到两个焦点 F₁、F₂ 的距离之和，恒等于长轴的长度 2a。太阳就坐在其中一个焦点上。</p>
+            <ul class="vars">
+              <li><b>P</b><span>行星在轨道上的位置</span></li>
+              <li><b>F₁、F₂</b><span>椭圆的两个焦点；太阳在其中一个</span></li>
+              <li><b>a</b><span>半长轴，决定轨道有多大</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二条定律更妙。开普勒把太阳和行星用一条线连起来，发现这条线在相同的时间里总是扫过相同的面积，不管行星在近处还是远处。近处时线短，但行星转得快、转过的角度大；远处时线长，行星却转得慢。两个效果刚好抵消。</p>
+            <div class="eq">ΔA <span class="op">≈</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> r<span class="sup">2</span> Δθ</div>
+            <p class="readas">读作：一小段时间里扫过的面积，约等于半径的平方、转过的角度与二分之一的乘积。时间取得越短，这个近似越准。</p>
+            <ul class="vars">
+              <li><b>ΔA</b><span>连线在短时间内扫过的面积</span></li>
+              <li><b>r</b><span>行星到太阳的距离</span></li>
+              <li><b>Δθ</b><span>短时间内转过的角度，用弧度计</span></li>
+            </ul>
+            <div class="eq"><span class="frac"><span class="num">dA</span><span class="den">dt</span></span> <span class="op">=</span> <span class="teal">常数</span></div>
+            <p class="readas">读作：面积对时间的变化率保持不变，这就是“面积速度不变”。把时间间隔取得足够小，上面那个 ΔA 与 Δθ 的近似就变成了这个关系。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三条定律要等到 1619 年的《世界的和谐》。开普勒把各颗行星的周期 T 和半长轴 a 摆在一起比较，发现一个出奇简洁的关系：周期的平方，正比于半长轴的三次方。半个多世纪后，牛顿用万有引力定律给出了它的证明；现在你只需要先记住这个模式。</p>
+            <div class="eq">T<span class="sup">2</span> <span class="op">∝</span> a<span class="sup">3</span></div>
+            <p class="readas">读作：行星公转周期的平方，与轨道半长轴的三次方成正比。换一颗行星，比值 T²/a³ 几乎不变。</p>
+            <ul class="vars">
+              <li><b>T</b><span>公转周期</span></li>
+              <li><b>a</b><span>轨道半长轴</span></li>
+            </ul>
+            <div class="table-wrap">
+              <table class="data">
+                <thead>
+                  <tr><th>行星</th><th>周期 T（年）</th><th>半长轴 a（AU）</th><th>T²</th><th>a³</th><th>T²/a³</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>地球</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.000</td></tr>
+                  <tr><td>火星</td><td>1.881</td><td>1.524</td><td>3.538</td><td>3.540</td><td>0.999</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="step" data-step>
+            <p>最后回到那个怪现象：逆行。火星从来没有倒退。你看到的是视角在变。地球在内圈跑得快，当地球从内侧超过火星时，火星在遥远星空背景上的投影会短暂地向后滑。就像你在高速公路上超车，被超过的那辆车在挡风玻璃里看起来在往后退——它没有倒车，是你的参照系变了。</p>
+            <div class="eq"><span class="vec">v</span><span class="sub">视</span> <span class="op">=</span> <span class="vec">v</span><span class="sub">火</span> <span class="op">−</span> <span class="vec">v</span><span class="sub">地</span></div>
+            <p class="readas">读作：火星相对地球的视速度，等于火星绕太阳的速度减去地球绕太阳的速度。两个速度方向不同，相减的结果在超车那几周会短暂地指向后方。</p>
+            <ul class="vars">
+              <li><b>v视</b><span>你在地球上“看到”的火星速度</span></li>
+              <li><b>v火</b><span>火星绕太阳的速度</span></li>
+              <li><b>v地</b><span>地球绕太阳的速度</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下面两个演示共用一条最简单的规则：行星绕太阳做圆周运动。真实的轨道是椭圆，但这里的圆已经足够让你看清“视角”和“周期”这两件事。演示里的位置都由同一套公式算出来；切换视角，只是换了一套坐标。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 地心视角 vs 日心视角</span>
+              <span class="demo-tag">同一段运动，两套坐标</span>
+            </div>
+            <p class="demo-desc">日心视角里，太阳不动，地球和火星各走各的圆。地心视角里，把地球放到原点，再把每个位置减去地球的位置。火星留下的轨迹，会画出一个个小环。</p>
+            <canvas id="orbitCanvas" data-height="340" aria-label="行星运动的地心与日心视角演示"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn" id="viewBtn">切换到地心视角</button>
+              <div class="anim-mount" id="orbitAnimMount"></div>
+              <span class="view-state" id="viewState">当前：日心视角</span>
+            </div>
+            <p class="hint">试试：切到地心视角，盯住火星身后那条轨迹——那几段打结的小环，就是“逆行”。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 开普勒第三定律</span>
+              <span class="demo-tag">T² ∝ a³</span>
+            </div>
+            <p class="demo-desc">横轴是 a³，纵轴是 T²，两者用同一个基准归一化。只要第三定律成立，所有行星都必须落在那条对角线上。</p>
+            <canvas id="keplerCanvas" data-height="300" aria-label="开普勒第三定律演示"></canvas>
+            <div id="keplerSlider"></div>
+            <div class="readout" id="keplerReadout"></div>
+            <p class="hint">试试：把 a 拖到 4 AU，看周期是不是 8 年。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>把火星的真实数字代进第三定律。火星的轨道半长轴是 1.524 AU，AU 是地球到太阳的平均距离，约 1.5 亿公里。</p>
+        <div class="eq">T <span class="op">=</span> a<span class="sup">1.5</span> <span class="op">=</span> 1.524<span class="sup">1.5</span> <span class="op">≈</span> 1.881 <span class="dim">年</span></div>
+        <p class="readas">读作：周期等于半长轴的 1.5 次方；1.524 的 1.5 次方约等于 1.881，单位是年。</p>
+        <p>观测给出的火星周期是 1.881 年。数量级上，它就是“不到两年”——一个不用计算器也能记住的结果。</p>
+        <p>这个数字还顺手解释了一种常见天象：火星冲日。太阳、地球、火星排成一条线时，火星最亮、整夜可见，这叫冲日。可它并不是每年都发生。地球一年转一圈，火星 1.881 年转一圈，所以地球每年比火星多转 1 − 1/1.881 圈。两次“追上”之间的间隔是：</p>
+        <div class="eq">1 <span class="op">/</span> ( 1 <span class="op">−</span> <span class="frac"><span class="num">1</span><span class="den">1.881</span></span> ) <span class="op">≈</span> 2.14 <span class="dim">年</span></div>
+        <p class="readas">读作：一除以“地球每年比火星多转的圈数”，得到约 2.14 年，也就是大约 780 天。所以你大约每两年两个月，才能看到一次最亮的火星。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>开普勒只回答了“怎么走”，没有回答“为什么这样走”。但他留下了一个非常强的暗示：支配行星的规则，可以被写成简洁的数学关系；而这条关系，和地上物体下落的规则之间，未必隔着一堵墙。</p>
+        <p>六十八年后，牛顿在《自然哲学的数学原理》里把这两件事接上了。他问了一个当时听起来很奇怪的问题：如果让月亮也像苹果那样“掉下来”，会算出什么？那就是下一课。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示 A：地心视角 vs 日心视角 ---------- */
+    var orbit = PH.canvas('orbitCanvas');
+    var viewMode = 'helio';
+    var YEAR_PER_SEC = 0.42;
+    var orbitAnim = null;
+    var viewBtn = document.getElementById('viewBtn');
+    var viewState = document.getElementById('viewState');
+
+    function planetAt(radius, period, tYears) {
+      var ang = 2 * Math.PI * (tYears / period) - Math.PI / 2;
+      return { x: radius * Math.cos(ang), y: radius * Math.sin(ang) };
+    }
+
+    function orbitFrame(t) {
+      if (!orbit) return;
+      var ctx = orbit.ctx;
+      var w = orbit.w;
+      var h = orbit.h;
+      var tYears = t * YEAR_PER_SEC;
+      var earth = planetAt(1, 1, tYears);
+      var mars = planetAt(1.524, 1.881, tYears);
+      var cx = w / 2;
+      var cy = h / 2;
+      var scale = Math.min(w, h) / 5.6;
+      var i;
+
+      orbit.clear();
+
+      /* 背景刻度圆 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.12)';
+      ctx.lineWidth = 1;
+      for (i = 1; i <= 2; i++) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, i * scale, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 日心视角下画出两条轨道 */
+      if (viewMode === 'helio') {
+        ctx.save();
+        ctx.setLineDash([5, 6]);
+        ctx.strokeStyle = 'rgba(53,224,200,.28)';
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(cx, cy, scale, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(cx, cy, 1.524 * scale, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      /* 火星轨迹：最近 3.3 年的采样，两种视角用同一段运动 */
+      var WINDOW = 3.3;
+      var SAMPLES = 420;
+      ctx.save();
+      ctx.strokeStyle = 'rgba(53,224,200,.5)';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      for (i = 0; i <= SAMPLES; i++) {
+        var ts = tYears - WINDOW + (WINDOW * i / SAMPLES);
+        var e2 = planetAt(1, 1, ts);
+        var m2 = planetAt(1.524, 1.881, ts);
+        var px, py;
+        if (viewMode === 'geo') {
+          px = cx + (m2.x - e2.x) * scale;
+          py = cy + (m2.y - e2.y) * scale;
+        } else {
+          px = cx + m2.x * scale;
+          py = cy + m2.y * scale;
+        }
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 三个天体的屏幕位置 */
+      var sunPos, earthPos, marsPos;
+      if (viewMode === 'geo') {
+        sunPos = { x: cx - earth.x * scale, y: cy - earth.y * scale };
+        earthPos = { x: cx, y: cy };
+        marsPos = { x: cx + (mars.x - earth.x) * scale, y: cy + (mars.y - earth.y) * scale };
+      } else {
+        sunPos = { x: cx, y: cy };
+        earthPos = { x: cx + earth.x * scale, y: cy + earth.y * scale };
+        marsPos = { x: cx + mars.x * scale, y: cy + mars.y * scale };
+      }
+
+      function glowDot(p, color, r, label) {
+        ctx.save();
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 12;
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+        if (label) {
+          ctx.fillStyle = 'rgba(214,230,255,.82)';
+          ctx.font = '12px ui-monospace, Consolas, monospace';
+          ctx.fillText(label, p.x + r + 5, p.y - r - 4);
+        }
+      }
+
+      glowDot(sunPos, '#ffb03d', 7, '太阳');
+      glowDot(earthPos, '#4ea8ff', 5, '地球');
+      glowDot(marsPos, '#ff5f6d', 5, '火星');
+
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText(viewMode === 'geo' ? '地心坐标：地球在原点，太阳绕地球转' : '日心坐标：太阳在原点', 14, 22);
+    }
+
+    orbitFrame(0, 0);
+    orbitAnim = PH.anim(orbitFrame, { mount: '#orbitAnimMount', autoplay: true, speed: 1 });
+
+    if (orbit) {
+      orbit.onResize(function () {
+        if (orbitAnim) orbitAnim.frame();
+      });
+    }
+
+    if (viewBtn) {
+      viewBtn.addEventListener('click', function () {
+        viewMode = viewMode === 'helio' ? 'geo' : 'helio';
+        viewBtn.textContent = viewMode === 'helio' ? '切换到地心视角' : '切换到日心视角';
+        if (viewState) viewState.textContent = viewMode === 'helio' ? '当前：日心视角' : '当前：地心视角';
+        if (orbitAnim) orbitAnim.frame();
+      });
+    }
+
+    /* ---------- 演示 B：开普勒第三定律 ---------- */
+    var kepler = PH.canvas('keplerCanvas');
+    var keplerReadout = document.getElementById('keplerReadout');
+    var A_MAX = 30;
+
+    function trim(v, digits) {
+      var s = Number(v).toFixed(digits);
+      if (s.indexOf('.') >= 0) {
+        s = s.replace(/0+$/, '').replace(/\.$/, '');
+      }
+      return s;
+    }
+
+    function drawKepler(a) {
+      if (!kepler) return;
+      var ctx = kepler.ctx;
+      var w = kepler.w;
+      var h = kepler.h;
+      var padL = 64;
+      var padR = 26;
+      var padT = 26;
+      var padB = 46;
+      var pw = Math.max(10, w - padL - padR);
+      var ph = Math.max(10, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var i;
+
+      kepler.clear();
+
+      /* 网格 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.16)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var fx = x0 + pw * i / 4;
+        var fy = y0 - ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(fx, padT);
+        ctx.lineTo(fx, y0);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x0, fy);
+        ctx.lineTo(x0 + pw, fy);
+        ctx.stroke();
+      }
+      /* 坐标轴 */
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 理论线 T² = a³（归一化后就是 45° 对角线） */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(53,224,200,.55)';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.moveTo(x0, y0);
+      ctx.lineTo(x0 + pw, padT);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 当前点 */
+      var nx = Math.pow(a, 3) / Math.pow(A_MAX, 3);
+      if (nx < 0) nx = 0;
+      if (nx > 1) nx = 1;
+      var px = x0 + pw * nx;
+      var py = y0 - ph * nx;
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.5)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(px, y0);
+      ctx.lineTo(px, py);
+      ctx.lineTo(x0, py);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(px, py, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 标注 */
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('a³（归一化）', x0 + pw - 92, y0 + 24);
+      ctx.save();
+      ctx.translate(18, padT + 96);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('T²（归一化）', 0, 0);
+      ctx.restore();
+      ctx.fillStyle = 'rgba(53,224,200,.9)';
+      ctx.fillText('T² = a³', x0 + pw * 0.58, y0 - ph * 0.58 - 10);
+    }
+
+    function updateKepler(a) {
+      drawKepler(a);
+      var T = Math.pow(a, 1.5);
+      if (keplerReadout) {
+        keplerReadout.textContent = 'a = ' + trim(a, 3) + ' AU　→　T ≈ ' + trim(T, 2) + ' 年';
+      }
+    }
+
+    var keplerSlider = PH.slider({
+      mount: '#keplerSlider',
+      label: '轨道半长轴 a',
+      min: 0.4,
+      max: 30,
+      step: 0.01,
+      value: 1.524,
+      unit: 'AU',
+      fmt: function (v) { return trim(v, 3); },
+      onInput: function (v) { updateKepler(v); }
+    });
+
+    updateKepler(1.524);
+    if (kepler) {
+      kepler.onResize(function () {
+        updateKepler(keplerSlider ? keplerSlider.value : 1.524);
+      });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '托勒密的模型既然能算准位置，为什么还是被取代了？',
+        options: [
+          { text: '因为它其实算不准，误差大得没法用。', correct: false, why: '加上足够多的本轮，托勒密模型的预测精度在当时的观测水平下相当好。问题不在“准不准”，而在“为什么”。' },
+          { text: '因为它只靠不断加圆去凑数据，没有说明行星为什么必须那样走。', correct: true, why: '开普勒用椭圆和三条定律，以更少的假设、更好的精度解释了同样的现象。能算准，不等于讲得通。' },
+          { text: '因为它无法解释火星逆行。', correct: false, why: '恰好相反，本轮-均轮这套装置最初就是为了解释逆行而设计的。' },
+          { text: '因为它被教会明令禁止使用。', correct: false, why: '那不是主要原因。日心说确实遭遇过阻力，但模型被取代的核心原因是解释力和简洁性。' }
+        ]
+      },
+      {
+        q: '火星逆行，最合理的解释是哪一个？',
+        options: [
+          { text: '火星的轨道真的会反向折返。', correct: false, why: '行星的轨道没有反向，火星始终沿着自己的椭圆向前走。' },
+          { text: '太阳在某一段时间把火星推了回去。', correct: false, why: '没有这种推力。太阳对火星的引力始终指向太阳，不会让它原路倒退。' },
+          { text: '地球在内圈超车，火星在星空背景上的视位置短暂倒退。', correct: true, why: '这正是视角效应：地球跑得快，从内侧超过火星时，火星相对地球的视速度短暂指向后方。' },
+          { text: '这是观测误差，火星其实没有动。', correct: false, why: '逆行会持续数周，是稳定的系统现象，不可能由观测误差造成。' }
+        ]
+      },
+      {
+        q: '若某颗行星的轨道半长轴 a = 4 AU，它的公转周期大约是？',
+        options: [
+          { text: '2 年', correct: false, why: '周期与 a 不是线性关系。a=4 时 a³=64，开平方得 8，不是 2。' },
+          { text: '4 年', correct: false, why: '把 a 的数值直接照搬，忽略了周期随 a 增长得更快。' },
+          { text: '8 年', correct: true, why: 'T = a^1.5 = 4^1.5 = 8，单位是年。' },
+          { text: '16 年', correct: false, why: '16 年对应 T²=256，也就是 a³=256，a 约为 6.35 AU，不是 4 AU。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

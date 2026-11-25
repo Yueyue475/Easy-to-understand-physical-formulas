@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 5 阶段 · 原子为什么是稳定的？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="5-4" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 17 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>原子为什么是稳定的？</h1>
+        <p class="lede">卢瑟福在 1911 年把原子核找了出来：核很小，电子在外面绕。可按当时的电磁学，这样的原子只能活一亿亿分之一秒。你之所以还在，说明有一条规则被漏掉了。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>1911 年，卢瑟福根据 α 粒子散射提出核式模型：原子的质量和正电荷集中在极小的核里，电子在核外绕行。大多数 α 粒子径直穿过，少数在靠近核时被弹开，说明原子内部几乎是空的，中心有一个又小又硬的东西。</p>
+        <p>问题随即而来。电子绕核做圆周运动，速度方向一直在变，所以它在加速。经典电动力学有一条铁律：加速的电荷辐射电磁波，带走能量。电子失去能量，半径变小；半径变小，转得更快，辐射更强，最后螺旋式坠入核中。</p>
+        <p>按经典理论，氢原子寿命只有 10⁻¹¹ 秒左右；现实中的原子却稳定了数十亿年，差了几十个数量级。更奇怪的是，坠落的电子应发出连续频率，实际却是几条孤零零的谱线。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是<strong>卢瑟福的核式模型</strong>：一个带正电的核，加上外面的电子。它有实验支撑；要救原子，只能在“电子如何运动”上想办法。</p>
+        <p>第二件工具是<strong>氢原子光谱</strong>。1885 年巴尔末发现氢的可见光谱有四条亮线：656.3、486.1、434.0、410.2 纳米，像尺子上的刻度。1888 年里德伯把这些刻度归纳成公式，能算出整条谱线系。</p>
+        <p>第三件工具是<strong>量子</strong>。普朗克 1900 年被迫承认，振子能量只能一份一份交换；爱因斯坦 1905 年提出，光本身就是一份份能量粒子，每份 hν。玻尔把这两个想法搬进原子：如果能量分层，电子也许只能待在某些轨道上。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么 n 越大，能级越挤？</summary>
+          <div class="mathbox-body">
+            <p>氢原子能量 Eₙ=−13.6/n² 电子伏。负号表示电子被束缚，n 越大能量越接近 0，也越“松”。</p>
+            <p>相邻能级的间距不固定：n=1 到 2 差 10.2 eV，2 到 3 只差 1.89 eV，3 到 4 差 0.66 eV；再往上越来越小，最后挤成一片。</p>
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th>n</th><th>Eₙ / eV</th><th>与上一条的间隔 / eV</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>−13.60</td><td>—</td></tr>
+                  <tr><td>2</td><td>−3.40</td><td>10.20</td></tr>
+                  <tr><td>3</td><td>−1.51</td><td>1.89</td></tr>
+                  <tr><td>4</td><td>−0.85</td><td>0.66</td></tr>
+                  <tr><td>5</td><td>−0.54</td><td>0.31</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="caption">能级越往上越密。可见光谱线主要来自落到 n=2 的跃迁，这一段的能量差刚好在可见光范围。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>玻尔 1913 年的做法，是先承认经典理论在原子内部失效，再强行加上两条量子规则。点“下一步”，看这两条规则怎样把光谱线算出来。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，把危机说清楚。电子在圆轨道上运动，向心加速度指向核；加速电荷辐射能量，这是麦克斯韦方程的直接结论。按此，电子在极短时间内就会失去全部动能，落进核里。</p>
+            <p>可原子没有塌，说明经典电动力学在原子上不能原样使用。玻尔没有修改麦克斯韦方程，而是规定：有些特殊轨道，电子在上面虽然加速，却不辐射。这条规定没有解释“为什么”，是一条新假设。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，写出“允许轨道”的条件。玻尔假定，轨道角动量只能是 ħ 的整数倍；角动量就是质量乘速度乘半径。</p>
+            <div class="eq">m v r <span class="op">=</span> n ħ <span class="dim">（n = 1, 2, 3, …）</span></div>
+            <p class="readas">读作：电子的质量、速度与轨道半径三者相乘，只能等于 n 个约化普朗克常数。n 是正整数，叫主量子数；n=1 是最内层。</p>
+            <ul class="vars">
+              <li><b>m</b><span>电子质量，9.11×10⁻³¹ kg</span></li>
+              <li><b>v</b><span>电子速度</span></li>
+              <li><b>r</b><span>轨道半径</span></li>
+              <li><b>ħ</b><span>约化普朗克常数，h/2π ≈ 1.055×10⁻³⁴ J·s</span></li>
+            </ul>
+            <p>为什么选角动量？因为它决定轨道的大小和形状，而光谱关心的正是电子在不同大小轨道之间跳。这个选择后来被证明方向对了，但 1913 年它仍是一条为对上数据而提的假设。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，规定光什么时候发出。电子待在允许轨道上时不辐射；只有从一个较高的允许轨道跳到较低的允许轨道时，才放出一份光。这份光的能量，正好等于两个能级之差。</p>
+            <div class="eq">hν <span class="op">=</span> E<span class="sub">m</span> <span class="op">−</span> E<span class="sub">n</span> <span class="dim">（m &gt; n）</span></div>
+            <p class="readas">读作：光子的能量，等于高能级 Eₘ 与低能级 Eₙ 的差。反过来，原子吸收一份同样能量的光，电子就从低能级跳到高能级。</p>
+            <ul class="vars">
+              <li><b>hν</b><span>放出或吸收的光子能量</span></li>
+              <li><b>Eₘ</b><span>较高的能级</span></li>
+              <li><b>Eₙ</b><span>较低的能级</span></li>
+            </ul>
+            <p>这一条把“光谱线”翻译成“能级差”：原子只发几种颜色，不是电子害羞，而是只能待在几个固定高度上，落差只有那么几种。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，把轨道大小和能量算出来。电子绕核转，靠的是库仑引力提供向心力；再把角动量条件代进去，就能解出半径。这里用 k 表示库仑常数 1/(4πε₀)，e 是电子电荷的大小。</p>
+            <div class="eq"><span class="frac"><span class="num">k e<span class="sup">2</span></span><span class="den">r<span class="sup">2</span></span></span> <span class="op">=</span> <span class="frac"><span class="num">m v<span class="sup">2</span></span><span class="den">r</span></span></div>
+            <p class="readas">读作：库仑力等于质量乘速度平方除以半径，也就是向心力。左边是核把电子拉住的力，右边是让电子拐弯所需的力。</p>
+            <p>由角动量条件得 v=nħ/(mr)，代进力平衡式消掉 v，整理后半径只能取一串离散值：</p>
+            <div class="eq">r<span class="sub">n</span> <span class="op">=</span> n<span class="sup">2</span> a<span class="sub">0</span> <span class="dim">，a₀ ≈ 0.053 nm</span></div>
+            <p class="readas">读作：第 n 条轨道的半径，等于 n 的平方乘以一个基本长度 a₀。a₀ 叫玻尔半径，约 0.053 纳米，是氢原子基态的尺度。</p>
+            <p>再把半径代回能量。总能量是动能加势能，算出来恰好是负的，而且分母里带着 n 的平方：</p>
+            <div class="eq">E<span class="sub">n</span> <span class="op">=</span> <span class="op">−</span><span class="frac"><span class="num">13.6</span><span class="den">n<span class="sup">2</span></span></span> <span class="dim">eV</span></div>
+            <p class="readas">读作：第 n 条轨道的能量，等于负 13.6 除以 n 的平方，单位是电子伏。n=1 时是 −13.6 eV，这就是氢原子的结合能；n 越大，能量越接近 0。</p>
+            <ul class="vars">
+              <li><b>rₙ</b><span>第 n 条轨道半径</span></li>
+              <li><b>a₀</b><span>玻尔半径，0.053 nm</span></li>
+              <li><b>Eₙ</b><span>第 n 条轨道的能量</span></li>
+              <li><b>eV</b><span>电子伏，1 eV=1.6×10⁻¹⁹ J</span></li>
+            </ul>
+            <p>这一步没有新的可调参数：a₀ 和 13.6 eV 都由 m、e、ħ、ε₀ 组合出来，不是凑的。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，算一条谱线。n=3 跳到 n=2，能量差 13.6×(1/4−1/9)=1.89 电子伏；用 hc=1240 eV·nm 换算，波长 1240/1.89≈656 纳米。这正是巴尔末 1885 年测到的第一条红线 Hα。</p>
+            <p>同一套算法用在 n=4→2、5→2，分别得到 486 纳米和 434 纳米，即 Hβ 和 Hγ。实验值是 486.1、434.0 纳米，只差千分之几，而公式里没有为氢光谱专门调过的常数。</p>
+            <div class="eq"><span class="frac"><span class="num">1</span><span class="den">λ</span></span> <span class="op">=</span> R <span class="op">(</span><span class="frac"><span class="num">1</span><span class="den">2<span class="sup">2</span></span></span> <span class="op">−</span> <span class="frac"><span class="num">1</span><span class="den">n<span class="sup">2</span></span></span><span class="op">)</span> <span class="op">→</span> λ(Hα) <span class="op">≈</span> 656 <span class="dim">nm</span></div>
+            <p class="readas">读作：波长的倒数，等于里德伯常数乘以“四分之一减去 n 平方分之一”。取 n=3，就得到 Hα 的 656 纳米；取 n=4、5，就依次得到蓝线和紫线。</p>
+            <p>巴尔末当年是从数据里“猜”出这个公式的；玻尔是从两条量子假设和库仑定律里“推”出它。这是最有力的地方：不只解释一条线，而是把一整族线放进了同一个框架。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>演示 A 是能级图。先点高能级，再点低能级，箭头会画出这次跃迁，并给出光子波长与颜色。演示 B 把经典模型和玻尔模型放在一起：一个注定坠落，一个稳定绕行。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 点两条能级，看一次跃迁</span>
+              <span class="demo-tag">hν = Eₘ − Eₙ</span>
+            </div>
+            <p class="demo-desc">六条水平线是 n=1 到 n=6 的能级，位置按 −13.6/n² 排布，所以越往上越挤。默认显示 3→2 的 Hα 红线。点高能级、再点低能级，就能试出 Hβ、Hγ 以及紫外、红外的跃迁。</p>
+            <canvas id="levelCanvas" data-height="380" aria-label="氢原子能级图与跃迁演示"></canvas>
+            <div class="readout" id="levelReadout"></div>
+            <p class="hint">试试：先点 n=4，再点 n=2，看波长从 656 纳米变成 486 纳米，箭头也由红转蓝；再点 n=2 到 n=1，波长会掉进紫外，颜色条变暗。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 经典坠落 vs 玻尔轨道</span>
+              <span class="demo-tag">rₙ = n²a₀</span>
+            </div>
+            <p class="demo-desc">切到经典模型，电子一边辐射一边螺旋下落，动画放慢了真实过程；切到玻尔模型，电子停在允许轨道上，不辐射。滑块改变主量子数 n，轨道半径按 n² 变大。</p>
+            <canvas id="orbitCanvas" data-height="320" aria-label="经典坠落与玻尔稳定轨道对比动画"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn" id="modeBtn">切换到经典模型</button>
+              <span class="view-state" id="modeState">当前：玻尔模型</span>
+            </div>
+            <div id="nSlider"></div>
+            <div class="readout" id="orbitReadout"></div>
+            <p class="hint">试试：把 n 从 1 拖到 6，看轨道半径变成 36 倍；再切到经典模型，看同一颗电子在几秒动画里螺旋坠入核中。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>先看尺度。氢原子基态半径 0.053 纳米，原子核约 1 飞米（10⁻⁶ 纳米），相差约五万倍。若把原子放大成足球场，原子核只有中央一颗豌豆那么大。</p>
+        <p>再看能量。把电子从 n=1 拉到无穷远需要 13.6 电子伏。可见光光子约 2 到 3 电子伏，几束就能电离氢原子；但换成每摩尔，它约 1312 千焦，是化学键的几十倍。化学反应动不了原子核，正因为这道门槛太高。</p>
+        <p>最后看谱线。Hα 656.3、Hβ 486.1、Hγ 434.0 纳米都在可见光里，分别呈红、蓝绿、紫。间隔并不均匀：Hα 与 Hβ 差 170 纳米，Hβ 与 Hγ 只差 52 纳米。这个“越往短波越挤”的节奏，来自 1/n² 的能级结构。</p>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>跃迁</th><th>名称</th><th>计算波长</th><th>实测波长</th><th>颜色</th></tr></thead>
+            <tbody>
+              <tr><td>3→2</td><td>Hα</td><td>656.1 nm</td><td>656.3 nm</td><td>红</td></tr>
+              <tr><td>4→2</td><td>Hβ</td><td>486.0 nm</td><td>486.1 nm</td><td>蓝绿</td></tr>
+              <tr><td>5→2</td><td>Hγ</td><td>434.0 nm</td><td>434.0 nm</td><td>紫</td></tr>
+              <tr><td>6→2</td><td>Hδ</td><td>410.1 nm</td><td>410.2 nm</td><td>紫</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>理论只用了电子质量、电荷、普朗克常数、真空介电常数四个常数，没有一条谱线是单独调的。这种“一次算一族”的成功，比单点吻合更有分量。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>玻尔 1913 年分三次发表这套理论：量子假设不只是辐射定律的补丁，还能决定物质结构。1914 年弗兰克和赫兹用电子碰撞测到离散能级，玻尔的图像有了独立证据。</p>
+        <p>但玻尔模型也有裂缝：算不准氦原子，解释不了谱线亮度，也说不清“为什么角动量必须量子化”。它像一座桥，两头分别连着经典轨道和量子规则，桥身却建立在矛盾之上。</p>
+        <p>出路在下一课。1924 年德布罗意提出：如果电子是一种波，“轨道周长等于整数个波长”就能自然给出玻尔的量子化条件。到那时，轨道不再是硬性规定，而是波自己形成的驻波。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var RY = 1.0973731568e7;
+    var E1 = 13.605693;
+    var A0 = 0.0529;
+
+    function energy(n) { return -E1 / (n * n); }
+    function waveNm(up, lo) {
+      var inv = RY * (1 / (lo * lo) - 1 / (up * up));
+      return 1e9 / inv;
+    }
+    function colorName(nm) {
+      if (nm < 380) return '紫外';
+      if (nm < 450) return '紫';
+      if (nm < 495) return '蓝';
+      if (nm < 570) return '绿';
+      if (nm < 590) return '黄';
+      if (nm < 620) return '橙';
+      if (nm < 750) return '红';
+      return '红外';
+    }
+    function hueFor(nm) {
+      var pts = [[380, 285], [440, 250], [490, 190], [510, 140], [580, 60], [645, 25], [750, 0]];
+      var i;
+      for (i = 0; i < pts.length - 1; i++) {
+        if (nm >= pts[i][0] && nm <= pts[i + 1][0]) {
+          var t = (nm - pts[i][0]) / (pts[i + 1][0] - pts[i][0]);
+          return pts[i][1] + (pts[i + 1][1] - pts[i][1]) * t;
+        }
+      }
+      return 0;
+    }
+    function photonColor(nm) {
+      if (nm < 380) return '#a98bff';
+      if (nm > 750) return '#ffb03d';
+      return 'hsl(' + hueFor(nm).toFixed(0) + ', 90%, 62%)';
+    }
+    function transitionName(up, lo) {
+      if (lo === 2 && up === 3) return '，Hα';
+      if (lo === 2 && up === 4) return '，Hβ';
+      if (lo === 2 && up === 5) return '，Hγ';
+      if (lo === 2 && up === 6) return '，Hδ';
+      if (lo === 1 && up === 2) return '，莱曼α';
+      return '';
+    }
+
+    /* ---------------- 演示 A：能级图 ---------------- */
+    var lv = PH.canvas('levelCanvas');
+    var levelReadout = document.getElementById('levelReadout');
+    var pair = { up: 3, lo: 2 };
+    var pending = null;
+
+    function levelY(n, top, ph) {
+      var e = energy(n);
+      return top + ph * (0 - e) / 14.2;
+    }
+
+    function drawLevels() {
+      if (!lv) return;
+      var ctx = lv.ctx;
+      var w = lv.w;
+      var h = lv.h;
+      var top = 44;
+      var bot = h - 58;
+      var ph = Math.max(40, bot - top);
+      var x1 = 62;
+      var x2 = w - 58;
+      var n;
+
+      lv.clear();
+
+      /* 能量轴 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.35)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(46, bot);
+      ctx.lineTo(46, top - 6);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(46, top - 6);
+      ctx.lineTo(42, top + 2);
+      ctx.moveTo(46, top - 6);
+      ctx.lineTo(50, top + 2);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(143,166,196,.65)';
+      ctx.font = '9px ui-monospace, Consolas, monospace';
+      ctx.fillText('E', 30, top);
+      ctx.fillText('0', 30, top + 12);
+      ctx.fillText('−14', 24, bot);
+      ctx.restore();
+
+      /* 能级线 */
+      for (n = 1; n <= 6; n++) {
+        var y = levelY(n, top, ph);
+        var selected = (n === pair.up || n === pair.lo);
+        var isPending = (n === pending);
+        ctx.save();
+        ctx.strokeStyle = selected ? 'rgba(255,176,61,.95)' : 'rgba(143,166,196,.55)';
+        ctx.lineWidth = selected ? 2.4 : 1.5;
+        if (isPending) {
+          ctx.strokeStyle = '#35e0c8';
+          ctx.lineWidth = 2.6;
+          ctx.shadowColor = 'rgba(53,224,200,.7)';
+          ctx.shadowBlur = 10;
+        }
+        ctx.beginPath();
+        ctx.moveTo(x1, y);
+        ctx.lineTo(x2, y);
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = selected ? '#ffb03d' : 'rgba(214,230,255,.75)';
+        ctx.font = '10px ui-monospace, Consolas, monospace';
+        if (n % 2 === 1) {
+          ctx.fillText('n=' + n, 10, y + 3);
+          ctx.fillText(energy(n).toFixed(2) + ' eV', x1 + 6, y - 5);
+        } else {
+          ctx.textAlign = 'right';
+          ctx.fillText('n=' + n, w - 8, y + 3);
+          var ly = (n === 4) ? y + 13 : y - 5;
+          ctx.fillText(energy(n).toFixed(2) + ' eV', x2 - 6, ly);
+        }
+        ctx.restore();
+      }
+
+      /* 跃迁箭头 */
+      var up = pair.up;
+      var lo = pair.lo;
+      var yu = levelY(up, top, ph);
+      var yl = levelY(lo, top, ph);
+      var ax = w * 0.46;
+      var nm = waveNm(up, lo);
+      var col = photonColor(nm);
+
+      ctx.save();
+      ctx.strokeStyle = col;
+      ctx.fillStyle = col;
+      ctx.lineWidth = 2.6;
+      ctx.shadowColor = col;
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.moveTo(ax, yu);
+      ctx.lineTo(ax, yl - 8);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(ax, yl);
+      ctx.lineTo(ax - 5, yl - 10);
+      ctx.lineTo(ax + 5, yl - 10);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = col;
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('λ = ' + nm.toFixed(0) + ' nm', ax + 10, (yu + yl) / 2 - 6);
+      ctx.fillStyle = 'rgba(214,230,255,.8)';
+      ctx.fillText(up + ' → ' + lo, ax + 10, (yu + yl) / 2 + 10);
+      ctx.restore();
+
+      /* 顶部提示 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      if (pending === null) {
+        ctx.fillText('点击一条能级，再点另一条', 10, 18);
+      } else {
+        ctx.fillStyle = '#35e0c8';
+        ctx.fillText('已选 n=' + pending + '，再点另一条能级', 10, 18);
+      }
+      ctx.restore();
+    }
+
+    function paintLevels() {
+      drawLevels();
+      var up = pair.up;
+      var lo = pair.lo;
+      var de = Math.abs(energy(up) - energy(lo));
+      var nm = waveNm(up, lo);
+      if (levelReadout) {
+        levelReadout.textContent = up + ' → ' + lo + '：ΔE = ' + de.toFixed(2) +
+          ' eV，λ = ' + nm.toFixed(1) + ' nm（' + colorName(nm) +
+          '光' + transitionName(up, lo) + '）';
+      }
+    }
+
+    paintLevels();
+
+    if (lv) {
+      lv.canvas.style.cursor = 'pointer';
+      lv.canvas.addEventListener('click', function (e) {
+        var rect = lv.canvas.getBoundingClientRect();
+        var y = e.clientY - rect.top;
+        var top = 44;
+        var bot = lv.h - 58;
+        var ph = Math.max(40, bot - top);
+        var best = -1;
+        var bd = 1e9;
+        var n;
+        for (n = 1; n <= 6; n++) {
+          var d = Math.abs(levelY(n, top, ph) - y);
+          if (d < bd) { bd = d; best = n; }
+        }
+        if (bd > 22 || best < 0) return;
+        if (pending === null) {
+          pending = best;
+        } else if (pending === best) {
+          pending = null;
+        } else {
+          pair.up = Math.max(pending, best);
+          pair.lo = Math.min(pending, best);
+          pending = null;
+        }
+        paintLevels();
+      });
+      lv.onResize(function () { paintLevels(); });
+    }
+
+    /* ---------------- 演示 B：经典 vs 玻尔 ---------------- */
+    var orb = PH.canvas('orbitCanvas');
+    var orbitReadout = document.getElementById('orbitReadout');
+    var modeState = document.getElementById('modeState');
+    var modeBtn = document.getElementById('modeBtn');
+    var mode = 'bohr';
+    var nq = 2;
+    var orbT = 0;
+
+    function drawOrbit() {
+      if (!orb) return;
+      var ctx = orb.ctx;
+      var w = orb.w;
+      var h = orb.h;
+      var cx = w / 2;
+      var cy = h / 2 + 6;
+      var r0 = 14 + 2.9 * nq * nq;
+
+      orb.clear();
+
+      /* 核 */
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 16;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,176,61,.9)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('原子核', cx + 10, cy + 4);
+      ctx.restore();
+
+      if (mode === 'bohr') {
+        var ang = orbT * 1.5;
+        var ex = cx + Math.cos(ang) * r0;
+        var ey = cy + Math.sin(ang) * r0;
+
+        ctx.save();
+        ctx.strokeStyle = 'rgba(53,224,200,.5)';
+        ctx.lineWidth = 1.6;
+        ctx.setLineDash([5, 5]);
+        ctx.beginPath();
+        ctx.arc(cx, cy, r0, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+
+        /* 轨道尾迹 */
+        ctx.save();
+        ctx.strokeStyle = 'rgba(53,224,200,.22)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(cx, cy, r0, ang - 1.1, ang);
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = '#35e0c8';
+        ctx.shadowColor = '#35e0c8';
+        ctx.shadowBlur = 14;
+        ctx.beginPath();
+        ctx.arc(ex, ey, 5.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = 'rgba(53,224,200,.9)';
+        ctx.font = '10px ui-monospace, Consolas, monospace';
+        ctx.fillText('允许轨道：不辐射', 12, 20);
+        ctx.fillText('n = ' + nq + '，r = ' + (nq * nq * A0).toFixed(3) + ' nm', 12, h - 12);
+        ctx.restore();
+      } else {
+        var cycle = 4.2;
+        var phase = orbT % cycle;
+        var rNow = r0 * Math.exp(-phase / 0.9);
+        var aNow = phase * 6;
+
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,107,157,.45)';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        var k;
+        for (k = 0; k <= 90; k++) {
+          var ph = phase * k / 90;
+          var rr = r0 * Math.exp(-ph / 0.9);
+          if (rr < 4) break;
+          var xx = cx + Math.cos(ph * 6) * rr;
+          var yy = cy + Math.sin(ph * 6) * rr;
+          if (k === 0) ctx.moveTo(xx, yy);
+          else ctx.lineTo(xx, yy);
+        }
+        ctx.stroke();
+        ctx.restore();
+
+        if (rNow > 5) {
+          ctx.save();
+          ctx.fillStyle = '#ff6b9d';
+          ctx.shadowColor = '#ff6b9d';
+          ctx.shadowBlur = 14;
+          ctx.beginPath();
+          ctx.arc(cx + Math.cos(aNow) * rNow, cy + Math.sin(aNow) * rNow, 5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+
+        /* 辐射波纹 */
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,176,61,.5)';
+        ctx.lineWidth = 1;
+        for (k = 0; k < 3; k++) {
+          var rr2 = 22 + k * 16 + (orbT * 18 % 16);
+          ctx.beginPath();
+          ctx.arc(cx, cy, rr2, -0.5, 0.5);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = 'rgba(255,176,61,.9)';
+        ctx.font = '10px ui-monospace, Consolas, monospace';
+        ctx.fillText('经典模型：辐射能量，螺旋坠落', 12, 20);
+        ctx.fillText('动画已放慢，真实过程约 10⁻¹¹ s', 12, h - 12);
+        ctx.restore();
+      }
+    }
+
+    function paintOrbit() {
+      drawOrbit();
+      if (modeState) modeState.textContent = mode === 'bohr' ? '当前：玻尔模型' : '当前：经典模型';
+      if (modeBtn) modeBtn.textContent = mode === 'bohr' ? '切换到经典模型' : '切换到玻尔模型';
+      if (!orbitReadout) return;
+      if (mode === 'bohr') {
+        orbitReadout.textContent = 'n = ' + nq + '　r = ' + (nq * nq * A0).toFixed(3) +
+          ' nm　E = ' + energy(nq).toFixed(2) + ' eV';
+      } else {
+        orbitReadout.textContent = '经典模型：从 n=' + nq + ' 的初始半径出发，电子在约 10⁻¹¹ s 内坠入核中（动画已放慢）';
+      }
+    }
+
+    var nSlider = PH.slider({
+      mount: '#nSlider',
+      label: '主量子数 n',
+      min: 1,
+      max: 6,
+      step: 1,
+      value: 2,
+      fmt: function (v) { return String(v); },
+      onInput: function (v) { nq = v; orbT = 0; paintOrbit(); }
+    });
+
+    if (modeBtn) {
+      modeBtn.addEventListener('click', function () {
+        mode = mode === 'bohr' ? 'classic' : 'bohr';
+        orbT = 0;
+        paintOrbit();
+      });
+    }
+
+    paintOrbit();
+    PH.anim(function (t, dt) {
+      if (dt > 0) orbT += dt;
+      drawOrbit();
+    }, { autoplay: true, speed: 1 });
+
+    if (orb) {
+      orb.onResize(function () { paintOrbit(); });
+    }
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '按经典电动力学，氢原子应该在多长时间内塌掉？',
+        options: [
+          { text: '约 10⁻¹¹ 秒', correct: true, why: '电子绕核加速，持续辐射，能量迅速损失。按经典估算，氢原子在 10⁻¹¹ 秒量级就会坠入核中，与原子长期稳定的事实尖锐矛盾。' },
+          { text: '约 10⁻³ 秒', correct: false, why: '这个时间太长了。经典辐射的功率很大，坠落过程只有 10⁻¹¹ 秒量级，比一次心跳短得多。' },
+          { text: '约一百年', correct: false, why: '如果经典理论给出这个结果，原子危机就不会那么尖锐。实际预言比这短了约二十个数量级。' },
+          { text: '永远不会塌，因为电子不加速。', correct: false, why: '圆周运动的电子速度方向不断改变，所以它在加速。不加速的说法与运动学不符。' }
+        ]
+      },
+      {
+        q: '玻尔用来挑选“允许轨道”的条件是什么？',
+        options: [
+          { text: '轨道半径必须是 0.053 纳米的整数倍。', correct: false, why: '半径是按 n² 增长的：a₀、4a₀、9a₀……不是整数倍。量子化条件加在角动量上，半径是它的结果。' },
+          { text: '电子的角动量 mvr 只能取 nħ 的整数倍。', correct: true, why: '这是玻尔的量子化条件。配上库仑力提供向心力，就能解出 rₙ=n²a₀ 和 Eₙ=−13.6/n² eV。' },
+          { text: '电子只能待在能量为正的轨道上。', correct: false, why: '束缚态的能量是负的。能量为正意味着电子已经脱离原子，不再是被束缚的轨道。' },
+          { text: '电子必须始终以光速运动。', correct: false, why: '氢原子基态电子速度约为光速的 1/137，远小于光速。玻尔模型里没有“必须达到光速”的要求。' }
+        ]
+      },
+      {
+        q: '为什么氢原子只发出几条特定颜色的光，而不是连续的一片？',
+        options: [
+          { text: '因为电子只在几条允许轨道之间跳跃，每次跃迁的能量差是固定的，所以光子频率也固定。', correct: true, why: 'hν=Eₘ−Eₙ。能级离散，差值就离散；每条差值对应一条谱线。656 nm、486 nm、434 nm 就是这样算出来的。' },
+          { text: '因为原子只含有一种元素。', correct: false, why: '元素种类决定谱线在哪，但不能解释“为什么是线状而不是连续谱”。氢只有一种元素，却仍有多条分立的线。' },
+          { text: '因为电子在轨道上匀速运动，不产生任何光。', correct: false, why: '不辐射只解释了“稳定”，没有解释“发光”。发光发生在跃迁时，而跃迁能量差是离散的。' },
+          { text: '因为人眼只能看见几种颜色。', correct: false, why: '光谱仪能记录所有波长。氢的谱线在可见光之外还有紫外和红外线，它们同样是分立的。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

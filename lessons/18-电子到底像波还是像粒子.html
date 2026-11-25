@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 5 阶段 · 电子到底像波还是像粒子？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="5-5" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 18 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>电子到底像波还是像粒子？</h1>
+        <p class="lede">光有时像波，有时像粒子；电子一直被视为小石子。1924 年，德布罗意反过来问了一句：既然波能装成粒子，粒子为什么不能装成波？三年后，电子在镍晶体上真的衍射了。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>到 1924 年，光的“双重身份”已经被实验逼出来了。干涉和衍射说明光是波；光电效应说明光的能量是一份一份的；1923 年康普顿散射更进一步，显示出光子像小球一样碰撞，动量也守恒。物理学家只好接受：光既是波，又是粒子。</p>
+        <p>可物质这一边，图像却干净得多。电子有确定的电荷和质量，在云室里留下一条条轨迹，在电场里被偏转，看起来就是一个小颗粒。没人见过电子的衍射，也没人觉得需要。</p>
+        <p>德布罗意在博士论文里提出一个不对称的问题：为什么只有光享有双重身份？如果波能像粒子，粒子为什么不能像波？他还想到，玻尔的“允许轨道”之所以像硬性规定，也许正因为电子是一种波：绕核一圈，只有周长恰好容纳整数个波长，波才能稳稳站住。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是<strong>光子的两个关系式</strong>。普朗克和爱因斯坦给出能量与频率的关系，康普顿的实验确认动量与波长的关系。对光来说，能量和动量都可以用频率、波长写出来。</p>
+        <p>第二件工具是<strong>电子枪</strong>。用电压加速电子，电压越高，电子动能越大。动能和电压的关系很干净：经过 V 伏加速的电子，动能就是 eV 电子伏。这让我们可以精确控制电子的动量。</p>
+        <p>第三件工具是<strong>晶体</strong>。原子按规则排列，间距约 0.1 到 0.3 纳米，正好和预期电子波长相仿。1912 年劳厄用晶体衍射了 X 射线，1913 年布拉格父子给出解释：晶体是天然光栅。电子若是波，也该在晶体上衍射。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：双缝条纹为什么等间距？</summary>
+          <div class="mathbox-body">
+            <p>两条缝到屏上同一点的路程不一样。设缝距为 d，屏上一点离中心的高度为 y，缝到屏的距离为 L。当 y 比 L 小很多时，两条路的差可以近似写成 d 乘 y 再除以 L。</p>
+            <svg viewBox="0 0 340 180" role="img" aria-label="双缝到屏幕的光程差">
+              <line x1="40" y1="30" x2="40" y2="150" stroke="rgba(143,166,196,.6)" stroke-width="2"/>
+              <line x1="36" y1="70" x2="44" y2="70" stroke="#0e1726" stroke-width="4"/>
+              <line x1="36" y1="110" x2="44" y2="110" stroke="#0e1726" stroke-width="4"/>
+              <line x1="300" y1="20" x2="300" y2="160" stroke="rgba(143,166,196,.6)" stroke-width="2"/>
+              <line x1="44" y1="70" x2="300" y2="60" stroke="#35e0c8" stroke-width="1.4"/>
+              <line x1="44" y1="110" x2="300" y2="60" stroke="#ffb03d" stroke-width="1.4"/>
+              <line x1="44" y1="90" x2="300" y2="90" stroke="rgba(143,166,196,.35)" stroke-dasharray="4 4"/>
+              <text x="10" y="74" fill="#35e0c8" font-size="10" font-family="monospace">S₁</text>
+              <text x="10" y="114" fill="#ffb03d" font-size="10" font-family="monospace">S₂</text>
+              <text x="308" y="64" fill="rgba(214,230,255,.8)" font-size="10" font-family="monospace">P</text>
+              <text x="150" y="150" fill="rgba(143,166,196,.8)" font-size="10" font-family="monospace">L</text>
+              <text x="302" y="84" fill="rgba(143,166,196,.8)" font-size="10" font-family="monospace">y</text>
+            </svg>
+            <p class="caption">两条斜线的长度差约为 d·y/L。当这个差等于整数个波长时，两束波在 P 点同相叠加，出现亮纹；差半个波长时互相抵消，出现暗纹。</p>
+            <p>由此可以推出：相邻两条亮纹的间距等于波长乘屏距，再除以缝距。缝越密、波长越长、屏越远，条纹越疏。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面五步，从光的关系式出发，把同一个关系式交给电子，再用晶体和双缝去检验。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，先看光。对光来说，能量写在频率里，动量写在波长里。频率越高，单个光子越“硬”；波长越短，动量越大。</p>
+            <div class="eq">E <span class="op">=</span> hν <span class="dim">，</span> p <span class="op">=</span> <span class="frac"><span class="num">h</span><span class="den">λ</span></span></div>
+            <p class="readas">读作：光子的能量等于 h 乘频率；动量等于 h 除以波长。波长越短，动量越大，碰撞时推得越狠。</p>
+            <ul class="vars">
+              <li><b>E</b><span>光子能量</span></li>
+              <li><b>ν</b><span>频率</span></li>
+              <li><b>p</b><span>动量</span></li>
+              <li><b>λ</b><span>波长</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，德布罗意把第二个式子原样搬到电子身上。他假设：任何一个运动的粒子，都对应一个波长，波长等于 h 除以它的动量。动量越大，波长越短。</p>
+            <div class="eq">λ <span class="op">=</span> <span class="frac"><span class="num">h</span><span class="den">p</span></span> <span class="op">=</span> <span class="frac"><span class="num">h</span><span class="den">m v</span></span></div>
+            <p class="readas">读作：物质波的波长，等于普朗克常数除以动量；在速度远小于光速时，动量就是质量乘速度。</p>
+            <p>这个假设没有给出“波是什么在振动”的答案。德布罗意自己也说不清。但他给出了一个可以被检验的预言：如果电子是波，它的波长应该和动量成反比；用电压改变动量，波长就应该跟着变。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，算一个具体数字。电子经过 100 伏加速，动能是 100 电子伏，也就是 1.6×10⁻¹⁷ 焦耳。用动能表示动量，p=√(2mE)，再代进德布罗意关系，就得到波长。</p>
+            <div class="eq">λ <span class="op">=</span> <span class="frac"><span class="num">h</span><span class="den"><span class="sqrt">2 m E<span class="sub">k</span></span></span></span></div>
+            <p class="readas">读作：波长等于普朗克常数除以根号下“二倍质量乘动能”。动能越大，分母越大，波长越短。</p>
+            <ul class="vars">
+              <li><b>m</b><span>电子质量，9.11×10⁻³¹ kg</span></li>
+              <li><b>Eₖ</b><span>电子动能，单位焦耳</span></li>
+            </ul>
+            <p>代进去算，100 伏电子对应的波长约 0.123 纳米。这个数不是随便来的：它和原子的间距、X 射线的波长是同一个量级。也就是说，晶体里的原子层刚好可以当光栅，让电子波发生衍射。</p>
+            <div class="eq">λ <span class="op">≈</span> <span class="frac"><span class="num">1.226</span><span class="den"><span class="sqrt">V</span></span></span> <span class="dim">nm（V 以伏特为单位）</span></div>
+            <p class="readas">读作：以纳米为单位的波长，约等于 1.226 除以加速电压（伏特）的平方根。100 伏开方是 10，1.226 除以 10 就是 0.123 纳米。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，等实验。1927 年，戴维孙和革末在美国用低速电子轰击镍晶体。一次意外让镍靶多晶化，他们却在散射角分布里看到了明显的衍射极大：54 伏电子对应的波长约 0.167 纳米，和德布罗意的预言对上了。</p>
+            <p>同年，英国的 G. P. 汤姆孙让电子穿过薄金属膜，在屏上得到同心圆环，和 X 射线的粉末衍射图一模一样。一个用单晶看衍射峰，一个用多晶看衍射环，两条路都指向同一个结论：电子会衍射。</p>
+            <p>这不是电子之间互相推挤造成的。把束流调到极弱，让电子逐个通过，衍射图样仍然会出现，只是需要更长的累积时间。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，做单电子双缝。电子一个一个发射，屏上每次只出现一个亮点。亮点位置看起来随机，无法预测下一个落在哪里。可发射成千上万个之后，亮点的密度自动排成了干涉条纹。</p>
+            <p>如果只开一条缝，条纹消失，变成一片模糊的亮斑；如果两条缝都开，但你去测量电子究竟走了哪条缝，条纹也会消失。单个电子的落点随机，大量电子的<strong>概率分布</strong>却遵守波的干涉规律。波在这里不是“电子分成两半”，而是“电子可能落在这里的幅度”。</p>
+            <p>德布罗意的波长公式，加上“波的强度给出概率”这条规则，构成了量子力学最早的一幅图像。它不告诉你单个电子落在哪里，但能精确告诉你大量电子怎样分布。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>上图是双缝装置示意：电子从左出发，穿过两条缝，落在右边屏上。下图是强度分布，条纹间距 Δy 由波长、缝距和屏距共同决定。打开“逐个电子累积”，看单个亮点怎样慢慢堆出条纹。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 双缝：波长、缝距与条纹间距</span>
+              <span class="demo-tag">Δy = λL / d</span>
+            </div>
+            <p class="demo-desc">屏距固定为 1 米。波长滑块模拟不同电压下的电子（0.123 nm 对应约 100 V）；缝距改变两条缝的距离。青色曲线是理想双缝的强度分布，粉色小点是逐个到达的电子。</p>
+            <canvas id="slitCanvas" data-height="470" aria-label="电子双缝干涉图样与条纹间距演示"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn" id="particleBtn">逐个电子累积</button>
+              <span class="view-state" id="particleState">当前：波动曲线</span>
+            </div>
+            <div id="lamSlider"></div>
+            <div id="dSlider"></div>
+            <div class="readout" id="slitReadout"></div>
+            <p class="hint">试试：把缝距从 1.00 μm 调到 0.20 μm，条纹间距变成原来的 5 倍，屏上的亮纹一下稀疏；再打开逐个电子模式，看随机亮点怎样自己排出条纹。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>100 伏电子的波长是 0.123 纳米。这个数字的意义是“可比”：典型晶体的原子间距约 0.2 到 0.3 纳米，X 射线的波长也在 0.1 纳米量级。所以晶体对电子来说不是一堵墙，而是一张规则的光栅。</p>
+        <div class="eq">λ(100 V) <span class="op">=</span> <span class="frac"><span class="num">1.226</span><span class="den"><span class="sqrt">100</span></span></span> <span class="op">=</span> 0.123 <span class="dim">nm</span></div>
+        <p class="readas">读作：100 伏加速的电子，德布罗意波长约 0.123 纳米，比可见光短几千倍，和原子间距同量级。</p>
+        <p>再看宏观物体。一个 1 千克的小球以 1 米每秒运动，动量是 1 kg·m/s，波长是 h 除以 1，约 6.6×10⁻³⁴ 米。这个长度比质子直径还小二十个数量级，没有任何光栅能分辨它。所以宏观物体不是“没有波动性”，而是波动性小到无法观测。</p>
+        <div class="eq">λ<span class="sub">球</span> <span class="op">=</span> <span class="frac"><span class="num">6.63×10<span class="sup">−34</span></span><span class="den">1</span></span> <span class="op">≈</span> 6.6×10<span class="sup">−34</span> <span class="dim">m</span></div>
+        <p class="readas">读作：一千克小球以一米每秒运动时，波长约 6.6 乘 10 的负 34 次方米。这个数小到没有任何实际意义，波动性被彻底藏了起来。</p>
+        <p>这也解释了为什么量子效应总在“小”的世界里出现：质量越小，同速度下动量越小，波长就越大。电子质量只有小球的 10⁻³⁰ 量级，所以它的波长能被晶体看见。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>论文起初没人当真。导师朗之万把副本寄给爱因斯坦，爱因斯坦回信说，这个年轻人“揭开了我们理论中最难解的一角”。1927 年电子衍射之后，物质波从猜想变成事实。1929 年德布罗意获诺贝尔奖；戴维孙和 G. P. 汤姆孙在 1937 年分享诺贝尔奖。</p>
+        <p>影响很快落到技术上。1931 年，诺尔和鲁斯卡造出第一台电子显微镜：电子的波长远比可见光短，因此能看清病毒和原子列。今天半导体工业检查芯片，仍靠电子束成像和电子束光刻。</p>
+        <p>更根本的改变在观念上。电子不再是有确定轨迹的小球，也不是一团模糊的云；它是一个用波函数描述的对象，波的强度给出在某处找到它的概率。这套语言在 1925 到 1926 年间发展成完整的量子力学，成为二十世纪物理学的另一根支柱。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var dbl = PH.canvas('slitCanvas');
+    var readout = document.getElementById('slitReadout');
+    var particleState = document.getElementById('particleState');
+    var particleBtn = document.getElementById('particleBtn');
+
+    var lamNm = 0.123;
+    var dUm = 1.0;
+    var L = 1.0;
+    var rangeMm = 3.0;
+    var particles = [];
+    var particleMode = false;
+
+    function intensity(mm) {
+      var arg = Math.PI * (dUm * 1e-6) * (mm * 1e-3) / (lamNm * 1e-9 * L);
+      var c = Math.cos(arg);
+      return c * c;
+    }
+
+    function drawSlits() {
+      if (!dbl) return;
+      var ctx = dbl.ctx;
+      var w = dbl.w;
+      var h = dbl.h;
+
+      dbl.clear();
+
+      /* ---------- 上部：装置示意 ---------- */
+      var srcX = 40;
+      var srcY = 104;
+      var barX = Math.min(150, w * 0.38);
+      var screenX = w - 52;
+      var slit1 = 88;
+      var slit2 = 120;
+      var topY = 42;
+      var botY = 176;
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.05)';
+      ctx.fillRect(0, 24, w, 176);
+      ctx.restore();
+
+      /* 电子枪 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.65)';
+      ctx.lineWidth = 1.4;
+      ctx.strokeRect(srcX - 22, srcY - 14, 34, 28);
+      ctx.fillStyle = 'rgba(214,230,255,.85)';
+      ctx.font = '9px ui-monospace, Consolas, monospace';
+      ctx.fillText('电子枪', srcX - 20, srcY + 3);
+      ctx.fillStyle = '#ff6b9d';
+      ctx.shadowColor = '#ff6b9d';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(srcX + 16, srcY, 3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 挡板与两条缝 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(78,168,255,.42)';
+      ctx.fillRect(barX, topY, 8, slit1 - topY - 3);
+      ctx.fillRect(barX, slit1 + 3, 8, slit2 - slit1 - 6);
+      ctx.fillRect(barX, slit2 + 3, 8, botY - slit2 - 3);
+      ctx.restore();
+
+      /* 入射束 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,107,157,.6)';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(srcX + 20, srcY);
+      ctx.lineTo(barX, (slit1 + slit2) / 2);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 衍射到屏 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,107,157,.4)';
+      ctx.lineWidth = 1.2;
+      var p1 = slit1, p2 = slit2;
+      var targets = [52, 104, 156];
+      var i;
+      for (i = 0; i < targets.length; i++) {
+        ctx.beginPath();
+        ctx.moveTo(barX + 8, p1);
+        ctx.lineTo(screenX, targets[i]);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(barX + 8, p2);
+        ctx.lineTo(screenX, targets[i]);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 屏 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.7)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(screenX, topY - 4);
+      ctx.lineTo(screenX, botY + 4);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(214,230,255,.85)';
+      ctx.font = '9px ui-monospace, Consolas, monospace';
+      ctx.fillText('屏', screenX - 10, topY - 10);
+      ctx.fillText('双缝', barX - 14, topY - 10);
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.fillText('d = ' + dUm.toFixed(2) + ' μm', barX - 20, botY + 16);
+      ctx.fillText('L = 1.00 m', (barX + screenX) / 2 - 30, botY + 16);
+      ctx.fillText('示意图，非等比例', 12, 18);
+      ctx.restore();
+
+      /* ---------- 下部：强度分布 ---------- */
+      var bx0 = 54;
+      var bx1 = w - 22;
+      var base = h - 74;
+      var yTop = h - 232;
+      var ph = base - yTop;
+
+      function X(mm) {
+        return bx0 + (mm + rangeMm) / (2 * rangeMm) * (bx1 - bx0);
+      }
+      function IY(v) {
+        return base - ph * v;
+      }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var gy = IY(i / 4);
+        ctx.beginPath();
+        ctx.moveTo(bx0, gy);
+        ctx.lineTo(bx1, gy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.42)';
+      ctx.beginPath();
+      ctx.moveTo(bx0, base);
+      ctx.lineTo(bx0, yTop);
+      ctx.lineTo(bx0, base);
+      ctx.lineTo(bx1, base);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '9px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('1', bx0 - 8, IY(1) + 3);
+      ctx.fillText('0.5', bx0 - 8, IY(0.5) + 3);
+      ctx.fillText('0', bx0 - 8, base + 3);
+      ctx.textAlign = 'center';
+      ctx.fillText('−3', bx0, base + 16);
+      ctx.fillText('−1.5', X(-1.5), base + 16);
+      ctx.fillText('0', X(0), base + 16);
+      ctx.fillText('+1.5', X(1.5), base + 16);
+      ctx.fillText('+3 mm', bx1 - 12, base + 16);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(214,230,255,.8)';
+      ctx.fillText('屏上相对强度', bx0, yTop - 10);
+      ctx.restore();
+
+      /* 曲线 */
+      var j;
+      ctx.save();
+      if (particleMode) ctx.globalAlpha = 0.3;
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(53,224,200,.45)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      var samples = Math.max(700, Math.round((bx1 - bx0) * 4));
+      for (j = 0; j <= samples; j++) {
+        var mm1 = -rangeMm + 2 * rangeMm * j / samples;
+        var yy = IY(intensity(mm1));
+        if (j === 0) ctx.moveTo(X(mm1), yy);
+        else ctx.lineTo(X(mm1), yy);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 屏条带 */
+      var stripY = base + 26;
+      var stripH = 26;
+      ctx.save();
+      ctx.fillStyle = 'rgba(10,17,28,.9)';
+      ctx.fillRect(bx0, stripY, bx1 - bx0, stripH);
+      var px;
+      for (px = 0; px < Math.floor(bx1 - bx0); px++) {
+        var mm2 = -rangeMm + 2 * rangeMm * px / (bx1 - bx0);
+        var inten = intensity(mm2);
+        ctx.fillStyle = 'rgba(255,107,157,' + (0.08 + 0.82 * inten).toFixed(3) + ')';
+        ctx.fillRect(bx0 + px, stripY, 1, stripH);
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.2)';
+      ctx.strokeRect(bx0, stripY, bx1 - bx0, stripH);
+      ctx.restore();
+
+      /* 粒子点 */
+      if (particleMode) {
+        ctx.save();
+        ctx.fillStyle = 'rgba(255,107,157,.72)';
+        for (i = 0; i < particles.length; i++) {
+          var pt = particles[i];
+          ctx.fillRect(X(pt.x), stripY + 2 + pt.j * (stripH - 4), 1.6, 1.6);
+        }
+        ctx.restore();
+      }
+
+      /* 条纹间距标注 */
+      var dyMm = lamNm / dUm * L;
+      var p0 = X(0);
+      var p1x = X(Math.min(dyMm, rangeMm));
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.75)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(p0, yTop);
+      ctx.lineTo(p0, stripY + stripH + 4);
+      ctx.moveTo(p1x, yTop);
+      ctx.lineTo(p1x, stripY + stripH + 4);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,176,61,.95)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      var mid = (p0 + p1x) / 2;
+      ctx.fillText('Δy', Math.min(Math.max(mid - 6, bx0 + 4), bx1 - 30), yTop - 10);
+      ctx.restore();
+
+      /* 底部说明 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(169,139,255,.9)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('电子波长 λ = ' + lamNm.toFixed(3) + ' nm　条纹间距 Δy = ' + dyMm.toFixed(3) + ' mm', 12, h - 10);
+      ctx.restore();
+    }
+
+    function paint() {
+      drawSlits();
+      if (particleState) particleState.textContent = particleMode ? '当前：逐个电子累积' : '当前：波动曲线';
+      if (particleBtn) particleBtn.textContent = particleMode ? '显示波动曲线' : '逐个电子累积';
+      if (!readout) return;
+      var dy = lamNm / dUm * L;
+      var perCm = 10 / dy;
+      readout.textContent = 'λ = ' + lamNm.toFixed(3) + ' nm　d = ' + dUm.toFixed(2) +
+        ' μm　L = 1.00 m　→　Δy = ' + dy.toFixed(3) + ' mm；屏上 1 cm 内约 ' +
+        Math.round(perCm) + ' 条亮纹';
+    }
+
+    var lamSlider = PH.slider({
+      mount: '#lamSlider',
+      label: '电子波长 λ',
+      min: 0.05,
+      max: 0.5,
+      step: 0.001,
+      value: 0.123,
+      fmt: function (v) { return v.toFixed(3) + ' nm'; },
+      onInput: function (v) {
+        lamNm = v;
+        particles = [];
+        paint();
+      }
+    });
+
+    var dSlider = PH.slider({
+      mount: '#dSlider',
+      label: '双缝间距 d',
+      min: 0.2,
+      max: 2,
+      step: 0.01,
+      value: 1,
+      fmt: function (v) { return v.toFixed(2) + ' μm'; },
+      onInput: function (v) {
+        dUm = v;
+        particles = [];
+        paint();
+      }
+    });
+
+    if (particleBtn) {
+      particleBtn.addEventListener('click', function () {
+        particleMode = !particleMode;
+        particles = [];
+        paint();
+      });
+    }
+
+    paint();
+    PH.anim(function (t, dt) {
+      if (!particleMode) return;
+      var k;
+      for (k = 0; k < 3; k++) {
+        var mm = (Math.random() * 2 - 1) * rangeMm;
+        if (Math.random() < intensity(mm)) {
+          particles.push({ x: mm, j: Math.random() });
+        }
+      }
+      if (particles.length > 2400) particles.splice(0, particles.length - 2400);
+      drawSlits();
+    }, { autoplay: true, speed: 1 });
+
+    if (dbl) {
+      dbl.onResize(function () { paint(); });
+    }
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '德布罗意把光子的哪个关系式搬到了电子身上？',
+        options: [
+          { text: 'E = mc²', correct: false, why: '这是质能关系，说明质量与能量等价，但没有直接给出波长与动量的关系。德布罗意用的是 p=h/λ。' },
+          { text: 'λ = h/p', correct: true, why: '对光子有 p=h/λ；德布罗意假设对电子同样成立，于是 λ=h/(mv)。动量越大，波长越短。' },
+          { text: 'F = ma', correct: false, why: '这是牛顿第二定律，描述力与加速度，不涉及波长。德布罗意的出发点是量子关系，不是经典力学。' },
+          { text: 'PV = nRT', correct: false, why: '这是理想气体状态方程，与单粒子的波动性无关。' }
+        ]
+      },
+      {
+        q: '为什么日常物体看不出波动性？',
+        options: [
+          { text: '因为宏观物体不遵守量子力学。', correct: false, why: '量子力学对宏观物体同样成立，只是效应极小。并不存在一条“宏观失效”的分界线。' },
+          { text: '因为它们的德布罗意波长小到约 10⁻³⁴ 米，没有任何光栅或缝能分辨。', correct: true, why: 'λ=h/p。1 kg 小球以 1 m/s 运动，λ≈6.6×10⁻³⁴ m，比原子核还小二十个数量级，衍射角小到无法测量。' },
+          { text: '因为宏观物体速度太慢，波长会变长。', correct: false, why: '速度越慢，动量越小，波长反而越长。宏观物体波长短是因为质量太大，不是因为速度慢。' },
+          { text: '因为宏观物体由许多原子组成，波互相抵消。', correct: false, why: '这不是主要原因。单个宏观物体的质心也有波长，只是小到无法观测；多粒子系统的整体波长由总动量决定。' }
+        ]
+      },
+      {
+        q: '单电子双缝实验中，一个一个发射电子，最终屏上出现条纹，这说明什么？',
+        options: [
+          { text: '电子之间在飞行中互相碰撞，撞出了条纹。', correct: false, why: '电子是一个一个发射的，屏上每次只有一个亮点，谈不上互相碰撞。条纹是单个电子概率分布的累积。' },
+          { text: '每个电子的落点是随机的，但大量电子的概率分布服从波的干涉规律。', correct: true, why: '单次落点无法预测；重复很多次后，亮点密度重现 cos² 条纹。波描述的是概率幅度，不是电子的实际轨迹。' },
+          { text: '电子在缝前分裂成两半，各走一条缝。', correct: false, why: '实验从未测到半个电子。探测器每次收到的都是一个完整电子；说“分裂”与观测不符。' },
+          { text: '条纹来自屏幕的机械振动。', correct: false, why: '如果是机械振动，改变缝距或波长时条纹不会按 Δy=λL/d 规律变化。条纹位置随参数系统移动，正说明它来自干涉。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

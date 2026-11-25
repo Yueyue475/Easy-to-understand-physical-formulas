@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 3 课 · 物体为什么会停下？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="1-3" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 3 课 / 共 27 课 · 约 10 分钟</p>
+        <h1>物体为什么会停下？</h1>
+        <p class="lede">推车不推就停，这看起来是天经地义的事。可正是这个“天经地义”，让人类在两千年里走错了一个方向。</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>亚里士多德的答案很自然：运动需要推动者。推车，你推它才走，一停手它就停；箭射出去以后，是靠前面的空气被排开、后面的空气补上来推着它；石头脱手后继续飞，也是空气在推。他还把运动分成两类：重物下落、轻物上升这类“自然运动”，和推、拉、抛这类“受迫运动”。受迫运动必须一直有东西推着，推力一断，运动就结束。</p>
+        <p>这套说法几乎能解释日常看到的一切，所以它统治了近两千年。问题不在于亚里士多德不做观察，而在于他把充满摩擦的世界当成了世界的全部。他从没见过“完全没有阻碍”的运动，于是把“摩擦让物体慢下来”误当成“运动需要力来维持”。</p>
+        <p>要推翻它，光靠辩论没用。你需要一个能跑得足够慢、慢到肉眼能看清每一段的实验，还需要一种能把时间切成等份的办法。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>伽利略的杀手锏是斜面。自由落体太快：放手一秒，球已落下 4.9 米，当时的计时器抓不住中间过程。斜面把重力“摊薄”了，沿斜面的那一份只有原来的 sinθ，球滚得慢，时间被拉长，简陋的水钟就跟得上了。</p>
+        <p>配套的工具是水钟和等时间标记。水钟靠称量流出的水计时；更直观的是每隔相等时间在斜面上留一个记号——课本里常画成每 0.1 秒滴一滴墨水。记号留下后，时间就变成了斜面上的刻度，你不必盯秒针，只需事后量距离。再加一对对接的斜面（双斜面），就能检验球能不能滚回原来的高度。伽利略把这些写进了 1638 年的《关于两门新科学的对话》。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么斜面上的加速度是 g sinθ？</summary>
+          <div class="mathbox-body">
+            <p>重力 mg 竖直向下。把它拆成两个方向：一个垂直压向斜面，被斜面的支持力抵消；另一个沿着斜面向下，大小为 mg sinθ。球真正被推动的，只有沿斜面的这一份。所以沿斜面的加速度是 g sinθ。</p>
+            <p>这个式子给出两个熟悉的极端：θ = 90° 时 sinθ = 1，回到自由落体；θ = 0 时 sinθ = 0，球不受沿面方向的力，也就不会自己加速。中间的角度，就是把重力“调小”的旋钮。</p>
+            <svg viewBox="0 0 320 180" role="img" aria-label="斜面上重力的分解示意图">
+              <path d="M40 150 L270 150 L270 55 Z" fill="none" stroke="rgba(143,166,196,.35)" stroke-width="1.5"/>
+              <path d="M40 150 A 52 52 0 0 0 63 136" fill="none" stroke="#ffb03d" stroke-width="1.5"/>
+              <text x="52" y="146" fill="#ffb03d" font-size="12" font-family="monospace">θ</text>
+              <line x1="150" y1="103" x2="150" y2="152" stroke="#a98bff" stroke-width="2"/>
+              <line x1="150" y1="103" x2="99" y2="124" stroke="#35e0c8" stroke-width="2"/>
+              <text x="158" y="150" fill="#a98bff" font-size="12" font-family="monospace">mg</text>
+              <text x="60" y="118" fill="#35e0c8" font-size="12" font-family="monospace">mg sinθ</text>
+            </svg>
+            <p class="caption">斜面没有让重力变小，只是把其中需要对付的那一份分了出来。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>推演的关键不在于公式多复杂，而在于把“太快、看不清”变成“够慢、量得准”。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步：换一个更慢的舞台。让球沿斜面滚下，加速度从 g 变成 g sinθ。θ 取几度，加速度只剩 g 的百分之几，同样一段路要走好几秒。这不是“修改重力”，而是让斜面承担掉一部分重力，只留下能看清的那一份推动球。</p>
+            <div class="eq">a <span class="op">=</span> g sinθ</div>
+            <p class="readas">读作：沿斜面的加速度，等于重力加速度乘以斜面倾角的正弦。角度越小，加速度越小，运动越慢。</p>
+            <ul class="vars">
+              <li><b>a</b><span>球沿斜面的加速度，单位 m/s²</span></li>
+              <li><b>g</b><span>地面附近的重力加速度，约 9.8 m/s²</span></li>
+              <li><b>θ</b><span>斜面与水平面的夹角</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步：每隔相等时间在斜面上留一个记号。如果速度不变，记号应该等距；实际看到的是一段比一段稀。再比较相邻两段：每一段 0.1 秒里速度增加的量都一样。每次增加同样的量，就意味着速度与时间成正比。</p>
+            <div class="eq">v <span class="op">=</span> a t</div>
+            <p class="readas">读作：速度等于加速度乘以时间。从静止开始，时间翻倍，速度也翻倍。</p>
+            <ul class="vars">
+              <li><b>v</b><span>从静止开始计时后 t 时刻的速度，单位 m/s</span></li>
+              <li><b>t</b><span>从释放算起的时间，单位 s</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步：再看从起点到各记号的总距离。记号的时刻取 1、2、3、4 个单位，总距离之比是 1 : 4 : 9 : 16；相邻两段距离之比则是 1 : 3 : 5 : 7。这个“奇数串”是匀加速运动的指纹，换任何斜面、任何小球都重复出现。</p>
+            <div class="eq">s <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> a t<span class="sup">2</span></div>
+            <p class="readas">读作：从静止开始走过的距离，等于二分之一的加速度乘以时间的平方。时间翻倍，距离变成四倍。</p>
+            <ul class="vars">
+              <li><b>s</b><span>从释放点算起走过的距离，单位 m</span></li>
+              <li><b>t</b><span>走过这段距离所用的时间，单位 s</span></li>
+            </ul>
+            <p>把 1 : 3 : 5 : 7 写成式子：第 n 段（每段等长的时间 Δt）里走过的距离，正比于 2n − 1。相邻两段一减，正好差 2，也就是一个固定的增量。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步：双斜面实验。球从左边某一高度释放，滚到底部再冲上右边。无论右边是陡是缓，球总能升回接近原来高度的位置，差的那一点是摩擦吃掉的。把右边逐渐放平，它为了“回到原来的高度”就得跑得更远；放到完全水平，它再也升不上去，只能一直往前跑。</p>
+            <p>这里真正重要的不是球有多快，而是它“想回到的高度”始终不变。这个高度对应着一份储存起来的运动，用后来的话说就是能量。</p>
+            <div class="eq"><span class="frac"><span class="num">1</span><span class="den">2</span></span> m v<span class="sup">2</span> <span class="op">=</span> m g h</div>
+            <p class="readas">读作：球在底部拥有的运动的一半 mv²，等于它从高度 h 落下时释放的 mgh。两边都含质量 m，可以约掉，所以回到多高与球本身多重无关。</p>
+            <ul class="vars">
+              <li><b>m</b><span>球的质量，单位 kg</span></li>
+              <li><b>h</b><span>释放高度，单位 m</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步：做一次外推。摩擦小一点，球就滚得远一点；把摩擦一直减小下去，球就该永远不停。这个“没有摩擦”的情形现实中做不到，但逻辑上必须走到底。</p>
+            <p>结论只有一句：没有任何力作用时，物体的速度保持不变。这就是惯性。停下来的真正原因是摩擦，不是“运动需要力来维持”。亚里士多德看到的每一步都没错——推车不推确实会停——他错在把摩擦当成了运动的本性。力不是维持运动的原因，而是改变运动的原因。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>第一个演示让球真的沿斜面滚下来，按等时间间隔留下点，你能亲眼看到点距怎样按 1 : 3 : 5 : 7 变稀。第二个演示把双斜面的右半边换成不同坡度，看球是不是总能回到同一高度。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 斜面上的等时打点</span>
+              <span class="demo-tag">s ∝ t²</span>
+            </div>
+            <p class="demo-desc">球从斜面顶端由静止释放，每 0.1 秒在斜面上留一个紫点。角度越小，球滚得越慢、点越密；但不管角度多大，相邻两段点距的比值都按 1 : 3 : 5 : 7 增长。右侧同步显示 t、v、s。</p>
+            <canvas id="inclineCanvas" data-height="330" aria-label="小球沿斜面滚下并等时打点的演示"></canvas>
+            <div id="incSliderMount"></div>
+            <div class="demo-controls">
+              <div class="anim-mount" id="inclineAnimMount"></div>
+              <button type="button" class="btn" id="replayBtn">重放</button>
+              <span class="view-state">斜面长 2.0 m</span>
+            </div>
+            <p class="hint">试试：把角度调到 30° 再重放，数一数一共留下几个点；然后调到 5°，看点数变成多少。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 双斜面</span>
+              <span class="demo-tag">回到同一高度</span>
+            </div>
+            <p class="demo-desc">球从左边 0.50 m 高处释放，冲上右边。右边越陡，它跑得越短；越缓，它跑得越远；但无论坡度如何，它都会升回那条虚线附近。把右边放平，它就再也不升高，只能一直往前跑。</p>
+            <canvas id="doubleCanvas" data-height="300" aria-label="双斜面演示：小球回到同一高度"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn" data-slope="60">右侧 60°</button>
+              <button type="button" class="btn" data-slope="45">右侧 45°</button>
+              <button type="button" class="btn" data-slope="0">右侧放平</button>
+              <div class="anim-mount" id="doubleAnimMount"></div>
+            </div>
+            <p class="hint">试试：先看 60°，再看 45°，最后放平。每次球只在虚线以下活动，只有放平时它不再回头。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>取一个很缓的坡度：高度差与水平距离之比为 1 : 100。这时 sinθ ≈ 0.01，沿斜面的加速度只有自由落体的百分之一。</p>
+        <div class="eq">a <span class="op">=</span> g sinθ <span class="op">≈</span> 9.8 <span class="op">×</span> 0.01 <span class="op">=</span> 0.098 <span class="dim">m/s²</span></div>
+        <p class="readas">读作：加速度约为 0.098 米每二次方秒，也就是自由落体加速度的百分之一。</p>
+        <p>放球后 1 秒，速度只有 0.098 m/s，约合 0.1 m/s；走过的距离是 ½ × 0.098 × 1² ≈ 0.049 m，也就是 5 厘米。同样这 1 秒里，自由落体会掉下 4.9 米。两个数字差了整整 100 倍——斜面把“一秒钟内发生的事”从 4.9 米压缩成了 5 厘米。</p>
+        <p>这个数量级正是关键。当时的计时误差可能有零点几秒，如果球一秒就落地，这种误差足以毁掉全部数据；而在斜面上，球要走好几秒才到底，零点几秒的误差只占很小一部分。慢，换来的是可测量。相邻两个 0.1 秒的点距分别是 0.49 毫米、1.47 毫米、2.45 毫米……比例正是 1 : 3 : 5，只是前几个点不到 1 毫米，所以斜面的长度和角度都得仔细选。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>1638 年，《关于两门新科学的对话》出版。书里的惯性概念后来被牛顿写成第一定律：一切物体，如果没有受到外力，就保持静止或匀速直线运动。笛卡尔在 1644 年也表述过类似的想法，但伽利略的斜面实验提供了最直接的实验支撑。</p>
+        <p>影响有三层。第一层是概念上的：力不再负责“维持”运动，只负责“改变”运动。没有这一步，就不会有后来的 F = ma：运动若需要力来维持，加速度就无从谈起。第二层是天文上的：天体不需要天使或漩涡持续推动，引力提供加速度就够了，这正好接上上一课的月亮。第三层是方法上的：伽利略做了一个现实里做不到的实验——把摩擦一点点减到零——再用这个极限情形定义规律。这种“理想实验”从此成了物理学的标准工具。</p>
+        <p>也正因为如此，亚里士多德的观点能活两千年并不奇怪：在充满摩擦的日常世界里，那个理想情形从来不会出现，而“推车不推就停”每天都能被验证。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示 A：斜面等时打点 ---------- */
+    var incC = PH.canvas('inclineCanvas');
+    var incAngle = 10;
+    var incTime = 0;
+    var INC_L = 2.0;
+    var INC_DT = 0.1;
+
+    function incAccel(deg) {
+      return 9.8 * Math.sin(deg * Math.PI / 180);
+    }
+
+    function drawIncline(deg, tt) {
+      if (!incC) return;
+      var ctx = incC.ctx;
+      var w = incC.w;
+      var h = incC.h;
+      var a = incAccel(deg);
+      var tEnd = Math.sqrt(2 * INC_L / a);
+      var tShow = Math.min(tt, tEnd);
+      var s = 0.5 * a * tShow * tShow;
+      var v = a * tShow;
+      var k;
+
+      incC.clear();
+
+      var Ax = w * 0.09;
+      var Ay = h * 0.20;
+      var Bx = w * 0.60;
+      var By = h * 0.84;
+      var i;
+
+      /* 地面基线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.22)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(10, By);
+      ctx.lineTo(w * 0.64, By);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 斜面 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(53,224,200,.7)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(Ax, Ay);
+      ctx.lineTo(Bx, By);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 等时点 */
+      ctx.save();
+      ctx.fillStyle = '#a98bff';
+      ctx.shadowColor = '#a98bff';
+      ctx.shadowBlur = 6;
+      for (k = 1; k * INC_DT <= tShow + 1e-9; k++) {
+        var sk = 0.5 * a * Math.pow(k * INC_DT, 2);
+        if (sk > INC_L) break;
+        var f = sk / INC_L;
+        ctx.beginPath();
+        ctx.arc(Ax + (Bx - Ax) * f, Ay + (By - Ay) * f, 2.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+
+      /* 球 */
+      var bf = s / INC_L;
+      var bx = Ax + (Bx - Ax) * bf;
+      var by = Ay + (By - Ay) * bf;
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(bx, by, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 起点标记 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('起点', Ax - 8, Ay - 10);
+      ctx.fillText('每 0.1 s 留一点', Ax + 6, By + 20);
+      ctx.restore();
+
+      /* 读数面板 */
+      var px0 = w * 0.66;
+      var boxY = h * 0.20;
+      var boxH = h * 0.44;
+      ctx.save();
+      ctx.fillStyle = 'rgba(14,23,38,.72)';
+      ctx.strokeStyle = 'rgba(143,166,196,.18)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.rect(px0 - 8, boxY, w - px0 - 2, boxH);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      var ty = boxY + 24;
+      ctx.fillStyle = 'rgba(143,166,196,.72)';
+      ctx.fillText('t', px0, ty);
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('= ' + tShow.toFixed(2) + ' s', px0 + 24, ty);
+      ty += 26;
+      ctx.fillStyle = 'rgba(143,166,196,.72)';
+      ctx.fillText('v', px0, ty);
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('= ' + v.toFixed(2) + ' m/s', px0 + 24, ty);
+      ty += 26;
+      ctx.fillStyle = 'rgba(143,166,196,.72)';
+      ctx.fillText('s', px0, ty);
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('= ' + s.toFixed(2) + ' m', px0 + 24, ty);
+      ty += 28;
+      ctx.fillStyle = 'rgba(169,139,255,.85)';
+      ctx.fillText('点距 1:3:5:7', px0, ty);
+      ctx.restore();
+    }
+
+    var incSlider = PH.slider({
+      mount: '#incSliderMount',
+      label: '斜面倾角 θ',
+      min: 2,
+      max: 30,
+      step: 1,
+      value: 10,
+      unit: '°',
+      fmt: function (v) { return String(v); },
+      onInput: function (v) {
+        incAngle = v;
+        incTime = 0;
+        drawIncline(v, 0);
+      }
+    });
+
+    var incAnim = PH.anim(function (t, dt) {
+      if (dt > 0) incTime += dt;
+      drawIncline(incAngle, incTime);
+    }, { mount: '#inclineAnimMount', autoplay: true });
+
+    var replayBtn = document.getElementById('replayBtn');
+    if (replayBtn) {
+      replayBtn.addEventListener('click', function () {
+        incTime = 0;
+        if (incAnim && !incAnim.isRunning) incAnim.start();
+        drawIncline(incAngle, 0);
+      });
+    }
+
+    drawIncline(incAngle, 0);
+    if (incC) {
+      incC.onResize(function () {
+        drawIncline(incAngle, incTime);
+      });
+    }
+
+    /* ---------- 演示 B：双斜面 ---------- */
+    var dblC = PH.canvas('doubleCanvas');
+    var dblAngle = 45;
+    var dblPath = [];
+    var dblSegLen = [];
+    var dblTotal = 0;
+    var dblP = 2;
+    var dblDir = 1;
+    var dblHold = 0;
+    var dblBaseY = 0;
+    var dblTopY = 0;
+    var dblScale = 1;
+    var H0 = 0.5;
+    var TIME_SCALE = 0.55;
+
+    function dblBuild() {
+      if (!dblC) return;
+      var w = dblC.w;
+      var h = dblC.h;
+      dblBaseY = h * 0.80;
+      dblTopY = h * 0.22;
+      var pivotX = w * 0.34;
+      var startX = w * 0.08;
+      var pts = [
+        { x: startX, y: dblTopY },
+        { x: pivotX, y: dblBaseY }
+      ];
+      if (dblAngle > 0) {
+        var rise = dblBaseY - dblTopY;
+        var run = rise / Math.tan(dblAngle * Math.PI / 180);
+        var ex = Math.min(w - 18, pivotX + run);
+        var ey = dblBaseY - (ex - pivotX) * Math.tan(dblAngle * Math.PI / 180);
+        pts.push({ x: ex, y: ey });
+      } else {
+        pts.push({ x: w - 18, y: dblBaseY });
+      }
+      dblPath = pts;
+      dblSegLen = [];
+      dblTotal = 0;
+      var i;
+      for (i = 0; i < pts.length - 1; i++) {
+        var dx = pts[i + 1].x - pts[i].x;
+        var dy = pts[i + 1].y - pts[i].y;
+        var L = Math.sqrt(dx * dx + dy * dy);
+        dblSegLen.push(L);
+        dblTotal += L;
+      }
+      dblScale = dblSegLen[0] / 1.0;
+      dblP = 2;
+      dblDir = 1;
+      dblHold = 0;
+    }
+
+    function dblPointAt(p) {
+      var acc = 0;
+      var i;
+      for (i = 0; i < dblPath.length - 1; i++) {
+        if (p <= acc + dblSegLen[i] || i === dblPath.length - 2) {
+          var f = dblSegLen[i] > 0 ? (p - acc) / dblSegLen[i] : 0;
+          f = Math.max(0, Math.min(1, f));
+          return {
+            x: dblPath[i].x + (dblPath[i + 1].x - dblPath[i].x) * f,
+            y: dblPath[i].y + (dblPath[i + 1].y - dblPath[i].y) * f
+          };
+        }
+        acc += dblSegLen[i];
+      }
+      return { x: 0, y: 0 };
+    }
+
+    function dblHeight(y) {
+      var f = (dblBaseY - y) / (dblBaseY - dblTopY);
+      return Math.max(0, f) * H0;
+    }
+
+    function dblFrame(t, dt) {
+      if (!dblC || !dblPath.length) return;
+      var ctx = dblC.ctx;
+      var w = dblC.w;
+      var h = dblC.h;
+      var i;
+      var pt;
+
+      if (dt > 0) {
+        pt = dblPointAt(dblP);
+        var hNow = dblHeight(pt.y);
+        var vReal = Math.sqrt(Math.max(0, 2 * 9.8 * (H0 - hNow)));
+        var vPx = vReal * dblScale * TIME_SCALE;
+        dblP += dblDir * vPx * dt;
+
+        if (dblAngle > 0) {
+          if (dblP >= dblTotal - 2) { dblP = dblTotal - 2; dblDir = -1; }
+          if (dblP <= 2) { dblP = 2; dblDir = 1; }
+        } else {
+          if (dblP >= dblTotal) {
+            dblP = dblTotal;
+            dblHold += dt;
+            if (dblHold > 1.4) {
+              dblP = 2;
+              dblDir = 1;
+              dblHold = 0;
+            }
+          }
+        }
+      }
+
+      dblC.clear();
+
+      /* 等高虚线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.32)';
+      ctx.setLineDash([5, 6]);
+      ctx.beginPath();
+      ctx.moveTo(w * 0.04, dblTopY);
+      ctx.lineTo(w - 16, dblTopY);
+      ctx.stroke();
+      ctx.restore();
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,176,61,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('释放高度 0.50 m', w * 0.06, dblTopY - 8);
+      ctx.restore();
+
+      /* 地面 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.22)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(w * 0.04, dblBaseY);
+      ctx.lineTo(w - 16, dblBaseY);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 双斜面 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(53,224,200,.7)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      for (i = 0; i < dblPath.length; i++) {
+        if (i === 0) ctx.moveTo(dblPath[i].x, dblPath[i].y);
+        else ctx.lineTo(dblPath[i].x, dblPath[i].y);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 球 */
+      pt = dblPointAt(dblP);
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 读数 */
+      var hCur = dblHeight(pt.y);
+      var vCur = Math.sqrt(Math.max(0, 2 * 9.8 * (H0 - hCur)));
+      ctx.save();
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillStyle = 'rgba(143,166,196,.85)';
+      ctx.fillText(dblAngle > 0 ? ('右侧坡度 ' + dblAngle + '°') : '右侧水平（无摩擦）', 14, h - 46);
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('当前高度 ' + hCur.toFixed(2) + ' m', 14, h - 28);
+      ctx.fillStyle = 'rgba(169,139,255,.9)';
+      ctx.fillText('速度 ' + vCur.toFixed(2) + ' m/s', 14, h - 10);
+      ctx.restore();
+    }
+
+    dblBuild();
+    var dblAnim = PH.anim(dblFrame, { mount: '#doubleAnimMount', autoplay: true });
+
+    var slopeBtns = document.querySelectorAll('[data-slope]');
+    for (var si = 0; si < slopeBtns.length; si++) {
+      (function (btn) {
+        btn.addEventListener('click', function () {
+          dblAngle = Number(btn.getAttribute('data-slope'));
+          dblBuild();
+          if (dblAnim && !dblAnim.isRunning) dblAnim.start();
+          dblFrame(0, 0);
+        });
+      })(slopeBtns[si]);
+    }
+
+    dblFrame(0, 0);
+    if (dblC) {
+      dblC.onResize(function () {
+        dblBuild();
+        dblFrame(0, 0);
+      });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '如果水平面真的完全没有摩擦，球冲上去以后会怎样？',
+        options: [
+          { text: '慢慢减速，最后停下来。', correct: false, why: '让它减速的是摩擦力。摩擦为零时，没有任何力去改变它的速度，它不会自己慢下来。' },
+          { text: '保持原来的速度一直滚下去。', correct: true, why: '这正是惯性：不受外力时速度不变。伽利略从“摩擦越小滚得越远”一路外推到了这个极限。' },
+          { text: '越滚越快。', correct: false, why: '速度要变快，必须有沿运动方向的力。水平面上没有这样的力，加速度为零。' },
+          { text: '立刻停住。', correct: false, why: '这需要极大的反向力。现实中球会停，是因为摩擦持续作用了一段时间，而不是瞬间制动。' }
+        ]
+      },
+      {
+        q: '斜面上测得 s ∝ t²，这说明什么？',
+        options: [
+          { text: '速度保持不变。', correct: false, why: '若速度不变，距离应与时间成正比，也就是 s ∝ t，而不是 t²。' },
+          { text: '速度随时间均匀增加，加速度恒定。', correct: true, why: 's = ½at² 正是匀加速运动的距离公式。t² 这个幂次说明加速度是一个不随时间变化的常数。' },
+          { text: '加速度越来越大。', correct: false, why: '若加速度随时间增大，距离会涨得比 t² 更快，幂次会高于 2。' },
+          { text: '距离与时间成正比。', correct: false, why: '这与测量结果直接矛盾：时间翻倍，距离变成四倍，不是两倍。' }
+        ]
+      },
+      {
+        q: '亚里士多德的观点错在哪一步？',
+        options: [
+          { text: '他认为地球是宇宙的中心。', correct: false, why: '地心说确实错了，但那是天文上的问题；即使把地球换掉，他关于“运动需要力维持”的判断依然要单独纠正。' },
+          { text: '他把“摩擦让物体停下”当成了“运动本身需要力来维持”。', correct: true, why: '他看到的现象都是真的，错在解释：真正让车停下的是摩擦，而不是“缺少推力”。' },
+          { text: '他没有做过任何观察。', correct: false, why: '他对自然现象的观察相当细致。问题不在观察数量，而在于把充满摩擦的日常世界当成了全部。' },
+          { text: '他把自由落体的加速度算错了。', correct: false, why: '他并没有做过这类定量测量。加速度的数值要等伽利略的斜面实验才被测出来。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

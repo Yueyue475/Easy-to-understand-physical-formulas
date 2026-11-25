@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 8 课 · 热量为什么只从热流向冷？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="3-3" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 8 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>热量为什么只从热流向冷？</h1>
+        <p class="lede">把行星运动的录像倒着放，看不出任何破绽；把一杯热水变凉的录像倒着放，谁都能一眼认出。同样的宇宙，为什么只有热现象带着箭头？</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>牛顿力学是时间可逆的。行星绕太阳的方程里，时间只以二阶导数的形式出现，把 t 换成 −t，方程一个字都不用改。把行星运动的录像倒放，行星照样沿着合法的轨道倒着走，看不出哪里违反了物理。</p>
+        <p>热现象不是这样。一杯热水放在桌上会变凉；一杯凉水不会自己变热。热量总是从高温流向低温，绝不会自己反过来。把这段录像倒放，任何人一眼就能认出它在倒放。</p>
+        <p>问题在于：如果热真的是分子的运动，那分子的运动也该服从牛顿方程，而牛顿方程是可逆的。方向感到底从哪里来？克劳修斯在 1850 年代开始追问这件事，他要找的不是某条新的力，而是一个能区分“过去”和“未来”的量。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>克劳修斯手上已经有两样东西。一样是卡诺在 1824 年留下的循环：等温、绝热、等温、绝热，四步回到起点。另一样是一个更朴素的概念：<strong>状态函数</strong>。</p>
+        <p>状态函数只取决于系统现在处在什么状态，与你怎样走到这里无关。海拔就是这样的量：你在山脚，海拔 0；爬到山顶，海拔 2000 米；坐缆车下来再走上去，海拔还是 2000 米。路径不同，差值一样。</p>
+        <p>内能 U 是状态函数。热 Q 和功 W 不是——同样从 20 ℃ 升到 100 ℃，可以慢慢加热，也可以一边加热一边让气体做功，吸进的热完全不同。克劳修斯想找一个像海拔那样的量，专门描述“热的去向”。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：什么叫“可逆过程”</summary>
+          <div class="mathbox-body">
+            <p>可逆过程是指：每一步都无限接近平衡，随时可以原路退回，外界和系统都不留下任何痕迹。</p>
+            <p>真实的传热有有限的温差，真实的摩擦会把功变成热，这些都退不回去。所以可逆过程是一个理想极限，用来算账，不是真实存在的过程。</p>
+            <p>它的用处在于：状态函数只认端点，因此可以用一条方便计算的可逆路径，去求两个真实状态之间的差值。就像测量山的高度，不必真的沿着你走过的路线去量，直接查海拔表就行。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>克劳修斯的推理从卡诺循环出发，只用了一个新想法：把热量除以它所在的温度。下面五步，会把这个除法变成一个状态函数。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>先把卡诺循环的热账记下来。高温端吸进 Qh，低温端放出 Qc。因为整个循环可逆，吸热与放热的比值，等于两个热源温度的比值。</p>
+            <div class="eq"><span class="frac"><span class="num">Q<span class="sub">h</span></span><span class="den">T<span class="sub">h</span></span></span> <span class="op">=</span> <span class="frac"><span class="num">Q<span class="sub">c</span></span><span class="den">T<span class="sub">c</span></span></span></div>
+            <p class="readas">读作：吸进的热除以高温，等于放出的热除以低温。温度用开尔文，也就是从绝对零度算起。</p>
+            <ul class="vars">
+              <li><b>Qh</b><span>从高温热源吸收的热量</span></li>
+              <li><b>Qc</b><span>向低温热源放出的热量</span></li>
+              <li><b>Th、Tc</b><span>两个热源的温度，单位开尔文</span></li>
+            </ul>
+            <p>这条关系说明：同样一份热，在高温端“占的分量”小，在低温端“占的分量”大。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>现在给热量加上符号：吸热记正，放热记负。沿卡诺循环走一圈，把每一项都加起来：</p>
+            <div class="eq"><span class="frac"><span class="num">Q<span class="sub">h</span></span><span class="den">T<span class="sub">h</span></span></span> <span class="op">−</span> <span class="frac"><span class="num">Q<span class="sub">c</span></span><span class="den">T<span class="sub">c</span></span></span> <span class="op">=</span> 0</div>
+            <p class="readas">读作：沿一个可逆循环走完一圈，“热量除以温度”带符号相加，结果正好是零。</p>
+            <p>这个结果很有意思：四步走完，气体回到了出发点，而“热量除以温度”也回到了零。就像你绕山走了一圈，总的海拔变化是零。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>任何一个可逆循环，都可以切成许多细窄的卡诺循环，每一小条都满足上面那条式子。全部加起来，就得到一般结论：对任意可逆循环，“热量除以温度”沿闭合路径的积分是零。</p>
+            <p>一个量沿任意闭合路径积分为零，意味着它只取决于起点和终点，与走法无关——这正是状态函数的定义。克劳修斯给它取了个名字：<strong>熵</strong>，记作 S。</p>
+            <div class="eq">ΔS <span class="op">=</span> ∫ <span class="frac"><span class="num">δQ</span><span class="den">T</span></span></div>
+            <p class="readas">读作：两个状态之间的熵差，等于沿一条可逆路径把每一小份热量除以温度再累加。</p>
+            <ul class="vars">
+              <li><b>ΔS</b><span>两个状态之间的熵差，单位 J/K</span></li>
+              <li><b>δQ</b><span>一极小段过程中交换的热量</span></li>
+              <li><b>T</b><span>交换热量时的绝对温度</span></li>
+            </ul>
+            <p>积分要走可逆路径。真实过程也许不可逆，但两个端点之间的熵差仍由任意一条连接它们的可逆路径算出，因为 S 只认端点。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>现在看真实过程。两块温度不同的金属贴在一起，热从高温流向低温。这个过程不可逆，你不能指望它自己反过来。</p>
+            <p>计算办法是：用一条可逆路径连接同样的初末状态，算出的 ΔS 就是这个过程的熵变。结果总是正的。</p>
+            <p>两种典型的不可逆都在我们身边。有限温差传热：热直接从高温“跳”到低温，而不是经过无穷多个无限小的温差。摩擦生热：机械功全部变成热，反过来却做不到。它们的熵变都大于零。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把它们合起来，就是熵增原理：一个孤立系统的熵永不减少。</p>
+            <div class="eq">ΔS<span class="sub">孤立</span> <span class="op">≥</span> 0</div>
+            <p class="readas">读作：孤立系统的熵变化永远大于等于零。等号只在理想的可逆过程中成立。</p>
+            <p>现实中不存在真正的可逆过程，所以孤立系统的熵总是增加。这就是时间箭头的来源：力学方程分不清过去和未来，熵分得清——过去熵更小，未来熵更大。</p>
+            <p>注意“孤立”两个字。打开冰箱门，房间的熵在增加，冰箱内部的熵在减少，总账仍然为正。局部的秩序可以增加，代价是别处更乱。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>左边做一次混合实验，看熵条怎么只升不降；右边把“温差”和“熵增”画成一条曲线，看两者怎样一起变化。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 两杯水混合</span>
+              <span class="demo-tag">ΔS = ∫δQ/T</span>
+            </div>
+            <p class="demo-desc">左右各 1 kg 水。拖动滑块设定初温，点“接触”，热量从高温流向低温，两边温度逐渐相同，熵条单调上升。再点“尝试反向”，看看违反熵增会发生什么。</p>
+            <canvas id="mixCanvas" data-height="340" aria-label="两杯水混合时温度趋同与熵增加"></canvas>
+            <div id="t1Slider"></div>
+            <div id="t2Slider"></div>
+            <div class="demo-controls">
+              <button type="button" class="btn primary" id="contactBtn">接触</button>
+              <button type="button" class="btn" id="reverseBtn">尝试反向</button>
+              <button type="button" class="btn ghost" id="mixReset">重来</button>
+            </div>
+            <div class="readout" id="mixReadout">T₁ = 100.0 ℃　T₂ = 0.0 ℃　ΔS = 0 J/K</div>
+            <p class="hint">试试：先把两边都拖到 50 ℃ 再接触，温差为零，熵几乎不动；再换回 100 ℃ 与 0 ℃，看熵条能爬多高。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 温差越大，熵增越大</span>
+              <span class="demo-tag">热水固定 100 ℃</span>
+            </div>
+            <p class="demo-desc">热水固定 100 ℃，只改变冷水的初温。温差缩小时，混合后的熵增会迅速趋近于零；温差越大，熵增越大。</p>
+            <canvas id="curveCanvas" data-height="300" aria-label="熵增随冷水初温变化的曲线"></canvas>
+            <div id="coldSlider"></div>
+            <div class="readout" id="curveReadout">冷水 0 ℃　→　ΔS ≈ 102 J/K</div>
+            <p class="hint">试试：把冷水拖到 90 ℃，光点落回接近零——没有温差，也就没有不可逆的代价。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>1 kg 100 ℃ 的水与 1 kg 0 ℃ 的水混合。质量相同，末温正好在中间：50 ℃，也就是 323 K。</p>
+        <p>热水降温，熵变是负的；冷水升温，熵变是正的。两边的比热容相同，各自用 mc ln(T末/T初) 计算，再相加：</p>
+        <div class="eq">ΔS <span class="op">=</span> 4186 <span class="op">×</span> ln<span class="frac"><span class="num">323</span><span class="den">373</span></span> <span class="op">+</span> 4186 <span class="op">×</span> ln<span class="frac"><span class="num">323</span><span class="den">273</span></span> <span class="op">≈</span> 100 <span class="dim">J/K</span></div>
+        <p class="readas">读作：熵变等于两部分之和，第一项约负六百，第二项约正七百，合计约正一百焦耳每开尔文。</p>
+        <p>具体算一下：第一项约 −602 J/K，第二项约 +704 J/K，加起来约 +102 J/K。正负相抵之后剩下的这个正数，才是关键。</p>
+        <p>100 J/K 听起来不大，但它有实际含义。乘上环境温度 300 K，TΔS 约为 3×10⁴ J——这部分能量被“降级”了，虽然还在，却再也变不成功。热机排掉的 Qc，本质上就是这笔账。</p>
+        <p>如果这个过程反过来——50 ℃ 的水自己分成 100 ℃ 和 0 ℃ 各一半——ΔS 就是 −102 J/K。孤立系统的熵减少，这是熵增原理明确禁止的。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>熵增原理刚提出时，只是一个关于热机的结论。但它很快越出了热学。化学家用它判断反应能否自发进行，冶金学家用它计算炉子的极限，工程师用它衡量一台机器的不可逆损失。</p>
+        <p>玻尔兹曼后来给出了微观解释：熵对应的是一个宏观状态底下有多少种微观排列。排列方式越多，熵越大。为什么热总是从热到冷？因为“冷热均匀”的微观排列，比“一半滚烫一半冰凉”多得多，多到几乎必然。方向感不是某条力推出来的，而是概率压出来的。</p>
+        <p>这条原理还带来一个尴尬的问题：如果熵永远增加，宇宙为什么曾经那么有序？这就是后来的“热寂”争论，也是现代宇宙学仍在处理的问题。</p>
+        <p>下一课换一个方向：不再问“能不能”，而是问“为什么”——如果热真是分子运动，温度和压强到底是怎么从一堆乱撞的粒子里长出来的？</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var C = 4186;
+    var K = 273.15;
+    var DS_MAX = 150;
+
+    /* ---------- 演示 A：两杯水混合 ---------- */
+    var mix = PH.canvas('mixCanvas');
+    var mixReadout = document.getElementById('mixReadout');
+    var contactBtn = document.getElementById('contactBtn');
+    var reverseBtn = document.getElementById('reverseBtn');
+    var mixReset = document.getElementById('mixReset');
+
+    var S = { t1: 100, t2: 0, cur1: 100, cur2: 0, entropy: 0, mixing: false, flash: 0 };
+    var rafId = null;
+    var lastTs = 0;
+    var raf = window.requestAnimationFrame || function (cb) {
+      return window.setTimeout(function () { cb(Date.now()); }, 16);
+    };
+
+    function dSOf(a, b, c, d) {
+      return C * Math.log((c + K) / (a + K)) + C * Math.log((d + K) / (b + K));
+    }
+
+    function tempColor(t) {
+      var f = Math.max(0, Math.min(1, t / 100));
+      return 'rgb(' + Math.round(78 + 177 * f) + ',' +
+        Math.round(168 - 30 * f) + ',' + Math.round(255 - 194 * f) + ')';
+    }
+
+    function beaker(ctx, x, y, bw, bh, t, label) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.5)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.rect(x, y, bw, bh);
+      ctx.stroke();
+      ctx.globalAlpha = 0.6;
+      ctx.fillStyle = tempColor(t);
+      ctx.fillRect(x + 2, y + 12, bw - 4, bh - 14);
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = t > 50 ? '#ff8a3d' : '#4ea8ff';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(t.toFixed(1) + ' ℃', x + bw / 2, y + bh + 20);
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText(label, x + bw / 2, y - 8);
+      ctx.textAlign = 'left';
+      ctx.restore();
+    }
+
+    function drawMix() {
+      if (!mix) return;
+      var ctx = mix.ctx;
+      var w = mix.w;
+      var h = mix.h;
+      var bw = Math.min(72, w * 0.22);
+      var bh = 86;
+      var by = 44;
+      var bx1 = w * 0.16 - bw / 2;
+      var bx2 = w * 0.64 - bw / 2;
+      var barX = 18;
+      var barW = w - 36;
+      var barY = 236;
+
+      mix.clear();
+
+      beaker(ctx, bx1, by, bw, bh, S.cur1, 'T₁');
+      beaker(ctx, bx2, by, bw, bh, S.cur2, 'T₂');
+
+      /* 热流箭头 */
+      if (Math.abs(S.cur1 - S.cur2) > 0.3) {
+        var hotLeft = S.cur1 > S.cur2;
+        var ax1 = hotLeft ? bx1 + bw + 6 : bx2 + bw + 6;
+        var ax2 = hotLeft ? bx2 - 6 : bx1 - 6;
+        var ay = by + 46;
+        var dir = ax2 > ax1 ? 1 : -1;
+        ctx.save();
+        ctx.strokeStyle = '#ff8a3d';
+        ctx.fillStyle = '#ff8a3d';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(ax1, ay);
+        ctx.lineTo(ax2, ay);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(ax2, ay);
+        ctx.lineTo(ax2 - dir * 9, ay - 5);
+        ctx.lineTo(ax2 - dir * 9, ay + 5);
+        ctx.closePath();
+        ctx.fill();
+        ctx.font = '11px ui-monospace, Consolas, monospace';
+        ctx.fillText('Q', (ax1 + ax2) / 2 - 3, ay - 8);
+        ctx.restore();
+      }
+
+      /* 熵条 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('熵（相对混合前）', barX, barY - 8);
+      ctx.fillStyle = 'rgba(143,166,196,.15)';
+      ctx.fillRect(barX, barY, barW, 16);
+
+      var fill = Math.max(0, Math.min(1, S.entropy / DS_MAX));
+      ctx.fillStyle = '#35e0c8';
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 10;
+      ctx.fillRect(barX, barY, barW * fill, 16);
+      ctx.shadowBlur = 0;
+
+      ctx.fillStyle = '#35e0c8';
+      ctx.font = '13px ui-monospace, Consolas, monospace';
+      ctx.fillText('ΔS = +' + S.entropy.toFixed(1) + ' J/K', barX, barY + 38);
+      ctx.fillStyle = 'rgba(143,166,196,.55)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('0', barX, barY + 56);
+      ctx.fillText(DS_MAX + ' J/K', barX + barW - 42, barY + 56);
+      ctx.restore();
+
+      /* 反向尝试的覆盖层 */
+      if (S.flash > 0) {
+        var alpha = Math.min(1, S.flash / 0.6);
+        ctx.save();
+        ctx.globalAlpha = alpha * 0.9;
+        ctx.fillStyle = 'rgba(8,16,28,.82)';
+        ctx.fillRect(bx1 - 8, by - 22, bx2 + bw - bx1 + 16, bh + 52);
+        ctx.strokeStyle = '#ff5f6d';
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(bx1 - 8, by - 22, bx2 + bw - bx1 + 16, bh + 52);
+
+        var neg = -dSOf(S.t1, S.t2, (S.t1 + S.t2) / 2, (S.t1 + S.t2) / 2);
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#ff5f6d';
+        ctx.font = '16px ui-monospace, Consolas, monospace';
+        var msg = 'ΔS = ' + (neg < -0.05 ? neg.toFixed(1) : '0') + ' J/K';
+        ctx.fillText(msg, w / 2, by + 46);
+
+        var tw = ctx.measureText(msg).width;
+        ctx.strokeStyle = '#ff5f6d';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(w / 2 - tw / 2 - 6, by + 41);
+        ctx.lineTo(w / 2 + tw / 2 + 6, by + 41);
+        ctx.stroke();
+
+        ctx.font = '12px ui-monospace, Consolas, monospace';
+        ctx.fillStyle = 'rgba(255,201,205,.95)';
+        ctx.fillText(neg < -0.05 ? '孤立系统熵减：不可能' : '没有温差，无法反向', w / 2, by + 70);
+        ctx.textAlign = 'left';
+        ctx.restore();
+      }
+    }
+
+    function updateMixText() {
+      if (mixReadout) {
+        mixReadout.textContent = 'T₁ = ' + S.cur1.toFixed(1) + ' ℃　T₂ = ' + S.cur2.toFixed(1)
+          + ' ℃　ΔS = ' + S.entropy.toFixed(1) + ' J/K';
+      }
+    }
+
+    function tick(ts) {
+      if (!lastTs) lastTs = ts;
+      var dt = (ts - lastTs) / 1000;
+      lastTs = ts;
+      if (dt < 0) dt = 0;
+      if (dt > 0.08) dt = 0.08;
+
+      if (S.mixing) {
+        var Tf = (S.t1 + S.t2) / 2;
+        var k = Math.min(1, dt * 1.9);
+        S.cur1 += (Tf - S.cur1) * k;
+        S.cur2 += (Tf - S.cur2) * k;
+        if (Math.abs(S.cur1 - Tf) < 0.05 && Math.abs(S.cur2 - Tf) < 0.05) {
+          S.cur1 = Tf;
+          S.cur2 = Tf;
+          S.mixing = false;
+        }
+        var ds = dSOf(S.t1, S.t2, S.cur1, S.cur2);
+        if (ds > S.entropy) S.entropy = ds;
+      }
+
+      if (S.flash > 0) S.flash = Math.max(0, S.flash - dt);
+
+      drawMix();
+      updateMixText();
+
+      if (S.mixing || S.flash > 0) {
+        rafId = raf(tick);
+      } else {
+        rafId = null;
+      }
+    }
+
+    function kick() {
+      if (rafId === null) {
+        lastTs = 0;
+        rafId = raf(tick);
+      }
+    }
+
+    var t1Slider = PH.slider({
+      mount: '#t1Slider',
+      label: '左杯初温 T₁',
+      min: 0,
+      max: 100,
+      step: 1,
+      value: 100,
+      unit: '℃',
+      fmt: function (v) { return String(Math.round(v)); },
+      onInput: function (v) {
+        S.t1 = v;
+        S.cur1 = v;
+        S.cur2 = S.t2;
+        S.entropy = 0;
+        S.mixing = false;
+        S.flash = 0;
+        drawMix();
+        updateMixText();
+      }
+    });
+
+    var t2Slider = PH.slider({
+      mount: '#t2Slider',
+      label: '右杯初温 T₂',
+      min: 0,
+      max: 100,
+      step: 1,
+      value: 0,
+      unit: '℃',
+      fmt: function (v) { return String(Math.round(v)); },
+      onInput: function (v) {
+        S.t2 = v;
+        S.cur1 = S.t1;
+        S.cur2 = v;
+        S.entropy = 0;
+        S.mixing = false;
+        S.flash = 0;
+        drawMix();
+        updateMixText();
+      }
+    });
+
+    if (contactBtn) {
+      contactBtn.addEventListener('click', function () {
+        if (Math.abs(S.t1 - S.t2) < 0.5) return;
+        S.mixing = true;
+        S.flash = 0;
+        kick();
+      });
+    }
+
+    if (reverseBtn) {
+      reverseBtn.addEventListener('click', function () {
+        S.flash = 2.6;
+        kick();
+      });
+    }
+
+    if (mixReset) {
+      mixReset.addEventListener('click', function () {
+        S.cur1 = S.t1;
+        S.cur2 = S.t2;
+        S.entropy = 0;
+        S.mixing = false;
+        S.flash = 0;
+        drawMix();
+        updateMixText();
+      });
+    }
+
+    drawMix();
+    updateMixText();
+    if (mix) mix.onResize(function () { drawMix(); });
+
+    /* ---------- 演示 B：熵增 vs 冷水初温 ---------- */
+    var curve = PH.canvas('curveCanvas');
+    var curveReadout = document.getElementById('curveReadout');
+
+    function dsPair(tc) {
+      var tf = (100 + tc) / 2;
+      return C * Math.log((tf + K) / (100 + K)) + C * Math.log((tf + K) / (tc + K));
+    }
+
+    function drawCurve(tc) {
+      if (!curve) return;
+      var ctx = curve.ctx;
+      var w = curve.w;
+      var h = curve.h;
+      var padL = 56;
+      var padR = 16;
+      var padT = 24;
+      var padB = 40;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, h - padT - padB);
+      var i;
+
+      function gx(v) { return padL + pw * v / 90; }
+      function gy(v) { return padT + ph - ph * v / DS_MAX; }
+
+      curve.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var gxx = padL + pw * i / 4;
+        var gyy = padT + ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(gxx, padT);
+        ctx.lineTo(gxx, padT + ph);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(padL, gyy);
+        ctx.lineTo(padL + pw, gyy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(padL, padT);
+      ctx.lineTo(padL, padT + ph);
+      ctx.lineTo(padL + pw, padT + ph);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.45)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (i = 0; i <= 90; i++) {
+        var x = gx(i);
+        var y = gy(dsPair(i));
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ff8a3d';
+      ctx.shadowColor = '#ff8a3d';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(gx(tc), gy(dsPair(tc)), 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('0', padL - 4, padT + ph + 16);
+      ctx.fillText('90 ℃', padL + pw - 18, padT + ph + 16);
+      ctx.fillText('冷水初温', padL + pw / 2 - 20, padT + ph + 32);
+      ctx.fillText('ΔS (J/K)', padL - 48, padT - 8);
+      ctx.fillText('50', padL - 20, gy(50) + 3);
+      ctx.fillText('100', padL - 26, gy(100) + 3);
+      ctx.fillText('150', padL - 26, gy(150) + 3);
+      ctx.restore();
+    }
+
+    var coldSlider = PH.slider({
+      mount: '#coldSlider',
+      label: '冷水初温',
+      min: 0,
+      max: 90,
+      step: 1,
+      value: 0,
+      unit: '℃',
+      fmt: function (v) { return String(Math.round(v)); },
+      onInput: function (v) {
+        drawCurve(v);
+        if (curveReadout) {
+          curveReadout.textContent = '冷水 ' + Math.round(v) + ' ℃　→　ΔS ≈ ' + dsPair(v).toFixed(1) + ' J/K';
+        }
+      }
+    });
+
+    drawCurve(0);
+    if (curveReadout) {
+      curveReadout.textContent = '冷水 0 ℃　→　ΔS ≈ ' + dsPair(0).toFixed(1) + ' J/K';
+    }
+    if (curve) curve.onResize(function () {
+      drawCurve(coldSlider ? coldSlider.value : 0);
+    });
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '熵为什么是一个“状态函数”？',
+        options: [
+          { text: '因为熵只和吸收的热量有关。', correct: false, why: '吸的热与路径有关，同一个状态可以经由不同路径到达，吸热各不相同。熵恰恰不是这样。' },
+          { text: '因为沿任意可逆循环 ∮δQ/T = 0，这个积分只取决于起点和终点。', correct: true, why: '闭合路径积分为零，意味着积分结果与路径无关，只由端点状态决定——这正是状态函数的判据。' },
+          { text: '因为熵永远不会减少。', correct: false, why: '熵增是孤立系统演化的性质，不是它能成为状态函数的理由。定义在先，熵增在后。' },
+          { text: '因为它是克劳修斯起的名字。', correct: false, why: '命名与数学性质无关。换一个名字，闭合路径积分仍然是零。' }
+        ]
+      },
+      {
+        q: '一个过程算出 ΔS > 0，最恰当的解读是？',
+        options: [
+          { text: '系统的温度一定升高了。', correct: false, why: '熵变与温度高低不是一回事。冰融化时温度不变，熵却在增加。' },
+          { text: '过程不可逆，孤立系统的自发演化朝熵增的方向进行。', correct: true, why: '可逆过程的熵变为零，不可逆过程为正。ΔS>0 正是不可逆的标志。' },
+          { text: '热量一定从冷物体流向了热物体。', correct: false, why: '孤立系统里热量自发从热流向冷，那也会让总熵增加。熵增不指定热的流向，只给出总账。' },
+          { text: '系统一定对外做了功。', correct: false, why: '做功不是必要条件。两块金属直接接触传热，不做任何功，熵照样增加。' }
+        ]
+      },
+      {
+        q: '为什么热量不能自发地从冷物体流向热物体？',
+        options: [
+          { text: '因为冷物体里根本没有热。', correct: false, why: '冷物体也有内能，也在持续进行分子运动，只是平均动能较小。' },
+          { text: '因为那样会让孤立系统的总熵减少，违反熵增原理。', correct: true, why: '把热从冷搬到热，需要外界做功（冰箱就是这样）。若孤立地自发发生，总熵会减少，因此不可能。' },
+          { text: '因为热传导必须有温差，而冷热之间没有温差。', correct: false, why: '冷热之间当然有温差。这条回答把“需要温差”与“方向由谁决定”混为一谈了。' },
+          { text: '因为冷物体的分子是静止的。', correct: false, why: '分子永远不会静止，温度再低也有热运动。绝对零度不可达。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

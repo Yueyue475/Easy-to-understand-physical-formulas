@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 6 阶段 · 相对论加量子，会算出什么怪东西？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="6-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 19 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>相对论加量子，会算出什么怪东西？</h1>
+        <p class="lede">1928 年，狄拉克想写一个既遵守相对论、又遵守量子力学的电子方程。方程写出来，却多出一半解：能量可以是负的，往下没有底。让世界不塌，他被迫预言了一种谁也没见过的东西。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>到 1928 年，量子力学已经有了一套能用的方程。薛定谔在 1926 年写下的波动方程，能算出氢原子能级，和光谱对得很准。但它有一个前提：电子速度远小于光速。方程里的动能写成 p²/2m，这是牛顿式的写法；一旦电子接近光速，它就不对了。</p>
+        <p>另一头，相对论处理的是“一个粒子”的力学：给定初始位置和速度，算出此后的轨迹。它没有自然的语言去描述“一个粒子变成两个”，或者“两个粒子撞在一起消失”。可 1920 年代末的实验已经暗示，高速碰撞里确实会冒出新粒子。</p>
+        <p>这就是那道缝：量子力学不会描述粒子的产生与湮灭，相对论不会描述概率与跃迁。狄拉克想做的事很明确——写下一个方程，让电子自动满足相对论的能量关系，同时保住波函数和概率解释。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是相对论的能量关系。第二件是 1926 年的克莱因-戈尔登方程：把能量和动量换成算符，代进那个二次关系式，得到一个对时间二阶的方程。它能给出正确的氢原子能级，却有一个致命毛病：算出的概率密度可以是负数，没法当概率方程。</p>
+        <p>第三件工具是自旋。1927 年，泡利为描述电子“朝上／朝下”的二值自由度，引入了 2×2 矩阵。狄拉克从中看到关键一点：两个矩阵相乘可以互相抵消，这是普通数字做不到的。</p>
+        <p>第四件是泡利不相容原理（1925）：两个电子不能占据完全相同的量子态。这条规则当时还是从原子光谱总结出来的经验，但马上就要变成整个故事的地基：没有它，“填满负能态”无从谈起。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么“开平方”会多出一倍解？</summary>
+          <div class="mathbox-body">
+            <p>平方把符号吃掉了，开方就得把两种可能都还回来；能量关系也是二次的，所以 E 天然有一正一负两个值。</p>
+            <p>狄拉克还想要方程对时间一阶，这样概率密度才恒为正。于是他不能写根号，而要写一个线性表达式，再要求它的平方回到原来的二次式。要让交叉项消失，几个系数必须两两“反对易”——换顺序就变号。普通数字做不到，矩阵可以；要同时装下自旋和电荷，最小的是 4×4 矩阵。</p>
+            <p>4×4 矩阵给出四个解：两种自旋的粒子，加上两种自旋的反粒子。</p>            <svg viewBox="0 0 340 160" role="img" aria-label="狄拉克方程的四个解：两种自旋与粒子反粒子">
+              <rect x="24" y="16" width="140" height="46" rx="8" fill="rgba(53,224,200,.09)" stroke="#35e0c8"/>
+              <rect x="176" y="16" width="140" height="46" rx="8" fill="rgba(53,224,200,.09)" stroke="#35e0c8"/>
+              <rect x="24" y="76" width="140" height="46" rx="8" fill="rgba(169,139,255,.1)" stroke="#a98bff"/>
+              <rect x="176" y="76" width="140" height="46" rx="8" fill="rgba(169,139,255,.1)" stroke="#a98bff"/>
+              <text x="94" y="44" fill="#d6e6ff" font-size="12" text-anchor="middle" font-family="monospace">自旋 ↑　粒子</text>
+              <text x="246" y="44" fill="#d6e6ff" font-size="12" text-anchor="middle" font-family="monospace">自旋 ↓　粒子</text>
+              <text x="94" y="104" fill="#d6e6ff" font-size="12" text-anchor="middle" font-family="monospace">自旋 ↑　反粒子</text>
+              <text x="246" y="104" fill="#d6e6ff" font-size="12" text-anchor="middle" font-family="monospace">自旋 ↓　反粒子</text>
+              <text x="170" y="146" fill="#8fa6c4" font-size="11" text-anchor="middle" font-family="monospace">一个方程，四个解</text>
+            </svg>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面五步，从相对论的能量关系出发，经过一次“开平方”，落到一个当时没人相信的预言上。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>先把相对论的能量关系摆出来。一个自由粒子，能量、动量、质量被锁在同一个式子里。粒子静止时动量为零，式子立刻退化成那个最有名的关系 E=mc²。</p>
+            <div class="eq">E<span class="sup">2</span> <span class="op">=</span> p<span class="sup">2</span>c<span class="sup">2</span> <span class="op">+</span> m<span class="sup">2</span>c<span class="sup">4</span></div>
+            <p class="readas">读作：能量平方等于动量平方乘光速平方，加质量平方乘光速四次方。静止时动量为零，只剩质量项。</p>
+            <ul class="vars">
+              <li><b>E</b><span>粒子的总能量</span></li>
+              <li><b>p</b><span>动量</span></li>
+              <li><b>m</b><span>静止质量</span></li>
+              <li><b>c</b><span>光速，约 3.0×10⁸ m/s</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>狄拉克要的不是二次式，而是一个“一次”的方程。薛定谔方程对时间一阶，概率密度才恒为正；写成二阶，就会重蹈负概率的覆辙。他想把 E² 开平方，写成线性表达式。麻烦在于根号下是动量的二次式，开出来不是多项式。于是他引入几个系数，要求平方都为 1，两两相乘再相加时互相抵消。</p>
+            <div class="eq">E <span class="op">=</span> c α <span class="op">·</span> <span class="vec">p</span> <span class="op">+</span> β m c<span class="sup">2</span></div>
+            <p class="readas">读作：能量等于光速乘“α 点乘动量”，再加 β 乘质量乘光速平方。α 和 β 不是数，是 4×4 矩阵，把自旋和电荷一起装进来。</p>
+            <ul class="vars">
+              <li><b>α</b><span>三个 4×4 矩阵，与动量逐分量相乘</span></li>
+              <li><b>β</b><span>一个 4×4 矩阵，与质量项相乘</span></li>
+              <li><b>ψ</b><span>四分量波函数，取代原来的单分量波函数</span></li>
+            </ul>
+            <p>方程对时间、空间都是一阶的，概率密度恒为正；代价是波函数有四个分量。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把方程平方回去，看它允许哪些能量。构造时已保证平方回到那个二次式，所以解必然一正一负：正能支从 +mc² 缓慢上升，负能支从 −mc² 继续往下。</p>
+            <div class="eq">E <span class="op">=</span> ±<span class="sqrt">p<span class="sup">2</span>c<span class="sup">2</span> <span class="op">+</span> m<span class="sup">2</span>c<span class="sup">4</span></span></div>
+            <p class="readas">读作：能量等于正负根号下“动量平方乘光速平方，加质量平方乘光速四次方”。两支都满足同一个二次方程，都是解。</p>
+            <p>问题就出在这个负号上。负能支不是孤立的几个点，而是一条向下无限延伸的曲线：动量越大，能量越负，没有下限。一个正能态的电子只要放出一个光子，就能跳进负能态，同时交出大得离谱的能量。照此推下去，所有电子都该瞬间掉下去，原子根本不该稳定存在。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>狄拉克先想到：负能态也许早已被占满。电子是费米子，一个态只能坐一个电子；负能态若都坐满，正能态的电子想往下跳，会发现没有空位——就像剧场满座，后来的人只能留在楼上。这片背景后来叫狄拉克海。</p>
+            <p>这个假设有可检验的后果。海均匀、看不见，我们测到的只是相对它的偏差。如果海里缺了一个电子，留下一个“洞”，那个洞少了一份负电荷、一份负能量，看起来就像带正电的粒子。狄拉克起初猜它是质子，立刻被否定：洞的质量必须和电子一样。1931 年他明确写下：存在一种“反电子”，质量与电子相同，电荷相反。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>1932 年，安德森在加州理工用云室拍摄宇宙线。一条径迹穿过 6 毫米铅板后损失了能量，弯曲方向却与电子相反——同样的磁场里，只有带正电的粒子才会那样弯；由曲率和电离密度反推的质量，与电子一致。这就是正电子，反物质第一次被看见。</p>
+            <div class="eq">e<span class="sup">−</span> <span class="op">+</span> e<span class="sup">+</span> <span class="op">→</span> 2γ</div>
+            <p class="readas">读作：电子与正电子相遇，湮灭成两个光子，沿相反方向飞出，各自带走 0.511 MeV——正好是电子的静止能量。</p>
+            <p>湮灭不是“两个粒子撞碎”，而是两份静止能量全部变成辐射。反过来，能量足够高的光子从原子核附近经过，也能凭空产生一对电子和正电子，这叫电子对产生。粒子的产生与湮灭，第一次有了自洽的方程。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>横轴是动量，纵轴是能量。拖动滑块，点沿双曲线往外走：上支是正能解，下支是负能解。虚线是 E=±pc 的渐近线，负能支贴着它一路往下，没有底。动量为零时两支间隙最小，正好是 2mc²。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 狄拉克方程的两个能量解</span>
+              <span class="demo-tag">E = ±√(p²c² + m²c⁴)</span>
+            </div>
+            <p class="demo-desc">青色是正能支，紫色是负能支，横轴单位是 MeV/c，纵轴单位是 MeV。琥珀色竖线连接同一个动量下的两个解，它们到零能线的距离永远相等。</p>
+            <canvas id="diracCanvas" data-height="400" aria-label="狄拉克方程正负能量解的双曲线演示"></canvas>
+            <div id="pSlider"></div>
+            <div class="readout" id="diracReadout"></div>
+            <p class="hint">试试：把 p 拖到 0，读出 ±0.511 MeV；再拖到 2.8，负能支已经到 −2.85 MeV。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>把电子质量代进去。电子的静止能量是 0.511 MeV。MeV 是兆电子伏，大约是电子经过 51 万伏电压获得的能量。</p>
+        <div class="eq">2 m<span class="sub">e</span> c<span class="sup">2</span> <span class="op">=</span> 2 <span class="op">×</span> 0.511 <span class="op">=</span> 1.022 <span class="dim">MeV</span></div>
+        <p class="readas">读作：一对电子和正电子的静止能量加起来是 1.022 兆电子伏。要让这样一对粒子凭空产生，光子的能量至少要达到这个数；反过来，它们湮灭时放出的两个光子，能量之和也正好是这个数。</p>
+        <p>0.511 MeV 这个数字，医院里每天都在用。正电子发射断层扫描把示踪剂送进人体，正电子走几毫米就湮灭，放出两个 0.511 MeV 的光子。探测器围成一圈，抓住这两个同时、反向的光子，就能反推湮灭点的位置。一台 PET 扫描仪，本质上是 511 keV 光子对的定位仪。</p>
+        <p>数量级也值得记住：0.511 MeV 约 8.2×10⁻¹⁴ 焦耳。单看很小，可一旦质量整个转化，一克物质能放出约 9×10¹³ 焦耳，相当于两万吨 TNT。c² 太大了，哪怕质量只有一丁点，能量也大得惊人。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>狄拉克方程改写了二十世纪后半段的物理。负能解不是错误，而是反物质的预言；四年后正电子被发现，1955 年找到反质子，1956 年找到反中子。</p>
+        <p>更重要的是：方程多出来的解，不要急着扔。狄拉克方程第一次把量子力学和相对论装进同一个式子，还自然给出电子自旋 ½、磁矩接近 2 个玻尔磁子——这些原本都得手工塞进去。沿着这条路，量子场论发展起来；而“场能不能被量子化”，就是下一课。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示：E-p 双曲线 ---------- */
+    var dc = PH.canvas('diracCanvas');
+    var dReadout = document.getElementById('diracReadout');
+    var M_E = 0.511;
+    var P_MAX = 3.2;
+    var E_MAX = 3.4;
+    var pNow = 0.8;
+
+    function drawDirac() {
+      if (!dc) return;
+      var ctx = dc.ctx;
+      var w = dc.w;
+      var h = dc.h;
+      var padL = 58;
+      var padR = 26;
+      var padT = 24;
+      var padB = 42;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, h - padT - padB);
+      var x0 = padL + pw / 2;
+      var y0 = padT + ph / 2;
+      var sx = pw / (2 * P_MAX);
+      var sy = ph / (2 * E_MAX);
+      var i;
+
+      function X(p) { return x0 + p * sx; }
+      function Y(e) { return y0 - e * sy; }
+
+      dc.clear();
+
+      /* 网格 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.12)';
+      ctx.lineWidth = 1;
+      for (i = -3; i <= 3; i++) {
+        if (i === 0) continue;
+        ctx.beginPath();
+        ctx.moveTo(X(i), padT);
+        ctx.lineTo(X(i), padT + ph);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(padL, Y(i));
+        ctx.lineTo(padL + pw, Y(i));
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 坐标轴 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(padL, y0);
+      ctx.lineTo(padL + pw, y0);
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, padT + ph);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 渐近线 E = ±pc */
+      ctx.save();
+      ctx.setLineDash([5, 6]);
+      ctx.strokeStyle = 'rgba(143,166,196,.28)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(X(-P_MAX), Y(-P_MAX));
+      ctx.lineTo(X(P_MAX), Y(P_MAX));
+      ctx.moveTo(X(-P_MAX), Y(P_MAX));
+      ctx.lineTo(X(P_MAX), Y(-P_MAX));
+      ctx.stroke();
+      ctx.restore();
+
+      /* 双曲线的两支 */
+      function branch(sign, color) {
+        var k;
+        ctx.save();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2.2;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        for (k = 0; k <= 240; k++) {
+          var p = -P_MAX + 2 * P_MAX * k / 240;
+          var e = sign * Math.sqrt(p * p + M_E * M_E);
+          if (k === 0) ctx.moveTo(X(p), Y(e));
+          else ctx.lineTo(X(p), Y(e));
+        }
+        ctx.stroke();
+        ctx.restore();
+      }
+      branch(1, '#35e0c8');
+      branch(-1, '#a98bff');
+
+      /* p = 0 处的间隙 2mc² */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.9)';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.moveTo(X(0) + 6, Y(M_E));
+      ctx.lineTo(X(0) + 6, Y(-M_E));
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(X(0) + 2, Y(M_E));
+      ctx.lineTo(X(0) + 10, Y(M_E));
+      ctx.moveTo(X(0) + 2, Y(-M_E));
+      ctx.lineTo(X(0) + 10, Y(-M_E));
+      ctx.stroke();
+
+      var lab = '间隙 2mc² = 1.022 MeV';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      var lw = ctx.measureText(lab).width;
+      ctx.fillStyle = 'rgba(8,16,28,.92)';
+      ctx.fillRect(X(0) + 13, y0 - 9, lw + 8, 18);
+      ctx.fillStyle = '#ffb03d';
+      ctx.fillText(lab, X(0) + 17, y0 + 4);
+
+      ctx.textAlign = 'right';
+      ctx.fillStyle = 'rgba(53,224,200,.9)';
+      ctx.fillText('+mc²', X(0) - 10, Y(M_E) - 4);
+      ctx.fillStyle = 'rgba(169,139,255,.9)';
+      ctx.fillText('−mc²', X(0) - 10, Y(-M_E) + 13);
+      ctx.textAlign = 'left';
+      ctx.restore();
+
+      /* 同一动量下的两个解 */
+      var ep = Math.sqrt(pNow * pNow + M_E * M_E);
+      ctx.save();
+      ctx.setLineDash([4, 5]);
+      ctx.strokeStyle = 'rgba(255,176,61,.55)';
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(X(pNow), Y(ep));
+      ctx.lineTo(X(pNow), Y(-ep));
+      ctx.stroke();
+      ctx.restore();
+
+      function solutionDot(e, color, text) {
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 14;
+        ctx.beginPath();
+        ctx.arc(X(pNow), Y(e), 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.font = '11.5px ui-monospace, Consolas, monospace';
+        var right = pNow <= 1.5;
+        ctx.textAlign = right ? 'left' : 'right';
+        ctx.fillText(text, X(pNow) + (right ? 10 : -10), Y(e) + (e > 0 ? -7 : 15));
+        ctx.restore();
+      }
+      solutionDot(ep, '#35e0c8', 'E₊ = +' + ep.toFixed(2) + ' MeV');
+      solutionDot(-ep, '#a98bff', 'E₋ = −' + ep.toFixed(2) + ' MeV');
+
+      /* 刻度与轴名 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.65)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      for (i = -3; i <= 3; i++) {
+        if (i === 0) continue;
+        ctx.fillText(String(i), X(i) - 4, y0 + 16);
+        ctx.fillText(String(i), padL - 18, Y(i) + 4);
+      }
+      ctx.fillText('0', X(0) - 11, y0 + 16);
+      ctx.fillText('p（MeV/c）', padL + pw - 84, y0 + 34);
+      ctx.fillText('E（MeV）', x0 + 8, padT + 10);
+      ctx.restore();
+
+      /* 图例 */
+      ctx.save();
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillRect(padL + 6, y0 - 62, 14, 2);
+      ctx.fillText('正能支', padL + 25, y0 - 57);
+      ctx.fillStyle = '#a98bff';
+      ctx.fillRect(padL + 6, y0 - 42, 14, 2);
+      ctx.fillText('负能支', padL + 25, y0 - 37);
+      ctx.restore();
+    }
+
+    function updateDirac() {
+      drawDirac();
+      var ep = Math.sqrt(pNow * pNow + M_E * M_E);
+      if (dReadout) {
+        dReadout.textContent = 'p = ' + pNow.toFixed(2) + ' MeV/c　→　E₊ = +' +
+          ep.toFixed(2) + ' MeV，E₋ = −' + ep.toFixed(2) + ' MeV；上下相差 ' +
+          (2 * ep).toFixed(2) + ' MeV';
+      }
+    }
+
+    var pSlider = PH.slider({
+      mount: '#pSlider',
+      label: '动量 p',
+      min: 0,
+      max: 2.8,
+      step: 0.01,
+      value: 0.8,
+      unit: 'MeV/c',
+      fmt: function (v) { return v.toFixed(2); },
+      onInput: function (v) {
+        pNow = v;
+        updateDirac();
+      }
+    });
+
+    updateDirac();
+    if (dc) dc.onResize(function () { updateDirac(); });
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '为什么把相对论能量关系“开平方”之后，必然出现负能解？',
+        options: [
+          { text: '因为狄拉克在推导时把正负号写反了。', correct: false, why: '符号不是笔误。E²=p²c²+m²c⁴ 是二次方程，平方根天生有正负两支；只要方程保留这个平方结构，两支就一定同时存在。' },
+          { text: '因为二次方程有两个平方根，一正一负都满足同一个能量关系；线性方程必须把两支都保留下来。', correct: true, why: '这正是关键。狄拉克要求方程对时间一阶，解出来的 E 只能取其中一个值，而这个值来自开方，所以 ± 两支各对应一族解。' },
+          { text: '因为电子带负电，所以能量也必须是负的。', correct: false, why: '电荷的正负与能量的正负是两件不相干的事。正能支描述的就是普通电子，它的电荷同样是负的。' },
+          { text: '因为相对论不允许粒子拥有正能量。', correct: false, why: '恰好相反。E=mc² 就是正能支在动量为零时的值，日常物质全都待在正能支上。' }
+        ]
+      },
+      {
+        q: '狄拉克海说的是什么？',
+        options: [
+          { text: '宇宙空间里真实存在的一片电子海洋。', correct: false, why: '它不是天文学意义上的物质海，而是对“所有负能态都被占据”这一假设的形象叫法，用来解释真空为什么稳定。' },
+          { text: '假设所有负能态都已被电子按泡利不相容原理填满，真空就是这片被填满的背景。', correct: true, why: '填满之后，正能态的电子找不到空位可跳，世界才稳定。海里少一个电子留下的空位，就表现为带正电的反粒子。' },
+          { text: '由正电子组成的海洋。', correct: false, why: '正电子是海里空出来的“洞”，不是海水本身。海由负能态的电子填满。' },
+          { text: '一个纯粹的数学技巧，没有任何物理后果。', correct: false, why: '它有明确预言：反电子。1932 年正电子被发现，这个“技巧”变成了实验事实。' }
+        ]
+      },
+      {
+        q: '反物质最早是怎么被发现的？',
+        options: [
+          { text: '狄拉克在纸上算出来之后，立刻在实验室里造出了正电子。', correct: false, why: '狄拉克 1931 年给出预言，但那是纯理论推论；实验验证要等到 1932 年，而且是别人在做宇宙线观测时偶然拍到的。' },
+          { text: '1932 年，安德森在宇宙线的云室照片里看到一条径迹：弯曲方向与电子相反，质量却与电子相同。', correct: true, why: '同样的磁场下，弯曲方向相反说明电荷为正；曲率和电离密度给出的质量与电子一致。这就是正电子。' },
+          { text: '用加速器把质子对撞，从碎片里挑出了反电子。', correct: false, why: '1932 年还没有这样的加速器。正电子是在天然宇宙线里被发现的，加速器产生反粒子是更晚的事。' },
+          { text: '在医院的正电子发射断层扫描仪里第一次被记录到。', correct: false, why: 'PET 利用的是正电子湮灭产生的 511 keV 光子，是几十年后才发展出的技术应用，不是发现本身。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

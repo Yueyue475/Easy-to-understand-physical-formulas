@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 26 课 · 恒星里的元素怎么造出来？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="8-2" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 26 课 / 共 27 课 · 约 11 分钟</p>
+        <h1>恒星里的元素怎么造出来？</h1>
+        <p class="lede">大爆炸只造出了氢和氦。可你身上有碳、氧、铁、碘——这些元素是什么时候、在哪里被造出来的？</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>把宇宙最早的几分钟倒推回去，能得到的东西少得惊人：大约四分之三的氢、四分之一的氦，加上一点点锂。再重的元素几乎为零。可今天的地球上有铁、有硅、有氧，生物体内还有碳和碘。这些原子核不可能凭空出现，它们一定是在某个地方、某段时间里被合成出来的。</p>
+        <p>问题在于，没人说得清那个“地方”在哪。20 世纪上半叶，人们已经知道太阳的能量大得离谱：化学燃烧撑不住，连引力收缩也只能维持几千万年。可核反应能不能当燃料、能烧到哪一步，都还没有答案。</p>
+        <p>更麻烦的是，恒星看上去太“稳”了。它没有爆炸，安安静静地亮了几十亿年。一个稳定的火炉，怎么可能顺手造出几十种元素，还把其中一些抛到宇宙里？这正是卡住的地方：能量来源、元素来源、以及如何离开恒星，三件事都是空白。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是质能关系。1905 年，爱因斯坦给出 E=mc²：质量和能量不是两种东西，而是同一种东西的两种记法。一个过程只要让总质量减少一点，减少的部分就以能量出现。c² 极大，质量只少一丝，能量也相当可观。</p>
+        <p>第二件工具是原子核的结合能。把质子和中子拼成一个核，拼好之后的总质量会比零件加起来略小。这个差额对应着“把核拆开需要付出的能量”，也就是结合能。它衡量的是原子核有多“紧”。</p>
+        <p>第三件工具是光谱分析。19 世纪，基尔霍夫和本生证明：每种元素都有固定的谱线，恒星大气会吸收特定波长的光，留下暗线。不必飞到恒星旁边，读光谱就能知道成分，这是后面推断的基础。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：怎么从星光读出成分</summary>
+          <div class="mathbox-body">
+            <p>恒星内部发出连续谱；光穿过较冷的外层大气时，原子只吸收能量刚好对上能级差的波长，连续谱上就被“咬”出暗线。</p>
+            <p>每条暗线的位置由元素种类决定，深度由丰度决定。把太阳光谱里的暗线与实验室里各种元素的光谱逐一比对，就能列出太阳大气的成分。1868 年，人们在太阳光谱里发现了一条当时地球上还没找到对应元素的黄线，后来确认那就是氦——先在天上发现，才在地上找到。</p>
+            <svg viewBox="0 0 360 128" role="img" aria-label="连续光谱上的吸收暗线">
+              <defs>
+                <linearGradient id="rainbow" x1="0" x2="1">
+                  <stop offset="0" stop-color="#4ea8ff"/>
+                  <stop offset="0.35" stop-color="#35e0c8"/>
+                  <stop offset="0.65" stop-color="#ffb03d"/>
+                  <stop offset="1" stop-color="#ff5f6d"/>
+                </linearGradient>
+              </defs>
+              <rect x="20" y="30" width="320" height="30" fill="url(#rainbow)" opacity=".55"/>
+              <line x1="93" y1="30" x2="93" y2="60" stroke="#070b12" stroke-width="3"/>
+              <line x1="152" y1="30" x2="152" y2="60" stroke="#070b12" stroke-width="3"/>
+              <line x1="212" y1="30" x2="212" y2="60" stroke="#070b12" stroke-width="3"/>
+              <line x1="271" y1="30" x2="271" y2="60" stroke="#070b12" stroke-width="2"/>
+              <text x="20" y="86" fill="#8fa6c4" font-size="11" font-family="monospace">连续谱被外层大气吸收，留下暗线</text>
+              <text x="20" y="108" fill="#ffb03d" font-size="11" font-family="monospace">每条线的位置 = 一种元素</text>
+            </svg>
+            <p class="caption">暗线的位置像指纹，线的深浅像指纹的浓淡。光谱因此既是“成分表”，也是“丰度表”。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>五步：先看“核为什么比零件轻”，再把这点质量差换成能量，然后画出每核子结合能曲线，看恒星怎样一路烧到铁，最后处理铁之后的重元素。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>先称一称原子核。一个原子核由 Z 个质子和 A−Z 个中子组成，A 叫质量数。把它们分开来称，再加起来，得到的总质量总是比整个核的质量大一点。这个差额叫质量亏损。用真空中的光速平方去乘它，就得到把核重新拆开所需的能量，也就是结合能。</p>
+            <div class="eq">Δm <span class="op">=</span> Z m<span class="sub">p</span> <span class="op">+</span> (A <span class="op">−</span> Z) m<span class="sub">n</span> <span class="op">−</span> M　　B <span class="op">=</span> Δm c<span class="sup">2</span></div>
+            <p class="readas">读作：质量亏损等于质子和中子的质量之和减去原子核的质量；结合能等于质量亏损乘以光速的平方。</p>
+            <ul class="vars">
+              <li><b>Z</b><span>质子数，也就是元素在周期表里的位置</span></li>
+              <li><b>A</b><span>质量数，质子数与中子数之和</span></li>
+              <li><b>M</b><span>整个原子核的静止质量</span></li>
+              <li><b>B</b><span>结合能，把核拆散所需的能量</span></li>
+            </ul>
+            <p>亏损非常小，通常只有总质量的千分之几。但乘上 c² 之后，就是核武器和恒星能量的全部来源。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把数字代进去，能得到一个很方便的换算。原子核物理习惯用“原子质量单位” u 来称质量，1 u 约等于 1.66×10⁻²⁷ 千克。把 1 u 的质量整个换成能量，得到约 931.5 兆电子伏。于是只要知道质量亏损是多少 u，乘以 931.5 就是能量的兆电子伏数。</p>
+            <div class="eq">E <span class="op">=</span> Δm c<span class="sup">2</span>：　1 u <span class="op">→</span> 931.5 <span class="dim">MeV</span></div>
+            <p class="readas">读作：一个原子质量单位对应的能量约为 931.5 兆电子伏。质量差一点点，能量就差很多。</p>
+            <p>这个换算把“称质量”变成“量能量”：比较反应前后的总质量，变小就放能，变大就吸能。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把所有核的结合能除以核子数，得到“每个核子的平均结合能”，再对质量数 A 画图。曲线从最轻的一端迅速爬升，在铁-56 附近到达最高点，每核子约 8.8 兆电子伏；越过铁以后，曲线缓慢下降，一直到铀。</p>
+            <div class="eq">B/A　<span class="dim">在</span>　<span class="sup">56</span>Fe <span class="dim">附近最大，约</span> 8.8 <span class="dim">MeV/核子</span></div>
+            <p class="readas">读作：每个核子的平均结合能在铁-56 附近达到最大值，约为 8.8 兆电子伏。</p>
+            <ul class="vars">
+              <li><b>B/A</b><span>平均每个核子被“绑”得有多紧</span></li>
+            </ul>
+            <p>曲线给出两条路：左边的轻核聚变更重，右边的重核裂变更轻，都朝结合能更高的方向走。两条路都通向铁，因为铁附近才是谷底。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>恒星就是靠这条曲线工作的。引力把核心压紧，温度和密度升高；当温度足够高，氢核之间的电斥力被穿透，四个质子经过一串反应合成一个氦-4，同时放出两个正电子和两个中微子。反应后的总质量比四个质子小约 0.7%，这部分质量变成了能量。</p>
+            <div class="eq">4 <span class="sup">1</span>H <span class="op">→</span> <span class="sup">4</span>He <span class="op">+</span> 2e<span class="sup">+</span> <span class="op">+</span> 2ν <span class="op">+</span> 26.7 <span class="dim">MeV</span></div>
+            <p class="readas">读作：四个氢核合成一个氦-4，放出两个正电子、两个中微子和约 26.7 兆电子伏的能量。</p>
+            <p>氢烧完后，核心收缩、继续升温，氦核再聚变成碳（三个氦核凑成一个碳-12），碳再和氦合成氧、氖、镁……一层一层往外烧，越烧越重，直到硅燃烧生成铁。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>到了铁，路走到头了。铁-56 附近的每核子结合能最高，再往上拼，结合能反而下降，聚变从放能变成吸能。核心失去支撑，在自身引力下坍缩，外层被反弹的激波掀开——这就是超新星。爆炸中密度极高，原子核能在毫秒量级里连续吞下中子，一路越过铁，造出金、铂、铀这些重元素。这条快速中子俘获的路径，今天被称为 r 过程。</p>
+            <p>所以元素有两个来源：氢和氦来自宇宙最早几分钟，碳到铁主要来自恒星内部的燃烧，铁之后的重元素则多半要在超新星或中子星并合这样的剧烈事件里才能合成。你身上的碘，年龄可能比太阳还大。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下图把“每核子结合能”对质量数画了出来。拖动滑块或直接在曲线上点一下，选一个核，看它往哪个方向反应才能放能。曲线最高处就是能量谷底。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 结合能曲线与能量谷底</span>
+              <span class="demo-tag">B/A 对 A</span>
+            </div>
+            <p class="demo-desc">横轴是质量数 A，纵轴是每个核子的平均结合能，单位是 MeV。绿线是实验数据的平滑走向，橙色点是当前选中的核，紫色虚线标出铁-56 的位置。轻核在左边，重核在右边，中间那道“山脊”就是铁。</p>
+            <canvas id="bindingCanvas" data-height="420" aria-label="原子核每核子结合能随质量数变化的曲线"></canvas>
+            <div id="bindingSlider"></div>
+            <div class="readout" id="bindingReadout"></div>
+            <p class="hint">试试：把 A 拖到 4（氦）再拖到 56（铁），看每核子结合能从 7.07 升到 8.79 MeV；再拖到 238（铀），它已经在山脊的另一侧了。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>先算 1 千克氢完全聚变成氦。反应前后质量减少约 0.7%，也就是 0.007 千克。把这 0.007 千克代入质能关系：</p>
+        <div class="eq">E <span class="op">=</span> Δm c<span class="sup">2</span> <span class="op">=</span> 0.007 <span class="dim">kg</span> <span class="op">×</span> (3.0<span class="op">×</span>10<span class="sup">8</span> <span class="dim">m/s</span>)<span class="sup">2</span> <span class="op">≈</span> 6.3<span class="op">×</span>10<span class="sup">14</span> <span class="dim">J</span></div>
+        <p class="readas">读作：一千克氢聚变，约有七克质量消失，释放出约 6.3×10¹⁴ 焦耳的能量。</p>
+        <p>燃烧 1 千克煤大约放出 3×10⁷ 焦耳。两者相除，氢聚变的能量密度是煤的两千万倍左右。这就是为什么一颗恒星能烧几十亿年，而同等质量的煤只能烧几分钟。</p>
+        <div class="eq"><span class="frac"><span class="num">6.3<span class="op">×</span>10<span class="sup">14</span></span><span class="den">3<span class="op">×</span>10<span class="sup">7</span></span></span> <span class="op">≈</span> 2<span class="op">×</span>10<span class="sup">7</span></div>
+        <p class="readas">读作：同样的质量，聚变释放的能量约为燃烧煤的两千万倍。</p>
+        <p>再把它和太阳对上。太阳每秒把约 6 亿吨氢变成氦，按每千克 6.3×10¹⁴ 焦耳计算：</p>
+        <div class="eq">6<span class="op">×</span>10<span class="sup">11</span> <span class="dim">kg/s</span> <span class="op">×</span> 6.3<span class="op">×</span>10<span class="sup">14</span> <span class="dim">J/kg</span> <span class="op">≈</span> 3.8<span class="op">×</span>10<span class="sup">26</span> <span class="dim">W</span></div>
+        <p class="readas">读作：太阳的功率约为 3.8×10²⁶ 瓦。这个数字和天文观测到的太阳光度一致，说明“太阳靠氢聚变发光”这个假设经得起检验。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>1957 年，伯比奇夫妇、福勒和霍伊尔把这条线索整理成一篇长论文，后来被称作 B2FH。它第一次系统地说明：从碳到铁，绝大多数元素都是在恒星内部一层层烧出来的。此前这更像哲学问题，此后它成了可以计算、可以用光谱检验的核天体物理。</p>
+        <p>里面还有一个漂亮的插曲。霍伊尔在 1953 年指出，如果碳-12 没有某个特定能级的共振，三个氦核就很难凑成碳，宇宙里就不会有足够的碳。他按这个要求预言了那个能级的位置，实验后来果然在附近找到了它。</p>
+        <p>后来，观测补上了重元素的来源。2017 年，引力波事件 GW170817 让两颗中子星并合，随后的光谱里出现了锶这类由中子俘获产生的元素。金、铂、铀的产地，第一次有了直接的观测线索。于是“我们由星尘构成”不再是一句诗：你身体里的碳来自恒星内部，铁来自超新星，更重的元素来自宇宙中最猛烈的碰撞。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+    /* ---------- 演示：结合能曲线 ---------- */
+    var binding = PH.canvas('bindingCanvas');
+    var bindingReadout = document.getElementById('bindingReadout');
+    var A_MAX = 240;
+    var B_MAX = 10;
+    var currentA = 56;
+
+    /* [质量数, 每核子结合能 MeV]，取自实验值的平滑近似 */
+    var BE = [
+      [1, 0], [2, 1.11], [3, 2.57], [4, 7.07], [6, 5.33], [7, 5.61],
+      [9, 6.46], [10, 6.48], [11, 6.93], [12, 7.68], [14, 7.48],
+      [16, 7.98], [20, 8.03], [24, 8.06], [28, 8.45], [32, 8.49],
+      [40, 8.55], [48, 8.67], [56, 8.79], [62, 8.79], [70, 8.70],
+      [84, 8.64], [98, 8.62], [120, 8.50], [140, 8.41], [160, 8.25],
+      [180, 8.10], [200, 7.90], [220, 7.70], [238, 7.57], [240, 7.56]
+    ];
+
+    var NAMES = {
+      1: '氢-1', 2: '氘', 3: '氚', 4: '氦-4', 7: '锂-7', 9: '铍-9',
+      10: '硼-10', 12: '碳-12', 14: '氮-14', 16: '氧-16', 20: '氖-20',
+      24: '镁-24', 28: '硅-28', 32: '硫-32', 40: '钙-40', 56: '铁-56',
+      62: '镍-62', 84: '氪-84', 98: '钼-98', 120: '锡-120', 140: '铈-140',
+      160: '钆-160', 180: '铪-180', 197: '金-197', 208: '铅-208', 238: '铀-238'
+    };
+
+    function trim(v, digits) {
+      var s = Number(v).toFixed(digits);
+      if (s.indexOf('.') >= 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
+      return s;
+    }
+
+    function bindingAt(A) {
+      if (A <= BE[0][0]) return BE[0][1];
+      for (var i = 1; i < BE.length; i++) {
+        if (A <= BE[i][0]) {
+          var a0 = BE[i - 1][0];
+          var b0 = BE[i - 1][1];
+          var a1 = BE[i][0];
+          var b1 = BE[i][1];
+          var f = (A - a0) / (a1 - a0);
+          return b0 + (b1 - b0) * f;
+        }
+      }
+      return BE[BE.length - 1][1];
+    }
+
+    function nameOf(A) {
+      return NAMES[A] ? NAMES[A] : '质量数 ' + A;
+    }
+
+    function drawBinding(A) {
+      if (!binding) return;
+      var ctx = binding.ctx;
+      var w = binding.w;
+      var h = binding.h;
+      var padL = 64;
+      var padR = 24;
+      var padT = 30;
+      var padB = 48;
+      var pw = Math.max(10, w - padL - padR);
+      var ph = Math.max(10, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var i;
+
+      function px(a) { return x0 + pw * (a / A_MAX); }
+      function py(b) { return y0 - ph * (b / B_MAX); }
+
+      binding.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 6; i++) {
+        var fx = x0 + pw * i / 6;
+        ctx.beginPath();
+        ctx.moveTo(fx, padT);
+        ctx.lineTo(fx, y0);
+        ctx.stroke();
+      }
+      for (i = 0; i <= 5; i++) {
+        var fy = y0 - ph * i / 5;
+        ctx.beginPath();
+        ctx.moveTo(x0, fy);
+        ctx.lineTo(x0 + pw, fy);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 曲线下的淡淡填充 */
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(px(1), y0);
+      for (i = 1; i <= A_MAX; i++) ctx.lineTo(px(i), py(bindingAt(i)));
+      ctx.lineTo(px(A_MAX), y0);
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(53,224,200,.07)';
+      ctx.fill();
+      ctx.restore();
+
+      /* 铁-56 参考线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(169,139,255,.55)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(px(56), padT);
+      ctx.lineTo(px(56), y0);
+      ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle = 'rgba(169,139,255,.9)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('Fe-56', px(56), padT - 8);
+
+      /* 结合能曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      for (i = 1; i <= A_MAX; i++) {
+        if (i === 1) ctx.moveTo(px(i), py(bindingAt(i)));
+        else ctx.lineTo(px(i), py(bindingAt(i)));
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 坐标轴 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 坐标刻度 */
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      for (i = 0; i <= 6; i++) {
+        ctx.fillText(String(Math.round(A_MAX * i / 6)), x0 + pw * i / 6, y0 + 18);
+      }
+      ctx.textAlign = 'right';
+      for (i = 0; i <= 5; i++) {
+        ctx.fillText(String(i * 2), x0 - 8, y0 - ph * i / 5 + 4);
+      }
+      ctx.textAlign = 'center';
+      ctx.fillText('质量数 A', x0 + pw / 2, y0 + 40);
+      ctx.save();
+      ctx.translate(16, padT + ph / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('B/A（MeV）', 0, 0);
+      ctx.restore();
+
+      /* 当前核 */
+      var yb = bindingAt(A);
+      var mx = px(A);
+      var my = py(yb);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.45)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(mx, my);
+      ctx.lineTo(mx, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(mx, my, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 放能方向箭头 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.9)';
+      ctx.fillStyle = 'rgba(255,176,61,.9)';
+      ctx.lineWidth = 1.6;
+      var ay = my - 22;
+      var dir = A < 56 ? 1 : -1;
+      var ax0 = mx + dir * 14;
+      var ax1 = mx + dir * 62;
+      if (A !== 56) {
+        ctx.beginPath();
+        ctx.moveTo(ax0, ay);
+        ctx.lineTo(ax1, ay);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(ax1, ay);
+        ctx.lineTo(ax1 - dir * 6, ay - 3.5);
+        ctx.lineTo(ax1 - dir * 6, ay + 3.5);
+        ctx.closePath();
+        ctx.fill();
+        ctx.textAlign = dir > 0 ? 'left' : 'right';
+        ctx.font = '11px ui-monospace, Consolas, monospace';
+        ctx.fillText(dir > 0 ? '聚变放能 →' : '← 裂变放能', ax1 + dir * 4, ay - 6);
+      }
+      ctx.restore();
+
+      ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(214,230,255,.9)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('A = ' + A + '　' + nameOf(A) + '　B/A ≈ ' + trim(yb, 2) + ' MeV', 14, 22);
+    }
+
+    function updateBinding(A) {
+      currentA = A;
+      drawBinding(A);
+      var yb = bindingAt(A);
+      var dirText;
+      if (A < 56) {
+        dirText = '朝铁聚变可放能，每核子约还能多放 ' + trim(8.79 - yb, 2) + ' MeV';
+      } else if (A > 56) {
+        dirText = '已越过铁：聚变吸能；裂变放能，每次约 200 MeV';
+      } else {
+        dirText = '铁-56 就在能量谷底，聚变和裂变都不再放能';
+      }
+      if (bindingReadout) {
+        bindingReadout.textContent = 'A = ' + A + '（' + nameOf(A) + '）· B/A ≈ ' +
+          trim(yb, 2) + ' MeV/核子 · ' + dirText +
+          '　｜　4p → ⁴He：放能 26.7 MeV ≈ 4.3×10⁻¹² J';
+      }
+    }
+
+    var bindingSlider = PH.slider({
+      mount: '#bindingSlider',
+      label: '质量数 A',
+      min: 1,
+      max: A_MAX,
+      step: 1,
+      value: 56,
+      fmt: function (v) { return String(Math.round(v)); },
+      onInput: function (v) { updateBinding(Math.round(v)); }
+    });
+
+    if (binding) {
+      binding.canvas.addEventListener('click', function (e) {
+        var rect = binding.canvas.getBoundingClientRect();
+        var mx = e.clientX - rect.left;
+        var padL = 64;
+        var padR = 24;
+        var pw = Math.max(10, binding.w - padL - padR);
+        var frac = (mx - padL) / pw;
+        if (frac < 0) frac = 0;
+        if (frac > 1) frac = 1;
+        var A = Math.round(frac * A_MAX);
+        if (A < 1) A = 1;
+        if (bindingSlider) bindingSlider.set(A);
+      });
+      binding.onResize(function () { drawBinding(currentA); });
+    }
+
+    updateBinding(56);
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '原子核的质量亏损，怎么变成恒星的能量？',
+        options: [
+          { text: '亏损的质量按 E = Δm·c² 转成能量释放出来。', correct: true, why: '聚变后的核比零件轻，少掉的质量并没有消失，而是以能量形式放出。乘上 c²，很小的质量差就是巨大的能量。' },
+          { text: '质量亏损说明核里少了几个核子，少掉的核子变成了光。', correct: false, why: '核子数并没有减少：四个质子仍然对应氦-4 的两个质子和两个中子（另有正电子）。变的是总质量，不是核子个数。' },
+          { text: '质量亏损只是称量误差，与能量无关。', correct: false, why: '这个差额是系统性的，而且精确等于结合能除以 c²。它正是核能定量计算的基础，不是误差。' },
+          { text: '亏损的质量变成了引力势能。', correct: false, why: '引力势能在恒星整体尺度上确实存在，但核反应放出的能量来自核子之间的强相互作用，对应的是质量亏损，不是引力。' }
+        ]
+      },
+      {
+        q: '为什么说铁-56 附近是“能量谷底”？',
+        options: [
+          { text: '因为铁附近的每核子结合能最高，往两边反应都会朝它靠拢。', correct: true, why: '结合能越高，核子被绑得越紧。轻核聚变、重核裂变都朝结合能更高的方向走，所以铁成了两条路的终点。' },
+          { text: '因为铁的密度最大，引力最强。', correct: false, why: '结合能曲线与密度、引力无关，它描述的是核子之间的束缚能。铁的优势在每核子结合能，不在密度。' },
+          { text: '因为铁不能发生任何核反应。', correct: false, why: '铁当然能参与核反应，只是继续聚变要吸收能量而不是放出能量。吸能和“不能反应”是两回事。' },
+          { text: '因为铁是宇宙中含量最多的元素。', correct: false, why: '含量最多的是氢和氦。铁之所以特殊，是因为结合能曲线在它附近达到峰值，与丰度无关。' }
+        ]
+      },
+      {
+        q: '金、铀这些比铁重的元素，主要是在哪里造出来的？',
+        options: [
+          { text: '在超新星爆发或中子星并合的极短瞬间，靠快速中子俘获造出来。', correct: true, why: '铁之后聚变吸能，普通恒星燃烧走不到这里。只有爆炸环境里极高的中子密度，才能让核连续吞中子，越过铁一路造到金和铀。' },
+          { text: '在恒星核心的氢燃烧阶段慢慢积累出来的。', correct: false, why: '氢燃烧只造氦。氦燃烧到硅燃烧最远到铁，能量上就走不下去了，不会在平稳燃烧阶段造出金。' },
+          { text: '在大爆炸最初几分钟和氢、氦一起造出来的。', correct: false, why: '大爆炸核合成只来得及造氢、氦和极少量锂。宇宙膨胀降温太快，更重的核没有时间凑出来。' },
+          { text: '由铁原子核不断吸收电子自然长大而成。', correct: false, why: '吸收电子改变的是质子中子比例，不会让质量数一路增加到金或铀。重元素的形成需要俘获中子。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

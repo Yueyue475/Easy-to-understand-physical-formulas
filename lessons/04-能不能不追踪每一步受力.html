@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 4 课 · 能不能不追踪每一步受力？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="2-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 4 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>能不能不追踪每一步受力？</h1>
+        <p class="lede">斜面、单摆、滑轮组——只要运动被轨道或绳子约束住，牛顿定律就得逐点分解那些看不见的约束力。18 世纪的人想换一个问题：能不能不盯每一步，只比较整条路径？</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>牛顿第二定律当然能算，但它要求你把每个位置受到的力都写出来，再合成、解方程。自由下落的石子只有一个重力，还好办；被约束的运动就麻烦了。</p>
+        <p>设想球沿斜面滚下：重力要沿斜面和垂直斜面分解，支持力垂直于斜面，有摩擦还要判断方向；斜面若是弯的，这些方向每一点都在变。用绳吊着的摆更麻烦：张力大小未知，还随摆角和速度变化，必须和运动方程联立。滑轮组里两根绳的张力是否相等，又取决于滑轮的质量和转动惯量；漏掉一个约束，整道题就错。</p>
+        <p>工程师要的是可靠，不是每道题都重新拆一遍力。于是有人换了个问法：在所有不违反约束的走法里，真实的那一条，是不是某个整体量的最优者？若是，就不必逐点追踪受力，只需比较整条路径。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一个把这种问法写成数学的人，是费马。1662 年他提出：光走的是所需时间最短的路径，不是距离最短。同一介质里看不出区别，等光从空气斜射入水，差别就出来了。</p>
+        <p>第二件工具是折射定律。斯涅尔 1621 年从实验里总结出它，没有发表；笛卡尔 1637 年在《屈光学》里给出推导和发表版本。定律说：入射角与折射角的正弦之比，等于两种介质中的光速之比。</p>
+        <p>第三件工具是欧拉的变分思想。1744 年，他在《求曲线极值的方法》里处理了一类新问题：未知量不是某个数，而是一整条曲线。要找的不是“x 等于几”，而是“哪条曲线让某个积分最小”。这一步是后来分析力学的入口。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：把一整条曲线当自变量</summary>
+          <div class="mathbox-body">
+            <p>平时求极值，变量是一个数 x：函数给每个 x 打分，你找分数最低的那个。变分问题里，变量换成整条曲线 y(x)：每条曲线被一个积分打一个总分，你要找总分最低的那条。</p>
+            <p>这个“给曲线打分的函数”叫泛函。求极值不再是对 x 求导，而是把曲线轻轻改一点——保持两端不动——看总分怎么变。若变化在一阶上为零，这条曲线就叫“驻值曲线”，真实轨迹往往就是它。</p>
+            <svg viewBox="0 0 340 180" role="img" aria-label="光从空气斜射入水，折线路径与直线路径的对比">
+              <rect x="0" y="92" width="340" height="80" fill="rgba(143,166,196,.1)"/>
+              <line x1="0" y1="92" x2="340" y2="92" stroke="rgba(143,166,196,.4)" stroke-width="1"/>
+              <line x1="52" y1="26" x2="272" y2="142" stroke="rgba(143,166,196,.3)" stroke-width="1.2" stroke-dasharray="4 5"/>
+              <line x1="52" y1="26" x2="199" y2="92" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="199" y1="92" x2="272" y2="142" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="199" y1="62" x2="199" y2="122" stroke="rgba(143,166,196,.35)" stroke-width="1" stroke-dasharray="3 4"/>
+              <circle cx="52" cy="26" r="4.5" fill="#35e0c8"/>
+              <circle cx="272" cy="142" r="4.5" fill="#35e0c8"/>
+              <circle cx="199" cy="92" r="5.5" fill="#ffb03d"/>
+              <text x="38" y="20" fill="#35e0c8" font-size="12" font-family="monospace">A</text>
+              <text x="280" y="150" fill="#35e0c8" font-size="12" font-family="monospace">B</text>
+              <text x="207" y="88" fill="#ffb03d" font-size="12" font-family="monospace">折点</text>
+              <text x="14" y="84" fill="#8fa6c4" font-size="12" font-family="monospace">空气 v₁</text>
+              <text x="14" y="112" fill="#8fa6c4" font-size="12" font-family="monospace">水 v₂</text>
+              <text x="206" y="62" fill="rgba(143,166,196,.75)" font-size="11" font-family="monospace">直线：路程最短</text>
+            </svg>
+            <p class="caption">虚线是两点间的直线，路程最短；但光实际走的是青色折线，因为它在水里慢，宁愿在空气里多走一点。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>五步：从光走到落体。先把现象写成函数的极值，得到斯涅尔定律，再把思路搬进力学，最后用一个能验算的例子收尾。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>在同一介质里，光走直线：两点之间直线最短，速度不变，时间也最短。可从空气斜射入水，路径会折一下，折点不在直线 AB 上。</p>
+            <p>若只求路程最短，光该走直线；但直线在水里那一段更长，而水里的光速只有空气的四分之三左右。光宁愿在空气中多走一点，把水里的路缩短——它节省的是时间。折点往哪边挪，要同时看两段路各有多长、各跑多快，这是一个整体选择。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把水面放在 x 轴上。A 在空气里高 h₁，B 在水里深 h₂，水平相距 L。折点在水面上滑动，横坐标记为 x；两侧光速分别是 v₁、v₂。</p>
+            <div class="eq">t(x) <span class="op">=</span> <span class="frac"><span class="num"><span class="sqrt">h<span class="sub">1</span><span class="sup">2</span> <span class="op">+</span> x<span class="sup">2</span></span></span><span class="den">v<span class="sub">1</span></span></span> <span class="op">+</span> <span class="frac"><span class="num"><span class="sqrt">h<span class="sub">2</span><span class="sup">2</span> <span class="op">+</span> (L <span class="op">−</span> x)<span class="sup">2</span></span></span><span class="den">v<span class="sub">2</span></span></span></div>
+            <p class="readas">读作：空气段路程除以 v₁，加上水段路程除以 v₂。x 一变，两段路程同时变。</p>
+            <ul class="vars">
+              <li><b>t</b><span>光从 A 到 B 的总时间，单位 ns</span></li>
+              <li><b>h₁、h₂</b><span>A 的高度、B 的深度，单位 m</span></li>
+              <li><b>L</b><span>水平距离，单位 m</span></li>
+              <li><b>x</b><span>折点的水平偏移，单位 m</span></li>
+              <li><b>v₁、v₂</b><span>两侧光速，单位 m/ns</span></li>
+            </ul>
+            <p>t(x) 有最低点。最低点附近把 x 往左或往右挪一点，t 几乎不变，这就是“极值”的白话版本：一阶变化为零。令导数等于零即可找到它。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>对 t(x) 求导：第一项给出 x 除以 v₁ 再除以第一段斜边，第二项给出负的 (L−x) 除以 v₂ 再除以第二段斜边。令两项相等，再把分母乘过去。</p>
+            <p>这时会出现两个熟悉的比值：x 除以第一段的斜边，是空气一侧的入射角正弦；L−x 除以第二段的斜边，是水中一侧的折射角正弦。极值条件于是变成了只含角度的关系。</p>
+            <div class="eq"><span class="frac"><span class="num">sin θ<span class="sub">1</span></span><span class="den">v<span class="sub">1</span></span></span> <span class="op">=</span> <span class="frac"><span class="num">sin θ<span class="sub">2</span></span><span class="den">v<span class="sub">2</span></span></span></div>
+            <p class="readas">读作：入射角正弦除以 v₁，等于折射角正弦除以 v₂。两边乘光速，就是课本里的折射定律。</p>
+            <ul class="vars">
+              <li><b>θ₁</b><span>入射角，光线与法线的夹角</span></li>
+              <li><b>θ₂</b><span>折射角，水中光线与法线的夹角</span></li>
+            </ul>
+            <p>这里没有出现任何“光受到了什么力”。一个整体条件——总时间取极值——直接给出路径该往哪里弯。这正是这套方法的诱人之处。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>1744 年，欧拉把这套语言写成一般方法；1788 年，拉格朗日把它系统搬进力学。对应的整体量叫<strong>作用量</strong>，记作 S。</p>
+            <div class="eq">S <span class="op">=</span> ∫<span class="sub">0</span><span class="sup">T</span> ( T <span class="op">−</span> V ) dt</div>
+            <p class="readas">读作：动能减势能，从起始累加到终止。这里 T 是动能，不是周期。</p>
+            <ul class="vars">
+              <li><b>S</b><span>作用量，单位 J·s（焦耳·秒）</span></li>
+              <li><b>T</b><span>动能，单位 J（后面也用它表示总时间）</span></li>
+              <li><b>V</b><span>势能，单位 J</span></li>
+              <li><b>t</b><span>时间，单位 s</span></li>
+            </ul>
+            <p>被积函数 T−V 叫拉格朗日量。真实轨迹让 S 取<strong>驻值</strong>：在端点固定、允许的所有轨迹中，S 对轨迹的一阶变化为零。很多情况下它就是最小值；本课的例子恰好如此。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>拿自由落体检验。取 m=1、y 向下为正，把起点定为零势能点，则 V=−gy，拉格朗日量是 L=T−V=½ẏ²+gy。从静止释放，真实轨迹是：</p>
+            <div class="eq">y(t) <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> g t<span class="sup">2</span></div>
+            <p class="readas">读作：下落距离等于重力加速度乘时间的平方再除以二。这是伽利略的结论。</p>
+            <p>现在故意偏离它：加一项 k·t(t−T)。它在 t=0 和 t=T 都为零，所以两端没动，只是中间鼓起来或凹下去。</p>
+            <div class="eq">y<span class="sub">k</span>(t) <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> g t<span class="sup">2</span> <span class="op">+</span> k · t(t <span class="op">−</span> T)</div>
+            <p class="readas">读作：扰动后的轨迹，等于真实轨迹加上一个在两端归零的“鼓包”，大小由 k 控制。</p>
+            <ul class="vars">
+              <li><b>k</b><span>偏离量，单位 m/s；k=0 就是真实轨迹</span></li>
+              <li><b>T</b><span>下落的总时间，本步取 1 s</span></li>
+            </ul>
+            <p>速度变成 ẏ=gt+k(2t−T)。代进作用量，得到 S 关于 k 的函数：</p>
+            <div class="eq">S(k) <span class="op">=</span> ∫<span class="sub">0</span><span class="sup">T</span> [ <span class="frac"><span class="num">1</span><span class="den">2</span></span>(gt <span class="op">+</span> k(2t <span class="op">−</span> T))<span class="sup">2</span> <span class="op">+</span> g( <span class="frac"><span class="num">1</span><span class="den">2</span></span> g t<span class="sup">2</span> <span class="op">+</span> k · t(t <span class="op">−</span> T) ) ] dt</div>
+            <p class="readas">读作：扰动后的动能项，加重力乘扰动后的高度，沿时间累加；m=1，不必再乘质量。</p>
+            <p>展开逐项积分，k 的一次项正好抵消——这是真实轨迹满足运动方程的表现。只剩常数项和 k² 项：</p>
+            <div class="eq">S(k) <span class="op">=</span> S<span class="sub">0</span> <span class="op">+</span> <span class="frac"><span class="num">T<span class="sup">3</span></span><span class="den">6</span></span> k<span class="sup">2</span></div>
+            <p class="readas">读作：作用量等于真实值加上一个与 k² 成正比的增量，是一条开口向上的抛物线，顶点在 k=0。</p>
+            <p>于是 k=0 时 S 最小：任何保持端点的偏离，不论向上鼓还是向下凹，都让作用量变大。真实轨迹是整体最省的那一条。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>两个演示对应推导里的两个变量：折点 x 和偏离量 k。拖一拖，看“极值”在图上长什么样。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 拖一拖光的折点</span>
+              <span class="demo-tag">t(x) 的最低点</span>
+            </div>
+            <p class="demo-desc">左边是空气与水的界面，青色折线是光路，橙色圆点是折点；右边是总时间 t 随折点 x 变化的曲线。拖动圆点，看两者怎么变。</p>
+            <canvas id="fermatCanvas" data-height="340" aria-label="光的折点位置与总时间曲线"></canvas>
+            <div class="readout" id="fermatReadout"></div>
+            <p class="hint">试试：把折点拖到最左或最右，时间都会变大；停在曲线最低点附近，左右挪一点几乎看不出变化——这就是极值。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 作用量的抛物线</span>
+              <span class="demo-tag">S(k) = S₀ + T³k²/6</span>
+            </div>
+            <p class="demo-desc">横轴是偏离量 k（以 g 为单位），纵轴是作用量 S。曲线由数值积分算出，不是示意线；橙色点是当前 k，虚线标出真实轨迹 k=0。</p>
+            <canvas id="actionCanvas" data-height="300" aria-label="作用量随偏离量变化的抛物线"></canvas>
+            <div id="kSlider"></div>
+            <div class="readout" id="actionReadout"></div>
+            <p class="hint">试试：把 k 拖到 0.25g，读数只比最小值高约 3%；拖到 1.5g，增量会大到一眼就能看出来。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>取 T=1 s、g=9.8 m/s²、m=1 kg。把真实轨迹代进作用量，逐项积分，得到：</p>
+        <div class="eq">S<span class="sub">0</span> <span class="op">=</span> <span class="frac"><span class="num">g<span class="sup">2</span>T<span class="sup">3</span></span><span class="den">3</span></span> <span class="op">=</span> <span class="frac"><span class="num">9.8<span class="sup">2</span> <span class="op">×</span> 1<span class="sup">3</span></span><span class="den">3</span></span> <span class="op">≈</span> 32 <span class="dim">J·s</span></div>
+        <p class="readas">读作：真实轨迹的作用量约等于 32 焦耳·秒。g 的平方约 96，除以 3 得 32。</p>
+        <p>绝对数依赖单位，有意义的是它随 k 怎么变。把 1 个作用量单位取作 10 J·s，屏幕读数就是 3.2；换成 SI 仍是 32 J·s。</p>
+        <p>k=0.25g 时增量约 3%，0.3g 时约 4.5%。偏离无论正负，S 都变大，且按 k² 增长：偏离翻倍，增量变四倍。</p>
+        <p>32 J·s 可这样理解：32 J 的能量持续 1 s。它比普朗克常数 ħ≈1.05×10⁻³⁴ J·s 大三十五个数量级，所以日常物体只走一条确定轨迹；微观里 S 与 ħ 同量级，多条路径都得算。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>1788 年，拉格朗日的《分析力学》出版。他在序言里说，这本书没有一张图。这不是省事，而是一种新写法：不画受力图，不逐点分解，只要写出能量，套一个方程，约束力自动消失。</p>
+        <p>1834 到 1835 年，哈密顿把作用量改写成另一套形式。二十世纪，费曼把它放进量子力学：粒子从 A 到 B 不是只走一条路，所有路径都贡献一份相位由 S/ħ 决定的振幅。宏观物体的 S 远大于 ħ，不同路径的相位振荡、互相抵消，只剩驻值附近那一条——经典轨迹由此浮现。</p>
+        <p>对工程来说更直接：约束运动不再意味着更多的未知力，而意味着更少的坐标。选对坐标，写能量，剩下的交给方程。这套语言成了机器人动力学、分子模拟和场论的标准起点。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 指针拖拽小工具 ---------- */
+    function bindPointer(el, onDown, onMove, onUp) {
+      var active = false;
+
+      function pointOf(e) {
+        var rect = el.getBoundingClientRect();
+        var p = e;
+        if (e.touches && e.touches.length) p = e.touches[0];
+        else if (e.changedTouches && e.changedTouches.length) p = e.changedTouches[0];
+        return { x: p.clientX - rect.left, y: p.clientY - rect.top };
+      }
+
+      function down(e) {
+        var p = pointOf(e);
+        if (onDown(p) === false) return;
+        active = true;
+        if (el.setPointerCapture && e.pointerId != null) {
+          try { el.setPointerCapture(e.pointerId); } catch (err) { /* 忽略 */ }
+        }
+        if (e.cancelable) e.preventDefault();
+      }
+
+      function move(e) {
+        if (!active) return;
+        onMove(pointOf(e));
+        if (e.cancelable) e.preventDefault();
+      }
+
+      function up() {
+        if (!active) return;
+        active = false;
+        if (onUp) onUp();
+      }
+
+      if (window.PointerEvent) {
+        el.addEventListener('pointerdown', down);
+        el.addEventListener('pointermove', move);
+        el.addEventListener('pointerup', up);
+        el.addEventListener('pointercancel', up);
+      } else {
+        el.addEventListener('mousedown', down);
+        window.addEventListener('mousemove', move);
+        window.addEventListener('mouseup', up);
+        el.addEventListener('touchstart', down, { passive: false });
+        el.addEventListener('touchmove', move, { passive: false });
+        el.addEventListener('touchend', up);
+      }
+    }
+
+    /* ---------- 演示 A：光的折点 ---------- */
+    var fermat = PH.canvas('fermatCanvas');
+    var fermatReadout = document.getElementById('fermatReadout');
+    var AIR_H = 0.8;
+    var WATER_D = 0.6;
+    var RUN = 1.0;
+    var V_AIR = 0.30;
+    var V_WATER = 0.225;
+    var bend = 0.67;
+    var fview = { ax: 0, scale: 1, surface: 0 };
+
+    function travelTime(x) {
+      return Math.sqrt(AIR_H * AIR_H + x * x) / V_AIR +
+        Math.sqrt(WATER_D * WATER_D + (RUN - x) * (RUN - x)) / V_WATER;
+    }
+
+    function findMin() {
+      var bestX = 0;
+      var bestT = travelTime(0);
+      var i, x, t;
+      for (i = 1; i <= 600; i++) {
+        x = RUN * i / 600;
+        t = travelTime(x);
+        if (t < bestT) {
+          bestT = t;
+          bestX = x;
+        }
+      }
+      return { x: bestX, t: bestT };
+    }
+
+    function drawFermat() {
+      if (!fermat) return;
+      var ctx = fermat.ctx;
+      var w = fermat.w;
+      var h = fermat.h;
+      var split = Math.round(w * 0.56);
+      var padT = 16;
+      var dh = h - 32;
+      var scale = Math.min((split - 28) / RUN, dh / (AIR_H + WATER_D));
+      var ax = (split - RUN * scale) / 2;
+      var surface = padT + (dh - (AIR_H + WATER_D) * scale) / 2 + AIR_H * scale;
+      var i;
+
+      fview.ax = ax;
+      fview.scale = scale;
+      fview.surface = surface;
+
+      function SX(x) { return ax + x * scale; }
+      function SY(y) { return surface + y * scale; }
+
+      var pxs = SX(bend);
+      var axs = SX(0);
+      var ays = SY(-AIR_H);
+      var bxs = SX(RUN);
+      var bys = SY(WATER_D);
+
+      fermat.clear();
+
+      /* 水面与水体 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.09)';
+      ctx.fillRect(0, surface, split, h - surface);
+      ctx.strokeStyle = 'rgba(143,166,196,.4)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, surface);
+      ctx.lineTo(split, surface);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 两点间直线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.28)';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(axs, ays);
+      ctx.lineTo(bxs, bys);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 法线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.32)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 4]);
+      ctx.beginPath();
+      ctx.moveTo(pxs, surface - 34);
+      ctx.lineTo(pxs, surface + 34);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 实际光路 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.6)';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.moveTo(axs, ays);
+      ctx.lineTo(pxs, surface);
+      ctx.lineTo(bxs, bys);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 关键点 */
+      function dot(x, y, r, color) {
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      dot(axs, ays, 5, '#35e0c8');
+      dot(bxs, bys, 5, '#35e0c8');
+      dot(pxs, surface, 7, '#ffb03d');
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(214,230,255,.85)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('A', axs - 16, ays + 4);
+      ctx.fillText('B', bxs + 8, bys + 4);
+      ctx.fillStyle = 'rgba(255,176,61,.95)';
+      ctx.fillText('折点', pxs + 10, surface - 8);
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.fillText('空气 v₁ = 0.30 m/ns', 8, surface - 14);
+      ctx.fillText('水 v₂ = 0.225 m/ns', 8, surface + 22);
+      ctx.restore();
+
+      /* ---- 右侧 t(x) 曲线 ---- */
+      var gx = split + 12;
+      var gw = w - gx - 14;
+      var gyT = 22;
+      var gyB = h - 34;
+      var mn = findMin();
+      var tA = travelTime(0);
+      var tB = travelTime(RUN);
+      var tLow = Math.min(tA, tB, mn.t) * 0.985;
+      var tHigh = Math.max(tA, tB, mn.t) * 1.02;
+
+      function GX(x) { return gx + gw * x / RUN; }
+      function GY(t) {
+        var f = (t - tLow) / (tHigh - tLow);
+        if (f < 0) f = 0;
+        if (f > 1) f = 1;
+        return gyB - (gyB - gyT) * f;
+      }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var yy = gyT + (gyB - gyT) * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(gx, yy);
+        ctx.lineTo(gx + gw, yy);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(gx, gyT);
+      ctx.lineTo(gx, gyB);
+      ctx.lineTo(gx + gw, gyB);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(53,224,200,.45)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (i = 0; i <= 240; i++) {
+        var xx = RUN * i / 240;
+        var px2 = GX(xx);
+        var py2 = GY(travelTime(xx));
+        if (i === 0) ctx.moveTo(px2, py2);
+        else ctx.lineTo(px2, py2);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 最低点 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.45)';
+      ctx.setLineDash([3, 4]);
+      ctx.beginPath();
+      ctx.moveTo(GX(mn.x), gyB);
+      ctx.lineTo(GX(mn.x), GY(mn.t));
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#ffb03d';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.arc(GX(mn.x), GY(mn.t), 5.5, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255,176,61,.95)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('最小', GX(mn.x) + 8, GY(mn.t) - 8);
+      ctx.restore();
+
+      /* 当前点 */
+      ctx.save();
+      ctx.fillStyle = '#a98bff';
+      ctx.shadowColor = '#a98bff';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(GX(bend), GY(travelTime(bend)), 4.8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 轴说明 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.78)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('t（ns）', gx + 2, gyT - 8);
+      ctx.fillText('x（m）', gx + gw - 42, gyB + 24);
+      ctx.restore();
+
+      /* 读数 */
+      if (fermatReadout) {
+        var tNow = travelTime(bend);
+        fermatReadout.textContent = 'x = ' + bend.toFixed(2) + ' m　t = ' + tNow.toFixed(2) +
+          ' ns　最小 ' + mn.t.toFixed(2) + ' ns（差 ' + Math.abs(tNow - mn.t).toFixed(2) + ' ns）';
+      }
+    }
+
+    drawFermat();
+    if (fermat) {
+      fermat.onResize(function () { drawFermat(); });
+      fermat.canvas.style.cursor = 'grab';
+      fermat.canvas.style.touchAction = 'none';
+
+      bindPointer(fermat.canvas, function (p) {
+        var px = fview.ax + bend * fview.scale;
+        var py = fview.surface;
+        var d = Math.sqrt((p.x - px) * (p.x - px) + (p.y - py) * (p.y - py));
+        if (d > 46) return false;
+        fermat.canvas.style.cursor = 'grabbing';
+        return true;
+      }, function (p) {
+        var x = (p.x - fview.ax) / fview.scale;
+        if (x < 0) x = 0;
+        if (x > RUN) x = RUN;
+        bend = x;
+        drawFermat();
+      }, function () {
+        fermat.canvas.style.cursor = 'grab';
+        drawFermat();
+      });
+    }
+
+    /* ---------- 演示 B：作用量抛物线 ---------- */
+    var actionC = PH.canvas('actionCanvas');
+    var actionReadout = document.getElementById('actionReadout');
+    var G_ACC = 9.8;
+    var T_TOTAL = 1.0;
+    var K_LIMIT = 1.5;
+
+    function actionAt(kUnit) {
+      var k = kUnit * G_ACC;
+      var N = 300;
+      var dt = T_TOTAL / N;
+      var sum = 0;
+      var prev = 0;
+      var i, t, y, vy, val;
+
+      for (i = 0; i <= N; i++) {
+        t = i * dt;
+        y = 0.5 * G_ACC * t * t + k * t * (t - T_TOTAL);
+        vy = G_ACC * t + k * (2 * t - T_TOTAL);
+        val = 0.5 * vy * vy + G_ACC * y;
+        if (i > 0) sum += 0.5 * (prev + val) * dt;
+        prev = val;
+      }
+      return sum;
+    }
+
+    function drawAction(kUnit) {
+      if (!actionC) return;
+      var ctx = actionC.ctx;
+      var w = actionC.w;
+      var h = actionC.h;
+      var padL = 62;
+      var padR = 20;
+      var padT = 22;
+      var padB = 42;
+      var pw = Math.max(10, w - padL - padR);
+      var ph = Math.max(10, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var s0 = actionAt(0);
+      var sMax = actionAt(K_LIMIT);
+      var low = s0 * 0.985;
+      var high = sMax * 1.02;
+      var i;
+
+      function X(k) { return x0 + pw * (k + K_LIMIT) / (2 * K_LIMIT); }
+      function Y(s) {
+        var f = (s - low) / (high - low);
+        if (f < 0) f = 0;
+        if (f > 1) f = 1;
+        return y0 - ph * f;
+      }
+
+      actionC.clear();
+
+      /* 网格 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var yy = padT + ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(x0, yy);
+        ctx.lineTo(x0 + pw, yy);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 坐标轴 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      /* k=0 参考线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.4)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(X(0), padT);
+      ctx.lineTo(X(0), y0);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 抛物线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(53,224,200,.45)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (i = 0; i <= 160; i++) {
+        var kk = -K_LIMIT + 2 * K_LIMIT * i / 160;
+        var px = X(kk);
+        var py = Y(actionAt(kk));
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 顶点 */
+      ctx.save();
+      ctx.strokeStyle = '#ffb03d';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.arc(X(0), Y(s0), 5.5, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255,176,61,.95)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('k = 0', X(0) + 9, Y(s0) - 9);
+      ctx.restore();
+
+      /* 当前点 */
+      var sNow = actionAt(kUnit);
+      ctx.save();
+      ctx.fillStyle = '#a98bff';
+      ctx.shadowColor = '#a98bff';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(X(kUnit), Y(sNow), 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 轴说明 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.78)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('S（10 J·s）', x0 + 2, padT - 8);
+      ctx.fillText('k（以 g 为单位）', x0 + pw - 100, y0 + 26);
+      ctx.fillText('−1.5g', x0 - 12, y0 + 18);
+      ctx.fillText('+1.5g', x0 + pw - 30, y0 + 18);
+      ctx.restore();
+
+      if (actionReadout) {
+        var ratio = (sNow - s0) / s0 * 100;
+        actionReadout.textContent = 'k = ' + kUnit.toFixed(2) + ' g　S = ' + (sNow / 10).toFixed(2) +
+          '（10 J·s）　比最小值高 ' + ratio.toFixed(1) + '%';
+      }
+    }
+
+    var actionSlider = PH.slider({
+      mount: '#kSlider',
+      label: '偏离量 k',
+      min: -1.5,
+      max: 1.5,
+      step: 0.01,
+      value: 0,
+      unit: 'g',
+      fmt: function (v) { return v.toFixed(2); },
+      onInput: function (v) { drawAction(v); }
+    });
+
+    drawAction(0);
+    if (actionC) {
+      actionC.onResize(function () {
+        drawAction(actionSlider ? actionSlider.value : 0);
+      });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '费马原理说的是光走“最短路径”还是“最短时间”？',
+        options: [
+          { text: '最短路径，也就是两点之间的直线。', correct: false, why: '如果只比路程，直线 AB 永远最短。但光从空气斜射入水时并不走直线，说明它比较的不是路程。' },
+          { text: '最短时间，即使那条路径在空间上更长。', correct: true, why: '光在不同介质中速度不同，水里的速度更小。它会在空气里多走一点、在水里少走一点，让总时间最短。' },
+          { text: '最短波长，因为波长决定颜色。', correct: false, why: '波长由光源和介质决定，不是路径选择的标准。费马原理比较的是传播时间。' },
+          { text: '最短作用量，因为在力学里作用量总是最小。', correct: false, why: '作用量是力学里的整体量。费马讨论的是光的时间，两者形式相似，但不能混为一谈。' }
+        ]
+      },
+      {
+        q: '本课定义的作用量 S 是下面哪一个？',
+        options: [
+          { text: 'S = ∫(T − V) dt，动能减势能对时间累加。', correct: true, why: '这正是拉格朗日量 T−V 对时间的积分。真实轨迹让它取驻值。' },
+          { text: 'S = ∫(T + V) dt，动能加势能对时间累加。', correct: false, why: 'T+V 是总能量。对一个孤立系统它不随时间变，积分下去只是“常数乘时间”，没有区分不同轨迹的能力。' },
+          { text: 'S = ∫V dt，只把势能累加起来。', correct: false, why: '只累加势能会漏掉运动快慢的信息。两条势能相同但速度不同的轨迹，就无法比较了。' },
+          { text: 'S = ∫F dt，把力对时间累加。', correct: false, why: '那是冲量，单位是 N·s，不是作用量。作用量的单位是 J·s。' }
+        ]
+      },
+      {
+        q: '为什么“整体最优”可以替代逐点受力分析？',
+        options: [
+          { text: '因为约束力不做虚功，选对坐标后它不出现在作用量里；真实轨迹又让 S 取驻值。', correct: true, why: '约束力垂直于允许的位移，因而不贡献虚功；坐标选择把约束自动消化掉。剩下只需比较整条路径的作用量。' },
+          { text: '因为约束力很小，可以直接忽略。', correct: false, why: '绳的张力、轨道的支持力往往很大，绝不能忽略。它们只是不出现在作用量的判据里。' },
+          { text: '因为自然界总选几何上最短的那条路。', correct: false, why: '光进入水中时走的折线比直线长。判据是作用量（或时间）的驻值，不是几何长度。' },
+          { text: '因为作用量方法只是受力分析的另一种写法，两者没有实质区别。', correct: false, why: '两者在结果上等价，但处理约束的方式不同：作用量方法把约束交给坐标，不必逐个写出约束力，计算量和出错机会都小得多。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

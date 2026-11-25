@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 2 课 · 天上的规律和地上的规律是同一套吗？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="1-2" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 2 课 / 共 27 课 · 约 11 分钟</p>
+        <h1>天上的规律和地上的规律是同一套吗？</h1>
+        <p class="lede">苹果会落地，月亮却挂在天上不落。很长一段时间里，人们把这两件事分给两门学问去管。1665 年，一个因瘟疫闭校而回乡的年轻人，想用同一把尺子把它们量一遍。</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>这个问题的麻烦之处，不在于算不出来，而在于它越界了。在 17 世纪，“天上”和“地上”是两套互不相干的学问。天上归天文家管：月亮、太阳和行星由一种不会腐烂的“第五元素”构成，它们的运动是匀速圆周。圆是最完美的图形，所以天体的运动不需要解释，也不会衰减。地上归自然哲学家管：重物天然趋向地心，轻物向上升；至于推车、抛石这类“受迫运动”，则必须一直有东西推着，推的人一停，车就停。</p>
+        <p>两套学问各自都能自圆其说，问题是它们之间没有接口：苹果下落有下落的原因，月亮绕转有绕转的原因，没人知道这两个原因是不是同一个。更让人不甘心的是，开普勒刚用椭圆和三条定律把行星运动描述得很准，却只回答了“怎么走”，没回答“谁在推”。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具来自惠更斯。他为了造出准确的摆钟，仔细研究了圆周运动，并在 1673 年的《摆钟论》里给出了向心加速度的表达式：<b>a = v²/r</b>。这条式子来自速度方向的变化：转圈时速率可以不变，方向却一直在变，而方向一变就有加速度。</p>
+        <p>第二件工具来自伽利略：自由落体。他确认了在地面附近，所有物体下落的加速度都差不多是 g ≈ 9.8 m/s²，与物体轻重无关。第三件工具是一组已经量好的天文数据：月地距离大约是 60 个地球半径，地球半径约 6.37×10³ km；月球绕地球一圈（恒星月）是 27.3 天。古希腊的喜帕恰斯用日食视差估过月地距离，结果和 60 倍地球半径相差不大。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么向心加速度是 v²/r？</summary>
+          <div class="mathbox-body">
+            <p>速度是矢量，既有大小也有方向。月亮以速率 v 沿半径 r 的圆走，速率可以一直不变，方向却每秒都在转。方向变了，速度就变了，于是就有了加速度。</p>
+            <p>取一小段时间 Δt。月亮走过一段弧，弧长是 vΔt；这段弧对应的圆心角是 θ = vΔt / r。速度矢量也正好转过同样的角 θ，所以速度变化量的大小约等于 vθ。把 θ 代进去，得到 Δv ≈ v²Δt / r；再除以 Δt，就是 a = v²/r。时间取得越短，这个近似越准。</p>
+            <svg viewBox="0 0 340 180" role="img" aria-label="圆周运动的速度方向变化示意图">
+              <circle cx="108" cy="92" r="58" fill="none" stroke="rgba(143,166,196,.28)" stroke-dasharray="4 5"/>
+              <circle cx="108" cy="92" r="5" fill="#4ea8ff"/>
+              <line x1="108" y1="34" x2="168" y2="34" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="127.8" y1="37.5" x2="182.4" y2="57.3" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="108" y1="92" x2="108" y2="34" stroke="rgba(143,166,196,.45)" stroke-dasharray="3 4"/>
+              <line x1="108" y1="92" x2="127.8" y2="37.5" stroke="rgba(143,166,196,.45)" stroke-dasharray="3 4"/>
+              <text x="170" y="30" fill="#35e0c8" font-size="12" font-family="monospace">v₁</text>
+              <text x="185" y="55" fill="#35e0c8" font-size="12" font-family="monospace">v₂</text>
+              <text x="118" y="104" fill="#8fa6c4" font-size="12" font-family="monospace">θ</text>
+              <text x="196" y="140" fill="#8fa6c4" font-size="12" font-family="monospace">|Δv| ≈ vθ</text>
+            </svg>
+            <p class="caption">速率没变，方向转了一个小角 θ，速度差就指向圆心。这就是“向心”两个字的来历。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>接下来的五步，每一步只做一件事。你可以把月亮当成一个普通的落体，唯一不同的是：它同时还在横着跑。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步：月亮绕地球转，所以它一定有一个指向地心的加速度。月球的轨道接近圆，速率也接近恒定，于是可以直接用惠更斯的式子。要提醒的是，方向在这里不是细节：加速度必须直指地心，才可能由地球的吸引提供。</p>
+            <div class="eq">a <span class="op">=</span> <span class="frac"><span class="num">v<span class="sup">2</span></span><span class="den">r</span></span></div>
+            <p class="readas">读作：向心加速度等于速率的平方除以轨道半径。方向沿半径指向圆心，也就是指向地球中心。</p>
+            <ul class="vars">
+              <li><b>a</b><span>月亮指向地心的加速度，单位 m/s²</span></li>
+              <li><b>v</b><span>月亮沿轨道的速率，单位 m/s</span></li>
+              <li><b>r</b><span>月地距离，单位 m</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步：把速度换成能直接查到的量。月亮走一圈的路程是 2πr，用时是一个周期 T，所以平均速率是 2πr 除以 T。这一步的好处是，r 和 T 都是天文观测能给出的数字，不需要谁跑到月亮上去测速。</p>
+            <div class="eq">v <span class="op">=</span> <span class="frac"><span class="num">2πr</span><span class="den">T</span></span></div>
+            <p class="readas">读作：圆周运动的速率，等于圆周长除以转一圈的时间。</p>
+            <ul class="vars">
+              <li><b>T</b><span>月球公转周期，这里取 27.3 天</span></li>
+              <li><b>π</b><span>圆周率，约 3.1416</span></li>
+            </ul>
+            <p>代进真实数字：r = 3.84×10⁸ m，T = 27.3 天 ≈ 2.36×10⁶ s。算出的速率约 1.02×10³ m/s，也就是每秒大约 1 公里。再把 v 和 r 放回第一步，得到加速度约 2.7×10⁻³ m/s²。</p>
+            <div class="eq">a <span class="op">=</span> <span class="frac"><span class="num">4π<span class="sup">2</span>r</span><span class="den">T<span class="sup">2</span></span></span> <span class="op">≈</span> 2.7<span class="op">×</span>10<span class="sup">−3</span> <span class="dim">m/s²</span></div>
+            <p class="readas">读作：把速率式代回向心加速度式，得到加速度只由半径和周期决定；代入月亮的数字，约为千分之二点七米每二次方秒。</p>
+            <p>这个数很小，但“小”本身不说明任何事：真正的问题是，它小得有没有规律？</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步：把两个加速度相除。9.8 除以 2.7×10⁻³，约等于 3.6×10³，也就是 3600 左右。换句话说，月亮所在位置的引力加速度，只有地面的三千六百分之一。</p>
+            <div class="eq"><span class="frac"><span class="num">g</span><span class="den">a</span></span> <span class="op">=</span> <span class="frac"><span class="num">9.8</span><span class="den">2.7×10<span class="sup">−3</span></span></span> <span class="op">≈</span> 3.6<span class="op">×</span>10<span class="sup">3</span></div>
+            <p class="readas">读作：地面重力加速度与月亮加速度之比约为三千六百，也就是月亮那里的加速度约为地面的 1/3600。</p>
+            <p>一个孤零零的比值，可能是巧合，也可能藏着规律。要判断是哪一种，得再找一个独立的数字来对照。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步：那个数字一直都在——月地距离是地球半径的 60 倍。把 60 平方，正好是 3600。一个来自运动的比值，和一个来自几何的比值，对上了。</p>
+            <p>这不是“差不多”。如果引力按 1/r 衰减，60 倍距离只该让加速度变成 1/60；如果按 1/r³ 衰减，会变成 1/216000。只有 1/r² 能给出 1/3600。于是牛顿写下：两个物体之间的引力，正比于质量的乘积，反比于距离的平方。</p>
+            <div class="eq">F <span class="op">=</span> G<span class="frac"><span class="num">Mm</span><span class="den">r<span class="sup">2</span></span></span></div>
+            <p class="readas">读作：引力等于引力常数乘以两个质量的乘积，再除以距离的平方。距离加倍，力变成原来的四分之一。</p>
+            <ul class="vars">
+              <li><b>F</b><span>两个物体之间的引力，单位 N</span></li>
+              <li><b>G</b><span>引力常数，后来由卡文迪什在 1798 年测出</span></li>
+              <li><b>M、m</b><span>两个物体的质量，单位 kg</span></li>
+              <li><b>r</b><span>两者中心的距离，单位 m</span></li>
+            </ul>
+            <p>这里还有一件必须同时成立的事：让物体加速的量，不能依赖它自己的质量。伽利略的自由落体保证了这一点。把 F 除以 m，物体自己的质量被约掉，加速度只由 M 和 r 决定。苹果和月亮，从此走同一个公式。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步：顺带收获一条旧定律。把引力当成向心力，令 GM/r² 等于 v²/r，再用 v = 2πr/T 换掉速度，整理之后就能得到周期的平方正比于半径的三次方。</p>
+            <div class="eq">T<span class="sup">2</span> <span class="op">∝</span> r<span class="sup">3</span></div>
+            <p class="readas">读作：公转周期的平方，与轨道半径的三次方成正比。这正是开普勒在 1619 年从数据里总结出的第三定律。</p>
+            <p>差别在于：开普勒的是经验规律，牛顿的是推论，而且推论里比例常数只由太阳质量和 G 决定。所以太阳系所有行星共用同一个 T²/r³。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>第一个演示让你亲手拖一拖“距离”这个变量，看 1/r² 到底长什么样；第二个演示把月亮那一秒钟的“下落”放大给你看。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 引力随距离怎么变</span>
+              <span class="demo-tag">g′ = 9.8 / r²</span>
+            </div>
+            <p class="demo-desc">横轴是距离，单位取地球半径；纵轴是引力加速度，用对数刻度，否则 0.0027 和 9.8 挤在一张图里根本看不见。曲线是 1/r²，橙色标记就是月亮所在的位置。</p>
+            <canvas id="gravityCanvas" data-height="330" aria-label="引力加速度随距离变化的曲线"></canvas>
+            <div id="gSlider"></div>
+            <div class="readout" id="gReadout"></div>
+            <p class="hint">试试：把滑块拖到 60，读数正好是 0.0027 m/s²；再拖到 30，看它是不是变成原来的 4 倍。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 月亮一直在掉</span>
+              <span class="demo-tag">每秒约 1.4 毫米</span>
+            </div>
+            <p class="demo-desc">青色的箭头是月亮的横向速度，每秒约 1 公里；橙色箭头是地球的吸引。紫色虚线是“如果没有引力，它会沿切线直飞”的方向。真实的落差只有 1.4 毫米，图上已经放大。</p>
+            <canvas id="moonCanvas" data-height="300" aria-label="月亮横向运动与下落的示意图"></canvas>
+            <div class="demo-controls">
+              <div class="anim-mount" id="moonAnimMount"></div>
+            </div>
+            <p class="hint">试试：暂停动画，盯住紫色虚线和圆弧之间的那条缝——那就是月亮每秒“掉”下去的量。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>把月亮的加速度代进自由落体的距离公式。取时间 t = 1 秒，初速度按“只算下落”这一项取零——横向的那 1 公里我们另外算。</p>
+        <div class="eq">h <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> a t<span class="sup">2</span> <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> <span class="op">×</span> 2.7<span class="op">×</span>10<span class="sup">−3</span> <span class="op">×</span> 1<span class="sup">2</span> <span class="op">≈</span> 1.4<span class="op">×</span>10<span class="sup">−3</span> <span class="dim">m</span></div>
+        <p class="readas">读作：一秒之内，月亮朝地球“掉”下去大约 1.4 毫米。这个数比一元硬币还薄一点。</p>
+        <p>1.4 毫米是什么概念？它小到你在纸上都画不出来。可月亮在同一秒里横着跑了约 1020 米。这一公里让它脚下的“地面”弯了下去，弯下去的量刚好也是 1.4 毫米。于是它掉一点、地面也弯一点，两个变化同步发生，轨道就闭上了。</p>
+        <p>还可以拿地球表面做个对照：沿地面横着走 1 公里，地面会因为地球是圆的而“沉”下去约 8 厘米。同样横着走 1 公里，月球轨道只弯 1.4 毫米。差了 60 倍，正好是月亮轨道半径比地球半径大的倍数。同一套几何，同一个 1/r²，只是尺子换了。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>1687 年，牛顿把这一切写进《自然哲学的数学原理》。从那天起，“天上”不再需要“完美”这个解释。月亮不是一种特殊的、永远不会掉的东西，它只是一个一直在掉、同时一直在跑的东西。</p>
+        <p>这条定律很快开始兑现预言。1705 年，哈雷用牛顿的力学算出一颗彗星的轨道，断言它会在 1758 年回来；那一年彗星真的出现了，哈雷已经去世十六年。1846 年，勒维耶和亚当斯各自根据天王星轨道的细微偏差，算出一颗未知行星该在的位置，伽勒按图索骥，找到了海王星。1798 年，卡文迪什用扭秤测出了 G，引力从此有了确切的数值。</p>
+        <p>更根本的变化发生在问法上：人们不再问“天体为什么走圆”，而是问“在这样一条力下，它会怎么走”。问题从几何变成了动力学。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示 A：1/r² 曲线 ---------- */
+    var gravity = PH.canvas('gravityCanvas');
+    var gReadout = document.getElementById('gReadout');
+    var G0 = 9.8;
+    var currentR = 60;
+
+    function trim(v, digits) {
+      var s = Number(v).toFixed(digits);
+      if (s.indexOf('.') >= 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
+      return s;
+    }
+
+    function gAt(r) {
+      return G0 / (r * r);
+    }
+
+    function fmtG(v) {
+      if (v >= 1) return v.toFixed(2);
+      if (v >= 0.01) return v.toFixed(4);
+      return v.toFixed(5);
+    }
+
+    function drawGravity(r) {
+      if (!gravity) return;
+      var ctx = gravity.ctx;
+      var w = gravity.w;
+      var h = gravity.h;
+      var padL = 66;
+      var padR = 22;
+      var padT = 24;
+      var padB = 44;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var LOG_MIN = -3;
+      var LOG_MAX = 1;
+      var i;
+
+      function X(rr) { return x0 + pw * (rr - 1) / 99; }
+      function Y(g) {
+        var lg = Math.log(g) / Math.LN10;
+        var f = (lg - LOG_MIN) / (LOG_MAX - LOG_MIN);
+        if (f < 0) f = 0;
+        if (f > 1) f = 1;
+        return y0 - ph * f;
+      }
+
+      gravity.clear();
+
+      /* r = 60 附近的高亮带 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,176,61,.08)';
+      ctx.fillRect(X(56), padT, X(64) - X(56), ph);
+      ctx.restore();
+
+      /* 横向网格与刻度 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.16)';
+      ctx.lineWidth = 1;
+      for (i = 1; i <= 5; i++) {
+        var rr = i * 20;
+        ctx.beginPath();
+        ctx.moveTo(X(rr), padT);
+        ctx.lineTo(X(rr), y0);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(143,166,196,.7)';
+        ctx.font = '11px ui-monospace, Consolas, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(String(rr), X(rr), y0 + 18);
+      }
+      ctx.restore();
+
+      /* 纵向：每个数量级一条线 */
+      var ticks = [10, 1, 0.1, 0.01, 0.001];
+      var labels = ['10', '1', '0.1', '0.01', '0.001'];
+      ctx.save();
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      for (i = 0; i < ticks.length; i++) {
+        var yy = Y(ticks[i]);
+        ctx.strokeStyle = 'rgba(143,166,196,.14)';
+        ctx.beginPath();
+        ctx.moveTo(x0, yy);
+        ctx.lineTo(x0 + pw, yy);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(143,166,196,.72)';
+        ctx.fillText(labels[i], x0 - 8, yy + 4);
+      }
+      ctx.restore();
+
+      /* 坐标轴 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 1/r² 曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(53,224,200,.55)';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      for (i = 0; i <= 300; i++) {
+        var rr2 = 1 + i * 99 / 300;
+        var xx = X(rr2);
+        var yy2 = Y(gAt(rr2));
+        if (i === 0) ctx.moveTo(xx, yy2);
+        else ctx.lineTo(xx, yy2);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 月亮位置 r = 60 */
+      var mx = X(60);
+      var my = Y(gAt(60));
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.45)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(mx, y0);
+      ctx.lineTo(mx, my);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(mx, my, 5.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,176,61,.95)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('60 R⊕ → 0.0027', mx - 8, my - 12);
+      ctx.restore();
+
+      /* 当前滑块位置 */
+      var cx = X(r);
+      var cy = Y(gAt(r));
+      ctx.save();
+      ctx.fillStyle = '#a98bff';
+      ctx.shadowColor = '#a98bff';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 轴说明 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('距离 r（地球半径）', x0 + pw - 120, y0 + 38);
+      ctx.save();
+      ctx.translate(14, padT + 78);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('g′（m/s²，对数）', 0, 0);
+      ctx.restore();
+      ctx.restore();
+    }
+
+    function updateGravity(r) {
+      currentR = r;
+      drawGravity(r);
+      if (gReadout) {
+        gReadout.textContent = 'r = ' + trim(r, 1) + ' 个地球半径　→　g′ ≈ ' + fmtG(gAt(r)) +
+          ' m/s²（约为地面重力的 1/' + Math.round(G0 / gAt(r)) + '）';
+      }
+    }
+
+    var gSlider = PH.slider({
+      mount: '#gSlider',
+      label: '距离 r（以地球半径为单位）',
+      min: 1,
+      max: 100,
+      step: 0.5,
+      value: 60,
+      unit: 'R⊕',
+      fmt: function (v) { return trim(v, 1); },
+      onInput: function (v) { updateGravity(v); }
+    });
+
+    updateGravity(60);
+    if (gravity) {
+      gravity.onResize(function () {
+        updateGravity(gSlider ? gSlider.value : currentR);
+      });
+    }
+
+    /* ---------- 演示 B：月亮在掉 ---------- */
+    var moonC = PH.canvas('moonCanvas');
+
+    function arrow(ctx, x1, y1, x2, y2, color, width) {
+      var ang = Math.atan2(y2 - y1, x2 - x1);
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
+      ctx.lineWidth = width || 2;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - 9 * Math.cos(ang - 0.38), y2 - 9 * Math.sin(ang - 0.38));
+      ctx.lineTo(x2 - 9 * Math.cos(ang + 0.38), y2 - 9 * Math.sin(ang + 0.38));
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawMoon(t) {
+      if (!moonC) return;
+      var ctx = moonC.ctx;
+      var w = moonC.w;
+      var h = moonC.h;
+      var cx = w * 0.32;
+      var cy = h * 0.56;
+      var earthR = Math.min(w, h) * 0.10;
+      var orbR = Math.min(w * 0.40, h * 0.36);
+
+      moonC.clear();
+
+      /* 轨道 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(53,224,200,.28)';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([5, 6]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, orbR, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 地球 */
+      ctx.save();
+      ctx.fillStyle = '#4ea8ff';
+      ctx.shadowColor = '#4ea8ff';
+      ctx.shadowBlur = 18;
+      ctx.beginPath();
+      ctx.arc(cx, cy, earthR, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+      ctx.save();
+      ctx.fillStyle = 'rgba(214,230,255,.85)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('地球', cx - 14, cy + earthR + 18);
+      ctx.restore();
+
+      /* 月亮位置 */
+      var ang = -Math.PI / 2 + t * 0.55;
+      var mx = cx + orbR * Math.cos(ang);
+      var my = cy + orbR * Math.sin(ang);
+      var tx = -Math.sin(ang);
+      var ty = Math.cos(ang);
+      var nx = -Math.cos(ang);
+      var ny = -Math.sin(ang);
+
+      /* 切线（若无引力） */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(169,139,255,.75)';
+      ctx.lineWidth = 1.4;
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath();
+      ctx.moveTo(mx, my);
+      ctx.lineTo(mx + tx * 92, my + ty * 92);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 速度与引力 */
+      arrow(ctx, mx, my, mx + tx * 54, my + ty * 54, '#35e0c8', 2);
+      arrow(ctx, mx, my, mx + nx * 40, my + ny * 40, '#ffb03d', 2);
+
+      /* 月亮 */
+      ctx.save();
+      ctx.fillStyle = '#d6e6ff';
+      ctx.shadowColor = '#d6e6ff';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(mx, my, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 标注 */
+      ctx.save();
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillStyle = 'rgba(53,224,200,.9)';
+      ctx.fillText('v ≈ 1.0 km/s', mx + tx * 58 + 4, my + ty * 58 + 4);
+      ctx.fillStyle = 'rgba(255,176,61,.9)';
+      ctx.fillText('a', mx + nx * 44, my + ny * 44);
+      ctx.fillStyle = 'rgba(169,139,255,.9)';
+      var lx = mx + tx * 52;
+      var ly = my + ty * 52 + 20;
+      if (lx > w - 160) lx = w - 160;
+      if (lx < 12) lx = 12;
+      if (ly > h - 10) ly = h - 10;
+      ctx.fillText('若没有引力，走这条直路', lx, ly);
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.fillText('每秒下落约 1.4 mm（图上放大）', 14, 22);
+      ctx.restore();
+    }
+
+    var moonAnim = PH.anim(drawMoon, { mount: '#moonAnimMount', autoplay: true });
+    drawMoon(0);
+    if (moonC) {
+      moonC.onResize(function () {
+        if (moonAnim) moonAnim.frame();
+      });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '月亮为什么没有掉下来？',
+        options: [
+          { text: '因为月亮离地球太远，地球的引力已经没有了。', correct: false, why: '引力按 1/r² 衰减，永远不会变成零。在月球那里，地球引力仍然给出 0.0027 m/s² 的加速度，只是比地面小得多。' },
+          { text: '因为它每秒掉 1.4 毫米，同时横着跑 1 公里，地面弯下去的量刚好抵消。', correct: true, why: '月亮确实一直在朝地球掉，但横向速度让它不断“越过”已经弯下去的地面，于是永远掉不到地上。' },
+          { text: '因为月亮在真空中，真空中没有重力。', correct: false, why: '真空只是没有空气，不影响引力。引力不需要介质，月球在真空中照样被地球拉着。' },
+          { text: '因为月亮绕地球转产生了“离心力”，把引力完全抵消了。', correct: false, why: '“离心力”不是真实的作用力，而是我们在转动参照系里的一种记账方式。真实存在的只有地球引力，它提供向心加速度。' }
+        ]
+      },
+      {
+        q: '若把到地心的距离加倍，引力加速度变成原来的几分之几？',
+        options: [
+          { text: '二分之一', correct: false, why: '这是 1/r 的规律。若真是这样，60 倍距离只能解释 1/60，对不上地面的 1/3600。' },
+          { text: '四分之一', correct: true, why: '1/r² 中 r 变成 2 倍，平方后是 4 倍，所以加速度变成 1/4。' },
+          { text: '八分之一', correct: false, why: '这对应 1/r³。三次方与 60 倍距离、3600 倍比值都对不上。' },
+          { text: '不变', correct: false, why: '如果不变，月亮那里的加速度就该和地面一样是 9.8 m/s²，月球的轨道周期会短得多。' }
+        ]
+      },
+      {
+        q: '下面哪一个事实最能说明“天上和地上是同一套规律”？',
+        options: [
+          { text: '月亮和苹果看起来都在“落下”。', correct: false, why: '这只是语言上的相似。眼睛看到的现象相似，并不能证明背后的规律相同。' },
+          { text: '月地距离是地球半径的 60 倍，而地面重力与月亮加速度的比值正好是 3600，即 60 的平方。', correct: true, why: '一个比值来自运动学测量，另一个来自几何距离，两者独立却精确对上。这才是“同一套规律、按 1/r² 衰减”的硬证据。' },
+          { text: '月球公转周期是 27.3 天。', correct: false, why: '这只是一个观测数字。单独看它，既不能说明规律相同，也不能说明规律不同。' },
+          { text: '第谷把行星位置的观测精度做到了 1 角分。', correct: false, why: '那是开普勒发现椭圆轨道的前提，属于上一课；它和“天上地上是否同一套规律”没有直接关系。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

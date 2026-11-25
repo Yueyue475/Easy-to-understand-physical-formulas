@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 6 阶段 · 弱作用为什么“违反”左右对称？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="6-3" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 21 课 / 共 27 课 · 约 11 分钟</p>
+        <h1>弱作用为什么“违反”左右对称？</h1>
+        <p class="lede">1956 年之前，“物理定律左右对称”被当成理所当然。李政道和杨振宁问了一句：弱作用真的遵守吗？一年后，吴健雄用接近绝对零度的钴-60 给出了答案：不遵守。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>对称性不是审美偏好，而是可检验的陈述。如果定律在照镜子后不变，把装置做成镜像，统计分布必须与原实验完全一样。这条要求太自然，从牛顿到爱因斯坦几乎没人怀疑过。</p>
+        <p>1950 年代中期，弱作用里冒出一个说不通的现象，叫 θ-τ 之谜。宇宙线里有两种粒子 θ 和 τ，质量、寿命都相同（约 1.2×10⁻⁸ 秒），看起来是同一种东西。可衰变方式不同：θ 衰变成两个 π 介子，τ 衰变成三个。π 的宇称是负的，两个 π 组成的系统宇称为正，三个 π 为负。若宇称守恒，同一种粒子不可能既给出正宇称、又给出负宇称。</p>
+        <p>出路只有两条：要么 θ 和 τ 是两种粒子，可质量与寿命的完全一致无法解释；要么宇称在弱作用里不守恒。1956 年，李政道和杨振宁选了后一条，并指出：过去所有“验证宇称守恒”的实验，测的其实都是强作用或电磁作用，弱作用的宇称从未被单独检验。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是宇称操作。把坐标全部反号，就是照镜子。做两次回到原样，所以本征值只能是 +1 或 −1。</p>
+        <p>第二件是角动量。角动量是位置叉乘动量，两个矢量都反号，叉乘后符号不变。所以自旋在镜子里方向不变。这一点后来成了关键：镜像会翻转电子的运动方向，却不翻转原子核的自旋。</p>
+        <p>第三件是钴-60 和极低温技术。钴-60 的原子核有自旋，平时方向杂乱、互相抵消。把样品放到约 0.01 K 的低温和强磁场里，热运动被压下去，核自旋就顺着磁场排齐，这叫极化。只有极化后，才能定义“沿自旋”和“反自旋”，比较两边的电子数。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：宇称变换到底做了什么</summary>
+          <div class="mathbox-body">
+            <p>宇称操作 P 把每个位置矢量换成反向：r → −r。做两次回到原状，所以 P²=1，本征值只有 ±1。</p>
+            <p>不同类型的量在镜子里表现不同。位置、动量、电场是“极矢量”，全部反号；角动量、自旋、磁场是“轴矢量”，方向不变——它们由两个极矢量叉乘而来，两个负号抵掉了。</p>
+            <p>要检验宇称，就找一个“镜像下必须为零”的量，比如核自旋朝上时，沿自旋与反自旋飞出的电子数之差：定律若左右对称，它必须严格为零。</p>
+            <svg viewBox="0 0 340 150" role="img" aria-label="真实世界与镜像世界里自旋和电子方向的对比">
+              <circle cx="88" cy="66" r="42" fill="none" stroke="rgba(143,166,196,.3)" stroke-dasharray="3 4"/>
+              <circle cx="252" cy="66" r="42" fill="none" stroke="rgba(143,166,196,.3)" stroke-dasharray="3 4"/>
+              <line x1="76" y1="66" x2="76" y2="34" stroke="#35e0c8" stroke-width="2"/>
+              <path d="M76 34 l-4 8 l8 0 z" fill="#35e0c8"/>
+              <line x1="100" y1="66" x2="100" y2="104" stroke="#ff5f6d" stroke-width="2"/>
+              <path d="M100 104 l-4 -8 l8 0 z" fill="#ff5f6d"/>
+              <line x1="240" y1="66" x2="240" y2="34" stroke="#35e0c8" stroke-width="2"/>
+              <path d="M240 34 l-4 8 l8 0 z" fill="#35e0c8"/>
+              <line x1="264" y1="66" x2="264" y2="28" stroke="#ff5f6d" stroke-width="2"/>
+              <path d="M264 28 l-4 8 l8 0 z" fill="#ff5f6d"/>
+              <text x="88" y="130" fill="#8fa6c4" font-size="10.5" text-anchor="middle" font-family="monospace">真实：自旋↑ 电子↓</text>
+              <text x="252" y="130" fill="#8fa6c4" font-size="10.5" text-anchor="middle" font-family="monospace">镜像：自旋↑ 电子↑</text>
+            </svg>
+            <p class="caption">自旋是轴矢量，照镜子不翻；电子方向翻了。镜像世界的电子分布，于是和真实世界对不上。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面五步，从“照镜子”这个操作出发，走到一个当年没人愿意相信的结论。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>宇称操作就是把整个世界的坐标同时反号：前后、左右、上下，全部翻过来。这等价于照一次镜子，再把镜子里的像绕镜面法线转 180°；对不区分方向的物理定律来说，转不转没有区别。</p>
+            <div class="eq">P <span class="dim">：</span> <span class="vec">r</span> <span class="op">→</span> <span class="op">−</span><span class="vec">r</span><span class="dim">，</span> P<span class="sup">2</span> <span class="op">=</span> 1</div>
+            <p class="readas">读作：宇称操作把位置矢量 r 变成 −r；连续做两次回到原状，所以 P 的平方等于 1，本征值只能是 +1 或 −1。</p>
+            <ul class="vars">
+              <li><b>P</b><span>宇称算符，即“照镜子”</span></li>
+              <li><b>r</b><span>位置矢量</span></li>
+              <li><b>±1</b><span>宇称的本征值：偶或奇</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>如果定律在 P 下不变，会有什么可观测的后果？最直接的一条：把装置换成它的镜像，统计分布必须一模一样。具体到 β 衰变，如果核自旋朝上，电子沿自旋方向射出的概率，应该等于沿反方向射出的概率——因为镜像把“沿自旋”变成“反自旋”，而定律若不变，两种情形必须给出同样的数。所以只要测出这两个概率不一样，宇称就破了。</p>
+            <p>李政道和杨振宁在 1956 年的论文里逐篇检查了当时的弱作用实验，结论出人意料：没有一篇做过这个比较。他们列出几种方案，其中一种是用极化的钴-60 看 β 电子的角分布。</p>
+            <p>θ-τ 之谜这时也有了出路：θ 和 τ 本来就是同一种粒子（后来叫 K⁺），有时衰变成两个 π，有时衰变成三个，宇称在衰变中不被遵守。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>1957 年初，吴健雄和合作者在国家标准局做了这个实验。他们把钴-60 冷却到约 0.01 K，加强磁场让核自旋排齐；然后在样品上下各放一个探测器，记录向上和向下的 β 电子。为了确认效应来自自旋，还要加热样品让自旋重新杂乱，做一次对照。</p>
+            <p>难点不在想法，而在工程。0.01 K 接近当时低温技术的极限，β 探测器又不能被强磁场干扰。她做了多年 β 衰变谱学。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>结果很清楚：沿自旋方向飞出的电子，比反方向少。把两边的计数写成不对称度，得到约 0.4。这不是几个事例的涨落——在统计误差内差异稳定出现，换方向、换样品都跟着变。</p>
+            <div class="eq">α <span class="op">=</span> <span class="frac"><span class="num">N<span class="sub">反</span> <span class="op">−</span> N<span class="sub">沿</span></span><span class="den">N<span class="sub">反</span> <span class="op">+</span> N<span class="sub">沿</span></span></span> <span class="op">≈</span> 0.4</div>
+            <p class="readas">读作：反方向计数减沿自旋计数，再除以两者之和。α 约 0.4，意思是反方向的电子比沿自旋方向多出约四成。</p>
+            <ul class="vars">
+              <li><b>N<span class="sub">沿</span></b><span>沿核自旋方向飞出的电子数</span></li>
+              <li><b>N<span class="sub">反</span></b><span>反方向飞出的电子数</span></li>
+              <li><b>α</b><span>前后不对称度，无量纲</span></li>
+            </ul>
+            <p>如果宇称守恒，这个量必须严格等于 0，因为镜像会把“多”和“少”对调。测到 0.4，等于说镜像与真实世界不一样。几乎同时，另外两个小组在 μ 子衰变里也看到同类效应，结论独立。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>结论：弱作用不遵守宇称。更准确地说，弱作用“只认左手”——费米子的自旋与运动方向有固定关系，镜像里那种“右手”伙伴几乎不出现。这是物理学第一次发现，基本规律本身区分左右。</p>
+            <p>这不是说物理没有对称性了。把镜像和“粒子换成反粒子”合起来（CP），守恒性一度成立；1964 年在 K 介子衰变里发现 CP 也被轻微破坏。但单靠照镜子，定律不再对称。</p>
+            <p>李政道和杨振宁在 1957 年获得诺贝尔物理学奖，距论文发表只隔一年，是诺奖历史上最快的一次之一。吴健雄没有分享当年的奖，但她的实验被公认为决定性证据。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>左边是真实世界：核自旋朝上，β 电子偏下。右边是照镜子后的镜像世界：自旋是轴矢量，不翻；电子方向翻了过来，于是偏上。如果宇称守恒，两幅图必须一模一样。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 真实世界与镜像世界</span>
+              <span class="demo-tag">α = (N反 − N沿) / (N反 + N沿)</span>
+            </div>
+            <p class="demo-desc">红色瓣是电子出射方向的极坐标分布，长度正比于该方向计数。滑块调节不对称度 α：α=0 时两屏完全相同，α=0.40 时彻底对不上；按按钮发射，看上下计数怎样拉开。</p>
+            <canvas id="parityCanvas" data-height="420" aria-label="钴-60 β 衰变在真实世界与镜像世界中的角分布对比"></canvas>
+            <div id="alphaSlider"></div>
+            <div class="demo-controls">
+              <button type="button" class="btn primary" id="emitBtn">发射 200 个电子</button>
+              <span class="view-state">自旋朝上 · 极低温极化</span>
+            </div>
+            <div class="readout" id="parityReadout"></div>
+            <p class="hint">试试：把 α 拖到 0，两屏立刻一模一样——宇称守恒的世界就长这样；拉回 0.40，镜像再也对不上。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>把不对称度翻译成计数。设沿自旋方向的电子数是 N 沿，反方向是 N 反。α=0.4 意味着：</p>
+        <div class="eq"><span class="frac"><span class="num">N<span class="sub">反</span></span><span class="den">N<span class="sub">沿</span></span></span> <span class="op">=</span> <span class="frac"><span class="num">1 <span class="op">+</span> 0.4</span><span class="den">1 <span class="op">−</span> 0.4</span></span> <span class="op">≈</span> 2.3</div>
+        <p class="readas">读作：反方向电子数与沿自旋方向电子数之比约为 2.3，也就是反方向多出约 1.3 倍。每收到 10 个沿自旋方向的电子，就会收到 23 个反方向的。</p>
+        <p>40% 这个量级很关键。它不是 0.4% 那种要上亿个事例才看得出的微弱偏差，而是几百个事例就能分辨的明显差异。对 1956 年的条件来说，这意味着实验可行：不必等上几年攒数据，只要冷却样品、开对磁场，效应就会显形。</p>
+        <p>另一个数字是温度：0.01 K，比宇宙微波背景的 2.7 K 还低两百多倍。只有在这个温度下，热运动才不会把核自旋重新打乱。温度不是背景条件，而是实验能否成立的前提。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>结果在 1957 年初公布后，物理学界大为震动。泡利给朋友写信，说他不相信“上帝是个弱左撇子”。理论家们不得不重写弱作用：原本可以随便写的耦合项，现在必须按手性筛选。</p>
+        <p>直接影响是理论的形态。1958 年前后，费曼-盖尔曼和马尔萨克-苏达尚分别写出 V−A 理论，把弱作用写成“矢量减轴矢量”的形式——它天然破坏宇称。这后来成为电弱统一理论的部件，而电弱理论在 1983 年被 W、Z 玻色子的发现证实。</p>
+        <p>更普遍的影响在观念上：对称性不再是默认前提，而是必须逐条检验、可能被打破的假设。今天写下一个理论，物理学家会问：它尊重哪些对称？哪些精确、哪些只是近似？这种提问方式，是 1957 年之后才成为常规的。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示：真实世界 vs 镜像世界 ---------- */
+    var pc = PH.canvas('parityCanvas');
+    var parityReadout = document.getElementById('parityReadout');
+    var emitBtn = document.getElementById('emitBtn');
+
+    var alphaVal = 0.4;
+    var cUp = 0;
+    var cDown = 0;
+    var parts = [];
+
+    function sampleAngle(mirror) {
+      var wmax = 1 + alphaVal;
+      if (wmax <= 0) return Math.random() * Math.PI * 2;
+      for (var i = 0; i < 400; i++) {
+        var th = Math.random() * Math.PI * 2;
+        var wgt = 1 + (mirror ? 1 : -1) * alphaVal * Math.cos(th);
+        if (Math.random() * wmax <= wgt) return th;
+      }
+      return Math.random() * Math.PI * 2;
+    }
+
+    function arrow(x1, y1, x2, y2, color, width) {
+      var ctx = pc.ctx;
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
+      ctx.lineWidth = width;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+      var ang = Math.atan2(y2 - y1, x2 - x1);
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - 9 * Math.cos(ang - 0.42), y2 - 9 * Math.sin(ang - 0.42));
+      ctx.lineTo(x2 - 9 * Math.cos(ang + 0.42), y2 - 9 * Math.sin(ang + 0.42));
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function lobe(cx, cy, R, sign) {
+      var ctx = pc.ctx;
+      var k;
+      var norm = R / (1 + alphaVal);
+      ctx.save();
+      ctx.beginPath();
+      for (k = 0; k <= 144; k++) {
+        var th = 2 * Math.PI * k / 144;
+        var rr = norm * (1 + sign * alphaVal * Math.cos(th));
+        var x = cx + rr * Math.sin(th);
+        var y = cy - rr * Math.cos(th);
+        if (k === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(255,95,109,.14)';
+      ctx.strokeStyle = '#ff5f6d';
+      ctx.lineWidth = 1.6;
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawPanel(cx, R, cy, h, mirror) {
+      var ctx = pc.ctx;
+      var i;
+      var sign = mirror ? 1 : -1;
+
+      /* 参考圆与轴线 */
+      ctx.save();
+      ctx.setLineDash([4, 6]);
+      ctx.strokeStyle = 'rgba(143,166,196,.22)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - R);
+      ctx.lineTo(cx, cy + R);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 极坐标分布 */
+      lobe(cx, cy, R, sign);
+
+      /* 电子点 */
+      ctx.save();
+      for (i = 0; i < parts.length; i++) {
+        var pt = parts[i];
+        if (pt.mirror !== mirror) continue;
+        var fade = pt.age < 0.9 ? 1 : Math.max(0, 1 - (pt.age - 0.9) / 0.6);
+        if (fade <= 0) continue;
+        var rr = pt.r * R;
+        var px = cx + rr * Math.sin(pt.ang);
+        var py = cy - rr * Math.cos(pt.ang);
+        ctx.fillStyle = 'rgba(255,140,150,' + (0.8 * fade).toFixed(3) + ')';
+        ctx.fillRect(px - 1, py - 1, 2.2, 2.2);
+      }
+      ctx.restore();
+
+      /* 自旋箭头（轴矢量，两边都朝上） */
+      arrow(cx - 14, cy, cx - 14, cy - R * 0.6, '#35e0c8', 2);
+      ctx.save();
+      ctx.fillStyle = '#35e0c8';
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('自旋', cx - 8, cy - R * 0.6 + 4);
+      ctx.restore();
+
+      /* 上下标注 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('向上', cx, cy - R - 8);
+      ctx.fillText('向下', cx, cy + R + 16);
+      ctx.textAlign = 'left';
+      ctx.restore();
+
+      /* 底部计数 */
+      var up = mirror ? cDown : cUp;
+      var down = mirror ? cUp : cDown;
+      ctx.save();
+      ctx.fillStyle = 'rgba(214,230,255,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('↑ ' + up + ' 个　　↓ ' + down + ' 个', cx, h - 26);
+      ctx.textAlign = 'left';
+      ctx.restore();
+    }
+
+    function drawParity() {
+      if (!pc) return;
+      var ctx = pc.ctx;
+      var w = pc.w;
+      var h = pc.h;
+      var mid = w / 2;
+      var cy = h * 0.48;
+      var R = Math.min(w * 0.19, h * 0.28);
+      var cx1 = w * 0.25;
+      var cx2 = w * 0.75;
+
+      pc.clear();
+
+      /* 两个面板底 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(14,23,38,.55)';
+      ctx.strokeStyle = 'rgba(143,166,196,.18)';
+      ctx.lineWidth = 1;
+      if (ctx.roundRect) {
+        ctx.beginPath();
+        ctx.roundRect(8, 8, mid - 14, h - 16, 10);
+        ctx.fill();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.roundRect(mid + 6, 8, mid - 14, h - 16, 10);
+        ctx.fill();
+        ctx.stroke();
+      } else {
+        ctx.fillRect(8, 8, mid - 14, h - 16);
+        ctx.strokeRect(8, 8, mid - 14, h - 16);
+        ctx.fillRect(mid + 6, 8, mid - 14, h - 16);
+        ctx.strokeRect(mid + 6, 8, mid - 14, h - 16);
+      }
+      ctx.restore();
+
+      /* 标题 */
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#eaf3ff';
+      ctx.font = '13px ui-monospace, Consolas, monospace';
+      ctx.fillText('真实世界', cx1, 32);
+      ctx.fillText('镜像世界', cx2, 32);
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('核自旋朝上，β 电子偏下', cx1, 50);
+      ctx.fillText('沿水平面照镜子：自旋不翻', cx2, 50);
+      ctx.textAlign = 'left';
+      ctx.restore();
+
+      drawPanel(cx1, R, cy, h, false);
+      drawPanel(cx2, R, cy, h, true);
+    }
+
+    function updateParity() {
+      drawParity();
+      if (!parityReadout) return;
+      var rReal = cDown > 0 ? (cUp / cDown) : null;
+      var rMir = cUp > 0 ? (cDown / cUp) : null;
+      parityReadout.textContent = 'α = ' + alphaVal.toFixed(2) +
+        '　真实：向上 ' + cUp + ' 个 / 向下 ' + cDown + ' 个' +
+        (rReal !== null ? '（比 ' + rReal.toFixed(2) + '）' : '') +
+        '　镜像：向上 ' + cDown + ' 个 / 向下 ' + cUp + ' 个' +
+        (rMir !== null ? '（比 ' + rMir.toFixed(2) + '）' : '');
+    }
+
+    function emit(n) {
+      var i;
+      for (i = 0; i < n; i++) {
+        var th = sampleAngle(false);
+        parts.push({ ang: th, r: 0, age: 0, mirror: false });
+        parts.push({ ang: Math.PI - th, r: 0, age: 0, mirror: true });
+        if (Math.cos(th) > 0) cUp += 1;
+        else cDown += 1;
+      }
+      if (parts.length > 1200) parts.splice(0, parts.length - 1200);
+      updateParity();
+    }
+
+    if (emitBtn) {
+      emitBtn.addEventListener('click', function () { emit(200); });
+    }
+
+    var alphaSlider = PH.slider({
+      mount: '#alphaSlider',
+      label: '前后不对称度 α',
+      min: 0,
+      max: 0.6,
+      step: 0.01,
+      value: 0.4,
+      fmt: function (v) { return v.toFixed(2); },
+      onInput: function (v) {
+        alphaVal = v;
+        cUp = 0;
+        cDown = 0;
+        parts = [];
+        updateParity();
+      }
+    });
+
+    updateParity();
+    if (pc) pc.onResize(function () { drawParity(); });
+
+    PH.anim(function (t, dt) {
+      var i;
+      for (i = 0; i < parts.length; i++) {
+        var pt = parts[i];
+        pt.age += dt;
+        if (pt.r < 1.06) pt.r += dt * 1.5;
+      }
+      while (parts.length && parts[0].age > 1.8) parts.shift();
+      drawParity();
+    }, { autoplay: true });
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '宇称变换做的是什么？',
+        options: [
+          { text: '把粒子的电荷换成相反符号。', correct: false, why: '那是电荷共轭 C，不是宇称。宇称只动空间坐标，电荷不变。' },
+          { text: '把所有空间坐标同时反号，相当于照镜子（再转 180°）。', correct: true, why: 'r → −r 就是宇称。做两次回到原状，所以 P²=1，本征值只能是 ±1。' },
+          { text: '把时间倒着走。', correct: false, why: '时间反演是另一个操作，通常记作 T。宇称只翻转空间方向。' },
+          { text: '把粒子的自旋方向翻过来。', correct: false, why: '自旋是轴矢量，在宇称操作下方向不变。这正是吴健雄实验能够成立的关键。' }
+        ]
+      },
+      {
+        q: '吴健雄是怎样检验弱作用里的宇称的？',
+        options: [
+          { text: '测量钴-60 样品的总放射性强不强。', correct: false, why: '总强度只说明衰变快慢，不涉及方向。要检验宇称，必须比较不同方向上的电子数。' },
+          { text: '把钴-60 冷却到约 0.01 K 并用强磁场极化核自旋，比较沿自旋与反自旋方向飞出的 β 电子数。', correct: true, why: '低温加磁场让核自旋排齐，才能定义“沿”和“反”两个方向；两边计数不一样，就说明镜像对不上。' },
+          { text: '用加速器把钴-60 加速到接近光速，看它有没有变重。', correct: false, why: '这个实验不需要把原子核加速。关键是极化和方向比较，不是速度。' },
+          { text: '测量 β 电子的电荷正负。', correct: false, why: 'β 电子带负电，这一点早就知道。电荷符号与左右对称是两回事。' }
+        ]
+      },
+      {
+        q: '为什么这个发现震动很大？',
+        options: [
+          { text: '因为它说明能量守恒在弱作用里失效了。', correct: false, why: '能量守恒没有失效。被打破的是空间反演对称性，不是能量守恒。' },
+          { text: '因为这是第一次发现基本规律本身区分左右，镜像世界与真实世界给出不同的统计结果。', correct: true, why: '在此之前，左右对称被视为理所当然。弱作用“只认左手”，迫使理论按手性重写，也改变了人们检验对称性的方式。' },
+          { text: '因为它证明所有物理定律都不对称。', correct: false, why: '强作用和电磁作用在宇称下仍然对称。被打破的是弱作用这一支，不是全部。' },
+          { text: '因为它推翻了相对论。', correct: false, why: '相对论不受影响。宇称不守恒与狭义相对论并不冲突，后来的 V−A 理论仍然是相对论性的。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 5 阶段 · 热物体发的光为什么只看温度？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="5-3" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 16 课 · 共 27 课 · 约 12 分钟</p>
+        <h1>热物体发的光为什么只看温度？</h1>
+        <p class="lede">把一块铁放进炉子，它会从暗红变成橙色，再变成刺眼的白。奇怪的是，不管换哪种材料，颜色几乎只跟温度走。更奇怪的是，经典物理算到短波端，会算出无穷大的能量。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>十九世纪末，热辐射已是成熟的实验题目。人们加热物体，用棱镜把光按波长分开，测出“光谱曲线”。曲线有一个惊人的共性：形状几乎只由温度决定。同一温度下，陶瓷、铁块、炭黑的谱形非常接近，差别主要在总亮度；温度升高，曲线抬高，峰值向短波移动。</p>
+        <p>经典物理本来有信心：热辐射来自带电粒子振动，按能量均分定理，每个模式分到一份与温度成正比的能量。问题出在“模式数”：空腔里的驻波波长越短，能塞进去的模式越多，数目随频率平方增长。</p>
+        <p>把“每个模式一份能量”乘上“模式数随频率平方增长”，短波端应该越算越大，趋于无穷。可实验曲线到了短波端反而回落。这就是<strong>紫外灾难</strong>：不是紫外光太多，而是经典理论给出了荒谬的无限大，却没人说得清该删哪条假设。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是<strong>黑体</strong>。它不是“黑色的物体”，而是理想化的吸收体：任何波长都被完全吸收。热平衡时它也是最会发射的物体。带小孔的空腔是很好的近似：光进去后反复反射，几乎逃不出来；腔壁加热后，漏出的光就带着温度信息。</p>
+        <p>第二件工具是<strong>光谱仪</strong>。用棱镜或光栅把光按波长铺开，再用热电偶或感光板逐段测量强度。到 1900 年，几条不同温度的黑体谱已经测得很像样，峰值位置和曲线形状都有可靠数据。</p>
+        <p>第三件工具是<strong>维恩位移定律</strong>。1893 年维恩用热力学证明：黑体谱峰值波长与温度成反比，两者乘积是常数。</p>
+        <div class="eq">λ<span class="sub">max</span> <span class="op">·</span> T <span class="op">=</span> 2.898×10<span class="sup">−3</span> <span class="dim">m·K</span></div>
+        <p class="readas">读作：峰值波长乘以绝对温度，约等于 2.9 乘 10 的负 3 次方米开尔文。温度翻倍，峰值波长减半，颜色向蓝端移动。</p>
+        <ul class="vars">
+          <li><b>λmax</b><span>辐射最强的波长</span></li>
+          <li><b>T</b><span>绝对温度，单位开尔文（K）</span></li>
+        </ul>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么短波方向有更多“模式”？</summary>
+          <div class="mathbox-body">
+            <p>一根两端固定的弦，只能振动出波长满足“半波长的整数倍等于弦长”的驻波。弦长固定时，波长越短，能塞进去的波腹越多：波长减半，模式数翻倍。</p>
+            <p>空腔里的电磁波是三维的，道理一样但更挤：每一个方向都能独立地排驻波，三个方向组合起来，模式数随频率的平方增长。频率变成 2 倍，单位频率间隔里的模式数变成 4 倍。</p>
+            <svg viewBox="0 0 340 150" role="img" aria-label="同一段弦上波长越短模式越多">
+              <line x1="30" y1="36" x2="310" y2="36" stroke="rgba(143,166,196,.35)"/>
+              <path d="M30 36 Q170 8 310 36" fill="none" stroke="#35e0c8" stroke-width="1.6"/>
+              <line x1="30" y1="82" x2="310" y2="82" stroke="rgba(143,166,196,.35)"/>
+              <path d="M30 82 Q100 58 170 82 Q240 106 310 82" fill="none" stroke="#ffb03d" stroke-width="1.6"/>
+              <line x1="30" y1="128" x2="310" y2="128" stroke="rgba(143,166,196,.35)"/>
+              <path d="M30 128 Q65 108 100 128 Q135 148 170 128 Q205 108 240 128 Q275 148 310 128" fill="none" stroke="#a98bff" stroke-width="1.6"/>
+              <text x="316" y="40" fill="#35e0c8" font-size="10" font-family="monospace">1</text>
+              <text x="316" y="86" fill="#ffb03d" font-size="10" font-family="monospace">2</text>
+              <text x="316" y="132" fill="#a98bff" font-size="10" font-family="monospace">4</text>
+            </svg>
+            <p class="caption">同一段弦，波长越短，能放下的波腹越多。三维空腔里，这个“越多”按频率的平方累积。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面五步，从实验事实走到普朗克的公式。关键转折在第三步：他被迫承认，振子的能量不能连续变化。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，先把实验事实说清楚。黑体谱的形状只由温度决定；温度升高，峰值向短波移动，峰值波长与温度成反比。这就是维恩位移定律。它在 1893 年由热力学推出，后来被大量测量证实。</p>
+            <p>这条定律只告诉你峰值在哪里，没有告诉你整条曲线长什么样。要解释“为什么是这个形状”，必须回到物质与辐射如何交换能量。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，经典理论给出瑞利-金斯公式：把电磁波看成一群振子，每个分到 kT 能量，再乘上正比于频率平方的模式数。它在长波端与实验吻合得很好。</p>
+            <div class="eq">u(ν) <span class="op">=</span> <span class="frac"><span class="num">8πν<span class="sup">2</span>kT</span><span class="den">c<span class="sup">3</span></span></span></div>
+            <p class="readas">读作：单位体积、单位频率间隔里的辐射能量，等于 8π 乘频率平方乘 kT，再除以光速的三次方。频率越高，这个值越大，而且没有上限。</p>
+            <ul class="vars">
+              <li><b>u(ν)</b><span>频率 ν 附近的能量密度</span></li>
+              <li><b>k</b><span>玻尔兹曼常数，1.38×10⁻²³ J/K</span></li>
+              <li><b>T</b><span>绝对温度</span></li>
+              <li><b>c</b><span>光速</span></li>
+            </ul>
+            <p>把频率一路往上加，公式给出的能量一路往上冲，积分结果是无穷大。这说不通：一个热物体不可能辐射出无限能量。经典理论在这里撞墙。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，普朗克在 1900 年做了一个他自己都不太喜欢的假设。他假定，腔壁上的振子不能连续地吸收或放出任意多的能量，只能一份一份地交换；每一份的大小与频率成正比，比例常数记作 h。一个振子的能量只能是 hν 的整数倍。</p>
+            <div class="eq">E <span class="op">=</span> n hν <span class="dim">（n = 0, 1, 2, …）</span></div>
+            <p class="readas">读作：振子的能量只能取 hν 的整数倍，不能取中间值。n 是整数，h 是一个新的自然常数，后来叫普朗克常数。</p>
+            <ul class="vars">
+              <li><b>E</b><span>振子的能量</span></li>
+              <li><b>n</b><span>整数，允许的“台阶”编号</span></li>
+              <li><b>h</b><span>普朗克常数，6.63×10⁻³⁴ J·s</span></li>
+              <li><b>ν</b><span>振动的频率</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，看这个假设怎么救场。频率越高，一份能量 hν 越贵。腔壁处于温度 T 时，能提供的典型能量是 kT；当 hν 远大于 kT 时，振子连“买一份”都很困难，更别说有很多份。于是高频振子被自然压低，短波端的曲线回落。</p>
+            <p>把“能量只能取整数倍”代进统计平均，得到的平均能量不再是 kT，而是 hν/(e^{hν/kT}−1)。再乘上模式数，就是普朗克公式。</p>
+            <div class="eq">u(ν) <span class="op">=</span> <span class="frac"><span class="num">8πhν<span class="sup">3</span></span><span class="den">c<span class="sup">3</span></span></span> <span class="op">·</span> <span class="frac"><span class="num">1</span><span class="den">e<span class="sup">hν/kT</span> <span class="op">−</span> 1</span></span></div>
+            <p class="readas">读作：普朗克谱等于“8π 乘 h 乘频率三次方除以光速三次方”，再乘一个由指数函数控制的分式。频率低时，分式约等于 kT/hν，公式退回瑞利-金斯；频率高时，指数项把整条曲线压向零。</p>
+            <p>注意它不是把经典公式“改小了一点”，而是换了一种能量记账方式：能量不再像水一样可以任意分割，而像台阶一样一级一级。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，对答案。普朗克把 h 调到一个很小的值，公式就同时穿过所有温度下的实验点：长波端接上瑞利-金斯，短波端自动回落，峰值位置正好满足维恩位移定律。h 的数值是：</p>
+            <div class="eq">h <span class="op">≈</span> 6.63×10<span class="sup">−34</span> <span class="dim">J·s</span></div>
+            <p class="readas">读作：6.63 乘 10 的负 34 次方焦耳秒。这个数小到日常完全察觉不到，所以在宏观世界里，能量看起来仍然是连续的。</p>
+            <p>普朗克把这一步称为“绝望之举”，多年试图在经典框架里绕开它，但没有成功。1900 年 12 月 14 日，他在德国物理学会报告了这个公式，量子概念从此出现。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下图把三条曲线画在同一张光谱上：青色实线是普朗克公式，橙色虚线是瑞利-金斯，紫色点线是维恩。白色竖条标出可见光范围，橙色竖线是当前温度的峰值波长。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 温度把光谱推来推去</span>
+              <span class="demo-tag">λmax·T = 2.898×10⁻³ m·K</span>
+            </div>
+            <p class="demo-desc">横轴是对数刻度的波长，纵轴是按峰值归一化的强度。升温时，青色曲线的峰向左移，可见光条带里的份额随之改变；橙色虚线在短波端一路冲出画面，正是经典理论的“无穷大”。纵轴只比较形状，实际总辐射随 T⁴ 增长。</p>
+            <canvas id="bbCanvas" data-height="430" aria-label="不同温度下的黑体辐射谱与经典公式对比"></canvas>
+            <div id="tempSlider"></div>
+            <div class="readout" id="bbReadout"></div>
+            <p class="hint">试试：把温度从 3000 K 拖到 6000 K，看橙色峰值线怎样从红外穿过红光、黄光，最后停在绿光附近；同时注意紫色点线在长波端越来越贴不住青色实线。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>先算太阳。太阳表面约 5800 K，代进维恩位移定律：</p>
+        <div class="eq">λ<span class="sub">max</span> <span class="op">=</span> <span class="frac"><span class="num">2.898×10<span class="sup">−3</span></span><span class="den">5800</span></span> <span class="op">≈</span> 5.0×10<span class="sup">−7</span> <span class="dim">m</span> <span class="op">=</span> 500 <span class="dim">nm</span></div>
+        <p class="readas">读作：太阳辐射的峰值在 500 纳米，落在绿光里。人眼对绿光最敏感，这不是巧合：进化把我们的视觉调到了太阳最亮的那一段。</p>
+        <p>再看人体。体温约 310 K，峰值约 9.4 微米，远在红外。人在暗处也会“发光”，只是人眼看不见；红外夜视仪靠这段辐射把人从背景里分出来。</p>
+        <p>白炽灯的灯丝约 2800 K，峰值在 1.0 微米左右，也在红外。它发出的可见光只占输入功率的一小部分，大部分电能变成了你摸得到的热。这就是为什么白炽灯效率低，而 LED 不靠加热也能发出可见光。</p>
+        <p>三个数字说明：温度决定峰值位置，而“可见”只是电磁波谱里很窄的一段。太阳恰好把峰值放在这一段，人体和白炽灯则把大部分能量放在红外。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>普朗克公式是一个奇怪的成功：能算出所有实验曲线，却建立在“能量不连续”上。普朗克长期把它当作数学技巧，希望用经典物理解释掉；真正把量子当真的是爱因斯坦，1905 年他用“光由一份份能量组成”解释了光电效应。</p>
+        <p>“紫外灾难”这个名字是埃伦费斯特在 1911 年叫开的。它成了经典物理失效的标志之一：不是某个公式算错了，而是“能量可以无限细分”这个前提本身出了问题。二十多年后，量子力学把这份“台阶”变成了理论的核心。</p>
+        <p>下一课，玻尔会把同样的台阶搬进原子内部，去回答一个更尖锐的问题：电子为什么不掉进原子核？</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var H = 6.62607015e-34;
+    var K = 1.380649e-23;
+    var C = 299792458;
+    var A = H * C / K;      /* 1.4388e-2 m·K */
+    var B = 2.897771955e-3; /* 维恩常数 m·K */
+
+    var bb = PH.canvas('bbCanvas');
+    var readout = document.getElementById('bbReadout');
+    var temp = 5800;
+
+    function planckShape(lam, T) {
+      var x = A / (lam * T);
+      if (x > 700) return 0;
+      return 1 / (Math.pow(lam, 5) * (Math.exp(x) - 1));
+    }
+
+    function colorName(lamNm) {
+      if (lamNm < 380) return '紫外';
+      if (lamNm < 450) return '紫光';
+      if (lamNm < 495) return '蓝光';
+      if (lamNm < 570) return '绿光';
+      if (lamNm < 590) return '黄光';
+      if (lamNm < 620) return '橙光';
+      if (lamNm < 750) return '红光';
+      return '红外';
+    }
+
+    function drawBB(T) {
+      if (!bb) return;
+      var ctx = bb.ctx;
+      var w = bb.w;
+      var h = bb.h;
+      var padL = 54;
+      var padR = 20;
+      var top = 30;
+      var bot = h - 96;
+      var pw = Math.max(40, w - padL - padR);
+      var ph = Math.max(40, bot - top);
+      var i;
+
+      var lo = Math.log(100);
+      var hi = Math.log(100000);
+      function X(nm) {
+        var t = (Math.log(nm) - lo) / (hi - lo);
+        return padL + pw * Math.max(0, Math.min(1, t));
+      }
+      var yMax = 1.5;
+      function Y(v) {
+        var q = Math.min(v, yMax) / yMax;
+        return bot - ph * q;
+      }
+
+      bb.clear();
+
+      /* 可见光背景条 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,255,255,.07)';
+      ctx.fillRect(X(380), top, Math.max(2, X(750) - X(380)), ph);
+      ctx.strokeStyle = 'rgba(255,255,255,.22)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(X(380), top);
+      ctx.lineTo(X(380), bot);
+      ctx.moveTo(X(750), top);
+      ctx.lineTo(X(750), bot);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(214,230,255,.65)';
+      ctx.font = '9px ui-monospace, Consolas, monospace';
+      ctx.fillText('可见光', X(380) + 3, top + 12);
+      ctx.restore();
+
+      /* 网格 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.12)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 3; i++) {
+        var gy = Y(yMax * i / 3);
+        ctx.beginPath();
+        ctx.moveTo(padL, gy);
+        ctx.lineTo(padL + pw, gy);
+        ctx.stroke();
+      }
+      var ticks = [100, 1000, 10000, 100000];
+      var labels = ['100 nm', '1 μm', '10 μm', '100 μm'];
+      for (i = 0; i < ticks.length; i++) {
+        ctx.beginPath();
+        ctx.moveTo(X(ticks[i]), top);
+        ctx.lineTo(X(ticks[i]), bot);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.42)';
+      ctx.beginPath();
+      ctx.moveTo(padL, top);
+      ctx.lineTo(padL, bot);
+      ctx.lineTo(padL + pw, bot);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.72)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('1.5', padL - 8, Y(1.5) + 4);
+      ctx.fillText('1.0', padL - 8, Y(1.0) + 4);
+      ctx.fillText('0.5', padL - 8, Y(0.5) + 4);
+      ctx.fillText('0', padL - 8, Y(0) + 4);
+      ctx.textAlign = 'center';
+      for (i = 0; i < ticks.length; i++) {
+        ctx.fillText(labels[i], X(ticks[i]), bot + 16);
+      }
+      ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(214,230,255,.8)';
+      ctx.fillText('相对强度（按峰值归一化）', padL, top - 10);
+      ctx.restore();
+
+      var lamMax = B / T;
+      var peak = planckShape(lamMax, T);
+      var N = 360;
+
+      function P(nm) { return planckShape(nm * 1e-9, T) / peak; }
+      function R(nm) {
+        var x = A / (nm * 1e-9 * T);
+        var ratio = (nm * 1e-9 * T / A) * (Math.exp(Math.min(x, 40)) - 1);
+        return P(nm) * ratio;
+      }
+      function W(nm) {
+        var x = A / (nm * 1e-9 * T);
+        return P(nm) * (1 - Math.exp(-x));
+      }
+
+      /* 瑞利-金斯：虚线 */
+      ctx.save();
+      ctx.strokeStyle = '#ffb03d';
+      ctx.lineWidth = 1.6;
+      ctx.setLineDash([6, 5]);
+      ctx.beginPath();
+      var started = false;
+      for (i = 0; i <= N; i++) {
+        var nm1 = Math.exp(lo + (hi - lo) * i / N);
+        var v1 = R(nm1);
+        if (v1 > yMax * 1.02) { started = false; continue; }
+        if (!started) { ctx.moveTo(X(nm1), Y(v1)); started = true; }
+        else ctx.lineTo(X(nm1), Y(v1));
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 维恩近似：点线 */
+      ctx.save();
+      ctx.strokeStyle = '#a98bff';
+      ctx.lineWidth = 1.6;
+      ctx.setLineDash([2, 4]);
+      ctx.beginPath();
+      for (i = 0; i <= N; i++) {
+        var nm2 = Math.exp(lo + (hi - lo) * i / N);
+        var v2 = W(nm2);
+        if (i === 0) ctx.moveTo(X(nm2), Y(v2));
+        else ctx.lineTo(X(nm2), Y(v2));
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 普朗克：实线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.4;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 9;
+      ctx.beginPath();
+      for (i = 0; i <= N; i++) {
+        var nm3 = Math.exp(lo + (hi - lo) * i / N);
+        var v3 = P(nm3);
+        if (i === 0) ctx.moveTo(X(nm3), Y(v3));
+        else ctx.lineTo(X(nm3), Y(v3));
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 峰值标记 */
+      var px = X(lamMax / 1e-9);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.85)';
+      ctx.lineWidth = 1.4;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(px, bot);
+      ctx.lineTo(px, Y(1));
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 11;
+      ctx.beginPath();
+      ctx.arc(px, Y(1), 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,176,61,.95)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      var lx = Math.min(px + 7, padL + pw - 88);
+      ctx.fillText('λmax = ' + (lamMax * 1e9).toFixed(0) + ' nm', lx, Y(1) - 10);
+      ctx.restore();
+
+      /* 短波端警示 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,176,61,.85)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('瑞利-金斯在此冲向无穷 ↑', padL + 6, top + 26);
+      ctx.restore();
+
+      /* 图例 */
+      ctx.save();
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      var ly = h - 48;
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(padL, ly - 3); ctx.lineTo(padL + 18, ly - 3); ctx.stroke();
+      ctx.fillStyle = 'rgba(214,230,255,.8)';
+      ctx.fillText('普朗克', padL + 23, ly);
+      var x2 = padL + 78;
+      ctx.strokeStyle = '#ffb03d';
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath(); ctx.moveTo(x2, ly - 3); ctx.lineTo(x2 + 18, ly - 3); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = 'rgba(214,230,255,.8)';
+      ctx.fillText('瑞利-金斯', x2 + 23, ly);
+      var x3 = padL + 166;
+      ctx.strokeStyle = '#a98bff';
+      ctx.setLineDash([2, 4]);
+      ctx.beginPath(); ctx.moveTo(x3, ly - 3); ctx.lineTo(x3 + 18, ly - 3); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = 'rgba(214,230,255,.8)';
+      ctx.fillText('维恩', x3 + 23, ly);
+      ctx.restore();
+    }
+
+    function paint(T) {
+      drawBB(T);
+      if (!readout) return;
+      var lm = B / T * 1e9;
+      var ratio = Math.pow(T / 1000, 4);
+      readout.textContent = 'T = ' + T.toFixed(0) + ' K　λmax = ' + lm.toFixed(0) + ' nm（' +
+        colorName(lm) + '）　总辐射 ∝ T⁴ = 1000 K 的 ' + ratio.toFixed(0) + ' 倍';
+    }
+
+    var tempSlider = PH.slider({
+      mount: '#tempSlider',
+      label: '黑体温度 T',
+      min: 1000,
+      max: 10000,
+      step: 50,
+      value: 5800,
+      unit: 'K',
+      fmt: function (v) { return v.toFixed(0); },
+      onInput: function (v) { temp = v; paint(v); }
+    });
+
+    paint(temp);
+    if (bb) {
+      bb.onResize(function () {
+        paint(tempSlider ? tempSlider.value : temp);
+      });
+    }
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '“紫外灾难”到底指什么？',
+        options: [
+          { text: '太阳发出的紫外线太多，把实验仪器烧坏了。', correct: false, why: '这和实验设备无关。它指的是经典理论在短波（紫外及更高频）一端给出的能量趋于无穷，与实测曲线回落矛盾。' },
+          { text: '经典瑞利-金斯公式在短波端给出无限大的能量，而实验曲线在短波端回落。', correct: true, why: '模式数随频率平方增长，每个模式又分到 kT，于是短波端越算越大。实验却看到曲线先升后降，这个矛盾就是紫外灾难。' },
+          { text: '黑体在紫外波段的吸收率突然变成零。', correct: false, why: '黑体的定义就是全波段完全吸收。灾难出在发射谱的计算，不在吸收性质。' },
+          { text: '紫外光的速度比其他颜色的光慢。', correct: false, why: '真空中所有频率的光速相同。灾难与速度无关，是能量分配的问题。' }
+        ]
+      },
+      {
+        q: '普朗克为了修好这条曲线，假设了什么？',
+        options: [
+          { text: '光速会随频率改变。', correct: false, why: '普朗克没有动光速。他动的是振子交换能量的方式，光速仍是 c。' },
+          { text: '振子的能量只能取 hν 的整数倍，不能连续变化。', correct: true, why: '这就是量子假设。高频振子的一份能量 hν 很贵，在温度 T 下很难被激发，于是短波端被自然压低。' },
+          { text: '黑体只吸收特定波长的光。', correct: false, why: '黑体按定义吸收所有波长。普朗克的假设针对腔壁振子的能量取值，不是吸收谱。' },
+          { text: '温度越高，普朗克常数 h 越大。', correct: false, why: 'h 是自然常数，不随温度变。温度改变的是 kT 与 hν 的相对大小，从而改变谱形。' }
+        ]
+      },
+      {
+        q: '为什么高温物体会从暗红变成橙、再变成蓝白色？',
+        options: [
+          { text: '因为高温下材料里的化学元素变了。', correct: false, why: '颜色变化在同样材料上就能看到。黑体谱的形状主要由温度决定，与具体元素关系很小。' },
+          { text: '因为温度升高，峰值波长向短波移动，可见光里蓝紫的比例增加，同时总辐射也大幅增强。', correct: true, why: 'λmax=2.898×10⁻³/T。1000 K 的峰值在红外，3000 K 进入红光附近，5800 K 到绿光，更高温则蓝紫成分显著，眼睛就看成白色。' },
+          { text: '因为高温物体只发蓝光，不发红光。', correct: false, why: '高温物体仍然发出所有波长的光，只是短波部分的相对强度变大。蓝白是混合色，不是单一蓝光。' },
+          { text: '因为人眼在强光下会自动把红色看成蓝色。', correct: false, why: '视觉适应不会把光谱峰值移动。颜色变化来自光源本身的光谱分布，相机和光谱仪都能测到。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

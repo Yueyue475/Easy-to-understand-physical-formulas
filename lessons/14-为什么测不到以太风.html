@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 5 阶段 · 怎么测都测不到“以太风”？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="5-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 14 课 / 共 27 课 · 约 11 分钟</p>
+        <h1>怎么测都测不到“以太风”？</h1>
+        <p class="lede">上一课那台漂在水银上的干涉仪，给出了一个干净得可疑的答案：没有。真正值得追问的不是这个“没有”，而是接下来的二十年——为什么几乎所有人都先想办法，把以太保住。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>零结果摆在面前，物理学界的第一反应不是推翻以太，而是“打补丁”。以太不是一条孤零零的假设，它是好几件事共用的地基：光被当成波，波总得有东西在振动；麦克斯韦方程算出的光速，总得相对于某个参考系；绝对时间和绝对空间，也默认存在一个普适背景。删掉以太，等于同时抽走三根柱子。</p>
+        <p>1892 年前后，洛伦兹和菲茨杰拉德各自提出同一个补丁：物体沿运动方向会缩短。洛伦兹从电子论出发，认为物质内部的电磁力在穿过以太时重新平衡，把原子挤扁了一点；菲茨杰拉德则猜是分子力受了运动影响。两人都不觉得这是革命，只是在给旧房子加固。</p>
+        <p>真正让人不安的是“恰好”：收缩必须刚好把预期的时间差抹平，偏一点就会留下条纹移动。一个专为零结果调出来的假设，如果无法独立验证，就很难算作物理，只能算一笔聪明的账。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>洛伦兹的工具相当硬。他是当时最懂电磁理论的几个人之一，熟悉麦克斯韦方程在运动物体中的写法，也掌握一套把不同参考系里的电场、磁场互相换算的数学，后来人们把它叫作洛伦兹变换。他还有电子论：物质由带电粒子组成，粒子的运动遵守电磁规律，所以“物体在以太中运动”可以拆成“一堆电荷在以太中运动”。</p>
+        <p>菲茨杰拉德的路子更偏物质结构：形状由分子力维持，如果电磁力在运动方向上受影响，物体就会沿那个方向收缩。他没有给出机制，但指出收缩也许是力学结果，而不是几何。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么 √(1−x²) 约等于 1−x²/2？</summary>
+          <div class="mathbox-body">
+            <p>当 x 很小的时候，x² 更小，x⁴ 就更小得可以丢掉。先看一个平方：把 1−x²/2 自己乘自己，得到</p>
+            <p style="text-align:center;font-family:ui-monospace,Consolas,monospace;color:#ffb03d">(1 − x²/2)² = 1 − x² + x⁴/4</p>
+            <p>最后那一项 x⁴/4 在 x 很小时几乎为零，所以右边差不多就是 1−x²。也就是说，1−x²/2 平方之后约等于 1−x²，那么它自然就约等于 1−x² 的平方根。</p>
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th>x</th><th>√(1−x²)</th><th>1−x²/2</th></tr></thead>
+                <tbody>
+                  <tr><td>0.1</td><td>0.99499</td><td>0.99500</td></tr>
+                  <tr><td>0.01</td><td>0.999950</td><td>0.999950</td></tr>
+                  <tr><td>0.0001</td><td>0.999999995</td><td>0.999999995</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="caption">x 越小，两者越分不开。本课的 x 是万分之一，近似已经准到小数点后第九位。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>这五步是“零结果之后”真实发生过的路线：先补，再发现补丁越打越多，最后有人换了一个出发点。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，收缩补丁。假设一把尺子沿运动方向放置，它在以太中运动时，长度会变成原来的一个因子；垂直于运动方向的长度不变。这个因子只取决于速度与光速之比。</p>
+            <div class="eq">L<span class="sub">∥</span> <span class="op">=</span> L <span class="op">·</span> <span class="sqrt">1 <span class="op">−</span> v<span class="sup">2</span>/c<span class="sup">2</span></span></div>
+            <p class="readas">读作：沿运动方向的长度，等于静止长度乘以根号下“一减去速度平方比光速平方”。速度越大，根号里的数越小，尺子缩得越短。</p>
+            <ul class="vars">
+              <li><b>L∥</b><span>沿运动方向量到的长度</span></li>
+              <li><b>L</b><span>尺子静止时的长度</span></li>
+              <li><b>v</b><span>尺子相对以太的速度</span></li>
+              <li><b>c</b><span>光速，约 3×10⁸ m/s</span></li>
+            </ul>
+            <p>为什么能对上？顺风那条臂的光去快回慢，往返时间被拉长；横风那条臂的光要斜着追镜子，也被拉长，但只有前者的一半。把顺风臂按上式缩短一点，多出来的时间正好被抵消，两条臂又同时收到光。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，算一算这个补丁要“恰好”到什么程度。速度比很小时，需要的收缩比例约等于速度比的平方的一半。注意这里是平方，不是一次方。</p>
+            <div class="eq"><span class="frac"><span class="num">ΔL</span><span class="den">L</span></span> <span class="op">≈</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> <span class="op">·</span> <span class="op">(</span><span class="frac"><span class="num">v</span><span class="den">c</span></span><span class="op">)</span><span class="sup">2</span></div>
+            <p class="readas">读作：每单位长度需要缩短的比例，约等于速度比平方的一半。地球公转的速度比是万分之一，平方后是亿分之一，再取一半，就是两亿分之一。</p>
+            <ul class="vars">
+              <li><b>ΔL</b><span>需要缩短的长度</span></li>
+              <li><b>L</b><span>物体的原有长度</span></li>
+              <li><b>v/c</b><span>速度与光速之比，地球公转时约 10⁻⁴</span></li>
+            </ul>
+            <p>麻烦在于：补丁必须精确到那个数。收缩多了或少了，都会留下条纹移动。可当时没有任何实验能独立测出“运动的尺子短了多少”，所以这个假设既不能证实，也不能证伪。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，补丁开始繁殖。光靠长度收缩还不够，因为光在运动介质里的速度也需要解释。菲涅耳早在 1818 年就提出，介质运动时会“部分拖曳”以太，拖曳系数是 1−1/n²，n 是折射率。这个公式能解释斐索 1851 年流水管里的光速测量，却和“以太绝对静止”的图像别扭地并存。</p>
+            <p>洛伦兹还得给运动参考系补一个“局部时间”，让麦克斯韦方程保持同样的形式。长度收缩、部分拖曳、局部时间，账本上的条目越来越多，却没人说清它们为什么必须同时成立。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，爱因斯坦换了一个出发点。1905 年，他在《论动体的电动力学》里不再问“物体怎样在以太中运动”，而是直接提出两条公设：一，所有惯性参考系里物理规律形式相同；二，真空中的光速对所有惯性观察者都是同一个 c，与光源是否运动无关。</p>
+            <div class="eq">c<span class="sup">′</span> <span class="op">=</span> c <span class="dim">（对所有惯性观察者）</span></div>
+            <p class="readas">读作：无论你以什么速度匀速运动，你测到的真空光速都等于同一个 c。不存在“顺着风测会快一点、逆着风测会慢一点”这回事。</p>
+            <p>两条公设一旦成立，零结果就不再是巧合：没有以太，就没有“以太风”，干涉仪当然测不到方向差异。原来要一整套补丁的事，成了理论的直接推论。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，代价落在时空上。如果光速对所有人都一样，而速度又等于距离除以时间，那么不同观察者对“同一段距离”和“同一段时间”的读数就不能再完全相同。时间和长度必须随运动改变，才能让光速保持不变。</p>
+            <div class="eq">t <span class="op">=</span> <span class="frac"><span class="num">t<span class="sub">0</span></span><span class="den"><span class="sqrt">1 <span class="op">−</span> v<span class="sup">2</span>/c<span class="sup">2</span></span></span></span> <span class="op">=</span> γ t<span class="sub">0</span></div>
+            <p class="readas">读作：运动着的钟走过的时间，等于它静止时走过的时间乘以一个大于 1 的因子。这个因子通常记作 γ（伽马），速度越接近光速，它越大。</p>
+            <ul class="vars">
+              <li><b>t</b><span>地面上的人量到的时间</span></li>
+              <li><b>t₀</b><span>跟着钟一起运动的人量到的时间</span></li>
+              <li><b>γ</b><span>1/√(1−v²/c²)，叫洛伦兹因子</span></li>
+            </ul>
+            <p>数学形式和洛伦兹的补丁几乎一样，但含义完全不同：在洛伦兹那里，收缩是物质被以太挤扁的力学后果；在爱因斯坦这里，它是时空本身的性质，不需要以太，也不需要“恰好”。补丁变成了定理。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下面的图把“补丁要多大”画了出来。上图是收缩因子，越接近 1 表示几乎不缩；下图把“每米缩短多少”换成对数刻度，因为跨了九个数量级。橙色竖线是你选的速度。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 要解释零结果，物体得缩多少？</span>
+              <span class="demo-tag">√(1−v²/c²)</span>
+            </div>
+            <p class="demo-desc">在 v=30 km/s 处，收缩因子是 0.999999995，下图对应每米只缩 5 纳米。把滑块推向光速，两条曲线才明显离开“无收缩”的参考线。这正是补丁的尴尬：它在真实速度下小到无法独立检验。</p>
+            <canvas id="contractCanvas" data-height="430" aria-label="速度与洛伦兹收缩量演示"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn" id="earthBtn">设为地球公转 30 km/s</button>
+              <button type="button" class="btn ghost" id="fastBtn">跳到 0.9c</button>
+            </div>
+            <div id="contractSlider"></div>
+            <div class="readout" id="contractReadout"></div>
+            <p class="hint">试试：先停在 30 km/s，看橙色标记几乎贴着 1；再点“跳到 0.9c”，看每米要缩掉 43 厘米——补丁突然变成了大动作。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>地球绕太阳的速度约 30 km/s，光速约 3×10⁸ m/s，两者相除是 10⁻⁴。把它代进平方根：</p>
+        <div class="eq"><span class="sqrt">1 <span class="op">−</span> (10<span class="sup">−4</span>)<span class="sup">2</span></span> <span class="op">≈</span> 1 <span class="op">−</span> 5×10<span class="sup">−9</span></div>
+        <p class="readas">读作：根号下是“一减去一亿分之一”，开方后约等于“一减去二十亿分之一”。也就是说，收缩因子只比 1 小 5×10⁻⁹。</p>
+        <p>换成每米的缩短量：1 m 乘 5×10⁻⁹，等于 5×10⁻⁹ m，也就是 5 纳米。一个原子的直径约 0.2 到 0.3 纳米，所以每米只缩了大约二十个原子的宽度。一根头发丝粗约 8 万纳米；把一米长的尺子量准到 5 纳米，即使用今天的光学干涉手段也很费劲。</p>
+        <p>这个数字的意义不在精度，而在逻辑：收缩假说假定了一个永远测不出的效应，去解释一个明明测得到的零结果。它把“可检验”换成了“恰好”。任何与实验不符的理论，都可以事后加一条看不见的补偿来救活，这在科学上是危险的。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>狭义相对论刚提出时并没有立刻被接受。洛伦兹和庞加莱继续使用以太的语言，很多物理学家把长度收缩当成真实的力学效应。直到 1908 年闵可夫斯基把时空画成四维几何图，人们才慢慢看清：洛伦兹那套数学没有错，错的是把它解释成“物质被以太挤扁”。</p>
+        <p>零结果有了双重身份：它既是旧理论最难看的伤口，也是新理论的出生证明。爱因斯坦后来多次表示，迈克耳孙-莫雷的结果并不是他 1905 年思考的起点；他更在意“追光会看到什么”。那就成了下一课。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var C = 299792458;
+    var BETA_EARTH = 30000 / C;
+
+    function factor(b) {
+      return Math.sqrt(Math.max(0, 1 - b * b));
+    }
+    function shrinkNm(b) {
+      return (1 - factor(b)) * 1e9;
+    }
+    function supStr(n) {
+      var map = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '-': '⁻' };
+      var s = String(n), out = '';
+      for (var i = 0; i < s.length; i++) out += map[s.charAt(i)] || s.charAt(i);
+      return out;
+    }
+    function sci(v, digits) {
+      if (!(v > 0)) return '0';
+      var e = Math.floor(Math.log(v) / Math.LN10);
+      var m = v / Math.pow(10, e);
+      if (m >= 9.995) { m /= 10; e += 1; }
+      return m.toFixed(digits == null ? 2 : digits) + '×10' + supStr(e);
+    }
+
+    var cc = PH.canvas('contractCanvas');
+    var readout = document.getElementById('contractReadout');
+    var beta = BETA_EARTH;
+
+    function drawContract(b) {
+      if (!cc) return;
+      var ctx = cc.ctx;
+      var w = cc.w;
+      var h = cc.h;
+      var padL = 62;
+      var padR = 22;
+      var mid = h * 0.47;
+      var i;
+
+      cc.clear();
+
+      /* ---------- 上半：收缩因子 ---------- */
+      var top = 30;
+      var bot = mid - 26;
+      var pw = Math.max(30, w - padL - padR);
+      var ph = Math.max(30, bot - top);
+
+      function X(bb) { return padL + pw * bb; }
+      function Y1(f) { return bot - ph * f; }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var gy = Y1(i / 4);
+        ctx.beginPath();
+        ctx.moveTo(padL, gy);
+        ctx.lineTo(padL + pw, gy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.42)';
+      ctx.beginPath();
+      ctx.moveTo(padL, top);
+      ctx.lineTo(padL, bot);
+      ctx.lineTo(padL + pw, bot);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('1.00', padL - 8, Y1(1) + 4);
+      ctx.fillText('0.75', padL - 8, Y1(0.75) + 4);
+      ctx.fillText('0.50', padL - 8, Y1(0.5) + 4);
+      ctx.fillText('0.25', padL - 8, Y1(0.25) + 4);
+      ctx.fillText('0', padL - 8, Y1(0) + 4);
+      ctx.textAlign = 'left';
+      for (i = 0; i <= 5; i++) {
+        ctx.fillText((i / 5).toFixed(1), X(i / 5) - 8, bot + 16);
+      }
+      ctx.fillStyle = 'rgba(214,230,255,.82)';
+      ctx.fillText('收缩因子 √(1−v²/c²)', padL, top - 9);
+      ctx.fillStyle = 'rgba(143,166,196,.72)';
+      ctx.fillText('v/c', padL + pw - 24, bot + 30);
+      ctx.restore();
+
+      /* 无收缩参考线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.setLineDash([6, 6]);
+      ctx.beginPath();
+      ctx.moveTo(padL, Y1(1));
+      ctx.lineTo(padL + pw, Y1(1));
+      ctx.stroke();
+      ctx.restore();
+
+      /* 曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.4;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 9;
+      ctx.beginPath();
+      for (i = 0; i <= 300; i++) {
+        var bb = i / 300;
+        var xx = X(bb);
+        var yy = Y1(factor(bb));
+        if (i === 0) ctx.moveTo(xx, yy);
+        else ctx.lineTo(xx, yy);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 地球公转位置的标注 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.75)';
+      ctx.setLineDash([3, 4]);
+      ctx.beginPath();
+      ctx.moveTo(X(0), Y1(1));
+      ctx.lineTo(X(0) + 96, top + 34);
+      ctx.stroke();
+      ctx.fillStyle = '#ffb03d';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('v = 30 km/s：', padL + 102, top + 30);
+      ctx.fillStyle = 'rgba(255,176,61,.9)';
+      ctx.fillText('因子 = 1 − 5×10⁻⁹', padL + 102, top + 46);
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.fillText('肉眼看就是贴着 1', padL + 102, top + 62);
+      ctx.restore();
+
+      /* 当前标记 */
+      var mx = X(b);
+      var my = Y1(factor(b));
+      ctx.save();
+      ctx.strokeStyle = 'rgba(214,230,255,.32)';
+      ctx.setLineDash([3, 4]);
+      ctx.beginPath();
+      ctx.moveTo(mx, top);
+      ctx.lineTo(mx, bot);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(mx, my, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* ---------- 下半：每米缩短量（对数） ---------- */
+      var top2 = mid + 34;
+      var bot2 = h - 40;
+      var ph2 = Math.max(30, bot2 - top2);
+
+      function Y2(vnm) {
+        var lg = Math.log(Math.max(0.5, vnm)) / Math.LN10;
+        if (lg < 0) lg = 0;
+        if (lg > 9) lg = 9;
+        return bot2 - ph2 * lg / 9;
+      }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      var marks = [0, 3, 6, 9];
+      for (i = 0; i < marks.length; i++) {
+        ctx.beginPath();
+        ctx.moveTo(padL, Y2(Math.pow(10, marks[i])));
+        ctx.lineTo(padL + pw, Y2(Math.pow(10, marks[i])));
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.42)';
+      ctx.beginPath();
+      ctx.moveTo(padL, top2);
+      ctx.lineTo(padL, bot2);
+      ctx.lineTo(padL + pw, bot2);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('1 m', padL - 8, Y2(1e9) + 4);
+      ctx.fillText('1 mm', padL - 8, Y2(1e6) + 4);
+      ctx.fillText('1 μm', padL - 8, Y2(1e3) + 4);
+      ctx.fillText('1 nm', padL - 8, Y2(1) + 4);
+      ctx.textAlign = 'left';
+      for (i = 0; i <= 5; i++) {
+        ctx.fillText((i / 5).toFixed(1), X(i / 5) - 8, bot2 + 16);
+      }
+      ctx.fillStyle = 'rgba(214,230,255,.82)';
+      ctx.fillText('每米缩短多少（对数刻度）', padL, top2 - 10);
+      ctx.fillStyle = 'rgba(143,166,196,.72)';
+      ctx.fillText('v/c', padL + pw - 24, bot2 + 30);
+      ctx.restore();
+
+      /* 5 nm 参考线 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.35)';
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath();
+      ctx.moveTo(padL, Y2(5));
+      ctx.lineTo(padL + pw, Y2(5));
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255,176,61,.85)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('地球公转：每米 5 nm', padL + 8, Y2(5) - 7);
+      ctx.restore();
+
+      /* 曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.4)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (i = 0; i <= 300; i++) {
+        var b2 = i / 300;
+        var x2 = X(b2);
+        if (x2 > padL + pw + 1) break;
+        var y2 = Y2(shrinkNm(b2));
+        if (i === 0) ctx.moveTo(x2, y2);
+        else ctx.lineTo(x2, y2);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      var my2 = Y2(shrinkNm(b));
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(mx, my2, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function paint(b) {
+      drawContract(b);
+      if (!readout) return;
+      var v = b * C;
+      var vTxt;
+      if (v >= 1000) vTxt = (v / 1000).toFixed(1) + ' km/s';
+      else vTxt = v.toFixed(0) + ' m/s';
+      var f = factor(b);
+      var fTxt = f.toFixed(9);
+      if (f > 0.999999 && f < 1) fTxt = f.toFixed(9);
+      var nm = shrinkNm(b);
+      var nmTxt;
+      if (nm >= 1e6) nmTxt = sci(nm, 2) + ' nm（' + (nm / 1e9).toFixed(3) + ' m）';
+      else nmTxt = nm.toFixed(nm < 100 ? 2 : 0) + ' nm';
+      readout.textContent = 'v = ' + sci(b, 3) + 'c = ' + vTxt +
+        '　→　收缩因子 ' + fTxt + '　每米缩短 ' + nmTxt;
+    }
+
+    var contractSlider = PH.slider({
+      mount: '#contractSlider',
+      label: '速度 v（以光速 c 为单位）',
+      min: 0,
+      max: 0.99,
+      step: 0.0001,
+      value: BETA_EARTH,
+      fmt: function (v) {
+        if (v < 0.01) return sci(v, 3) + ' c';
+        return v.toFixed(4) + ' c';
+      },
+      onInput: function (v) { beta = v; paint(v); }
+    });
+
+    var earthBtn = document.getElementById('earthBtn');
+    var fastBtn = document.getElementById('fastBtn');
+    if (earthBtn) {
+      earthBtn.addEventListener('click', function () {
+        if (contractSlider) contractSlider.set(BETA_EARTH);
+      });
+    }
+    if (fastBtn) {
+      fastBtn.addEventListener('click', function () {
+        if (contractSlider) contractSlider.set(0.9);
+      });
+    }
+
+    paint(beta);
+    if (cc) {
+      cc.onResize(function () {
+        paint(contractSlider ? contractSlider.value : beta);
+      });
+    }
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '洛伦兹-菲茨杰拉德收缩能“解释”零结果，为什么当时仍不被普遍接受？',
+        options: [
+          { text: '因为它算错了，收缩方向反了。', correct: false, why: '方向没有算反：沿运动方向缩短，确实能把两条臂的往返时间差抵消掉。问题不在算术，而在假设的地位。' },
+          { text: '因为它必须“恰好”抵消，却没有独立机制说明物体为什么会缩，也无法单独验证。', correct: true, why: '收缩量被调成刚好抹平零结果，而 30 km/s 下每米只缩 5 纳米，当时没有任何直尺能独立测出。一个只能事后凑结果、不能独立检验的假设，很难被当作物理理论。' },
+          { text: '因为迈克耳孙本人公开宣布实验失败。', correct: false, why: '实验并没有失败，恰恰相反，它的灵敏度足以看到预期效应，却没看到。零结果本身是可靠的。' },
+          { text: '因为当时没有人懂麦克斯韦方程。', correct: false, why: '1880 年代麦克斯韦理论已被广泛接受，赫兹在 1887 年还证实了电磁波。洛伦兹正是电磁理论的高手。' }
+        ]
+      },
+      {
+        q: '爱因斯坦的出发点，和洛伦兹最根本的不同在哪？',
+        options: [
+          { text: '爱因斯坦保留了以太，只是把方程改得更复杂。', correct: false, why: '恰好相反。爱因斯坦删掉了以太，并拒绝为运动参考系引入“局部时间”这类补丁。' },
+          { text: '爱因斯坦把“光速对所有人都是 c”和相对性原理当作公设，让时空去适应它们。', correct: true, why: '洛伦兹先从物质与以太的相互作用出发，把收缩当成力学结果；爱因斯坦则从两条公设出发，收缩和时间变慢成为必然推论。数学相似，逻辑起点不同。' },
+          { text: '爱因斯坦先做了更精确的干涉实验，才得出结论。', correct: false, why: '1905 年的论文是理论工作，没有新的干涉实验。他依据的是电动力学的不自洽，而不是一台新仪器。' },
+          { text: '爱因斯坦认为光速可以随观察者变化，所以零结果很正常。', correct: false, why: '光速不变是他的公设，不是“可变”。正因为光速不随观察者变，才需要改变时间和长度的读数。' }
+        ]
+      },
+      {
+        q: '地球公转速度 30 km/s 对应的长度收缩，大约是每米缩短多少？',
+        options: [
+          { text: '5 纳米', correct: true, why: 'v/c=10⁻⁴，1−√(1−v²/c²)≈5×10⁻⁹，所以 1 m 缩短 5×10⁻⁹ m，即 5 nm，约二十个原子的宽度。' },
+          { text: '5 微米', correct: false, why: '5 微米是 5×10⁻⁶ m，比正确值大了一千倍。它对应的是 v/c 约 0.003，而不是 10⁻⁴。' },
+          { text: '5 毫米', correct: false, why: '5 毫米是 5×10⁻³ m，比正确值大了百万倍。这个量级只有在速度接近光速时才出现。' },
+          { text: '5 厘米', correct: false, why: '5 厘米意味着每米缩掉二十分之一，需要 v/c 接近 0.6，远不是地球公转的速度。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

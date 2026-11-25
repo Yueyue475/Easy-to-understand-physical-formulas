@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 4 阶段 · 力能不能不靠接触传递？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="4-2" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 11 课 / 共 27 课 · 约 10 分钟</p>
+        <h1>力能不能不靠接触传递？</h1>
+        <p class="lede">太阳并没有用绳子拉着地球，磁铁也没有碰到铁钉，可它们都在施加力。一个隔空生效的力，到底是怎么走过去的？</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>牛顿的万有引力公式极其成功：只要知道两个物体的质量和距离，就能算出它们之间的力。可这个公式有一个让牛顿自己都不安的地方——它只告诉你力有多大、指向哪里，却完全没说这个力<strong>怎么</strong>从太阳传到地球。中间是真空，没有绳子，没有空气，没有任何可以推一把的东西。</p>
+        <p>牛顿在给朋友的信里承认过这个困难，但他选择先把“怎么传”搁在一边：公式能算准行星，就先算。18 世纪的多数人接受了这种安排，把“超距作用”当成一条不必再解释的公理——物体隔空瞬间互相影响，问“机制”是不必要的形而上学。库仑的电荷力、磁极力也都写成平方反比，同样带着这个隐忧。</p>
+        <p>法拉第正是被这件事卡住的人。他当过装订工学徒，靠自学进入科学圈，没有受过系统的高等数学训练，看不懂微分方程，也很难用“远距离瞬时作用”这种语言思考。这反而逼他走另一条路：用图像和实验去想力。1820 年奥斯特的发现让他兴奋不已，1831 年他找到了电磁感应；可要解释“磁铁怎么隔空推动电荷”，现有语言都不够用。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>法拉第手边最有力的工具朴素得不像工具：一块条形磁铁、一张硬纸板、一盒细铁屑。把纸板盖在磁铁上，撒上铁屑，轻敲纸板，铁屑就会自己排队，排成一条条从磁铁一端弯出去、再弯回来的曲线。</p>
+        <p>这个画面给了法拉第一个可以抓住的实体。铁屑本身当然不会“知道”该往哪走：每一粒铁屑在磁场里先被磁化，变成一根微小的磁针，再沿着当地的磁作用方向躺下。于是铁屑排成的线，把看不见的磁作用“翻译”成了看得见的几何。法拉第把它叫做<strong>力线</strong>。他后来还用一块软铁、一些线圈和检流计做实验，把力线的形状和强弱一点点摸清楚。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：铁屑为什么能显示方向？</summary>
+          <div class="mathbox-body">
+            <p>铁是软磁材料：把它放进磁场，内部的小磁畴会顺着外场排列，整块铁立刻变成一个临时磁铁，北极指向外场方向。铁屑又细又轻，摩擦力很小，所以它会转到与外场平行的姿态停住。</p>
+            <p>很多铁屑沿着同一条线排下去，看起来就像一条连续的线。其实那条“线”是无数独立小磁针的集体姿态，不是真的有根线。真正连续存在的是磁场本身。</p>
+            <p class="caption">实验图像的价值就在这里：它把一个不可见的场，变成了可以描摹的图形。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>跟着法拉第的思路走一遍。他不写方程，只看图，一步步把“超距作用”换成一个充满空间的实体。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，做铁屑实验。把条形磁铁平放在桌上，盖上纸板，均匀撒一层细铁屑，再轻敲纸板。铁屑从磁铁的 N 极附近出发，向外弯出一道道弧线，最后收回 S 极附近。靠近磁铁两端的地方，线挤得很紧；越往外，线越舒展。</p>
+            <p>注意一个特点：线没有起点也没有终点。它们在磁铁外部从 N 弯到 S，在内部再从 S 回到 N，只是被铁挡住看不见。整条线是一个闭合的环。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，观察疏密。磁极附近线挨着线，远处空得很。这个差别与“哪里吸铁钉更用力”完全对应：磁极附近吸得最牢，越远越弱。</p>
+            <p>于是有了一个自然的猜想：线的疏密，可以当作磁场强弱的地图。不需要额外仪器去“测量”，只要数一数某个小面积里穿过了几根线，就能比较两处的场强。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，把这个猜想写成定义。取一小块与力线垂直的面积，数穿过它的力线条数，再除以面积。单位面积上的线数越多，那里的磁场就越强。这就是“场”的雏形：不是磁铁里流出来的某种液体，而是空间中每一点都有一个确定的强弱和方向。</p>
+            <div class="eq">B <span class="op">∝</span> <span class="frac"><span class="num">N</span><span class="den">A</span></span></div>
+            <p class="readas">读作：磁感应强度正比于垂直穿过单位面积的力线条数；N 是穿过面积 A 的线数。</p>
+            <ul class="vars">
+              <li><b>B</b><span>该处的磁感应强度（T）</span></li>
+              <li><b>N</b><span>穿过小面积的力线条数</span></li>
+              <li><b>A</b><span>与力线垂直的小面积（m²）</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，追问力线为什么闭合。把磁铁从中间切开，你以为会得到只有 N 极和只有 S 极的两块碎片，结果两半各自又长出完整的 N 极和 S 极。再切还是如此。无论怎么分，磁极总是成对出现，没人找到过单独的“磁荷”。</p>
+            <p>没有磁荷，力线就不能像电场线那样从正电荷发出、到负电荷终止。它只能自己绕回来。用数学说，就是穿过任意一个闭合曲面的磁通量总为零：进去多少，出来多少。这条规则后来被写进麦克斯韦方程组，成为“磁单极不存在”的表达式。</p>
+            <div class="eq"><span class="op">∮</span> <span class="vec">B</span> <span class="op">·</span> d<span class="vec">A</span> <span class="op">=</span> 0</div>
+            <p class="readas">读作：穿过任意闭合曲面的磁通量恒等于零；磁力线不会在某个地方凭空开始或结束。</p>
+            <ul class="vars">
+              <li><b>∮B·dA</b><span>穿过闭合曲面的总磁通量</span></li>
+              <li><b>dA</b><span>曲面上的小面积元，方向朝外</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，把“场”扶正为实体。既然空间中每一点都有确定的场，那么磁铁 A 对磁铁 B 的作用就可以拆成两段：A 先在周围建立场，B 再感受自己所在位置的场。力不是瞬间从 A 跳到 B，而是由场从一处传到相邻一处。</p>
+            <p>这一步替换掉的正是“超距作用”。场不需要绳子，但它填满了空间，有自己的强弱分布，可以画、可以测、可以随时间变化。代价是：场在远处的衰减有明确的规律。条形磁铁是偶极子，它的远场不按 1/r² 掉，而是按 1/r³ 掉，比点电荷的电场衰减得更快。这也是为什么磁铁稍远一点就几乎感觉不到。</p>
+            <div class="eq">B <span class="op">∝</span> <span class="frac"><span class="num">m</span><span class="den">r<span class="sup">3</span></span></span></div>
+            <p class="readas">读作：偶极子在远处的磁场，与磁矩 m 成正比，与距离 r 的三次方成反比。</p>
+            <ul class="vars">
+              <li><b>m</b><span>磁矩，描述磁铁“有多强”，单位 A·m²</span></li>
+              <li><b>r</b><span>到磁铁中心的距离（m）</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>演示 A 的力线实时算出：每移动一次磁铁，场重新分布，线随之重画。演示 B 画出偶极子远场的 1/r³ 衰减。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 拖动磁铁看力线重排</span>
+              <span class="demo-tag">力线密度 = 场强</span>
+            </div>
+            <p class="demo-desc">按住磁铁拖动。紫色的线是磁力线，越密的地方场越强；把第二块磁铁放进来，让异极相对或同极相对，看力线是接通还是互相排开。鼠标停在哪里，下方就读出那里的磁感应强度。</p>
+            <canvas id="linesCanvas" data-height="400" aria-label="可拖动条形磁铁与实时磁力线演示"></canvas>
+            <div class="demo-controls">
+              <button type="button" class="btn" id="addMagnetBtn">放入第二块磁铁</button>
+              <button type="button" class="btn ghost" id="flipMagnetBtn">翻转它的极性</button>
+            </div>
+            <div class="readout" id="linesReadout"></div>
+            <p class="hint">试试：把两块磁铁的异极靠近，力线会连成一片；同极靠近时，中间会出现一块线绕开的“空档”。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 偶极场为什么掉得这么快</span>
+              <span class="demo-tag">B ∝ 1/r³</span>
+            </div>
+            <p class="demo-desc">横轴是到磁铁中心的距离，纵轴是轴线上的磁感应强度，用对数坐标。实线是偶极子的 1/r³，虚线是按 1/r² 衰减的对照线；距离一拉远，两条线迅速分开。</p>
+            <canvas id="dipoleCanvas" data-height="300" aria-label="偶极磁场随距离三次方衰减曲线"></canvas>
+            <div id="dipoleSlider"></div>
+            <div class="readout" id="dipoleReadout"></div>
+            <p class="hint">试试：把距离从 5 cm 拖到 10 cm，读数应该掉到大约八分之一——因为距离翻倍，三次方就是八倍。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>把三个熟悉的磁场排在一起，数量级的差别会立刻显出来。地磁场大约 5×10⁻⁵ T，它能让指南针工作，却吸不起一枚回形针。冰箱贴表面的磁场大约 0.01 T。</p>
+        <div class="eq"><span class="frac"><span class="num">0.01</span><span class="den">5×10<span class="sup">−5</span></span></span> <span class="op">=</span> 200</div>
+        <p class="readas">读作：冰箱贴表面的磁场是地磁场的两百倍。这就是为什么指南针会被冰箱贴带偏，却不会被自己的外壳干扰。</p>
+        <p>医院里的核磁共振成像仪更强：1.5 T 到 3 T。按同样的算法，1.5 T 是地磁场的三万倍。这意味着检查室里任何铁磁性物体都会受到巨大拉力，所以医生会要求你把钥匙、硬币、轮椅统统留在门外。</p>
+        <p>再回到力线。铁屑图看起来只是“好看”，其实它把场的强弱直接画在了纸上：磁极附近线距只有一两毫米，几十厘米外就宽到几厘米。线密度相差几十倍，场强就相差几十倍。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>“场”最初并不被普遍接受。很多人觉得它只是把“超距作用”换了个说法：你说场在传力，可场本身又是什么？法拉第的回答是实验：力线可以被扰动、被切割、随时间变化，它有可测量的行为，不是文字游戏。</p>
+        <p>真正让场站稳脚跟的是麦克斯韦。他把法拉第的力线翻译成方程，发现电场和磁场可以互相激发、在真空中传播，而且速度正好等于光速。场不再只是描述力的工具，它本身成了物理舞台上的主角。下一课就来做这个翻译。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var POLE = 2.5e-7;         /* μ0/(4π) × 磁极强度，单位 T·m² */
+    var HALF = 0.021;          /* 条形磁铁半长，m */
+    var MAG_H = 0.007;         /* 半高，m */
+    var WORLD_W = 0.26;
+
+    var magnets = [
+      { x: -0.055, y: 0, dir: 1 }
+    ];
+    var secondOn = false;
+
+    var linesC = PH.canvas('linesCanvas');
+    var linesReadout = document.getElementById('linesReadout');
+    var addBtn = document.getElementById('addMagnetBtn');
+    var flipBtn = document.getElementById('flipMagnetBtn');
+
+    var cursor = { x: 0.02, y: 0.035, inside: false };
+
+    function fmtField(B) {
+      if (!(B > 0)) return '0 T';
+      if (B >= 1e-3) return (B * 1e3).toFixed(2) + ' mT';
+      if (B >= 1e-6) return (B * 1e6).toFixed(1) + ' µT';
+      return (B * 1e9).toFixed(0) + ' nT';
+    }
+
+    function polesOf(m) {
+      return {
+        n: { x: m.x + m.dir * HALF, y: m.y, q: 1 },
+        s: { x: m.x - m.dir * HALF, y: m.y, q: -1 }
+      };
+    }
+
+    function fieldAt(x, y) {
+      var bx = 0;
+      var by = 0;
+      for (var i = 0; i < magnets.length; i++) {
+        var p = polesOf(magnets[i]);
+        var arr = [p.n, p.s];
+        for (var k = 0; k < 2; k++) {
+          var dx = x - arr[k].x;
+          var dy = y - arr[k].y;
+          var r2 = dx * dx + dy * dy;
+          if (r2 < 1.6e-5) r2 = 1.6e-5;
+          var r = Math.sqrt(r2);
+          var f = POLE * arr[k].q / (r2 * r);
+          bx += f * dx;
+          by += f * dy;
+        }
+      }
+      return { x: bx, y: by, mag: Math.sqrt(bx * bx + by * by) };
+    }
+
+    function insideMagnet(x, y, margin) {
+      margin = margin || 0;
+      for (var i = 0; i < magnets.length; i++) {
+        var m = magnets[i];
+        if (Math.abs(x - m.x) <= HALF + margin && Math.abs(y - m.y) <= MAG_H + margin) return true;
+      }
+      return false;
+    }
+
+    function worldToScreen(x, y, w, h) {
+      var s = w / WORLD_W;
+      return { x: w / 2 + x * s, y: h / 2 + y * s };
+    }
+
+    function screenToWorld(px, py, w, h) {
+      var s = w / WORLD_W;
+      return { x: (px - w / 2) / s, y: (py - h / 2) / s };
+    }
+
+    function traceLine(x, y, w, h) {
+      var pts = [];
+      var step = 0.0013;
+      var i;
+      for (i = 0; i < 900; i++) {
+        pts.push({ x: x, y: y });
+        if (insideMagnet(x, y, 0.0015)) break;
+        var f1 = fieldAt(x, y);
+        if (!(f1.mag > 1e-11)) break;
+        var mx = x + (f1.x / f1.mag) * step * 0.5;
+        var my = y + (f1.y / f1.mag) * step * 0.5;
+        var f2 = fieldAt(mx, my);
+        if (!(f2.mag > 1e-11)) break;
+        x += (f2.x / f2.mag) * step;
+        y += (f2.y / f2.mag) * step;
+        if (Math.abs(x) > WORLD_W * 0.62 || Math.abs(y) > WORLD_W * 0.62 * h / w) break;
+      }
+      return pts;
+    }
+
+    function drawMagnet(ctx, m, w, h, active) {
+      var c = worldToScreen(m.x, m.y, w, h);
+      var s = w / WORLD_W;
+      var hw = HALF * s;
+      var hh = MAG_H * s;
+      var nx = c.x + m.dir * hw;
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(169,139,255,.18)';
+      ctx.strokeStyle = active ? '#a98bff' : 'rgba(169,139,255,.7)';
+      ctx.lineWidth = active ? 2.4 : 1.6;
+      ctx.beginPath();
+      ctx.rect(c.x - hw, c.y - hh, hw * 2, hh * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(255,176,61,.75)';
+      ctx.fillRect(Math.min(c.x, nx), c.y - hh, hw, hh * 2);
+      ctx.fillStyle = 'rgba(78,168,255,.55)';
+      ctx.fillRect(Math.min(c.x, c.x - m.dir * hw), c.y - hh, hw, hh * 2);
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#08101c';
+      ctx.font = 'bold 15px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('N', c.x + m.dir * hw * 0.5, c.y);
+      ctx.fillText('S', c.x - m.dir * hw * 0.5, c.y);
+      ctx.restore();
+    }
+
+    function drawLines() {
+      if (!linesC) return;
+      var ctx = linesC.ctx;
+      var w = linesC.w;
+      var h = linesC.h;
+      var i;
+
+      linesC.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(169,139,255,.42)';
+      ctx.lineWidth = 1.1;
+      for (i = 0; i < magnets.length; i++) {
+        var p = polesOf(magnets[i]);
+        var radii = [0.008, 0.016, 0.028];
+        for (var ri = 0; ri < radii.length; ri++) {
+          for (var ai = 0; ai < 16; ai++) {
+            var ang = (ai + 0.5) * Math.PI * 2 / 16;
+            var sx = p.n.x + radii[ri] * Math.cos(ang);
+            var sy = p.n.y + radii[ri] * Math.sin(ang);
+            if (insideMagnet(sx, sy, 0.002)) continue;
+            if (Math.abs(sx) > WORLD_W * 0.56) continue;
+            if (Math.abs(sy) > WORLD_W * 0.56 * h / w) continue;
+            var pts = traceLine(sx, sy, w, h);
+            if (pts.length < 3) continue;
+            ctx.beginPath();
+            for (var k = 0; k < pts.length; k++) {
+              var sp = worldToScreen(pts[k].x, pts[k].y, w, h);
+              if (k === 0) ctx.moveTo(sp.x, sp.y);
+              else ctx.lineTo(sp.x, sp.y);
+            }
+            ctx.stroke();
+          }
+        }
+      }
+      ctx.restore();
+
+      for (i = 0; i < magnets.length; i++) {
+        drawMagnet(ctx, magnets[i], w, h, dragIdx === i);
+      }
+
+      if (cursor.inside) {
+        var cp = worldToScreen(cursor.x, cursor.y, w, h);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(53,224,200,.85)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(cp.x, cp.y, 5, 0, Math.PI * 2);
+        ctx.moveTo(cp.x - 9, cp.y);
+        ctx.lineTo(cp.x - 5, cp.y);
+        ctx.moveTo(cp.x + 5, cp.y);
+        ctx.lineTo(cp.x + 9, cp.y);
+        ctx.moveTo(cp.x, cp.y - 9);
+        ctx.lineTo(cp.x, cp.y - 5);
+        ctx.moveTo(cp.x, cp.y + 5);
+        ctx.lineTo(cp.x, cp.y + 9);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('紫色曲线：磁力线（从 N 出去，绕回 S）', 12, 20);
+      ctx.fillText('拖动磁铁，看线怎么重排', 12, h - 14);
+      ctx.restore();
+    }
+
+    var dragIdx = -1;
+
+    function updateLinesReadout() {
+      if (!linesReadout) return;
+      if (!cursor.inside) {
+        linesReadout.textContent = '把鼠标移到画布上，即可读出该处的磁感应强度 B';
+        return;
+      }
+      var f = fieldAt(cursor.x, cursor.y);
+      linesReadout.textContent = '鼠标处 B ≈ ' + fmtField(f.mag) + '　（磁场方向沿紫色力线的切线）';
+    }
+
+    var pending = false;
+    function refresh() {
+      if (pending) return;
+      pending = true;
+      var raf = window.requestAnimationFrame || function (cb) { return setTimeout(cb, 16); };
+      raf(function () {
+        pending = false;
+        drawLines();
+        updateLinesReadout();
+      });
+    }
+
+    function hitMagnet(wx, wy) {
+      for (var i = magnets.length - 1; i >= 0; i--) {
+        var m = magnets[i];
+        if (Math.abs(wx - m.x) <= HALF + 0.006 && Math.abs(wy - m.y) <= MAG_H + 0.006) return i;
+      }
+      return -1;
+    }
+
+    if (linesC) {
+      var el = linesC.canvas;
+      el.style.touchAction = 'none';
+
+      el.addEventListener('pointerdown', function (e) {
+        var rect = el.getBoundingClientRect();
+        var sp = screenToWorld(e.clientX - rect.left, e.clientY - rect.top, linesC.w, linesC.h);
+        var idx = hitMagnet(sp.x, sp.y);
+        if (idx >= 0) {
+          dragIdx = idx;
+          cursor.x = sp.x;
+          cursor.y = sp.y;
+          cursor.inside = true;
+          try {
+            if (el.setPointerCapture) el.setPointerCapture(e.pointerId);
+          } catch (err) {}
+          refresh();
+        }
+      });
+
+      el.addEventListener('pointermove', function (e) {
+        var rect = el.getBoundingClientRect();
+        var sp = screenToWorld(e.clientX - rect.left, e.clientY - rect.top, linesC.w, linesC.h);
+        cursor.inside = true;
+        cursor.x = sp.x;
+        cursor.y = sp.y;
+        if (dragIdx >= 0) {
+          var m = magnets[dragIdx];
+          m.x = Math.max(-0.085, Math.min(0.085, sp.x));
+          m.y = Math.max(-0.032, Math.min(0.032, sp.y));
+        }
+        refresh();
+      });
+
+      function endDrag() {
+        dragIdx = -1;
+        refresh();
+      }
+      el.addEventListener('pointerup', endDrag);
+      el.addEventListener('pointercancel', endDrag);
+      el.addEventListener('pointerleave', function () {
+        if (dragIdx < 0) {
+          cursor.inside = false;
+          refresh();
+        }
+      });
+
+      linesC.onResize(function () { refresh(); });
+    }
+
+    if (addBtn) {
+      addBtn.addEventListener('click', function () {
+        secondOn = !secondOn;
+        if (secondOn) {
+          magnets.push({ x: 0.075, y: 0, dir: 1 });
+          addBtn.textContent = '拿开第二块磁铁';
+          if (flipBtn) flipBtn.disabled = false;
+        } else {
+          magnets.length = 1;
+          addBtn.textContent = '放入第二块磁铁';
+          if (flipBtn) flipBtn.disabled = true;
+        }
+        refresh();
+      });
+    }
+
+    if (flipBtn) {
+      flipBtn.disabled = true;
+      flipBtn.addEventListener('click', function () {
+        if (magnets.length > 1) {
+          magnets[1].dir *= -1;
+          refresh();
+        }
+      });
+    }
+
+    if (linesC) {
+      cursor.x = 0.02;
+      cursor.y = 0.032;
+      cursor.inside = true;
+      refresh();
+    }
+
+    var dipoleC = PH.canvas('dipoleCanvas');
+    var dipoleReadout = document.getElementById('dipoleReadout');
+
+    function axialField(r) {
+      var a = HALF;
+      if (r < a * 1.04) r = a * 1.04;
+      return POLE * (1 / Math.pow(r - a, 2) - 1 / Math.pow(r + a, 2));
+    }
+
+    function drawDipole(rNow) {
+      if (!dipoleC) return;
+      var ctx = dipoleC.ctx;
+      var w = dipoleC.w;
+      var h = dipoleC.h;
+      var padL = 62;
+      var padR = 20;
+      var padT = 24;
+      var padB = 42;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var rMin = 0.03;
+      var rMax = 0.30;
+      var yMin = 1e-7;
+      var yMax = 1e-2;
+      var i;
+
+      function gx(r) { return x0 + pw * Math.log(r / rMin) / Math.log(rMax / rMin); }
+      function gy(B) {
+        var t = Math.log(B / yMin) / Math.log(yMax / yMin);
+        if (t < 0) t = 0;
+        if (t > 1) t = 1;
+        return y0 - ph * t;
+      }
+
+      dipoleC.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = -7; i <= -2; i++) {
+        var yy = gy(Math.pow(10, i));
+        ctx.beginPath();
+        ctx.moveTo(x0, yy);
+        ctx.lineTo(x0 + pw, yy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      var yl = ['10⁻⁷', '10⁻⁶', '10⁻⁵', '10⁻⁴', '10⁻³', '10⁻²'];
+      for (i = 0; i < yl.length; i++) {
+        ctx.fillText(yl[i], padL - 8, gy(Math.pow(10, i - 7)) + 4);
+      }
+      ctx.textAlign = 'left';
+      var xl = [3, 5, 10, 20, 30];
+      for (i = 0; i < xl.length; i++) {
+        ctx.fillText(String(xl[i]), gx(xl[i] / 100) - 7, y0 + 20);
+      }
+      ctx.fillText('r / cm', x0 + pw - 34, y0 + 38);
+      ctx.save();
+      ctx.translate(14, padT + 92);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('B / T', 0, 0);
+      ctx.restore();
+      ctx.restore();
+
+      var ref0 = axialField(0.03);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.55)';
+      ctx.setLineDash([5, 6]);
+      ctx.lineWidth = 1.3;
+      ctx.beginPath();
+      for (i = 0; i <= 100; i++) {
+        var rr = rMin * Math.pow(rMax / rMin, i / 100);
+        var br = ref0 * Math.pow(0.03 / rr, 2);
+        var X = gx(rr);
+        var Y = gy(br);
+        if (i === 0) ctx.moveTo(X, Y);
+        else ctx.lineTo(X, Y);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (i = 0; i <= 140; i++) {
+        var r2 = rMin * Math.pow(rMax / rMin, i / 140);
+        var b2 = axialField(r2);
+        var X2 = gx(r2);
+        var Y2 = gy(b2);
+        if (i === 0) ctx.moveTo(X2, Y2);
+        else ctx.lineTo(X2, Y2);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      var px = gx(rNow);
+      var py = gy(axialField(rNow));
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.5)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(px, y0);
+      ctx.lineTo(px, py);
+      ctx.lineTo(x0, py);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(px, py, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('实线：偶极子 B ∝ 1/r³', padL + pw - 8, padT + 16);
+      ctx.fillStyle = 'rgba(143,166,196,.85)';
+      ctx.fillText('虚线：1/r² 对照', padL + pw - 8, padT + 34);
+      ctx.textAlign = 'left';
+      ctx.restore();
+    }
+
+    function updateDipole(rCm) {
+      var r = rCm / 100;
+      drawDipole(r);
+      if (dipoleReadout) {
+        var ref = axialField(0.03) * Math.pow(0.03 / r, 2);
+        dipoleReadout.textContent = 'r = ' + rCm.toFixed(1) + ' cm　轴线上的 B ≈ ' +
+          fmtField(axialField(r)) + '；按 1/r² 本该有 ' + fmtField(ref) + '，偶极场掉得快得多';
+      }
+    }
+
+    var dipoleSlider = PH.slider({
+      mount: '#dipoleSlider',
+      label: '到磁铁中心的距离 r',
+      min: 3,
+      max: 30,
+      step: 0.5,
+      value: 10,
+      unit: 'cm',
+      fmt: function (v) { return v.toFixed(1); },
+      onInput: function (v) { updateDipole(v); }
+    });
+
+    updateDipole(10);
+    if (dipoleC) {
+      dipoleC.onResize(function () {
+        updateDipole(dipoleSlider ? dipoleSlider.value : 10);
+      });
+    }
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '铁屑图上的“力线密度”，代表的是什么？',
+        options: [
+          { text: '只代表磁场的方向，与强弱无关。', correct: false, why: '方向是力线的切线，信息确实有；但疏密另有一层含义。若只看方向，就无法解释磁极附近为什么吸得更牢。' },
+          { text: '代表该处磁场的强弱：垂直穿过单位面积的线越多，场越强。', correct: true, why: '这正是法拉第的定义方式，也是演示里“线越密、读数越大”的依据。' },
+          { text: '代表磁铁的吸引范围有多大。', correct: false, why: '吸引范围取决于场强衰减到多小才算“有感”，不是线密度本身；同一张图上远近都有线。' },
+          { text: '代表撒了多少铁屑，与磁场无关。', correct: false, why: '如果与磁场无关，轻轻敲击后铁屑应该杂乱无章，不会自发排成从 N 到 S 的弧线。' }
+        ]
+      },
+      {
+        q: '为什么磁力线必须闭合，而不能像电场线那样从正电荷发出、到负电荷终止？',
+        options: [
+          { text: '因为磁铁通常被做成条形或环形。', correct: false, why: '形状不影响这条规则。把磁铁切成任意形状，甚至碎成粉末，每一小块仍然同时有 N 极和 S 极。' },
+          { text: '因为不存在磁单极：磁极总是成对出现，每条线从 N 出去、最终绕回 S，在磁铁内部接上。', correct: true, why: '这正是 ∮B·dA = 0 的物理含义。没有孤立的“磁荷”可以让线终止，所以线只能自己绕回来。' },
+          { text: '因为地球磁场把所有磁力线都折回来了。', correct: false, why: '地球磁场很弱，只有 5×10⁻⁵ T，不可能决定一块磁铁自身力线的拓扑结构。' },
+          { text: '闭合只是画图的习惯，实际可以不闭合。', correct: false, why: '闭合是场的性质，不是画法约定。若线能在某处终止，那里就必须存在磁荷，而实验从未找到。' }
+        ]
+      },
+      {
+        q: '引入“场”这个概念，主要解决了超距作用的什么困难？',
+        options: [
+          { text: '让引力变得更强，从而解释行星运动。', correct: false, why: '场不改变力的大小，也不解释行星为什么走椭圆；它回答的是力“怎么传过去”。' },
+          { text: '提供了力传递的中间机制：物体只与身边的场作用，场再把作用一步步传出去。', correct: true, why: '这就把“隔空瞬间生效”拆成了邻域之间的连续作用，牛顿留下的机制空白被填上了。' },
+          { text: '证明了以太一定存在。', correct: false, why: '场概念并不需要以太；后来以太被实验否定，场照样成立，并且成为独立的研究对象。' },
+          { text: '让磁铁不必靠近也能产生同样的力。', correct: false, why: '场随距离衰减，偶极场按 1/r³ 掉，远处的作用非常弱。场没有取消距离，只是描述了距离依赖。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 23 课 · 为什么电阻会出现精确台阶？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="7-2" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 23 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>为什么电阻会出现精确台阶？</h1>
+        <p class="lede">电阻通常是个“脏”数：换个材料、掺点杂质，数值就变。可 1980 年，冯·克利青在二维电子气里看到的霍尔电阻，却是一级级精确到十亿分之一的台阶。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>电阻是最不普适的物理量之一。铜和铝不同；同一根导线拉长一倍，电阻就翻倍；掺进千分之一的杂质，数值又能变一个量级。物理学家早就习惯了：谈到电阻，必须先说清是什么材料、什么尺寸、什么温度。</p>
+        <p>霍尔效应看起来也一样：磁场固定时，霍尔电阻的斜率取决于电子密度；密度一变，数值就变——依然是一个依赖样品的量。</p>
+        <p>1980 年，冯·克利青在硅 MOSFET 界面的二维电子气里，把样品冷到约 1.5 K，加上十几特斯拉的磁场。霍尔电阻没有继续走直线，而是出现了一段段水平的平台。平台的高度不由样品决定，只由普朗克常数 h 和电子电荷 e 决定，相对精度达到 10⁻⁹ 量级。一个“脏”量，突然变成了基本常数。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是霍尔效应本身。1879 年，霍尔发现载流导体在磁场中会出现横向电压。这个效应后来成了测量载流子密度和类型的标准手段。</p>
+        <p>第二件是二维电子气。在硅 MOSFET 的界面处，电子被限制在几纳米厚的薄层里，垂直于界面的运动被冻住，只剩下平面内的两个方向。一个三维问题，被压成了二维。</p>
+        <p>第三件是强磁场和极低温。几特斯拉到十几特斯拉的超导磁体、液氦温区的制冷，让朗道能级的间距大于热涨落和杂质展宽。三样东西凑齐，量子化才显现出来。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么非要是二维</summary>
+          <div class="mathbox-body">
+            <p>在三维样品里，电子沿磁场方向仍可自由平动；连续动量把每个朗道能级抹成一条能带，能隙不再干净，电子总能找到能量几乎相同的空态。</p>
+            <p>二维样品把第三个方向冻住：界面的势垒让电子只能在平面内运动。沿磁场方向的动量不再连续，朗道能级变成一根根锐利的线。填充因子——填满了几个能级——才有确定的意义，平台才可能出现。</p>
+            <svg viewBox="0 0 360 168" role="img" aria-label="三维能带被抹开与二维朗道能级锐利的对比">
+              <text x="86" y="18" fill="#8fa6c4" font-size="11" text-anchor="middle" font-family="monospace">三维：能级被抹开</text>
+              <line x1="18" y1="132" x2="154" y2="132" stroke="rgba(143,166,196,.45)"/>
+              <line x1="18" y1="132" x2="18" y2="32" stroke="rgba(143,166,196,.45)"/>
+              <rect x="26" y="46" width="120" height="12" fill="rgba(169,139,255,.28)" stroke="#a98bff"/>
+              <rect x="26" y="76" width="120" height="12" fill="rgba(169,139,255,.22)" stroke="#a98bff"/>
+              <rect x="26" y="106" width="120" height="12" fill="rgba(169,139,255,.16)" stroke="#a98bff"/>
+              <text x="252" y="18" fill="#8fa6c4" font-size="11" text-anchor="middle" font-family="monospace">二维：能级锐利</text>
+              <line x1="188" y1="132" x2="342" y2="132" stroke="rgba(143,166,196,.45)"/>
+              <line x1="188" y1="132" x2="188" y2="32" stroke="rgba(143,166,196,.45)"/>
+              <line x1="196" y1="52" x2="334" y2="52" stroke="#35e0c8" stroke-width="2.4"/>
+              <line x1="196" y1="82" x2="334" y2="82" stroke="#35e0c8" stroke-width="2.4"/>
+              <line x1="196" y1="112" x2="334" y2="112" stroke="#35e0c8" stroke-width="2.4"/>
+              <text x="180" y="152" fill="#8fa6c4" font-size="10.5" text-anchor="middle" font-family="monospace">沿着磁场方向的动量</text>
+            </svg>
+            <p class="caption">左边能级有厚度，电子可以在里面滑动；右边能级是一根线，能级之间是真正的空档。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>五步：先写出普通霍尔电阻，再把电子能量量子化，最后看填充因子为什么把电阻锁死。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>设电流沿 x 方向，磁场沿 z 方向。电子带负电，漂移速度沿 −x，代入洛伦兹力，受力方向指向 −y。电子向 −y 一侧堆积，另一侧留下正电荷，横向电场逐渐增大，直到电场力把磁力抵消，偏转停止。</p>
+            <div class="eq"><span class="vec">F</span> <span class="op">=</span> <span class="op">−</span>e <span class="vec">v</span> <span class="op">×</span> <span class="vec">B</span></div>
+            <p class="readas">读作：电子受到的洛伦兹力，等于负的电荷量乘以速度与磁场的叉乘。叉乘的方向由右手定则给出，再乘上负电荷，方向反转。</p>
+            <ul class="vars">
+              <li><b>e</b><span>电子电荷的大小</span></li>
+              <li><b>v</b><span>电子的漂移速度</span></li>
+              <li><b>B</b><span>沿 z 方向的磁感应强度</span></li>
+            </ul>
+            <p>平衡时电场力与磁力大小相等，横向电场 E<span class="sub">y</span> 等于 v<span class="sub">x</span>B。再乘上样品宽度，就得到霍尔电压。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把电流和电压写成可测的量。二维下，电流等于电子面密度、电荷、漂移速度和宽度相乘；霍尔电压等于横向电场乘宽度。两者相除，宽度和漂移速度约掉。</p>
+            <div class="eq">R<span class="sub">H</span> <span class="op">=</span> <span class="frac"><span class="num">B</span><span class="den">n<span class="sub">s</span> e</span></span></div>
+            <p class="readas">读作：霍尔电阻等于磁场除以“电子面密度乘以电子电荷”。磁场越强、电子越少，霍尔电压越高。</p>
+            <ul class="vars">
+              <li><b>R<span class="sub">H</span></b><span>霍尔电阻，等于霍尔电压除以电流</span></li>
+              <li><b>n<span class="sub">s</span></b><span>电子面密度，单位面积上有多少个电子</span></li>
+            </ul>
+            <p>这个式子说明：磁场固定时，霍尔电阻由电子密度决定。不同样品密度不同，曲线斜率不同。到这里，一切仍然“脏”。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>强磁场改变游戏规则。磁场中的电子做圆周运动，圆周频率叫回旋频率，等于 eB 除以有效质量。量子力学要求这个圆周运动的总能量只能取分立值，相邻能级相差 ħω<span class="sub">c</span>。这就是朗道能级。</p>
+            <div class="eq">E<span class="sub">n</span> <span class="op">=</span> ( n <span class="op">+</span> <span class="frac"><span class="num">1</span><span class="den">2</span></span> ) ħω<span class="sub">c</span></div>
+            <p class="readas">读作：第 n 个朗道能级的能量，等于 n 加二分之一，乘以约化普朗克常数和回旋频率。能级是等间距的。</p>
+            <ul class="vars">
+              <li><b>n</b><span>能级编号，0、1、2……</span></li>
+              <li><b>ħ</b><span>约化普朗克常数，h 除以 2π</span></li>
+              <li><b>ω<span class="sub">c</span></b><span>回旋频率，由磁场和电子有效质量决定</span></li>
+            </ul>
+            <p>每个朗道能级能装多少电子？由磁通量子决定：单位面积上，每个能级能装 eB/h 个。</p>
+            <div class="eq">n<span class="sub">B</span> <span class="op">=</span> <span class="frac"><span class="num">eB</span><span class="den">h</span></span></div>
+            <p class="readas">读作：单位面积上，一个朗道能级能容纳的电子数，等于电子电荷乘磁场再除以普朗克常数。磁场越强，每个能级装得越多。</p>
+            <ul class="vars">
+              <li><b>n<span class="sub">B</span></b><span>每个朗道能级的单位面积容量</span></li>
+              <li><b>h</b><span>普朗克常数</span></li>
+            </ul>
+            <p>把电子总数除以这个容量，得到填充因子 ν。它表示电子填满了几个朗道能级。磁场增大，ν 变小。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>当 ν 恰好是整数时，最后一个朗道能级刚好填满，上面全空，下面全满。电子想散射，必须找到一个能量相同、位置空着的态；可它周围没有这样的态，中间隔着 ħω<span class="sub">c</span> 的能隙。散射被禁止，纵向电阻降为零，霍尔电压不再随磁场变化，R<span class="sub">H</span> 被锁定。</p>
+            <div class="eq">R<span class="sub">H</span> <span class="op">=</span> <span class="frac"><span class="num">h</span><span class="den">e<span class="sup">2</span> ν</span></span></div>
+            <p class="readas">读作：霍尔电阻等于普朗克常数除以“电子电荷的平方乘以填充因子”。ν 是整数，h 和 e 是常数，所以平台值完全确定。</p>
+            <ul class="vars">
+              <li><b>ν</b><span>填充因子，平台上是整数 1、2、3……</span></li>
+              <li><b>h / e<span class="sup">2</span></b><span>一个只由基本常数组成的电阻，约 25.8 kΩ</span></li>
+            </ul>
+            <p>这个式子最奇怪的地方是：材料、杂质、几何全都不见了。因为填充因子是整数，而 h 和 e 是普适常数，平台值对所有样品都一样。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>1985 年，冯·克利青因为这个发现获得诺贝尔物理学奖。h/e² 被命名为冯·克利青常数，记作 R<span class="sub">K</span>。它的数值可以算到很多位，而实验测到的平台高度与它一致到 10⁻⁹ 量级。</p>
+            <div class="eq">R<span class="sub">K</span> <span class="op">=</span> <span class="frac"><span class="num">h</span><span class="den">e<span class="sup">2</span></span></span> <span class="op">≈</span> 25812.807 <span class="dim">Ω</span></div>
+            <p class="readas">读作：冯·克利青常数等于普朗克常数除以电子电荷的平方，约等于两万五千八百一十二点八零七欧姆。</p>
+            <ul class="vars">
+              <li><b>R<span class="sub">K</span></b><span>冯·克利青常数，量子霍尔电阻的基准</span></li>
+            </ul>
+            <p>从 1990 年起，国际计量体系用这个平台值来维持电阻单位；2019 年国际单位制改由基本常数定义之后，欧姆直接挂在 h 和 e 上。量子霍尔电阻从“一个漂亮的实验”变成了“米制的柱子”。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下面把霍尔电阻画成磁场的函数。虚线是经典公式 B/(n<span class="sub">s</span>e) 的预言，一条不断上升的直线；实线是量子化的结果，在整数填充处锁成平台。拖动磁场，看读数何时进入“锁定”。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 霍尔电阻的台阶</span>
+              <span class="demo-tag">R<span class="sub">H</span> = h / (e²ν)</span>
+            </div>
+            <p class="demo-desc">样品取电子面密度 2.9×10¹¹ cm⁻²，于是 ν=1 的平台落在约 12 T，ν=2 落在约 6 T。平台越宽，对磁场抖动越不敏感。</p>
+            <canvas id="qhCanvas" data-height="420" aria-label="霍尔电阻随磁场变化的台阶曲线"></canvas>
+            <div id="qhSlider"></div>
+            <div class="readout" id="qhReadout"></div>
+            <p class="hint">试试：把磁场停在 6.0 T，读数锁定在 12 906.4 Ω；再移到 8.0 T，读数落在两个平台之间。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>把 ν 代进去，得到一串台阶：ν=1 时 25 812.807 Ω；ν=2 时 12 906.4 Ω；ν=3 时 8 604.3 Ω；ν=4 时 6 453.2 Ω。台阶高度按 1/ν 缩小。</p>
+        <p>台阶出现在什么磁场？这由电子密度决定。若面密度 n<span class="sub">s</span> = 2.9×10¹¹ cm⁻²，也就是 2.9×10¹⁵ m⁻²，ν=1 对应的磁场是：</p>
+        <div class="eq">B <span class="op">=</span> <span class="frac"><span class="num">n<span class="sub">s</span> h</span><span class="den">e</span></span> <span class="op">≈</span> <span class="frac"><span class="num">2.9<span class="op">×</span>10<span class="sup">15</span> <span class="op">×</span> 6.626<span class="op">×</span>10<span class="sup">−34</span></span><span class="den">1.602<span class="op">×</span>10<span class="sup">−19</span></span></span> <span class="dim">T</span> <span class="op">≈</span> 12.0 <span class="dim">T</span></div>
+        <p class="readas">读作：磁场约等于电子面密度乘普朗克常数、再除以电子电荷，结果约 12 特斯拉。ν=2 的台阶在约 6.0 T，ν=3 在约 4.0 T。</p>
+        <p>这些数字的意义在于“可复现”。12 T 超导磁体很容易达到，1.5 K 是液氦温区；难的是样品纯度和测量精度。平台宽达几特斯拉，磁场抖动百分之一也不会改变读数——正因如此，它才能当基准，而不是一个只能在理想条件下成立的实验室奇观。</p>
+        <p>25.8 kΩ 是“宏观”电阻，用普通四引线法就能测，不需要单电子器件：量子效应直接出现在毫米见方的样品上。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>量子霍尔效应改变了计量学。电阻不再需要靠一根实物基准电阻来传递，任何一个实验室只要有一台合格的量子霍尔器件，就能复现出同样的欧姆。校准链条从此挂在基本常数上。</p>
+        <p>它也打开了拓扑物态的门。1982 年，索利斯、科莫托、奈廷格尔和登奈斯提出 TKNN 不变量，说明霍尔电导的整数是能带的一个拓扑数；同一年，分数量子霍尔效应被发现，ν 可以是分数，激发带分数电荷。2016 年诺贝尔物理学奖表彰了拓扑相变与拓扑物态的理论。下一课要讲的拓扑绝缘体，正是这条线的延续。</p>
+        <p>把三课连起来看：超导的零电阻、量子霍尔的台阶、拓扑绝缘体的表面态，都不是单个电子的性质，而是一大群电子“商量”出来的新规则。这就是涌现。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示：霍尔电阻的台阶 ---------- */
+    var qh = PH.canvas('qhCanvas');
+    var qhReadout = document.getElementById('qhReadout');
+    var E_CHARGE = 1.602176634e-19;
+    var H_PLANCK = 6.62607015e-34;
+    var R_K = H_PLANCK / (E_CHARGE * E_CHARGE);
+    var N_S = 2.9e15;
+    var B_MAX = 14;
+    var R_MAX_K = 32;
+
+    function qhAt(B) {
+      if (B < 0.2) B = 0.2;
+      var nu = N_S * H_PLANCK / (E_CHARGE * B);
+      if (nu <= 1.2) {
+        if (nu >= 0.8) return { R: R_K, n: 1, nu: nu, locked: true };
+        return { R: R_K / nu, n: 1, nu: nu, locked: false };
+      }
+      var n = Math.floor(nu);
+      var t = nu - n;
+      if (t <= 0.45) return { R: R_K / n, n: n, nu: nu, locked: true };
+      if (t >= 0.55) return { R: R_K / (n + 1), n: n + 1, nu: nu, locked: true };
+      var u = (t - 0.45) / 0.1;
+      u = u * u * (3 - 2 * u);
+      return {
+        R: R_K / n + (R_K / (n + 1) - R_K / n) * u,
+        n: n,
+        nu: nu,
+        locked: false
+      };
+    }
+
+    function fmtOhm(v) {
+      return v.toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    function drawQH(B) {
+      if (!qh) return;
+      var ctx = qh.ctx;
+      var w = qh.w;
+      var h = qh.h;
+      var padL = 66;
+      var padR = 28;
+      var padT = 54;
+      var padB = 54;
+      var pw = Math.max(40, w - padL - padR);
+      var ph = Math.max(40, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var i;
+
+      function X(b) { return x0 + pw * (b / B_MAX); }
+      function Y(r) { return y0 - ph * (r / 1000) / R_MAX_K; }
+
+      qh.clear();
+
+      /* 网格 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 7; i++) {
+        var gx = x0 + pw * i / 7;
+        ctx.beginPath();
+        ctx.moveTo(gx, padT);
+        ctx.lineTo(gx, y0);
+        ctx.stroke();
+      }
+      for (i = 0; i <= 4; i++) {
+        var gy = y0 - ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(x0, gy);
+        ctx.lineTo(x0 + pw, gy);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 平台参考线 */
+      ctx.save();
+      ctx.setLineDash([3, 6]);
+      ctx.strokeStyle = 'rgba(53,224,200,.25)';
+      for (i = 1; i <= 4; i++) {
+        ctx.beginPath();
+        ctx.moveTo(x0, Y(R_K / i));
+        ctx.lineTo(x0 + pw, Y(R_K / i));
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 坐标轴 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.5)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('B / T', x0 + pw - 34, y0 + 38);
+      ctx.save();
+      ctx.translate(16, padT + 66);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('R_H / kΩ', 0, 0);
+      ctx.restore();
+
+      ctx.textAlign = 'center';
+      ctx.fillText('0', x0, y0 + 18);
+      ctx.fillText('2', X(2), y0 + 18);
+      ctx.fillText('4', X(4), y0 + 18);
+      ctx.fillText('6', X(6), y0 + 18);
+      ctx.fillText('8', X(8), y0 + 18);
+      ctx.fillText('10', X(10), y0 + 18);
+      ctx.fillText('12', X(12), y0 + 18);
+      ctx.fillText('14', X(14), y0 + 18);
+      ctx.textAlign = 'left';
+      ctx.fillText('0', x0 - 18, y0 + 4);
+      ctx.fillText('8', x0 - 18, Y(8000) + 4);
+      ctx.fillText('16', x0 - 18, Y(16000) + 4);
+      ctx.fillText('24', x0 - 18, Y(24000) + 4);
+      ctx.fillText('32', x0 - 18, Y(32000) + 4);
+      ctx.restore();
+
+      /* 经典预言：直线 */
+      ctx.save();
+      ctx.setLineDash([5, 6]);
+      ctx.strokeStyle = 'rgba(255,176,61,.55)';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(X(0), Y(0));
+      ctx.lineTo(X(B_MAX), Y(B_MAX / (N_S * E_CHARGE)));
+      ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle = 'rgba(255,176,61,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('经典：B / (n e)', X(9.2), Y(20500) - 8);
+
+      /* 量子化台阶 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      var b;
+      for (b = 0.2; b <= B_MAX; b += 0.02) {
+        var q = qhAt(b);
+        var px = X(b);
+        var py = Y(q.R);
+        if (b === 0.2) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 平台标注 */
+      ctx.save();
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillStyle = 'rgba(53,224,200,.8)';
+      for (i = 1; i <= 4; i++) {
+        ctx.fillText('ν=' + i, x0 + 6, Y(R_K / i) - 5);
+      }
+      ctx.restore();
+
+      /* 当前点 */
+      var cur = qhAt(B);
+      var mx = X(B);
+      var my = Y(cur.R);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.35)';
+      ctx.setLineDash([3, 4]);
+      ctx.beginPath();
+      ctx.moveTo(mx, y0);
+      ctx.lineTo(mx, my);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      var mc = cur.locked ? '#ffb03d' : '#4ea8ff';
+      ctx.fillStyle = mc;
+      ctx.shadowColor = mc;
+      ctx.shadowBlur = 16;
+      ctx.beginPath();
+      ctx.arc(mx, my, cur.locked ? 6 : 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      if (cur.locked) {
+        ctx.strokeStyle = 'rgba(255,176,61,.7)';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.arc(mx, my, 11, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.fillStyle = cur.locked ? '#ffb03d' : 'rgba(78,168,255,.9)';
+      ctx.font = '11.5px ui-monospace, Consolas, monospace';
+      ctx.fillText(cur.locked ? '锁定' : '过渡区', mx + 12, my - 10);
+
+      /* 大数字读数 */
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.font = '600 21px ui-monospace, Consolas, monospace';
+      ctx.fillText(fmtOhm(cur.R) + ' Ω', x0 + 14, padT + 4);
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '11.5px ui-monospace, Consolas, monospace';
+      var target = cur.locked ? 'h/e²ν = ' + fmtOhm(R_K / cur.n) + ' Ω　ν = ' + cur.n
+        : 'h/e²ν = ' + fmtOhm(R_K / Math.max(1, Math.round(cur.nu))) + ' Ω　ν = ' + cur.nu.toFixed(2);
+      ctx.fillText(target, x0 + 14, padT + 22);
+      ctx.restore();
+
+      if (qhReadout) {
+        qhReadout.textContent = cur.locked
+          ? 'B = ' + B.toFixed(2) + ' T　→　ν = ' + cur.n + '　R_H = ' + fmtOhm(cur.R) + ' Ω（平台锁定）'
+          : 'B = ' + B.toFixed(2) + ' T　→　ν = ' + cur.nu.toFixed(2) + '　R_H ≈ ' + fmtOhm(cur.R) + ' Ω（过渡区）';
+      }
+    }
+
+    var qhSlider = PH.slider({
+      mount: '#qhSlider',
+      label: '磁场 B',
+      min: 0,
+      max: 14,
+      step: 0.01,
+      value: 6,
+      unit: 'T',
+      fmt: function (v) { return v.toFixed(2); },
+      onInput: function (v) { drawQH(v); }
+    });
+
+    drawQH(6);
+    if (qh) {
+      qh.onResize(function () { drawQH(qhSlider ? qhSlider.value : 6); });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '霍尔电阻为什么会出现平台？',
+        options: [
+          { text: '因为样品做得特别纯，杂质少到可以忽略。', correct: false, why: '量子霍尔平台恰恰在有一定杂质的样品里更明显。平台值的普适性正说明它与杂质无关。' },
+          { text: '因为强磁场把电子能量量子化成朗道能级，最后一个能级填满时没有空态可散射，霍尔电阻锁定在 h/(e²ν)。', correct: true, why: '能级填满后，上方是空的、下方是满的，中间隔着能隙，电子无法散射；霍尔电压不再随磁场变化。' },
+          { text: '因为温度太低，电子被冻住不动了。', correct: false, why: '电子仍在运动，只是不能随意改变量子态。零电阻来自散射通道被关闭，不是电子静止。' },
+          { text: '因为磁场把电子全部推到了样品边缘。', correct: false, why: '边缘态确实存在，也参与导电，但平台的高度来自体内的填充因子，不能靠边缘堆积解释精确的普适值。' }
+        ]
+      },
+      {
+        q: 'ν=2 时，霍尔电阻是多少？',
+        options: [
+          { text: '25 812.8 Ω', correct: false, why: '那是 ν=1 的平台值。填充因子越大，被除的数越大，电阻越小。' },
+          { text: '12 906.4 Ω', correct: true, why: 'R_H = h/(e²ν) = 25 812.807 / 2 ≈ 12 906.4 Ω。' },
+          { text: '51 625.6 Ω', correct: false, why: '那相当于把 25 812.8 乘以 2，也就是 ν=1/2；整数填充不会给出这个值。' },
+          { text: '0 Ω', correct: false, why: '平台处接近零的是纵向电阻，不是霍尔电阻。霍尔电阻锁定在有限值上。' }
+        ]
+      },
+      {
+        q: '这个精度为什么重要？',
+        options: [
+          { text: '因为它让电阻单位有了只依赖 h 和 e 的基准，可以在不同实验室之间复现。', correct: true, why: '平台值由基本常数决定，不依赖样品和地点；1990 年起它成为电阻基准，2019 年后欧姆直接挂在 h 和 e 上。' },
+          { text: '因为它能用来制造更强的电磁铁。', correct: false, why: '量子霍尔效应不是制造强磁体的技术；强磁体靠的是超导线圈。' },
+          { text: '因为它证明欧姆定律是错的。', correct: false, why: '欧姆定律在通常条件下依然成立。量子霍尔效应说明的是，在强磁场和极低温下出现了新的量子态。' },
+          { text: '因为它说明电阻可以被随意调节到任意值。', correct: false, why: '情况相反：平台值被锁死，不能连续调节；可调的是磁场，而电阻只在特定值上停留。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

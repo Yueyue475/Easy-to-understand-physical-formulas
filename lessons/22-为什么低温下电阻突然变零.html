@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 22 课 · 为什么低温下电阻突然变零？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="7-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 22 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>为什么低温下电阻突然变零？</h1>
+        <p class="lede">把汞冷却到 4.2 K，电阻不是慢慢变小，而是直接掉到仪表读不出。这个“零”不是“非常小”，而是一道门槛：跨过去，材料就换了状态。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>十九世纪的导电图像很朴素：电子在晶格里穿行，撞上振动的原子或杂质，就丢掉前进方向。温度越低，原子振动越弱，碰撞越少，电阻也越小。这条规律一直管到几十开尔文。</p>
+        <p>按这个图像，温度降到绝对零度，振动停止，电阻只剩杂质造成的“剩余电阻”。它是一个很小的正数。没有人期待它会精确等于零——零意味着电子完全不损失能量，等于把摩擦从世界里删掉。</p>
+        <p>1911 年，昂内斯在莱顿把汞冷却到 4.2 K。他看到的不是平滑下降，而是电阻在极窄的温度范围内垂直下坠，跌到 10⁻⁵ Ω 以下，仪表再也读不出差别。更怪的事在后面：撤掉电源，回路里的电流还能流好几年。这不是“很小”，这是“没有”。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是液氦。昂内斯 1908 年首次液化氦，又用十几年把实验室稳定做到几开尔文。氦在 4.2 K 液化，正好压在汞的转变点附近——工具和发现是配套的。</p>
+        <p>第二件是四引线测量。两根引线负责送电流，另外两根单独取电压。这样，引线和接触电阻被排除在外，才有可能分辨微伏量级的电压。没有这套接法，“零”和“很小”根本分不开。</p>
+        <p>第三件来自 1933 年。迈斯纳和奥克森费尔德把超导体放在磁场里冷却，再撤掉外场。普通导体冷却时会把已有磁通“冻结”在里面；超导体却把磁场全部排出去。所以超导不是“电阻为零的普通金属”，而是一种新的热力学平衡态。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：零电阻和完全抗磁，为什么是两件事</summary>
+          <div class="mathbox-body">
+            <p>设想一种“电阻恰好为零”的理想导体。放进磁场再降温，磁通会原样留在里面；撤掉外场，感生电流把磁通维持住。这一切只讲电磁感应，与材料是否处于特殊状态无关。</p>
+            <p>超导体不一样：它在转变温度以下主动排空体内磁场，不管磁场先加还是后加，结果都一样。这说明排磁不是“感应出来的”，而是平衡态本身的性质。</p>
+            <svg viewBox="0 0 360 176" role="img" aria-label="理想导体冻结磁通与超导体排出磁场的对比">
+              <rect x="14" y="28" width="142" height="104" rx="8" fill="rgba(78,168,255,.08)" stroke="rgba(143,166,196,.35)"/>
+              <line x1="24" y1="50" x2="146" y2="50" stroke="#4ea8ff" stroke-width="1.4"/>
+              <line x1="24" y1="70" x2="146" y2="70" stroke="#4ea8ff" stroke-width="1.4"/>
+              <line x1="24" y1="90" x2="146" y2="90" stroke="#4ea8ff" stroke-width="1.4"/>
+              <line x1="24" y1="110" x2="146" y2="110" stroke="#4ea8ff" stroke-width="1.4"/>
+              <text x="85" y="156" fill="#8fa6c4" font-size="11" text-anchor="middle" font-family="monospace">理想导体：磁通被冻结</text>
+              <rect x="204" y="28" width="142" height="104" rx="8" fill="rgba(53,224,200,.08)" stroke="rgba(53,224,200,.45)"/>
+              <line x1="240" y1="24" x2="240" y2="12" stroke="#35e0c8" stroke-width="1.6"/>
+              <path d="M240 10 l-4 7 h8 z" fill="#35e0c8"/>
+              <line x1="280" y1="24" x2="280" y2="12" stroke="#35e0c8" stroke-width="1.6"/>
+              <path d="M280 10 l-4 7 h8 z" fill="#35e0c8"/>
+              <line x1="240" y1="136" x2="240" y2="148" stroke="#35e0c8" stroke-width="1.6"/>
+              <path d="M240 150 l-4 -7 h8 z" fill="#35e0c8"/>
+              <line x1="280" y1="136" x2="280" y2="148" stroke="#35e0c8" stroke-width="1.6"/>
+              <path d="M280 150 l-4 -7 h8 z" fill="#35e0c8"/>
+              <text x="275" y="86" fill="#35e0c8" font-size="12" text-anchor="middle" font-family="monospace">B内 = 0</text>
+              <text x="275" y="156" fill="#8fa6c4" font-size="11" text-anchor="middle" font-family="monospace">超导体：磁场被排出</text>
+            </svg>
+            <p class="caption">同样的外磁场，左边把磁通冻在里面，右边把磁通挤到体外。这个区别无法用“电阻为零”解释。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面五步，从普通金属的剩余电阻出发，先看零电阻的证据，再看热力学证据，最后走到 1957 年的配对机制。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>先看普通金属。电子被晶格振动（声子）和杂质、缺陷散射。温度降低，声子变少，这一部分电阻下降；杂质不随温度消失，所以温度趋近 0 K 时，电阻趋于一个正的剩余值。</p>
+            <div class="eq">R(T) <span class="op">=</span> R<span class="sub">剩</span> <span class="op">+</span> aT</div>
+            <p class="readas">读作：金属的电阻等于一个不随温度变化的剩余电阻，加上一个与温度成正比的项。温度降到零，只剩前一项。</p>
+            <ul class="vars">
+              <li><b>R<span class="sub">剩</span></b><span>杂质和缺陷造成的剩余电阻，是一个正数</span></li>
+              <li><b>a</b><span>与材料有关的系数，描述声子散射随温度增长的快慢</span></li>
+              <li><b>T</b><span>绝对温度，单位开尔文</span></li>
+            </ul>
+            <p>对汞来说，这个剩余值对应的电阻率小到 10⁻⁹ Ω·m 的量级，但它是有限的。只靠“降温”，永远到不了零。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>1911 年的那条曲线，把上面这套推理打断了。电阻在 4.2 K 附近不是继续缓慢下降，而是几乎竖直地掉下去，落到 10⁻⁵ Ω 以下。昂内斯在论文里写“汞几乎为零”。“几乎”是测量者的谨慎：仪表给不出更小的数。</p>
+            <p>更有说服力的是持续电流。超导环里一旦感生出电流，没有电阻，它就不衰减；几年之后，测量仍然能检出它。这给出的不是“电阻很小”的估计，而是一个极低的上限。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>1933 年，迈斯纳发现了第二件怪事。把超导体放在磁场中降温，进入超导态时，体内磁场被完全排出，而不是被冻结在里面。撤掉外场，体内仍然是零场。这个现象后来叫迈斯纳效应。</p>
+            <div class="eq">B<span class="sub">内</span> <span class="op">=</span> 0</div>
+            <p class="readas">读作：超导体内部的磁感应强度等于零。磁场绕到样品外面走，不穿过体内。</p>
+            <ul class="vars">
+              <li><b>B<span class="sub">内</span></b><span>超导体内部的磁感应强度</span></li>
+              <li><b>T<span class="sub">c</span></b><span>临界温度，汞约为 4.2 K</span></li>
+              <li><b>H<span class="sub">c</span></b><span>临界磁场，超过它超导态也会被破坏</span></li>
+            </ul>
+            <p>零电阻只说明“电场推不动电子”；完全抗磁说明超导体在热力学上是一个新相。它有明确的 T<span class="sub">c</span> 和 H<span class="sub">c</span>，越过任何一条边界，超导态就整体消失。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>1957 年，巴丁、库珀和施里弗给出了机制。两个电子同号，本该相斥；但第一个电子经过时，会把周围带正电的离子稍微拉向自己，留下一个短暂的正电荷富集区。第二个电子被这个区域吸引，于是两者之间出现净吸引。</p>
+            <p>吸引很弱，但足够让两个电子结成一对。配对的规矩很特别：一个动量为 k、自旋向上的电子，和另一个动量为 −k、自旋向下的电子配成一对。总动量为零，总自旋也为零。</p>
+            <div class="eq">( k↑ , −k↓ )</div>
+            <p class="readas">读作：一对电子，一个动量为 k、自旋向上，另一个动量为 −k、自旋向下。两个动量相加为零，两个自旋相加也为零。</p>
+            <ul class="vars">
+              <li><b>k</b><span>电子的晶体动量</span></li>
+              <li><b>↑、↓</b><span>自旋的两种取向</span></li>
+              <li><b>库珀对</b><span>这样配好对的两个电子，整体像一个粒子</span></li>
+            </ul>
+            <p>它们不是像分子那样黏在一起。一对电子在空间上可以相隔几百纳米，配对是动量空间里的关联。整块金属里，大量对共享同一个相位，像一个整体。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>为什么单个杂质碰不动这个整体？因为要改变一个库珀对的状态，必须把它拆成两个独立的电子，这至少要付出 2Δ 的能量。低温下，热运动能提供的能量远小于 2Δ，散射通道被关掉了。</p>
+            <div class="eq">2Δ <span class="op">≈</span> 3.5 k<span class="sub">B</span>T<span class="sub">c</span></div>
+            <p class="readas">读作：拆开一个库珀对所需的能量，约等于 3.5 倍玻尔兹曼常数乘以临界温度。这个关系在弱耦合的常规超导体里成立得相当好。</p>
+            <ul class="vars">
+              <li><b>Δ</b><span>超导能隙的一半，单位是能量</span></li>
+              <li><b>k<span class="sub">B</span></b><span>玻尔兹曼常数，把温度换算成能量</span></li>
+              <li><b>T<span class="sub">c</span></b><span>临界温度</span></li>
+            </ul>
+            <p>温度升到 T<span class="sub">c</span>，热运动能量涨到与能隙同量级，对子被成批拆散，正常电阻在一瞬间回来。所以转变那么陡：配对是整块材料的集体选择，不是局部事件。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下面是汞的电阻随温度变化曲线。横轴是温度，纵轴是电阻，单位毫欧。把滑块拖过 4.2 K，看读数怎样从毫欧直接掉到零，以及状态条怎样从“结成”翻到“拆散”。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 汞的电阻-温度曲线</span>
+              <span class="demo-tag">R(T) · Tc = 4.2 K</span>
+            </div>
+            <p class="demo-desc">曲线在 T<span class="sub">c</span> 处垂直下坠，之后贴着横轴走——电阻真的变成了零。状态条表示保持配对的电子比例。</p>
+            <canvas id="scCanvas" data-height="420" aria-label="汞的电阻随温度变化曲线与库珀对状态"></canvas>
+            <div id="scSlider"></div>
+            <div class="readout" id="scReadout"></div>
+            <p class="hint">试试：把温度停在 10 K，读数约 1.14 mΩ；再拖到 4.0 K，读数直接变成 0 Ω——中间没有“越来越小”的过渡。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>汞的 T<span class="sub">c</span> 是 4.2 K，铅是 7.2 K。把铅的数字代进去，估出拆对所需的能量：</p>
+        <div class="eq">2Δ <span class="op">≈</span> 3.5 <span class="op">×</span> 8.617<span class="op">×</span>10<span class="sup">−5</span> <span class="dim">eV/K</span> <span class="op">×</span> 7.2 <span class="dim">K</span> <span class="op">≈</span> 2.2 <span class="dim">meV</span></div>
+        <p class="readas">读作：二倍的能隙约等于 3.5 乘以玻尔兹曼常数、再乘以 7.2 K，结果约 2.2 毫电子伏。毫电子伏是电子伏的千分之一，比可见光光子（约 2 eV）小三个数量级。</p>
+        <p>2.2 meV 除以 k<span class="sub">B</span> 约得 25 K，这是单次热涨落拆对的能量尺度。4.2 K 时，这种涨落被 e<span class="sup">−6</span> 压到千分之几；升到 T<span class="sub">c</span>，涨落成批出现，配对就维持不住了。</p>
+        <p>1986 年之后，铜氧化物把 T<span class="sub">c</span> 推到了液氮以上。YBCO 的 T<span class="sub">c</span> 约 92 K，高于液氮的 77 K，可以用便宜、容易获得的液氮代替液氦。MRI 磁体主要用 NbTi（T<span class="sub">c</span> 约 9 K）泡在液氦里；超导磁悬浮、粒子加速器的二极磁体，也依赖同一套低温工程。一个 1911 年的“仪表读不出”，最后变成了医院里的机器。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>超导把“零电阻”直接变成工程：无损耗输电的设想、储能环、SQUID 磁强计、MRI 和加速器磁体。迈斯纳效应还带来了磁悬浮：超导体把磁场排开，磁场反过来给它一个稳定的托力。</p>
+        <p>BCS 留下的更大遗产，是“涌现”的一个样本。单个电子没有 T<span class="sub">c</span>，没有能隙，没有抗磁性；这些性质只在电子结成对、并且所有对共享一个相位之后才出现。你没法从单个电子的参数表里查出超导转变温度，就像你没法从一个水分子的性质里查出“湿”。</p>
+        <p>下一课换一种集体现象：二维电子气在强磁场里，霍尔电阻不再是连续值，而是一个个精确台阶。台阶高度只由普朗克常数和电子电荷决定。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    /* ---------- 演示：汞的电阻-温度曲线 ---------- */
+    var sc = PH.canvas('scCanvas');
+    var scReadout = document.getElementById('scReadout');
+    var TC = 4.2;
+    var R_SLOPE = 0.0148;
+    var T_MAX = 150;
+    var R_MAX = 3.6;
+
+    function resAt(T) {
+      if (T <= TC) return 0;
+      return 1.05 + R_SLOPE * (T - TC);
+    }
+
+    function trim(v, digits) {
+      var s = Number(v).toFixed(digits);
+      if (s.indexOf('.') >= 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
+      return s;
+    }
+
+    function drawSC(T) {
+      if (!sc) return;
+      var ctx = sc.ctx;
+      var w = sc.w;
+      var h = sc.h;
+      var padL = 62;
+      var padR = 26;
+      var padT = 34;
+      var padB = 92;
+      var pw = Math.max(40, w - padL - padR);
+      var ph = Math.max(40, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var i;
+      var TICKS = [0, 4.2, 10, 50, 100, 150];
+      var KNEE = 10;
+      var ZOOM = 0.42;
+
+      function X(t) {
+        if (t <= KNEE) return x0 + pw * ZOOM * (t / KNEE);
+        return x0 + pw * (ZOOM + (1 - ZOOM) * (t - KNEE) / (T_MAX - KNEE));
+      }
+      function Y(r) { return y0 - ph * (r / R_MAX); }
+
+      sc.clear();
+
+      /* 网格 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.16)';
+      ctx.lineWidth = 1;
+      for (i = 0; i < TICKS.length; i++) {
+        var gx = X(TICKS[i]);
+        ctx.beginPath();
+        ctx.moveTo(gx, padT);
+        ctx.lineTo(gx, y0);
+        ctx.stroke();
+      }
+      for (i = 0; i <= 4; i++) {
+        var gy = y0 - ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(x0, gy);
+        ctx.lineTo(x0 + pw, gy);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 坐标轴与刻度 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.5)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('T / K', x0 + pw - 30, y0 + 38);
+      ctx.save();
+      ctx.translate(16, padT + 58);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('R / mΩ', 0, 0);
+      ctx.restore();
+
+      ctx.textAlign = 'center';
+      for (i = 0; i < TICKS.length; i++) {
+        ctx.fillText(String(TICKS[i]), X(TICKS[i]), y0 + 18);
+      }
+      ctx.textAlign = 'left';
+      ctx.fillText('0', x0 - 16, y0 + 4);
+      ctx.fillText('1', x0 - 16, Y(1) + 4);
+      ctx.fillText('2', x0 - 16, Y(2) + 4);
+      ctx.fillText('3', x0 - 16, Y(3) + 4);
+      ctx.restore();
+
+      /* 临界温度竖线 */
+      ctx.save();
+      ctx.setLineDash([4, 5]);
+      ctx.strokeStyle = 'rgba(255,176,61,.55)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(X(TC), padT);
+      ctx.lineTo(X(TC), y0);
+      ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle = '#ffb03d';
+      ctx.font = '11.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('Tc = 4.2 K', X(TC) + 8, padT + 12);
+
+      /* 零电阻段 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 3;
+      ctx.shadowColor = 'rgba(53,224,200,.8)';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.moveTo(x0, y0);
+      ctx.lineTo(X(TC), y0);
+      ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle = 'rgba(53,224,200,.95)';
+      ctx.font = '11.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('R = 0（测不出）', x0 + 30, y0 - 16);
+      ctx.fillStyle = 'rgba(143,166,196,.6)';
+      ctx.font = '10.5px ui-monospace, Consolas, monospace';
+      ctx.fillText('0–10 K 已放大', x0 + 8, padT + 30);
+
+      /* 断轴标记 */
+      ctx.strokeStyle = 'rgba(143,166,196,.7)';
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(X(10) - 4, y0 + 4);
+      ctx.lineTo(X(10) + 2, y0 - 4);
+      ctx.moveTo(X(10) + 2, y0 + 4);
+      ctx.lineTo(X(10) + 8, y0 - 4);
+      ctx.stroke();
+
+      /* 正常态曲线：在 Tc 处垂直下坠 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.moveTo(X(TC), y0);
+      ctx.lineTo(X(TC), Y(resAt(TC + 0.001)));
+      var tt;
+      for (tt = TC; tt <= T_MAX; tt += 0.5) {
+        ctx.lineTo(X(tt), Y(resAt(tt)));
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 当前点 */
+      var curR = resAt(T);
+      var mx = X(T);
+      var my = Y(curR);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.4)';
+      ctx.setLineDash([3, 4]);
+      ctx.beginPath();
+      ctx.moveTo(mx, y0);
+      ctx.lineTo(mx, my);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(mx, my, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 库珀对状态条 */
+      var paired = T <= TC ? 1 : Math.max(0, 1 - (T - TC) / 40);
+      var barX = x0;
+      var barY = y0 + 52;
+      var barH = 12;
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.14)';
+      ctx.fillRect(barX, barY, pw, barH);
+      ctx.fillStyle = 'rgba(53,224,200,.72)';
+      ctx.fillRect(barX, barY, pw * paired, barH);
+      ctx.strokeStyle = 'rgba(143,166,196,.3)';
+      ctx.strokeRect(barX, barY, pw, barH);
+
+      ctx.font = '11.5px ui-monospace, Consolas, monospace';
+      ctx.fillStyle = 'rgba(143,166,196,.85)';
+      ctx.fillText('库珀对状态', barX, barY - 6);
+      ctx.fillStyle = T <= TC ? '#35e0c8' : '#ff5f6d';
+      ctx.textAlign = 'right';
+      ctx.fillText(T <= TC ? '结成' : '拆散', barX + pw, barY + barH + 15);
+      ctx.textAlign = 'left';
+      ctx.restore();
+
+      /* 态标注 */
+      ctx.fillStyle = T <= TC ? 'rgba(53,224,200,.95)' : 'rgba(255,176,61,.9)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText(T <= TC ? '超导态' : '正常态', mx + 10, my - 10);
+
+      if (scReadout) {
+        scReadout.textContent = T <= TC
+          ? 'T = ' + trim(T, 1) + ' K　→　R = 0 Ω（仪表测不出，持续电流不衰减）'
+          : 'T = ' + trim(T, 1) + ' K　→　R ≈ ' + curR.toFixed(2) + ' mΩ（正常金属，有剩余电阻）';
+      }
+    }
+
+    var scSlider = PH.slider({
+      mount: '#scSlider',
+      label: '温度 T',
+      min: 0,
+      max: 150,
+      step: 0.1,
+      value: 20,
+      unit: 'K',
+      fmt: function (v) { return v.toFixed(1); },
+      onInput: function (v) { drawSC(v); }
+    });
+
+    drawSC(20);
+    if (sc) {
+      sc.onResize(function () { drawSC(scSlider ? scSlider.value : 20); });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '为什么超导不能简单理解成“电阻很小”？',
+        options: [
+          { text: '因为超导体的电阻只是比铜小一千倍左右，仍然可以测出。', correct: false, why: '实验给出的不是“更小的正数”，而是低于 10⁻⁵ Ω 的零；持续电流几年不衰减，给出的是一个极低的上限。' },
+          { text: '因为电阻在 Tc 处不是继续变小，而是直接变成零，同时磁场被完全排出，说明它是另一种热力学状态。', correct: true, why: '零电阻加上完全抗磁，才构成超导。迈斯纳效应说明排磁是平衡态性质，理想导体做不到这一点。' },
+          { text: '因为超导体在低温下根本不导电。', correct: false, why: '恰好相反：超导体在 Tc 以下导电能力极强，电流可以无衰减地持续流动。' },
+          { text: '因为超导体只有表面一层导电，体内是绝缘的。', correct: false, why: '那是拓扑绝缘体的图像，不是超导。超导体的零电阻是整块材料的行为。' }
+        ]
+      },
+      {
+        q: '库珀对为什么不怕单个杂质？',
+        options: [
+          { text: '因为杂质在低温下不再带电，无法散射电子。', correct: false, why: '杂质是否带电与温度无关，它仍然是散射中心。真正被关掉的是电子可用的散射通道。' },
+          { text: '因为一对电子的总动量为零、自旋相反，要拆散它至少需要 2Δ 的能量，杂质能提供的能量不够。', correct: true, why: '库珀对是一个整体，改变它的状态必须付能隙的能量。低温下热运动给不出这笔能量，散射被禁止。' },
+          { text: '因为电子对的质量很大，杂质推不动它。', correct: false, why: '一对电子的质量只是单个电子的两倍，并不大。关键是能量门槛，而不是惯性。' },
+          { text: '因为杂质被迈斯纳效应排出了体外。', correct: false, why: '迈斯纳效应排出的是磁场，不是杂质。杂质仍然留在材料里。' }
+        ]
+      },
+      {
+        q: '温度升到 Tc 以上会发生什么？',
+        options: [
+          { text: '电阻从零跳回有限值，库珀对被热运动拆散，材料回到普通金属。', correct: true, why: '温度越过 Tc，热运动能量达到能隙的量级，配对整体瓦解，正常散射恢复。' },
+          { text: '电阻仍然为零，只是磁场可以进入体内。', correct: false, why: '磁场进入体内是超导态被破坏的结果，同时伴随电阻恢复；零电阻不会单独保留。' },
+          { text: '材料变成绝缘体，电阻变得极大。', correct: false, why: 'Tc 以上是普通金属态，电阻虽然比超导态大，但仍然是金属的有限电阻。' },
+          { text: '库珀对变多，超导变得更稳定。', correct: false, why: '方向反了。Tc 以上热运动拆对，配对密度降到零。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

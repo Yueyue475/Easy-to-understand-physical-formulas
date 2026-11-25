@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 27 课 · 黑洞中心与宇宙开端，两个理论为什么打架？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="8-3" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 27 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>黑洞中心与宇宙开端，两个理论为什么打架？</h1>
+        <p class="lede">广义相对论管大，量子力学管小，各自都极其成功。可黑洞中心和宇宙开端同时需要两者——算出来的却是无穷大。</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>广义相对论和量子力学是 20 世纪物理学的两根柱子。前者把引力解释成时空弯曲，从水星进动到引力波屡获验证；后者描述微观粒子，精度高到小数点后十几位。各自的地盘上，几乎没有裂痕。</p>
+        <p>裂痕出现在两者必须同时出场的地方。黑洞的中心是一个密度趋于无限大的点，时空曲率在那里发散；宇宙的开端，把所有物质压缩到极小的尺度，同样撞上无穷大。奇点不是计算偷懒，而是方程自己的答案：1916 年施瓦西解里就出现了 r = 0 处的发散，1939 年奥本海默和斯奈德的计算表明大质量恒星会一路坍缩过去，1960 年代彭罗斯和霍金的奇点定理进一步说明，这类发散在一般条件下无法避免。</p>
+        <p>麻烦在于，奇点处的尺度小到必须用量子力学，引力又强到必须用广义相对论。硬拼两套理论，得到的不是有限答案，而是无穷大。无穷大通常意味着理论缺了一块——这块就是量子引力。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件是广义相对论。它的核心不是“引力是一种力”，而是“时空被质量弯曲，弯曲的时空告诉物体怎么走”。时空不是固定舞台，而是会响应物质、自己也会动的实体。</p>
+        <p>第二件是海森堡的不确定性原理。位置和动量不能同时被确定到任意精度；两者的不确定度之积有一个下限，由约化普朗克常数 ħ 设定。</p>
+        <p>第三件是量纲分析。手上有三个常数：ħ 带作用量，G 带引力，c 是速度。把它们按不同方式乘除，可以拼出长度、时间、能量，拼法基本唯一——这正是普朗克 1899 年做的事。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：只用三个常数，拼出一个长度</summary>
+          <div class="mathbox-body">
+            <p>先看量纲。ħ 的单位是千克·米²/秒；G 的单位是米³/(千克·秒²)；c 的单位是米/秒。想拼出“米”，就要让千克和秒都恰好抵消。</p>
+            <p>写成乘积 ħ<sup>a</sup>G<sup>b</sup>c<sup>d</sup>，要求质量、时间的指数为零，长度的指数为一。三个方程解出 a = 1/2、b = 1/2、d = −3/2，唯一的长度就是 √(ħG/c³)。</p>
+            <p>普朗克长度不是拍脑袋定的，而是三个基本常数自然长出来的“刻度”。</p>
+            <svg viewBox="0 0 360 150" role="img" aria-label="三个常数拼出普朗克长度的量纲关系">
+              <rect x="24" y="34" width="86" height="34" rx="8" fill="rgba(53,224,200,.1)" stroke="#35e0c8"/>
+              <text x="67" y="56" fill="#35e0c8" font-size="13" text-anchor="middle" font-family="monospace">ħ</text>
+              <rect x="137" y="34" width="86" height="34" rx="8" fill="rgba(255,176,61,.1)" stroke="#ffb03d"/>
+              <text x="180" y="56" fill="#ffb03d" font-size="13" text-anchor="middle" font-family="monospace">G</text>
+              <rect x="250" y="34" width="86" height="34" rx="8" fill="rgba(169,139,255,.1)" stroke="#a98bff"/>
+              <text x="293" y="56" fill="#a98bff" font-size="13" text-anchor="middle" font-family="monospace">c</text>
+              <path d="M67 68 L67 84 L180 84 M180 84 L180 100 M293 68 L293 84 L180 84" stroke="rgba(143,166,196,.45)" fill="none"/>
+              <text x="180" y="122" fill="#8fa6c4" font-size="12" text-anchor="middle" font-family="monospace">l_P = √(ħG/c³)</text>
+              <text x="180" y="141" fill="#8fa6c4" font-size="11" text-anchor="middle" font-family="monospace">唯一能拼出的长度</text>
+            </svg>
+            <p class="caption">三个常数，三种量纲，恰好凑出一个长度。物理上它标志着“现有理论还能用”的边界。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>五步：先确认广义相对论对时空的假设，再看量子力学在最小尺度上加了什么，然后把三个常数拼成普朗克长度，最后说明为什么这里必须换一套理论。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>广义相对论把时空当成一张可以弯曲的布：物质告诉时空怎么弯，时空告诉物质怎么走。关键是光滑——任意小块都近似是平的，可以一直细分。方程也这么写：能量密度有限，曲率就有限。</p>
+            <p>黑洞是这个框架里最极端的解。1916 年，施瓦西在爱因斯坦方程发表后不久给出了球对称的解，其中有一个特殊的半径：进入这个半径以内，连光也逃不出去。它的表达式很简洁：</p>
+            <div class="eq">r<span class="sub">s</span> <span class="op">=</span> <span class="frac"><span class="num">2GM</span><span class="den">c<span class="sup">2</span></span></span></div>
+            <p class="readas">读作：施瓦西半径等于二倍引力常数乘以质量，再除以光速的平方。</p>
+            <ul class="vars">
+              <li><b>r<span class="sub">s</span></b><span>黑洞的视界半径</span></li>
+              <li><b>M</b><span>中心天体的质量</span></li>
+              <li><b>G</b><span>牛顿引力常数</span></li>
+            </ul>
+            <p>把太阳的质量代进去，r<span class="sub">s</span> 约 3 公里；把地球代进去，不到 1 厘米。而当 r 趋近 0，曲率趋于无穷——这就是奇点。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>量子力学在同一块布上加了另一条规则。位置和动量不能同时被确定到任意精度，两者的不确定度之积有一个由 ħ 设定的下限。把一个粒子关进越小的空间，它的动量就越不确定，能量也就越不确定。</p>
+            <div class="eq">Δx <span class="op">·</span> Δp <span class="op">≥</span> <span class="frac"><span class="num">ħ</span><span class="den">2</span></span></div>
+            <p class="readas">读作：位置的不确定度乘以动量的不确定度，不小于约化普朗克常数的一半。</p>
+            <ul class="vars">
+              <li><b>Δx</b><span>位置的不确定范围</span></li>
+              <li><b>Δp</b><span>动量的不确定范围</span></li>
+              <li><b>ħ</b><span>约化普朗克常数，约 1.05×10⁻³⁴ J·s</span></li>
+            </ul>
+            <p>这条规则不只管粒子。真空里不断有虚粒子对冒出又湮灭，“空的时空”一直在翻腾。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>把三者放在一起：ħ 代表量子，G 代表引力，c 代表相对论。量纲分析表明，它们只能拼出一个长度，叫普朗克长度；除以光速，就是普朗克时间。</p>
+            <div class="eq">l<span class="sub">P</span> <span class="op">=</span> <span class="sqrt">ħG/c<span class="sup">3</span></span> <span class="op">≈</span> 1.6<span class="op">×</span>10<span class="sup">−35</span> <span class="dim">m</span>　　t<span class="sub">P</span> <span class="op">≈</span> 5.4<span class="op">×</span>10<span class="sup">−44</span> <span class="dim">s</span></div>
+            <p class="readas">读作：普朗克长度约为 1.6×10⁻³⁵ 米，普朗克时间约为 5.4×10⁻⁴⁴ 秒。</p>
+            <ul class="vars">
+              <li><b>l<span class="sub">P</span></b><span>普朗克长度，量子引力效应变得重要的尺度</span></li>
+              <li><b>t<span class="sub">P</span></b><span>光走过普朗克长度所需的时间</span></li>
+            </ul>
+            <p>这两个数由三个常数算出，划定了一条界线：比这更小的尺度，现有的两套理论都没有经过检验。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>为什么在这个尺度出事？因为时空自己也开始涨落：量子力学要求一切都有不确定度，时空几何也不例外。在普朗克长度上，时空的量子涨落幅度与黑洞视界的曲率半径同量级，“光滑的布”这个概念本身失效了。</p>
+            <p>广义相对论的方程假定曲率可以连续变化，量子力学却让能量密度在极小尺度上剧烈涨落。两者同时使用，方程给出的量会发散。这不是数学技巧能消掉的无穷大，而是两种假设的正面冲突：一个要求时空光滑可分，一个要求它在最小尺度上模糊不定。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>同样的冲突出现在两个地方。往小里看，是黑洞中心的奇点：所有质量挤进越来越小的体积，曲率无限增大。往早里看，是宇宙的开端：把膨胀倒推回去，密度和温度在普朗克时间之前趋于无限。两个地点，同一个问题：需要一套同时容纳两者的理论。</p>
+            <p>候选方案不少。弦论把点状粒子换成极小的弦，试图把引力和其它相互作用放进同一个框架；圈量子引力则把时空本身量子化，让面积和体积只能取离散的值。两者都能在极端条件下给出有限的答案，但都还没有被实验确认。1974 年霍金提出的黑洞辐射，是目前少数把两者放在一起还能给出可计算预言的成果，可它仍是半经典的，不是完整的量子引力。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下面是一条对数尺度尺，从日常的一米缩到普朗克长度。拖动滑块，看尺度落在哪一层，两套理论还撑不撑得住。颜色从绿到黄再到红，提示能否使用。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 一路缩到普朗克长度</span>
+              <span class="demo-tag">1 m → 10⁻³⁵ m</span>
+            </div>
+            <p class="demo-desc">横轴是尺度的对数，从左到右越来越小，标出人类、原子、原子核、质子和普朗克五个阶段。接近普朗克长度时，两块理论图标转黄、转红并闪烁“失效”。</p>
+            <canvas id="qgCanvas" data-height="430" aria-label="从一米缩小到普朗克长度时理论适用性的变化"></canvas>
+            <div id="qgSlider"></div>
+            <div class="readout" id="qgReadout"></div>
+            <p class="hint">试试：拖到 10⁻³⁵ m，两块理论同时变红；停到 10⁻¹⁴ m，离普朗克长度还差 21 个数量级。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>普朗克长度是 1.616×10⁻³⁵ 米。质子的大小约 10⁻¹⁵ 米。两者相除：</p>
+        <div class="eq"><span class="frac"><span class="num">l<span class="sub">P</span></span><span class="den">r<span class="sub">p</span></span></span> <span class="op">≈</span> <span class="frac"><span class="num">1.6<span class="op">×</span>10<span class="sup">−35</span></span><span class="den">10<span class="sup">−15</span></span></span> <span class="op">≈</span> 10<span class="sup">−20</span></div>
+        <p class="readas">读作：普朗克长度比质子还小二十个数量级。如果把一个质子放大到地球那么大，普朗克长度才相当于一个质子。</p>
+        <p>再看能量。普朗克能量由 ħ、c、G 拼成，约 1.22×10¹⁹ GeV。大型强子对撞机把质子加速到 13 TeV，也就是 1.3×10⁴ GeV。两者相差：</p>
+        <div class="eq"><span class="frac"><span class="num">E<span class="sub">P</span></span><span class="den">E<span class="sub">LHC</span></span></span> <span class="op">≈</span> <span class="frac"><span class="num">1.2<span class="op">×</span>10<span class="sup">19</span></span><span class="den">1.3<span class="op">×</span>10<span class="sup">4</span></span></span> <span class="op">≈</span> 10<span class="sup">15</span></div>
+        <p class="readas">读作：普朗克能量约为对撞机能量的 10¹⁵ 倍，也就是一千万亿倍。</p>
+        <p>这个数量级说明量子引力为什么难检验。要直接打出普朗克尺度的效应，需要一千万亿倍于当前最高能量的机器。宇宙学观测提供了另一条路：早期宇宙曾经自然达到过这样的能量，所以原初引力波、宇宙微波背景的细微图案，成了少数可能的间接窗口。但至今没有确认的信号。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>它改变了物理学对“理论边界”的态度。此前人们习惯认为，只要算力足够，任何问题都能算下去；奇点提醒大家，有些问题不是算不动，而是现有语言在那里失效。两套理论都不是“错”的，各自在尺度内极其准确，只是在这里同时越界。</p>
+        <p>它把宇宙学推到前台。宇宙开端不再只是哲学话题：要描述普朗克时间之前，必须有一套量子引力；原初涨落与微波背景的统计特征，可能留下那段时期的痕迹。2019 年事件视界望远镜拍下 M87 黑洞阴影，2022 年拍下银河系中心的 Sgr A*；它们检验强引力区的广义相对论，尚未触及普朗克尺度。</p>
+        <p>最后回到这门课一开始的那张问题地图。我们反复问：当时的人卡在哪，手里有什么工具，怎样把问题拆小。三课走到地图边缘——哈勃让宇宙变成会变化的对象，核合成说明元素有来历，黑洞与开端指出还有一块没画完。能算出 10⁻³⁵ 米，说明知道自己缺什么；知道缺什么，就是下一步的起点。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+    /* ---------- 演示：对数尺度与理论边界 ---------- */
+    var qg = PH.canvas('qgCanvas');
+    var qgReadout = document.getElementById('qgReadout');
+    var S_MAX = 35;
+    var sVal = 1;
+    var blinkT = 0;
+
+    var SUP = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '.': '·' };
+
+    function trim(v, digits) {
+      var s = Number(v).toFixed(digits);
+      if (s.indexOf('.') >= 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
+      return s;
+    }
+
+    function pow10(s) {
+      var raw = trim(s, 1);
+      var out = '';
+      for (var i = 0; i < raw.length; i++) out += SUP[raw.charAt(i)] || raw.charAt(i);
+      return '10⁻' + out;
+    }
+
+    function scaleLabel(s) {
+      return s === 0 ? '1 m' : pow10(s) + ' m';
+    }
+
+    function objectAt(s) {
+      if (s < 3) return '人类 / 米级物体';
+      if (s < 7) return '细胞与分子';
+      if (s < 11) return '原子';
+      if (s < 13.5) return '原子核';
+      if (s < 18) return '质子';
+      return '普朗克尺度附近';
+    }
+
+    function statusAt(s) {
+      if (s < 23) {
+        return { color: '#35e0c8', text: '适用', note: '两套理论在这个尺度上都经过检验' };
+      }
+      if (s < 33) {
+        return { color: '#ffb03d', text: '临界', note: '引力与量子效应开始同量级，近似越来越不可靠' };
+      }
+      return { color: '#ff5f6d', text: '失效', note: '时空涨落与曲率同量级，方程出现发散' };
+    }
+
+    function roundRect(ctx, x, y, wd, ht, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + wd - r, y);
+      ctx.quadraticCurveTo(x + wd, y, x + wd, y + r);
+      ctx.lineTo(x + wd, y + ht - r);
+      ctx.quadraticCurveTo(x + wd, y + ht, x + wd - r, y + ht);
+      ctx.lineTo(x + r, y + ht);
+      ctx.quadraticCurveTo(x, y + ht, x, y + ht - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function drawQG(s, t) {
+      if (!qg) return;
+      var ctx = qg.ctx;
+      var w = qg.w;
+      var h = qg.h;
+      var padL = 46;
+      var padR = 46;
+      var plotW = Math.max(20, w - padL - padR);
+      var axisY = 128;
+      var i;
+
+      function px(exp) { return padL + plotW * (exp / S_MAX); }
+
+      qg.clear();
+
+      /* 顶部读数 */
+      ctx.fillStyle = 'rgba(214,230,255,.94)';
+      ctx.font = '15px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('当前尺度　' + scaleLabel(s), padL, 30);
+      ctx.fillStyle = 'rgba(143,166,196,.85)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('对应：' + objectAt(s), padL, 52);
+
+      /* 轴与刻度 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.4)';
+      ctx.beginPath();
+      ctx.moveTo(padL, axisY);
+      ctx.lineTo(padL + plotW, axisY);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      for (i = 0; i <= 7; i++) {
+        var exp = i * 5;
+        var tx = px(exp);
+        ctx.strokeStyle = 'rgba(143,166,196,.3)';
+        ctx.beginPath();
+        ctx.moveTo(tx, axisY - 5);
+        ctx.lineTo(tx, axisY + 5);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(143,166,196,.68)';
+        ctx.fillText(exp === 0 ? '1 m' : pow10(exp), tx, axisY + 20);
+      }
+
+      /* 阶段标记 */
+      function stageMark(exp, label, row, align) {
+        var x = px(exp);
+        ctx.strokeStyle = 'rgba(53,224,200,.45)';
+        ctx.beginPath();
+        ctx.moveTo(x, axisY - 20);
+        ctx.lineTo(x, axisY - 7);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(143,166,196,.9)';
+        ctx.textAlign = align || 'center';
+        ctx.fillText(label, x, axisY - 28 - row * 15);
+      }
+      stageMark(0, '人类', 0);
+      stageMark(10, '原子', 0);
+      stageMark(14, '原子核', 1, 'right');
+      stageMark(15, '质子', 2, 'left');
+      stageMark(35, '普朗克', 0, 'right');
+
+      /* 已缩小的范围：轴下方阴影 */
+      ctx.fillStyle = 'rgba(53,224,200,.08)';
+      ctx.fillRect(padL, axisY + 30, px(s) - padL, 6);
+
+      /* 当前尺度指针 */
+      var cx = px(s);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.75)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(cx, axisY - 96);
+      ctx.lineTo(cx, axisY + 42);
+      ctx.stroke();
+      ctx.restore();
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(cx, axisY, 5.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 两套理论的状态卡 */
+      var st = statusAt(s);
+      var blink = st.text === '失效' ? 0.45 + 0.55 * Math.abs(Math.sin(t * 5)) : 1;
+      var cardY = 214;
+      var cardH = 92;
+      var gap = 14;
+      var cardW = (w - padL * 2 - gap) / 2;
+      var cards = [
+        { x: padL, title: '广义相对论', sub: '时空弯曲' },
+        { x: padL + cardW + gap, title: '量子力学', sub: '量子涨落' }
+      ];
+      for (i = 0; i < cards.length; i++) {
+        var c = cards[i];
+        ctx.save();
+        ctx.globalAlpha = blink;
+        ctx.fillStyle = 'rgba(14,23,38,.85)';
+        roundRect(ctx, c.x, cardY, cardW, cardH, 12);
+        ctx.fill();
+        ctx.strokeStyle = st.color;
+        ctx.globalAlpha = blink * 0.75;
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.save();
+        ctx.globalAlpha = blink;
+        ctx.fillStyle = 'rgba(234,243,255,.94)';
+        ctx.font = '14px system-ui, "Segoe UI", "Microsoft YaHei", sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText(c.title, c.x + 14, cardY + 26);
+        ctx.fillStyle = 'rgba(143,166,196,.8)';
+        ctx.font = '11px system-ui, "Segoe UI", "Microsoft YaHei", sans-serif';
+        ctx.fillText(c.sub, c.x + 14, cardY + 46);
+        ctx.fillStyle = st.color;
+        ctx.font = '15px ui-monospace, Consolas, monospace';
+        ctx.fillText(st.text, c.x + 14, cardY + 74);
+        ctx.beginPath();
+        ctx.arc(c.x + cardW - 22, cardY + 70, 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      /* 底部说明 */
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      var note1 = st.text === '失效' ? '时空不再光滑，两套理论在这里同时越界' : '越接近普朗克长度，时空越不光滑';
+      ctx.fillText(note1, w / 2, 342);
+      ctx.fillStyle = 'rgba(169,139,255,.85)';
+      ctx.fillText('l_P = 1.6×10⁻³⁵ m　—— 量子引力问题的入口', w / 2, 364);
+    }
+
+    var qgSlider = PH.slider({
+      mount: '#qgSlider',
+      label: '缩放尺度（对数）',
+      min: 0,
+      max: S_MAX,
+      step: 1,
+      value: 1,
+      fmt: function (v) { return scaleLabel(v); },
+      onInput: function (v) {
+        sVal = v;
+        drawQG(sVal, blinkT);
+        var st = statusAt(sVal);
+        if (qgReadout) {
+          qgReadout.textContent = '当前 ' + scaleLabel(sVal) + '　·　' + objectAt(sVal) +
+            '　·　广义相对论：' + st.text + '　·　量子力学：' + st.text;
+        }
+      }
+    });
+
+    if (qg) {
+      qg.canvas.addEventListener('click', function (e) {
+        var rect = qg.canvas.getBoundingClientRect();
+        var mx = e.clientX - rect.left;
+        var padL = 46;
+        var padR = 46;
+        var plotW = Math.max(20, qg.w - padL - padR);
+        var frac = (mx - padL) / plotW;
+        if (frac < 0) frac = 0;
+        if (frac > 1) frac = 1;
+        if (qgSlider) qgSlider.set(frac * S_MAX);
+      });
+      qg.onResize(function () { drawQG(sVal, blinkT); });
+    }
+
+    drawQG(sVal, 0);
+    if (qgReadout) {
+      qgReadout.textContent = '当前 10⁻¹ m　·　人类 / 米级物体　·　广义相对论：适用　·　量子力学：适用';
+    }
+
+    PH.anim(function (t) {
+      blinkT = t;
+      drawQG(sVal, t);
+    }, { autoplay: true });
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '普朗克长度是怎么拼出来的？',
+        options: [
+          { text: '把 ħ、G、c 按量纲拼成 √(ħG/c³)，这是唯一能得到长度的组合。', correct: true, why: '三个常数的量纲分别带作用量、引力和速度，只有这个组合能让千克和秒都抵消，只剩长度。' },
+          { text: '直接取 ħG/c³，不再开平方。', correct: false, why: 'ħG/c³ 的量纲是米²，是面积的量级；开平方之后才是长度。' },
+          { text: '用 c 除以哈勃常数 H₀，得到哈勃半径。', correct: false, why: '哈勃半径约 140 亿光年，是宇宙学尺度，和普朗克长度相差几十个数量级，完全不是一回事。' },
+          { text: '用黑洞的施瓦西半径 2GM/c²，取 M 等于质子质量。', correct: false, why: '施瓦西半径依赖质量 M，不是一个由基本常数唯一确定的固定长度；质子的施瓦西半径也远小于普朗克长度。' }
+        ]
+      },
+      {
+        q: '为什么在普朗克尺度上，两套理论会同时失效？',
+        options: [
+          { text: '因为时空自身的量子涨落与黑洞曲率同量级，“光滑时空”的假设不再成立。', correct: true, why: '广义相对论要求时空光滑可分，量子力学要求时空几何也有不确定度。到了这个尺度，两者正面冲突，方程发散。' },
+          { text: '因为引力在微观尺度太弱，可以完全忽略。', correct: false, why: '距离越近，引力效应反而越强。问题不是引力太弱，而是它在极小尺度上强到不能忽略，又无法被现有理论处理。' },
+          { text: '因为量子力学只适用于原子，出了原子就不成立。', correct: false, why: '量子力学在原子核、基本粒子尺度上同样精确，并没有“出了原子就失效”这条边界。' },
+          { text: '因为光速在普朗克尺度会变大。', correct: false, why: '没有实验或理论依据支持光速在那个尺度改变。失效的原因是时空描述本身，而不是常数变了。' }
+        ]
+      },
+      {
+        q: '为什么量子引力至今没法用实验直接检验？',
+        options: [
+          { text: '普朗克能量约 10¹⁹ GeV，比 LHC 高约 10¹⁵ 倍，只能靠宇宙学观测间接找线索。', correct: true, why: '要直接探测普朗克尺度的效应，需要的能量比当前最强对撞机高一千万亿倍，短期内造不出来。' },
+          { text: '因为 LHC 已经直接验证了量子引力，只是数据还没公开。', correct: false, why: 'LHC 的能量比普朗克能量低十几个数量级，远未达到直接检验量子引力的条件。' },
+          { text: '因为弦论和圈量子引力还没有任何数学表述。', correct: false, why: '两者都有成熟的数学框架，也能给出具体预言；难的是预言对应的能量太高，缺少可检验的实验窗口。' },
+          { text: '因为黑洞离地球太远，望远镜根本拍不到。', correct: false, why: '2019 年和 2022 年事件视界望远镜已经拍到了黑洞阴影。它检验的是强引力区的广义相对论，但还没有触及普朗克尺度。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

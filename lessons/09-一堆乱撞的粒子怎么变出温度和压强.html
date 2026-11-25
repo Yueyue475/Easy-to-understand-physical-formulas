@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 9 课 · 一堆乱撞的粒子怎么变出温度和压强？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="3-4" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 9 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>一堆乱撞的粒子怎么变出温度和压强？</h1>
+        <p class="lede">热力学能告诉你什么允许、什么禁止，却说不清温度计上的数字到底在数什么。如果热真是分子运动，那么“温度”和“压强”这两个词，得从碰撞里重新长出来。</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>到 1850 年代，热力学已经能算得很准：效率有上限，熵只增不减。可它始终是一套“现象学”的学问——它描述热怎么流动、怎么变成功，却不回答热到底是什么。温度计上的 20 ℃，究竟在测量什么东西？</p>
+        <p>如果热是分子运动，这个问题就必须有一个微观答案。气体由大量分子组成，它们朝各个方向乱飞，每秒碰撞几十亿次。可你在实验室里量到的压强是一个稳定的数，温度也是一个稳定的数。一堆混乱，怎么会给出这么平静的读数？</p>
+        <p>更麻烦的是，当时原子论本身还没有直接证据。马赫和奥斯特瓦尔德这样的学者认为，原子只是方便的说法，不必真的存在。要把热学建立在分子上，先得说明：从分子出发，真的能算出宏观规律。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>工具只有三样：原子论、理想气体的实验定律、以及统计平均。</p>
+        <p>实验定律已经摆在桌上：稀薄气体的压强与体积成反比，与温度成正比，合起来就是 pV∝T。这是一条从测量里总结出来的规律，还没有微观解释。</p>
+        <p>统计平均是关键的思维方式。你不需要追踪每一个分子，就像描述城市交通不需要记住每辆车的车牌，只需要平均车速和车流密度。分子数量太大，逐个追踪既不可能也没必要；真正决定宏观读数的是平均值。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：平均值、平方平均与方均根</summary>
+          <div class="mathbox-body">
+            <p>⟨v⟩ 表示速度大小的平均值：把所有分子的速率加起来，再除以分子数。</p>
+            <p>⟨v²⟩ 表示速度平方的平均值：先把每个分子的速率平方，再取平均。它和 ⟨v⟩² 不是一回事，通常 ⟨v²⟩ 更大，因为平方会放大快分子的贡献。</p>
+            <p>方均根速度定义为 v<sub>rms</sub> = √⟨v²⟩，它的意思是“平方之后再平均，最后开方”。这个量在气体理论里反复出现，因为它直接对应平均动能。</p>
+            <p>为什么偏偏用平方？因为碰撞传递的动量与速度成正比，而来回一趟的频率也与速度成正比，两者相乘就出现了 v²。平方不是数学上的偏好，而是物理上的必然。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面这条推导只用一个立方盒子、一个分子和一次弹性碰撞。做完之后，你会发现压强和温度都从同一个地方冒出来。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>取一个边长为 L 的立方盒子，里面有一个质量为 m 的分子。它沿 x 方向以速度 vx 撞上右壁，弹性反弹，速度变成 −vx。</p>
+            <p>速度改变了 2vx，所以动量变化是 2mvx。这份动量没有消失，它传给了墙壁。墙受到的冲量，正是压强的来源。</p>
+            <div class="eq">Δp <span class="op">=</span> 2m v<span class="sub">x</span></div>
+            <p class="readas">读作：一次弹性碰撞中，分子动量的变化量等于两倍的质量乘速度的 x 分量。</p>
+            <ul class="vars">
+              <li><b>Δp</b><span>分子动量的变化量</span></li>
+              <li><b>m</b><span>一个分子的质量</span></li>
+              <li><b>vx</b><span>速度在垂直于墙面方向上的分量</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>下一个问题是：多久撞一次？分子撞完右壁后弹回左壁，再回来，x 方向一个来回要走 2L，所以它每秒撞右壁 vx/(2L) 次。</p>
+            <p>盒子里有大量分子。设数密度为 n = N/V，即单位体积内的分子数。单位时间内撞到面积 A 上的分子，只算朝墙飞的那一半，约为</p>
+            <div class="eq">½ n A v<span class="sub">x</span></div>
+            <p class="readas">读作：二分之一的数密度、面积与速度分量三者相乘。二分之一来自“只有一半分子朝墙飞”。</p>
+            <p>这个式子把“多少个分子在撞”与“撞得多快”合在了一起。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>压强是单位时间、单位面积上传递的动量。把每次碰撞传递的 2mvx，乘以单位时间撞墙的分子数，再除以面积 A：</p>
+            <div class="eq">p <span class="op">=</span> n m ⟨v<span class="sub">x</span><span class="sup">2</span>⟩</div>
+            <p class="readas">读作：压强等于数密度、分子质量与速度 x 分量平方的平均值三者相乘。</p>
+            <ul class="vars">
+              <li><b>p</b><span>气体压强，单位帕斯卡</span></li>
+              <li><b>n</b><span>数密度，单位体积内的分子数</span></li>
+              <li><b>m</b><span>一个分子的质量</span></li>
+              <li><b>⟨vx²⟩</b><span>速度 x 分量平方的平均值</span></li>
+            </ul>
+            <p>注意 ½ 和 2 正好抵消。这个“巧合”其实说明：朝墙飞的那一半和每次碰撞的双倍动量，本来就是同一件事的两面。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>盒子里的气体没有特殊方向。x、y、z 三个方向的平方平均相同，而三者之和就是速度平方的平均：</p>
+            <div class="eq">⟨v<span class="sub">x</span><span class="sup">2</span>⟩ <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">3</span></span> ⟨v<span class="sup">2</span>⟩</div>
+            <p class="readas">读作：任一方向的平方平均，等于总速度平方平均的三分之一。</p>
+            <p>把它代回压强公式，两边再乘以体积 V = N/n，就得到一个只跟总分子数和平均速度平方有关的式子：</p>
+            <div class="eq">pV <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">3</span></span> N m ⟨v<span class="sup">2</span>⟩</div>
+            <p class="readas">读作：压强乘体积，等于三分之一的总分子数、分子质量与速度平方平均值之积。</p>
+            <p>左边全是宏观量，右边全是微观量。两条本来分开的账，第一次接上了。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>实验告诉我们，稀薄气体的 pV 与绝对温度成正比：pV = NkT，k 是玻尔兹曼常数。把两个 pV 的表达式并排放，消去 pV：</p>
+            <div class="eq"><span class="frac"><span class="num">1</span><span class="den">2</span></span> m⟨v<span class="sup">2</span>⟩ <span class="op">=</span> <span class="frac"><span class="num">3</span><span class="den">2</span></span> kT</div>
+            <p class="readas">读作：一个分子的平均平动动能，等于二分之三乘以玻尔兹曼常数再乘以绝对温度。</p>
+            <ul class="vars">
+              <li><b>k</b><span>玻尔兹曼常数，约 1.38×10⁻²³ J/K</span></li>
+              <li><b>T</b><span>绝对温度，单位开尔文</span></li>
+            </ul>
+            <p>左边正是分子的平均平动动能。温度就是分子平均动能的量度——这句话到这里才算有了精确定义。单个分子没有温度，只有速度；温度是大量分子的集体性质。</p>
+            <p>麦克斯韦进一步给出了速度分布：分子并不都一样快，而是一条右偏的钟形曲线。升温时曲线整体右移并变宽，快分子越来越多，但永远不会所有分子一样快。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>左边的盒子里有 200 个分子，速度按麦克斯韦分布抽取；右边把它们的速率统计成直方图，并叠上理论曲线。两个演示共用同一个温度。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 盒子里的 200 个分子</span>
+              <span class="demo-tag">p = n m ⟨vx²⟩</span>
+            </div>
+            <p class="demo-desc">颜色表示快慢：蓝色偏慢，橙色偏快。拖动温度滑块，所有分子的速度一起改变；右侧墙壁被撞时会闪一下。</p>
+            <canvas id="boxCanvas" data-height="320" aria-label="盒子里分子的运动与撞墙"></canvas>
+            <div id="tempSlider"></div>
+            <div class="demo-controls">
+              <div class="anim-mount" id="mbAnimMount"></div>
+            </div>
+            <div class="readout" id="mbReadout">T = 300 K　⟨v²⟩ = 2.67×10⁵ m²/s²　p ≈ 104 kPa</div>
+            <div class="readout" id="hitReadout" style="color:#8fa6c4;font-size:13px;">每秒撞右墙 ≈ 0 次（模拟，200 个分子）</div>
+            <p class="hint">试试：把温度拖到 1000 K。分子明显变快，撞墙次数和压强读数一起上升，而盒子的大小一点没变。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 速度分布直方图</span>
+              <span class="demo-tag">麦克斯韦分布</span>
+            </div>
+            <p class="demo-desc">横轴是速率，纵轴是“落在这一档里的分子比例”。青色曲线是理论分布，柱子的高度来自盒子里那 200 个分子的实时统计。</p>
+            <canvas id="histCanvas" data-height="300" aria-label="分子速率的直方图与麦克斯韦理论曲线"></canvas>
+            <p class="hint">试试：把温度从 100 K 拖到 1000 K，曲线一边右移、一边变矮变宽。曲线下的总面积始终是 1。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>室温 300 K 下，氮气分子（摩尔质量 M = 0.028 kg/mol）的方均根速率是</p>
+        <div class="eq">v<span class="sub">rms</span> <span class="op">=</span> <span class="sqrt">3RT / M</span> <span class="op">≈</span> 5.2<span class="op">×</span>10<span class="sup">2</span> <span class="dim">m/s</span></div>
+        <p class="readas">读作：方均根速率等于根号下三倍气体常数乘温度除以摩尔质量，约五百二十米每秒。</p>
+        <p>换算成日常数字：约 515 m/s，比空气中的音速（约 343 m/s）还快。0 ℃ 时降到约 493 m/s；100 ℃ 时升到约 570 m/s。也就是说，你呼出的一口气里，分子正以接近子弹的速度乱飞。</p>
+        <p>那为什么我们闻不到一阵“分子风”？因为分子虽然快，但每走很短一段就会撞上别的分子，方向被撞得七零八落。它净往前挪的速度非常慢，扩散靠的是这种随机游走，而不是直线冲刺。</p>
+        <p>这也顺便解释了声音：声波就是分子碰撞的集体传递，速度自然和分子热运动速度同一量级。温度越高，分子越快，声音也传得越快。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>统计力学把热力学从“现象学”变成了“微观推导”。此前，压强和温度是必须接受的基本量；此后，它们可以从分子的质量和速度算出来。热力学回答“能不能”，统计物理回答“为什么”，两套语言在这里正式合流。</p>
+        <p>它也让原子论站稳了脚跟。1905 年，爱因斯坦用布朗运动估算阿伏伽德罗常数；1908 年，佩兰用实验证实了这个估算。原子不再只是方便的说法，而是可以被数出来的实体。</p>
+        <p>更深的后果是：温度、压强这些看似“基本”的量，其实是统计平均。单个分子没有温度，只有速度。这个观念后来一路延伸：相变是大量粒子的集体行为，超导是电子配对后的集体状态，量子气体有全新的统计规律。多，不只是多的叠加。</p>
+        <p>第三阶段到这里结束。热从一种流体，变成了能量，又变成了运动，最后变成了一套可以统计的微观账本。下一阶段，物理学家要把注意力转向电、磁和光。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var N = 200;
+    var RGAS = 8.314;
+    var MOLAR = 0.028;          /* kg/mol，氮气 */
+    var MOL = MOLAR / 6.022e23; /* 单个分子质量 */
+    var NUM_DENSITY = 2.5e25;   /* 1/m³，约一个大气压 */
+    var T = 300;
+
+    var boxC = PH.canvas('boxCanvas');
+    var histC = PH.canvas('histCanvas');
+    var mbReadout = document.getElementById('mbReadout');
+    var hitReadout = document.getElementById('hitReadout');
+
+    var parts = [];
+    var wallGlow = 0;
+
+    function gauss() {
+      var u = 0;
+      var v = 0;
+      while (u === 0) u = Math.random();
+      while (v === 0) v = Math.random();
+      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+    }
+
+    function initParts() {
+      var i;
+      for (i = 0; i < N; i++) {
+        var vx = gauss() / Math.sqrt(3);
+        var vy = gauss() / Math.sqrt(3);
+        var vz = gauss() / Math.sqrt(3);
+        parts.push({
+          x: Math.random(),
+          y: Math.random(),
+          vx: vx,
+          vy: vy,
+          vz: vz
+        });
+      }
+    }
+
+    function vrmsOf(t) {
+      return Math.sqrt(3 * RGAS * t / MOLAR);
+    }
+
+    function sci(v) {
+      var e = Math.floor(Math.log(v) / Math.LN10);
+      var m = v / Math.pow(10, e);
+      var sup = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+      var es = String(e).replace(/-/g, '⁻').replace(/[0-9]/g, function (d) {
+        return sup[Number(d)];
+      });
+      return m.toFixed(2) + '×10' + es;
+    }
+
+    function stepParts(dt) {
+      var v = vrmsOf(T);
+      var scale = 0.00055 * v;   /* 每秒走过的盒宽比例 */
+      var i;
+      for (i = 0; i < N; i++) {
+        var p = parts[i];
+        p.x += p.vx * scale * dt;
+        p.y += p.vy * scale * dt;
+        if (p.x < 0.015) {
+          p.x = 0.015;
+          p.vx = -p.vx;
+        } else if (p.x > 0.985) {
+          p.x = 0.985;
+          p.vx = -p.vx;
+          wallGlow = 1;
+        }
+        if (p.y < 0.015) {
+          p.y = 0.015;
+          p.vy = -p.vy;
+        } else if (p.y > 0.985) {
+          p.y = 0.985;
+          p.vy = -p.vy;
+        }
+      }
+
+      wallGlow = Math.max(0, wallGlow - dt * 2.2);
+    }
+
+    function drawBox() {
+      if (!boxC) return;
+      var ctx = boxC.ctx;
+      var w = boxC.w;
+      var h = boxC.h;
+      var pad = 12;
+      var bw = w - pad * 2;
+      var bh = h - pad * 2;
+      var i;
+
+      boxC.clear();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(78,168,255,.03)';
+      ctx.fillRect(pad, pad, bw, bh);
+      ctx.strokeStyle = 'rgba(143,166,196,.4)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(pad, pad, bw, bh);
+      ctx.restore();
+
+      /* 右壁被撞时的闪光 */
+      if (wallGlow > 0) {
+        ctx.save();
+        ctx.globalAlpha = wallGlow * 0.8;
+        ctx.strokeStyle = '#ffb03d';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(pad + bw, pad);
+        ctx.lineTo(pad + bw, pad + bh);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      for (i = 0; i < N; i++) {
+        var p = parts[i];
+        var u = Math.sqrt(p.vx * p.vx + p.vy * p.vy + p.vz * p.vz);
+        var f = Math.max(0, Math.min(1, u / 1.9));
+        ctx.fillStyle = 'rgba(' + Math.round(78 + 177 * f) + ',' +
+          Math.round(168 - 30 * f) + ',' + Math.round(255 - 194 * f) + ',.9)';
+        ctx.beginPath();
+        ctx.arc(pad + p.x * bw, pad + p.y * bh, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('T = ' + T + ' K　N = ' + N, pad + 8, pad + 16);
+      ctx.restore();
+    }
+
+    function drawHist() {
+      if (!histC) return;
+      var ctx = histC.ctx;
+      var w = histC.w;
+      var h = histC.h;
+      var padL = 58;
+      var padR = 16;
+      var padT = 22;
+      var padB = 40;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, h - padT - padB);
+      var vmax = 2000;
+      var bins = 25;
+      var binW = vmax / bins;
+      var counts = [];
+      var i;
+      var v = vrmsOf(T);
+
+      for (i = 0; i < bins; i++) counts.push(0);
+      for (i = 0; i < N; i++) {
+        var p = parts[i];
+        var sp = Math.sqrt(p.vx * p.vx + p.vy * p.vy + p.vz * p.vz) * v;
+        var bi = Math.floor(sp / binW);
+        if (bi >= 0 && bi < bins) counts[bi] += 1;
+      }
+
+      var yMax = 0.0024;
+
+      function gx(s) { return padL + pw * s / vmax; }
+      function gy(d) { return padT + ph - ph * d / yMax; }
+
+      histC.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var gyy = padT + ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(padL, gyy);
+        ctx.lineTo(padL + pw, gyy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(padL, padT);
+      ctx.lineTo(padL, padT + ph);
+      ctx.lineTo(padL + pw, padT + ph);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 直方图 */
+      ctx.save();
+      for (i = 0; i < bins; i++) {
+        var density = counts[i] / (N * binW);
+        var barH = ph * density / yMax;
+        if (barH <= 0) continue;
+        var x = padL + pw * (i * binW) / vmax;
+        var bwid = pw * binW / vmax;
+        ctx.fillStyle = 'rgba(53,224,200,.28)';
+        ctx.fillRect(x + 1, padT + ph - barH, Math.max(1, bwid - 2), barH);
+      }
+      ctx.restore();
+
+      /* 理论曲线 */
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(53,224,200,.5)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (i = 0; i <= 120; i++) {
+        var sv = vmax * i / 120;
+        var y = sv / v;
+        var f = 4.146 * y * y * Math.exp(-1.5 * y * y) / v;
+        if (i === 0) ctx.moveTo(gx(sv), gy(f));
+        else ctx.lineTo(gx(sv), gy(f));
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 方均根速度标记 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.6)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(gx(v), padT);
+      ctx.lineTo(gx(v), padT + ph);
+      ctx.stroke();
+      ctx.fillStyle = '#ffb03d';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('v_rms', gx(v) + 4, padT + 12);
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('0', padL - 4, padT + ph + 16);
+      ctx.fillText('500', gx(500) - 8, padT + ph + 16);
+      ctx.fillText('1000', gx(1000) - 11, padT + ph + 16);
+      ctx.fillText('1500', gx(1500) - 11, padT + ph + 16);
+      ctx.fillText('2000', gx(2000) - 11, padT + ph + 16);
+      ctx.fillText('速率 (m/s)', padL + pw - 58, padT + ph + 30);
+      ctx.fillText('比例 / (m/s)', padL - 48, padT - 8);
+      ctx.restore();
+    }
+
+    function updateStats() {
+      var v = vrmsOf(T);
+      var v2 = v * v;
+      var pPa = NUM_DENSITY * MOL * v2 / 3;
+      if (mbReadout) {
+        mbReadout.textContent = 'T = ' + T + ' K　⟨v²⟩ = ' + sci(v2) + ' m²/s²　p ≈ ' + Math.round(pPa / 1000) + ' kPa';
+      }
+      if (hitReadout) {
+        var scale = 0.00055 * v;
+        var rate = 0;
+        var i;
+        for (i = 0; i < N; i++) {
+          rate += Math.abs(parts[i].vx) * scale / 1.94;
+        }
+        hitReadout.textContent = '每秒撞右墙 ≈ ' + Math.round(rate) + ' 次（模拟，' + N + ' 个分子）';
+      }
+    }
+
+    initParts();
+    drawBox();
+    drawHist();
+    updateStats();
+
+    /* 动画 */
+    PH.anim(function (t, dt) {
+      stepParts(dt);
+      drawBox();
+      drawHist();
+      updateStats();
+    }, { mount: '#mbAnimMount', autoplay: true, speed: 1 });
+
+    /* 温度滑块 */
+    var tempSlider = PH.slider({
+      mount: '#tempSlider',
+      label: '温度 T',
+      min: 100,
+      max: 1000,
+      step: 10,
+      value: 300,
+      unit: 'K',
+      fmt: function (x) { return String(Math.round(x)); },
+      onInput: function (x) {
+        T = x;
+        drawBox();
+        drawHist();
+        updateStats();
+      }
+    });
+
+    if (boxC) boxC.onResize(function () { drawBox(); });
+    if (histC) histC.onResize(function () { drawHist(); });
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '压强在微观上到底是什么？',
+        options: [
+          { text: '分子自身的重量压在容器底上。', correct: false, why: '分子质量极小，单个分子的重量完全可以忽略。压强来自碰撞，不来自静置的重量。' },
+          { text: '大量分子不断撞击壁面，在单位时间、单位面积上传递的动量。', correct: true, why: '每次碰撞传递 2mvx，乘上撞墙频率再除以面积，就得到 p = n m⟨vx²⟩。这就是压强的微观图像。' },
+          { text: '分子之间的万有引力。', correct: false, why: '理想气体分子之间的引力被忽略，而且引力会让压强变小，与事实相反。' },
+          { text: '壁面受热后自己产生的推力。', correct: false, why: '壁面温度升高是结果，不是原因。真正传递动量的是撞上去的分子。' }
+        ]
+      },
+      {
+        q: '温度对应分子的什么？',
+        options: [
+          { text: '分子的总动量。', correct: false, why: '总动量在静止气体里为零，但温度并不为零。方向相反的动量会互相抵消。' },
+          { text: '分子的平均平动动能。', correct: true, why: '由 ½m⟨v²⟩ = 3/2·kT 可知，温度正比于一个分子的平均平动动能。这才是温度的微观定义。' },
+          { text: '分子的数量。', correct: false, why: '同样温度下，分子数多一倍，内能多一倍，但温度不变。' },
+          { text: '分子之间的平均距离。', correct: false, why: '距离主要影响密度和相互作用，理想气体的温度与它无关。' }
+        ]
+      },
+      {
+        q: '温度升高后，速度分布会怎样变化？',
+        options: [
+          { text: '整条曲线向左移动并变窄。', correct: false, why: '温度升高意味着分子平均变快，分布应当右移；变窄则意味着所有分子趋同，与事实相反。' },
+          { text: '曲线整体右移并变宽，高速分子的比例增加。', correct: true, why: '麦克斯韦分布随 T 增大而展宽，峰值降低并右移。曲线下的总面积仍然为 1。' },
+          { text: '曲线形状完全不变，只是分子总数变多。', correct: false, why: '温度直接进入分布函数，形状必然改变。分子总数并没有变。' },
+          { text: '所有分子的速度都变成同一个值。', correct: false, why: '碰撞是随机的，速度永远有一个分布。温度再高也不会让所有分子整齐划一。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

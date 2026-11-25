@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>物理公式重演：27 个把人卡住的问题</title>
+  <link rel="stylesheet" href="assets/course.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>物理公式重演：27 个把人卡住的问题</h1>
+      <p class="sub">从行星轨道到量子引力，一步步把公式重新推一遍</p>
+      <div class="progress-wrap">
+        <div class="progress-bar" role="progressbar" aria-label="阅读进度"
+             aria-valuemin="0" aria-valuemax="27" aria-valuenow="0">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="progress-text" id="progressText">已读 0 / 27</span>
+      </div>
+    </header>
+
+    <main id="stage-list" aria-label="课程目录"></main>
+
+    <p class="index-foot">建议按顺序读。每课只需要 10 分钟，但每课都有一个你必须先想一遍的问题。</p>
+  </div>
+
+  <script src="assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var list = document.getElementById('stage-list');
+    var frag = document.createDocumentFragment();
+    var s, l;
+
+    for (s = 0; s < PH.STAGES.length; s++) {
+      var st = PH.STAGES[s];
+      var sec = document.createElement('section');
+      sec.className = 'stage-block';
+      sec.style.setProperty('--stage', st.color);
+
+      var bar = document.createElement('div');
+      bar.className = 'stage-bar';
+
+      var num = document.createElement('span');
+      num.className = 'stage-num';
+      num.textContent = '阶段 ' + st.n;
+
+      var h2 = document.createElement('h2');
+      h2.textContent = st.name;
+
+      var sub = document.createElement('span');
+      sub.className = 'stage-sub';
+      sub.textContent = st.sub;
+
+      bar.appendChild(num);
+      bar.appendChild(h2);
+      bar.appendChild(sub);
+      sec.appendChild(bar);
+
+      var grid = document.createElement('div');
+      grid.className = 'stage-grid';
+
+      for (l = 0; l < PH.LESSONS.length; l++) {
+        var lesson = PH.LESSONS[l];
+        if (lesson.stage !== st.n) continue;
+
+        var done = PH.isDone(lesson.id);
+
+        var card = document.createElement('a');
+        card.className = 'lesson-card' + (done ? ' is-done' : '');
+        card.href = 'lessons/' + lesson.file;
+
+        var top = document.createElement('div');
+        top.className = 'card-top';
+
+        var id = document.createElement('span');
+        id.className = 'card-id';
+        id.textContent = lesson.id;
+        top.appendChild(id);
+
+        if (done) {
+          var flag = document.createElement('span');
+          flag.className = 'card-done';
+          flag.textContent = '已读';
+          top.appendChild(flag);
+        }
+
+        var title = document.createElement('span');
+        title.className = 'card-title';
+        title.textContent = lesson.title;
+
+        var time = document.createElement('span');
+        time.className = 'card-time';
+        time.textContent = '约 ' + lesson.minutes + ' 分钟';
+
+        card.appendChild(top);
+        card.appendChild(title);
+        card.appendChild(time);
+        grid.appendChild(card);
+      }
+
+      sec.appendChild(grid);
+      frag.appendChild(sec);
+    }
+
+    list.appendChild(frag);
+
+    function paintProgress() {
+      var p = PH.progress();
+      document.getElementById('progressFill').style.width = p.pct + '%';
+      document.getElementById('progressText').textContent = '已读 ' + p.done + ' / ' + p.total;
+      var barEl = document.querySelector('.progress-bar');
+      if (barEl) barEl.setAttribute('aria-valuenow', String(p.done));
+    }
+
+    paintProgress();
+    document.addEventListener('ph:progress', paintProgress);
+  });
+  </script>
+</body>
+</html>

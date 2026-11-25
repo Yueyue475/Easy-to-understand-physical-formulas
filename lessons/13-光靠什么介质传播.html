@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 4 阶段 · 光靠什么介质传播？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="4-4" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 13 课 / 共 27 课 · 约 11 分钟</p>
+        <h1>光靠什么介质传播？</h1>
+        <p class="lede">声波靠空气，水波靠水，海浪靠海水。19 世纪的人认定：光是波，那就一定有什么东西在振动。他们把这种东西叫做以太，然后花了半个世纪去找它。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>19 世纪的物理学有一个几乎无法绕开的常识：波需要介质。声音在空气里传，抽掉空气的玻璃罩里铃铛就听不见；水波在水面上传，水面平静就没有波纹。波的本质是“某种东西在振动，并把振动传给旁边”，没有东西，就没有波。</p>
+        <p>可光能在真空中传播。太阳的光穿过 1.5 亿公里的真空到达地球，中间没有任何空气。如果光真是波，那就必须假设有一种看不见的东西填满了整个宇宙，连“真空”里也有它。这就是<strong>以太</strong>：无重量、完全透明、可以穿透一切物体、充满所有空间，而且被设想为绝对静止的——它是宇宙的“背景”，所有运动都相对它而言。</p>
+        <p>这个假说在 19 世纪非常合理，甚至是被迫的：杨和菲涅耳的波动理论需要它，麦克斯韦的电磁波也被认为是以太的振动。问题只剩一个：它能不能被找到？地球以约 30 km/s 绕太阳运动，若以太绝对静止，地面就像在风里穿行，应该有一股“以太风”，改变光在不同方向上的传播速度。只要仪器够灵敏，就该测得出来。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>要测“光速在不同方向上是否略有不同”，普通的计时器毫无希望：光跑 11 米只要 3.7×10⁻⁸ 秒，而预期的方向差异只有这个时间的亿分之一。必须找到一种把极小时间差放大成可观察量的办法。干涉仪就是这样的放大器。</p>
+        <p>迈克耳孙在 1881 年做出第一台干涉仪。一块半透半反的镜子把一束光分成两束，沿两条互相垂直的臂走同样的距离，再由镜子反射回来重新合到一起。两束光叠加时，路程差哪怕只有半个波长，条纹位置也会移动：条纹把“时间差”翻译成“长度差”，可以用目镜读出。</p>
+        <p>1887 年，迈克耳孙与化学家莫雷合作，在美国克利夫兰的凯斯学院把装置大幅改进：让光在两条臂里来回反射多次，把有效光程拉长到 11 米，并把整个装置装在一块漂浮在水银上的石板上，避免震动干扰。他们用钠黄光，波长约 590 nm。这台仪器能稳定地看出小到 0.01 条条纹的移动。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么“半个波长”就是一条条纹？</summary>
+          <div class="mathbox-body">
+            <p>两束光重新合到一起时，比的不是谁更亮，而是“波峰遇上了什么”。如果一束光比另一束多走了整整一个波长，它的波峰正好落在对方的波峰上，亮的地方还是亮，条纹位置一动不动。</p>
+            <p>如果多走了半个波长，波峰就正好压在对方的波谷上：一高一低互相抵消，原来亮的地方变暗，原来的暗处反倒变亮。整片条纹于是平移了一条——一条亮纹加一条暗纹的距离。</p>
+            <p>所以“条纹移动 0.4 条”，说的是两束光的路程差多出了 0.4 个波长，约 0.4 × 590 nm ≈ 236 nm，不到一根头发直径的百分之一。一个肉眼完全看不见的长度差，就这样被条纹变成了一眼能读出的位移。</p>
+            <svg viewBox="0 0 360 120" role="img" aria-label="两行波形：左半段同相为亮，右半段错开半个波长为暗">
+              <line x1="123" y1="18" x2="123" y2="106" stroke="rgba(143,166,196,.38)" stroke-dasharray="4 5"/>
+              <line x1="313" y1="18" x2="313" y2="106" stroke="rgba(143,166,196,.38)" stroke-dasharray="4 5"/>
+              <line x1="180" y1="18" x2="180" y2="106" stroke="rgba(143,166,196,.22)" stroke-dasharray="3 6"/>
+              <polyline points="28,38 32,33.8 36,30 40,27.1 44,25.4 48,25 52,26.1 56,28.4 60,31.8 64,35.9 68,40.1 72,44.2 76,47.6 80,49.9 84,51 88,50.6 92,48.9 96,46 100,42.2 104,38 108,33.8 112,30 116,27.1 120,25.4 124,25 128,26.1 132,28.4 136,31.8 140,35.9 144,40.1 148,44.2 152,47.6 156,49.9 160,51 164,50.6 168,48.9 172,46 176,42.2 180,38 184,33.8 188,30 192,27.1 196,25.4 200,25 204,26.1 208,28.4 212,31.8 216,35.9 220,40.1 224,44.2 228,47.6 232,49.9 236,51 240,50.6 244,48.9 248,46 252,42.2 256,38 260,33.8 264,30 268,27.1 272,25.4 276,25 280,26.1 284,28.4 288,31.8 292,35.9 296,40.1 300,44.2 304,47.6 308,49.9 312,51 316,50.6 320,48.9 324,46 328,42.2 332,38" fill="none" stroke="#35e0c8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <polyline points="28,88 32,83.8 36,80 40,77.1 44,75.4 48,75 52,76.1 56,78.4 60,81.8 64,85.9 68,90.1 72,94.2 76,97.6 80,99.9 84,101 88,100.6 92,98.9 96,96 100,92.2 104,88 108,83.8 112,80 116,77.1 120,75.4 124,75 128,76.1 132,78.4 136,81.8 140,85.9 144,90.1 148,94.2 152,97.6 156,99.9 160,101 164,100.6 168,98.9 172,96 176,92.2 180,88" fill="none" stroke="#35e0c8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <polyline points="180,88 184,92.2 188,96 192,98.9 196,100.6 200,101 204,99.9 208,97.6 212,94.2 216,90.1 220,85.9 224,81.8 228,78.4 232,76.1 236,75 240,75.4 244,77.1 248,80 252,83.8 256,88 260,92.2 264,96 268,98.9 272,100.6 276,101 280,99.9 284,97.6 288,94.2 292,90.1 296,85.9 300,81.8 304,78.4 308,76.1 312,75 316,75.4 320,77.1 324,80 328,83.8 332,88" fill="none" stroke="#35e0c8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <text x="123" y="14" fill="#8fa6c4" font-size="10" text-anchor="middle" font-family="ui-monospace,Consolas,monospace">亮</text>
+              <text x="313" y="14" fill="#8fa6c4" font-size="10" text-anchor="middle" font-family="ui-monospace,Consolas,monospace">暗</text>
+              <text x="180" y="117" fill="#8fa6c4" font-size="10" text-anchor="middle" font-family="ui-monospace,Consolas,monospace">λ/2</text>
+            </svg>
+            <p class="caption">左边两束光同相，波峰对波峰，合起来是亮的；右边错开半个波长，波峰压着波谷，合成后变暗。分界线处那半个波长的差距，就是一条条纹。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>现在把“以太风应该造成多大条纹移动”算出来。只有先知道该找什么，才能判断“没找到”意味着什么。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，估计风速。地球公转速度约 30 km/s，即 3×10⁴ m/s。若以太绝对静止，地面上看，以太就以这个速度迎面流来。用光速去除它，得到一个很小的比值。</p>
+            <div class="eq"><span class="frac"><span class="num">v</span><span class="den">c</span></span> <span class="op">=</span> <span class="frac"><span class="num">3×10<span class="sup">4</span></span><span class="den">3×10<span class="sup">8</span></span></span> <span class="op">=</span> 10<span class="sup">−4</span></div>
+            <p class="readas">读作：地球公转速度是光速的万分之一。这个比值很小，但它会以平方的形式进入时间差，所以不能直接忽略。</p>
+            <ul class="vars">
+              <li><b>v</b><span>地球相对以太的速度，约 30 km/s</span></li>
+              <li><b>c</b><span>光速，约 3×10⁸ m/s</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，比较顺风与逆风。假设一条臂与以太风平行。光顺着风走时，相对于地面的速度是 c+v；反射回来逆着风走时，速度是 c−v。往返一趟的时间不是简单的 2L/c，而是两段不同速度的时间之和。</p>
+            <p>把两段加起来，再按 v/c 很小做展开，多出来的部分正比于 (v/c)²。而垂直于风的另一条臂，光要斜着追上被风吹动的镜子，往返时间也变长，但多出来的量只有平行臂的一半。两者相减，剩下的时间差仍然正比于 (v/c)²。</p>
+            <div class="eq">Δt <span class="op">≈</span> <span class="frac"><span class="num">2L</span><span class="den">c</span></span> <span class="op">·</span> <span class="op">(</span><span class="frac"><span class="num">v</span><span class="den">c</span></span><span class="op">)</span><span class="sup">2</span></div>
+            <p class="readas">读作：两条臂的光往返时间差，约等于“光跑完两倍臂长所需时间”乘以速度比的平方。v/c 是万分之一，平方后只有亿分之一。</p>
+            <ul class="vars">
+              <li><b>Δt</b><span>两束光返回时的时间差（s）</span></li>
+              <li><b>L</b><span>一条臂的长度，这里做到 11 m</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，把时间差换成条纹移动。干涉仪不是直接读时间，而是读条纹。光的一个周期对应一条条纹的移动，所以时间差除以光的周期，就是移动了多少条条纹。周期等于波长除以光速，于是公式变成下面这样。</p>
+            <p>注意这里的 L 是单程臂长，而 2L 对应光往返的总路程。干涉仪转动 90° 时，两条臂的角色互换：原来顺风的那条变成垂直，原来垂直的变成顺风。条纹会从一边移到另一边，所以实际观察到的移动量是往返两倍，公式里保留这个 2。</p>
+            <div class="eq">ΔN <span class="op">=</span> <span class="frac"><span class="num">2L</span><span class="den">λ</span></span> <span class="op">·</span> <span class="op">(</span><span class="frac"><span class="num">v</span><span class="den">c</span></span><span class="op">)</span><span class="sup">2</span></div>
+            <p class="readas">读作：条纹移动的条数，等于两倍臂长除以波长，再乘以速度比的平方。</p>
+            <ul class="vars">
+              <li><b>ΔN</b><span>条纹移动的条数（无量纲）</span></li>
+              <li><b>λ</b><span>光的波长，钠黄光约 590 nm</span></li>
+              <li><b>2L</b><span>光在一条臂中往返的总路程</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，代入数字。L=11 m，λ=590 nm=5.9×10⁻⁷ m，v/c=10⁻⁴。先算 (v/c)²=10⁻⁸，再乘 2L/λ。</p>
+            <div class="eq">ΔN <span class="op">=</span> <span class="frac"><span class="num">22</span><span class="den">5.9×10<span class="sup">−7</span></span></span> <span class="op">×</span> 10<span class="sup">−8</span> <span class="op">≈</span> 0.37 <span class="dim">条</span></div>
+            <p class="readas">读作：预期条纹会移动约 0.37 条，四舍五入就是 0.4 条。这不是一个可以忽略的小数，只要仪器稳定，肉眼配合测微目镜就能看出来。</p>
+            <p>换个说法：对应的时间差约 7×10⁻¹⁶ 秒。这是一个极其短暂的时间，但干涉仪把它放大成了大约五分之二条条纹的位移。迈克耳孙设计的巧妙之处，就是让不可直接测量的时间差变成了可读的条纹位置。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，看实测。1887 年的结果是：无论把装置转到哪个方向，条纹的移动都小于 0.01 条。而仪器本身的灵敏度足以分辨 0.01 条，预期的 0.37 条比它大了三十多倍，绝不可能漏掉。</p>
+            <p>于是结论很尖锐：找不到以太风。这不只是“这一次没测到”，而是把以太风的速度上限压到了大约 5 km/s 以下——不到地球公转速度的六分之一。如果以太真的存在，它要么被地球完全拖着走，要么根本不以当时设想的方式存在。无论哪一种，都让“绝对静止的以太”这个假说陷入根本困难。</p>
+            <div class="eq">ΔN<span class="sub">实测</span> <span class="op">&lt;</span> 0.01 <span class="op">≪</span> ΔN<span class="sub">预测</span> <span class="op">≈</span> 0.4</div>
+            <p class="readas">读作：实测的条纹移动小于 0.01 条，远小于以太说预言的约 0.4 条。预言与事实相差四十倍。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>下面的干涉仪可以整体旋转。上方的示意图跟着角度转，下方的曲线同时画出两种东西：以太说预言的条纹位移，和实际测到的结果。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 转动干涉仪：预言与实测</span>
+              <span class="demo-tag">ΔN = 2L(v/c)²/λ</span>
+            </div>
+            <p class="demo-desc">橙色正弦曲线是以太说的预言：当某条臂与以太风平行时位移最大，转到 45° 时两条臂受影响相同，位移归零，转过 90° 后符号反转。青色直线是 1887 年的实测：几乎贴着零线，起伏小于 0.01 条。滑块转动整个装置，看预言怎么起伏、实测怎么不动。</p>
+            <canvas id="mmCanvas" data-height="440" aria-label="旋转干涉仪与条纹位移预言、实测对比"></canvas>
+            <div id="angleSlider"></div>
+            <div class="readout" id="mmReadout"></div>
+            <p class="hint">试试：把角度停在 0° 和 90°，预言分别是 +0.4 和 −0.4 条；再把角度停在 45°，预言恰好是 0——可实测在任何角度都贴着零。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>把关键比值再摆一遍。v/c=10⁻⁴，平方之后是 10⁻⁸。这个“亿分之一”是整件事的要害：地球跑得并不慢，但和光速比起来仍然慢得可怜，所以以太效应被压到了二阶。</p>
+        <p>如果没有干涉仪，这个效应完全无法察觉。以当时最好的计时手段，测量光往返 22 米所需的时间（约 7×10⁻⁸ 秒）已经勉强，而要分辨其中 10⁻⁸ 的相对变化，等于要求计时精度达到 10⁻¹⁶ 秒——比原子钟出现还早了大半个世纪。</p>
+        <p>干涉仪绕开了计时。它把两束光的时间差转成条纹的相位差，而相位差可以被光学方法放大到肉眼可见。0.4 条条纹的移动，在目镜里是明暗条纹整体平移了约五分之二个条纹间距，绝不算微小。正因如此，1887 年的“没看到”才有分量：不是仪器太钝，而是该出现的东西没有出现。</p>
+        <p>实验精度还常用一个形象的比较：能测出 0.01 条条纹，相当于在 1 公里外测出一根头发丝的宽度。这个精度足以看到 0.4 条的预言。后来的重复实验（包括在不同季节、不同地点做的）都给出同样的零结果，这就把“偶然没测到”的可能性也基本排除了。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>迈克耳孙-莫雷实验的零结果，是物理学史上最著名的“失败”之一：想找的东西没找到，却逼出了全新的理论。人们先尝试补救——假设地球拖着以太一起走，或者以太在物体附近被“压缩”。这些补丁要么与光行差观测矛盾，要么需要不断加新假设，越来越不自然。</p>
+        <p>1905 年，爱因斯坦选择不再修补。他直接把“以太”从理论里删掉，并把“真空光速对所有人都一样”提为公理。这样，迈克耳孙-莫雷的零结果不再是意外，而是理论的必然推论。空间和时间本身必须随之改变，这就是狭义相对论。</p>
+        <p>回头看，这一课的问题——“光靠什么介质传播？”——最终的答案是：不需要介质。电磁波是场自身的传播，场就是舞台，不需要额外的物质来承载。以太的失败，恰好清空了舞台，让相对论登场。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var mmC = PH.canvas('mmCanvas');
+    var mmReadout = document.getElementById('mmReadout');
+    var angle = 0;
+
+    function predicted(deg) {
+      return 0.4 * Math.cos(2 * deg * Math.PI / 180);
+    }
+    function measured(deg) {
+      var r = deg * Math.PI / 180;
+      return 0.006 * Math.sin(3 * r) + 0.003 * Math.cos(5 * r);
+    }
+
+    function drawApparatus(ctx, w, cx, cy, R, deg) {
+      var rad = deg * Math.PI / 180;
+      var cs = Math.cos(rad);
+      var sn = Math.sin(rad);
+
+      function P(u, v) {
+        return { x: cx + u * cs - v * sn, y: cy - (u * sn + v * cs) };
+      }
+
+      var src = P(-1.22 * R, 0);
+      var m1 = P(R, 0);
+      var m2 = P(0, R);
+      var det = P(0, -0.95 * R);
+      var bs = { x: cx, y: cy };
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(53,224,200,.4)';
+      ctx.lineWidth = 1.4;
+      ctx.setLineDash([5, 4]);
+      var beams = [[src, bs], [bs, m1], [m1, bs], [bs, m2], [m2, bs], [bs, det]];
+      for (var i = 0; i < beams.length; i++) {
+        ctx.beginPath();
+        ctx.moveTo(beams[i][0].x, beams[i][0].y);
+        ctx.lineTo(beams[i][1].x, beams[i][1].y);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#8fb4e8';
+      ctx.lineWidth = 3;
+      var m1a = P(R, -0.12 * R);
+      var m1b = P(R, 0.12 * R);
+      ctx.beginPath();
+      ctx.moveTo(m1a.x, m1a.y);
+      ctx.lineTo(m1b.x, m1b.y);
+      ctx.stroke();
+      var m2a = P(-0.12 * R, R);
+      var m2b = P(0.12 * R, R);
+      ctx.beginPath();
+      ctx.moveTo(m2a.x, m2a.y);
+      ctx.lineTo(m2b.x, m2b.y);
+      ctx.stroke();
+
+      ctx.strokeStyle = 'rgba(255,176,61,.9)';
+      ctx.lineWidth = 2;
+      var bsa = P(-0.09 * R, 0.09 * R);
+      var bsb = P(0.09 * R, -0.09 * R);
+      ctx.beginPath();
+      ctx.moveTo(bsa.x, bsa.y);
+      ctx.lineTo(bsb.x, bsb.y);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#4ea8ff';
+      ctx.shadowColor = '#4ea8ff';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(src.x, src.y, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(214,230,255,.9)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('光源', src.x - 34, src.y + 4);
+      ctx.fillText('M1', m1.x + 8, m1.y + 4);
+      ctx.fillText('M2', m2.x - 8, m2.y - 8);
+      ctx.fillText('探测器', det.x - 16, det.y + 20);
+      ctx.fillStyle = 'rgba(255,176,61,.95)';
+      ctx.fillText('分束镜', bs.x + 10, bs.y - 10);
+      ctx.restore();
+
+      var wy = 26;
+      ctx.save();
+      ctx.strokeStyle = 'rgba(169,139,255,.85)';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.moveTo(16, wy);
+      ctx.lineTo(92, wy);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(92, wy);
+      ctx.lineTo(84, wy - 4);
+      ctx.moveTo(92, wy);
+      ctx.lineTo(84, wy + 4);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(169,139,255,.9)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('以太风 30 km/s →', 16, wy + 18);
+      ctx.restore();
+    }
+
+    function drawGraph(ctx, w, h, top, deg) {
+      var padL = 54;
+      var padR = 24;
+      var padT = top + 24;
+      var padB = 40;
+      var y0 = h - padB;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, y0 - padT);
+      var i;
+
+      function gx(d) { return padL + pw * d / 360; }
+      function gy(n) { return y0 - ph * (n + 0.5); }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = -0.5; i <= 0.5001; i += 0.25) {
+        var yy = gy(i);
+        ctx.beginPath();
+        ctx.moveTo(padL, yy);
+        ctx.lineTo(padL + pw, yy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(padL, padT);
+      ctx.lineTo(padL, y0);
+      ctx.lineTo(padL + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('+0.5', padL - 8, gy(0.5) + 10);
+      ctx.fillText('0', padL - 8, gy(0) + 4);
+      ctx.fillText('−0.5', padL - 8, gy(-0.5) + 2);
+      ctx.textAlign = 'left';
+      var xt = [0, 90, 180, 270, 360];
+      for (i = 0; i < xt.length; i++) {
+        ctx.fillText(xt[i] + '°', gx(xt[i]) - 8, y0 + 18);
+      }
+      ctx.fillText('干涉仪转角 θ', padL + pw - 76, y0 + 34);
+      ctx.save();
+      ctx.translate(14, padT + 54);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('ΔN / 条', 0, 0);
+      ctx.restore();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#ffb03d';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(255,176,61,.4)';
+      ctx.shadowBlur = 7;
+      ctx.beginPath();
+      for (i = 0; i <= 360; i += 2) {
+        var X = gx(i);
+        var Y = gy(predicted(i));
+        if (i === 0) ctx.moveTo(X, Y);
+        else ctx.lineTo(X, Y);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#35e0c8';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(53,224,200,.45)';
+      ctx.shadowBlur = 7;
+      ctx.beginPath();
+      for (i = 0; i <= 360; i += 2) {
+        var X2 = gx(i);
+        var Y2 = gy(measured(i));
+        if (i === 0) ctx.moveTo(X2, Y2);
+        else ctx.lineTo(X2, Y2);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      var mx = gx(deg);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(214,230,255,.35)';
+      ctx.setLineDash([3, 4]);
+      ctx.beginPath();
+      ctx.moveTo(mx, padT);
+      ctx.lineTo(mx, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      var py = gy(predicted(deg));
+      var my = gy(measured(deg));
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(mx, py, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#35e0c8';
+      ctx.shadowColor = '#35e0c8';
+      ctx.beginPath();
+      ctx.arc(mx, my, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillStyle = '#ffb03d';
+      ctx.fillText('● 以太说预言（±0.40 条）', padL, padT - 8);
+      ctx.fillStyle = '#35e0c8';
+      ctx.fillText('● 实测（< 0.01 条）', padL + 186, padT - 8);
+      ctx.restore();
+    }
+
+    function drawMM(deg) {
+      if (!mmC) return;
+      var ctx = mmC.ctx;
+      var w = mmC.w;
+      var h = mmC.h;
+      var cx = w / 2;
+      var cy = 126;
+      var R = Math.min(w * 0.17, 102);
+
+      mmC.clear();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.06)';
+      ctx.fillRect(0, 0, w, 250);
+      ctx.restore();
+
+      drawApparatus(ctx, w, cx, cy, R, deg);
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(214,230,255,.85)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('装置转角 θ = ' + deg + '°', w - 14, 20);
+      ctx.textAlign = 'left';
+      ctx.restore();
+
+      drawGraph(ctx, w, h, 250, deg);
+    }
+
+    function paintMM(deg) {
+      drawMM(deg);
+      if (mmReadout) {
+        mmReadout.textContent = 'θ = ' + deg + '°　以太说预言 ΔN ≈ ' +
+          (predicted(deg) >= 0 ? '+' : '') + predicted(deg).toFixed(2) +
+          ' 条　实测 ΔN ≈ ' + (measured(deg) >= 0 ? '+' : '') + measured(deg).toFixed(3) +
+          ' 条（始终 |ΔN| < 0.01 条）';
+      }
+    }
+
+    var angleSlider = PH.slider({
+      mount: '#angleSlider',
+      label: '干涉仪相对以太风的转角 θ',
+      min: 0,
+      max: 360,
+      step: 1,
+      value: 0,
+      unit: '°',
+      fmt: function (v) { return String(v); },
+      onInput: function (v) { angle = v; paintMM(angle); }
+    });
+
+    paintMM(0);
+    if (mmC) {
+      mmC.onResize(function () { paintMM(angleSlider ? angleSlider.value : 0); });
+    }
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '为什么当时预期会看到条纹移动？',
+        options: [
+          { text: '因为地球自转会让干涉仪抖动，条纹当然会晃。', correct: false, why: '装置放在水银上就是为了隔绝震动；而且抖动没有确定的方向规律，不会随转角呈 cos2θ 变化。' },
+          { text: '因为地球以约 30 km/s 绕日运动，若以太绝对静止，地面就有以太风，两臂的光速不同，往返时间出现差异。', correct: true, why: '时间差正比于 (v/c)²，约 10⁻⁸；再乘 2L/λ，就得到约 0.4 条条纹的可观察移动。' },
+          { text: '因为实验室的光源在随地球运动，光速会因此改变。', correct: false, why: '以太说的论证不依赖光源速度，而是依赖两臂相对以太风的方向不同。何况光源随地球一起动，两臂都会受影响。' },
+          { text: '因为镜子受热膨胀，臂长发生了变化。', correct: false, why: '热膨胀是缓慢的、无方向性的；它不会因为把装置转过 90° 就使条纹反向移动，因此解释不了预期的规律。' }
+        ]
+      },
+      {
+        q: '1887 年“看不到条纹移动”这个结果，意味着什么？',
+        options: [
+          { text: '找不到以太风，绝对静止的以太假说遭遇根本困难。', correct: true, why: '这正是零结果的含义。它没有直接说“以太不存在”，但把以太风压到 5 km/s 以下，迫使人们放弃绝对静止的以太图像。' },
+          { text: '干涉仪坏了，所以什么也没测到。', correct: false, why: '仪器能分辨 0.01 条，且实验被多次重复、改进，不同季节和地点结果一致。把零结果归因于仪器故障无法解释这种一致性。' },
+          { text: '地球恰好静止在宇宙中心，所以没有以太风。', correct: false, why: '地球绕太阳运动早已被观测证实。更重要的是，这个说法无法解释为什么后来的重复实验在不同季节（地球速度方向不同）仍然给出零结果。' },
+          { text: '光速是无限的，所以不存在时间差。', correct: false, why: '斐索在 1849 年就测出了有限的光速。若光速无限，干涉、衍射这些波动现象都不会以现在的形式出现。' }
+        ]
+      },
+      {
+        q: '这个实验的精度大概是什么水平？',
+        options: [
+          { text: '只能分辨 1 条条纹，所以 0.4 条的预言根本看不见。', correct: false, why: '如果只能分辨 1 条，实验就没有意义了。实际灵敏度约为 0.01 条，比预期的 0.4 条细四十倍。' },
+          { text: '能分辨约 0.01 条条纹，相当于在 1 公里外看出一根头发丝的宽度，足以发现 0.4 条的预言。', correct: true, why: '0.01 条是波长的百分之一量级，靠多次反射和光学放大实现。正因灵敏度足够，零结果才有说服力。' },
+          { text: '精度达到了一整个光波波长，所以只能做定性观察。', correct: false, why: '“一条条纹”对应一个波长的光程差，而实验能分辨它的百分之一，远好于一整个波长，是精确定量测量。' },
+          { text: '没有精度可言，只是用眼睛看条纹有没有动。', correct: false, why: '干涉仪配有测微目镜，可以读出条纹间距的很小一部分；迈克耳孙本人就是精密测量的专家。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

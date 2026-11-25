@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 25 课 · 宇宙为什么在膨胀？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="8-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <!-- 1. 课头 -->
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 25 课 / 共 27 课 · 约 10 分钟</p>
+        <h1>宇宙为什么在膨胀？</h1>
+        <p class="lede">1920 年代，几乎所有人都认为宇宙是静态的，连爱因斯坦也不例外。可望远镜里那些星系的光，正在系统性地变红——它们都在离开我们。</p>
+      </header>
+
+      <!-- 2. 卡点 -->
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>在 1920 年代之前，静态宇宙几乎是物理学的一条默认前提。理由很朴素：星空千百年没什么变化，最自然的猜测就是——宇宙一直这样，也会一直这样。整体没有开始，也没有方向。</p>
+        <p>这个前提不只是直觉，它还被写进了方程。1915 年，爱因斯坦完成广义相对论，用一套描述时空弯曲的方程来统一引力。可当他试图把整个宇宙代进方程时，发现解是不稳定的：一个充满物质的宇宙，在自身引力作用下会收缩。为了让宇宙停住，他在 1917 年给方程添了一个额外的项——宇宙学常数，用它提供一种排斥效应，正好抵消引力。他后来把这一步称为自己“最大的错误”。</p>
+        <p>所以卡住的不是某道计算，而是整套图像：宇宙被假定为静态、永恒、没有历史。任何指向“变化”的观测，都会与之正面冲突。</p>
+      </section>
+
+      <!-- 3. 工具 -->
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是造父变星。这类恒星的光度会周期性变化，而且变化的周期与它真正的亮度之间存在稳定的关系：周期越长，恒星本身越亮。1912 年前后，亨丽埃塔·勒维特在麦哲伦云里整理这类星的光变曲线，找到了这条周光关系。只要在星系里找到一颗造父变星，测出周期，就知道真实亮度；再比较视亮度，就能反推距离。这就是“标准烛光”。</p>
+        <p>第二件工具是星系光谱。把一个星系的光用棱镜或光栅铺开，会看到一条条亮线或暗线，它们对应着特定的化学元素。每一种元素都有自己固定的谱线位置，像指纹一样。</p>
+        <p>第三件工具是多普勒效应。声源朝你跑来，音调变高；跑远，音调变低。光也一样：光源远离时，谱线整体向长波方向挪，也就是向红端挪。天文学家用红移来描述这种挪动。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：红移为什么能当速度计</summary>
+          <div class="mathbox-body">
+            <p>假设实验室里测得某条谱线的波长是 λ₀，而在星系光谱里，同一条线出现在了更长的波长 λ 处。两者之差除以 λ₀，就是红移 z。它衡量的是“波长被拉长了多少比例”。</p>
+            <p>速度远小于光速时，这个比例近似等于速度与光速之比。所以量出谱线挪了多少，就能算出速度；不必知道星系里有什么元素，只要认出图案。</p>
+            <svg viewBox="0 0 360 150" role="img" aria-label="静止光谱与红移光谱的谱线位置对比">
+              <text x="20" y="30" fill="#8fa6c4" font-size="11" font-family="monospace">静止参考</text>
+              <line x1="20" y1="46" x2="340" y2="46" stroke="rgba(143,166,196,.35)"/>
+              <line x1="86" y1="38" x2="86" y2="54" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="150" y1="38" x2="150" y2="54" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="216" y1="38" x2="216" y2="54" stroke="#35e0c8" stroke-width="2"/>
+              <text x="20" y="86" fill="#8fa6c4" font-size="11" font-family="monospace">星系光谱</text>
+              <line x1="20" y1="102" x2="340" y2="102" stroke="rgba(143,166,196,.35)"/>
+              <line x1="112" y1="94" x2="112" y2="110" stroke="#ffb03d" stroke-width="2"/>
+              <line x1="184" y1="94" x2="184" y2="110" stroke="#ffb03d" stroke-width="2"/>
+              <line x1="258" y1="94" x2="258" y2="110" stroke="#ffb03d" stroke-width="2"/>
+              <path d="M86 122 L112 122 M216 122 L258 122" stroke="rgba(143,166,196,.3)" stroke-dasharray="3 4"/>
+              <text x="120" y="138" fill="#ffb03d" font-size="11" font-family="monospace">整组谱线向右（长波）平移</text>
+            </svg>
+            <p class="caption">谱线的相对间距不变，整组一起挪。挪动的比例就是红移 z。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. 推导 -->
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>五步：先从斯里弗的谱线说起，再把红移翻译成速度，然后看哈勃怎样把距离和速度画在同一张图上，最后处理那个最容易误解的问题——为什么这不能说明我们在宇宙中心。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>用大望远镜拍星系光谱，那些亮斑看起来和化学元素在实验室里的位置对不上：它被拉长了。红移的定义就是波长的相对变化：观测到的波长减去静止波长，再除以静止波长。大多数星系的红移都是正的，也就是说，它们的谱线整体向长波方向挪动了。</p>
+            <div class="eq">z <span class="op">=</span> <span class="frac"><span class="num">λ<span class="sub">观测</span> <span class="op">−</span> λ<span class="sub">静止</span></span><span class="den">λ<span class="sub">静止</span></span></div>
+            <p class="readas">读作：红移 z 等于“观测波长与静止波长之差”除以“静止波长”。它是一个纯比例，没有单位。</p>
+            <ul class="vars">
+              <li><b>λ<span class="sub">观测</span></b><span>望远镜里测到的谱线波长</span></li>
+              <li><b>λ<span class="sub">静止</span></b><span>同一条谱线在实验室里的波长</span></li>
+              <li><b>z</b><span>红移，波长的相对拉长量</span></li>
+            </ul>
+            <p>从 1910 年代起，斯里弗不断记录到这种偏离，后来成了哈勃分析的材料。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>接下来要把红移换成速度。背离运动的光源，其谱线会被拉长；拉长的比例，在速度远小于光速时正好等于速度与光速之比。所以一条谱线挪了多大比例，就对应一个多大的退行速度。</p>
+            <div class="eq">z <span class="op">≈</span> <span class="frac"><span class="num">v</span><span class="den">c</span></span>　　<span class="dim">即</span>　　v <span class="op">≈</span> c z</div>
+            <p class="readas">读作：在速度远小于光速时，红移近似等于退行速度除以光速，于是退行速度约等于光速乘以红移。</p>
+            <ul class="vars">
+              <li><b>v</b><span>星系的退行速度</span></li>
+              <li><b>c</b><span>光速，约 3.0×10⁵ km/s</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>有了速度，还差距离。造父变星补上了这一环：测出光变周期，就得到真实亮度；再用视亮度反推距离。1929 年，哈勃把这些距离与由红移换算出的速度放在同一张图上，画出了著名的距离-速度关系。数据点排列得相当整齐，越远的星系退行越快，速度与距离成比例。</p>
+            <div class="eq">v <span class="op">=</span> H<span class="sub">0</span> <span class="op">×</span> d</div>
+            <p class="readas">读作：星系的退行速度等于哈勃常数乘以它到我们的距离。距离每增加一倍，退行速度也增加一倍。</p>
+            <ul class="vars">
+              <li><b>H<span class="sub">0</span></b><span>哈勃常数，衡量膨胀快慢的比例系数</span></li>
+              <li><b>d</b><span>星系到我们的距离</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>这个比例系数有一个现代测量值，大约每百万秒差距每秒 70 公里。百万秒差距是天文学常用的距离单位，约合 326 万光年。写成数学式时常用符号 H₀，它的单位读作“公里每秒每百万秒差距”：在每一段距离上，膨胀带来多少速度。</p>
+            <div class="eq">H<span class="sub">0</span> <span class="op">≈</span> 70 <span class="dim">km/s/Mpc</span>　　(1 Mpc <span class="op">≈</span> 3.26×10<span class="sup">6</span> <span class="dim">光年</span>)</div>
+            <p class="readas">读作：每远 326 万光年，退行速度就增加约每秒 70 公里。</p>
+        <p>注意“每”字：H₀ 是速率除以长度，不是绝对速度，这也解释了它别扭的单位。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>最容易走偏的一步在这里：如果所有星系都在远离我们，看上去就像我们处在爆炸的中心。但均匀膨胀的空间不是这样。设想把整个点阵按同一个比例放大：无论你站在哪个星系上，周围每个星系到你的距离都按同一个因子增加，远处的增加得更多，速度也就更大。每个观察者都会测到同样的 v = H₀d。没有任何一个点特殊。</p>
+            <div class="eq">d<span class="sub">观</span> <span class="op">→</span> 2d<span class="sub">观</span>　<span class="dim">则</span>　v<span class="sub">观</span> <span class="op">→</span> 2v<span class="sub">观</span></div>
+            <p class="readas">读作：距离翻倍，退行速度也翻倍。比例关系对每个星系都成立，所以“所有星系都在远离我们”并不指向一个特殊的位置。</p>
+            <p>这也顺带说明：膨胀不是星系在空间里各自跑开，而是星系之间的空间本身在伸展。像点阵上的墨点：墨点没动，点阵放大，间距就变大。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 演示 -->
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>两个演示共用一条规则：距离按尺度因子整体放大，没有任何点被特殊对待。左图是均匀点阵，任选一个星系当“家”；右图把同一次膨胀换成距离-速度散点图。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 谁在中心？</span>
+              <span class="demo-tag">均匀膨胀的点阵</span>
+            </div>
+            <p class="demo-desc">拖动时间滑块，整个点阵按尺度因子 a = 1 + 0.1t 均匀放大，t 以十亿年计。点一下任意一个点，把它设为“家”；再看所有箭头——它们都从你家指向外侧。</p>
+            <canvas id="hubbleCanvas" data-height="340" aria-label="均匀膨胀的星系点阵，可任选一个星系作为观察者"></canvas>
+            <div id="hubbleSlider"></div>
+            <div class="readout" id="hubbleReadout"></div>
+            <p class="hint">试试：把家设在边缘的点上，再看箭头。边缘的观察者看到的也是“所有星系都在远离我”，和自己的位置无关。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 距离-速度图</span>
+              <span class="demo-tag">v = H₀ d</span>
+            </div>
+            <p class="demo-desc">横轴是距离，纵轴是退行速度。每个点是一个星系，直线是 H₀ = 70 km/s/Mpc 的理论关系。拖动上方的时间滑块，点阵放大，所有点向外移动；散布是固定的，比例关系不变。</p>
+            <canvas id="fitCanvas" data-height="300" aria-label="星系距离与退行速度的散点图与拟合直线"></canvas>
+            <div class="readout" id="fitReadout"></div>
+            <p class="hint">试试：把时间拖到 50 亿年，选一个原来在 50 Mpc 的星系，看它的速度从 3500 km/s 变成多少。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 真实数字 -->
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>取一个距离 100 Mpc 的星系。100 Mpc 约合 3.26 亿光年。把它代进哈勃关系：</p>
+        <div class="eq">v <span class="op">=</span> H<span class="sub">0</span> d <span class="op">=</span> 70 <span class="dim">km/s/Mpc</span> <span class="op">×</span> 100 <span class="dim">Mpc</span> <span class="op">≈</span> 7000 <span class="dim">km/s</span></div>
+        <p class="readas">读作：每百万秒差距 70 公里，乘以 100 百万秒差距，得到每秒约 7000 公里。</p>
+        <p>7000 km/s 约是光速的 2.3%。如果这个星系里有一条静止波长为 656 纳米的氢谱线，红移 z ≈ v/c ≈ 0.023，观测波长会被拉到约 671 纳米。光谱仪能精确量出它。</p>
+        <p>哈勃常数还藏着一个时间。把距离除以速度，d 被约掉，只剩 1/H₀。它的量纲是时间：</p>
+        <div class="eq"><span class="frac"><span class="num">1</span><span class="den">H<span class="sub">0</span></span></span> <span class="op">≈</span> <span class="frac"><span class="num">1</span><span class="den">70</span></span> <span class="dim">Mpc·s/km</span> <span class="op">≈</span> 4.4×10<span class="sup">17</span> <span class="dim">s</span> <span class="op">≈</span> 140 <span class="dim">亿年</span></div>
+        <p class="readas">读作：哈勃常数的倒数约为 140 亿年。天文学家把它叫作哈勃时间。</p>
+        <p>这个数字的意义是：如果膨胀一直是匀速的，那么所有星系在 140 亿年前应该挤在同一个地方。它给出的正是宇宙年龄的量级——不是精确值，但已经足够说明宇宙有一个有限的历史，而不是永恒不变。更精细的模型给出约 138 亿年，与这个粗估接近。</p>
+      </section>
+
+      <!-- 7. 影响 -->
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>哈勃的图把宇宙从“舞台”变成“角色”：它曾经更小、更热、更密，而且还在继续变化。大爆炸模型就是从这条线索长出来的——空间在膨胀，倒着推回去，就必然有一个极热极密的起点阶段。</p>
+        <p>爱因斯坦的宇宙学常数也因此改换了身份。为了维持静态，他曾把它当成一个抵消引力的补丁；膨胀被发现后，这个理由消失了。可到了 1990 年代末，观测发现膨胀不是在减速，而是在加速，宇宙学常数又以“暗能量”的形式回来了。同一个项先被当作错误，后来又被当作必需——宇宙学的方程，最终要由观测裁决。</p>
+        <p>还有一层变化：可观测宇宙有了大小和年龄，星系有了演化史，“宇宙从哪来”第一次可以用数据讨论。</p>
+      </section>
+
+      <!-- 8. 自测 -->
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <!-- 9. 页脚 -->
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+    /* ---------- 演示 A：均匀膨胀的点阵 ---------- */
+    var hubble = PH.canvas('hubbleCanvas');
+    var fit = PH.canvas('fitCanvas');
+    var hubbleReadout = document.getElementById('hubbleReadout');
+    var fitReadout = document.getElementById('fitReadout');
+    var TIME_MAX = 10;
+    var RATE = 0.1;
+    var GRID = [];
+    for (var gx = -2; gx <= 2; gx++) {
+      for (var gy = -2; gy <= 2; gy++) GRID.push({ x: gx, y: gy });
+    }
+    var homeIndex = 12;
+    var currentT = 3;
+
+    function trim(v, digits) {
+      var s = Number(v).toFixed(digits);
+      if (s.indexOf('.') >= 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
+      return s;
+    }
+
+    function scaleAt(t) { return 1 + RATE * t; }
+
+    function drawHubble(t) {
+      if (!hubble) return;
+      var ctx = hubble.ctx;
+      var w = hubble.w;
+      var h = hubble.h;
+      var a = scaleAt(t);
+      var cx = w / 2;
+      var cy = h / 2;
+      var unit = Math.min(w, h) / 8.6;
+      var pts = [];
+      var i;
+
+      hubble.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.10)';
+      ctx.lineWidth = 1;
+      for (i = 0; i < 5; i++) {
+        var rr = unit * a * (0.9 + i * 0.9);
+        ctx.beginPath();
+        ctx.arc(cx, cy, rr, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      for (i = 0; i < GRID.length; i++) {
+        pts.push({ x: cx + GRID[i].x * a * unit, y: cy + GRID[i].y * a * unit });
+      }
+      var home = pts[homeIndex];
+
+      /* 从“家”指向其他星系的箭头 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(53,224,200,.24)';
+      ctx.fillStyle = 'rgba(53,224,200,.34)';
+      ctx.lineWidth = 1;
+      for (i = 0; i < pts.length; i++) {
+        if (i === homeIndex) continue;
+        var dx = pts[i].x - home.x;
+        var dy = pts[i].y - home.y;
+        var len = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (len < 18) continue;
+        var ux = dx / len;
+        var uy = dy / len;
+        var sx = home.x + ux * 11;
+        var sy = home.y + uy * 11;
+        var ex = pts[i].x - ux * 6;
+        var ey = pts[i].y - uy * 6;
+        ctx.beginPath();
+        ctx.moveTo(sx, sy);
+        ctx.lineTo(ex, ey);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(ex, ey);
+        ctx.lineTo(ex - ux * 5 - uy * 3, ey - uy * 5 + ux * 3);
+        ctx.lineTo(ex - ux * 5 + uy * 3, ey - uy * 5 - ux * 3);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+
+      for (i = 0; i < pts.length; i++) {
+        ctx.save();
+        ctx.fillStyle = i === homeIndex ? '#ffb03d' : '#35e0c8';
+        ctx.shadowColor = i === homeIndex ? '#ffb03d' : '#35e0c8';
+        ctx.shadowBlur = i === homeIndex ? 16 : 8;
+        ctx.beginPath();
+        ctx.arc(pts[i].x, pts[i].y, i === homeIndex ? 6 : 3.4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      ctx.fillStyle = 'rgba(214,230,255,.9)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('t = ' + trim(t, 1) + ' 十亿年　a = ' + trim(a, 2), 14, 22);
+      ctx.fillStyle = 'rgba(255,176,61,.9)';
+      ctx.fillText('★ 你的“家”', home.x + 10, home.y + 22);
+
+      if (hubbleReadout) {
+        hubbleReadout.textContent = 'a = ' + trim(a, 2) + '　点间距为初始的 ' + trim(a, 2) +
+          ' 倍　24 个星系都远离“家”，无一例外';
+      }
+    }
+
+    var timeSlider = PH.slider({
+      mount: '#hubbleSlider',
+      label: '宇宙时间',
+      min: 0,
+      max: TIME_MAX,
+      step: 0.1,
+      value: currentT,
+      unit: '十亿年',
+      fmt: function (v) { return trim(v, 1); },
+      onInput: function (v) {
+        currentT = v;
+        drawHubble(v);
+        drawFit(v);
+      }
+    });
+
+    if (hubble) {
+      hubble.canvas.addEventListener('click', function (e) {
+        var rect = hubble.canvas.getBoundingClientRect();
+        var mx = e.clientX - rect.left;
+        var my = e.clientY - rect.top;
+        var a = scaleAt(currentT);
+        var cx = hubble.w / 2;
+        var cy = hubble.h / 2;
+        var unit = Math.min(hubble.w, hubble.h) / 8.6;
+        var best = -1;
+        var bestD = 30;
+        for (var i = 0; i < GRID.length; i++) {
+          var px = cx + GRID[i].x * a * unit;
+          var py = cy + GRID[i].y * a * unit;
+          var dd = Math.sqrt((px - mx) * (px - mx) + (py - my) * (py - my));
+          if (dd < bestD) { bestD = dd; best = i; }
+        }
+        if (best >= 0) {
+          homeIndex = best;
+          drawHubble(currentT);
+        }
+      });
+      hubble.onResize(function () { drawHubble(currentT); });
+    }
+
+    /* ---------- 演示 B：距离-速度图 ---------- */
+    function drawFit(t) {
+      if (!fit) return;
+      var ctx = fit.ctx;
+      var w = fit.w;
+      var h = fit.h;
+      var a = scaleAt(t);
+      var maxD = 420 * a;
+      var maxV = 70 * maxD * 1.08;
+      var padL = 68;
+      var padR = 22;
+      var padT = 26;
+      var padB = 46;
+      var pw = Math.max(10, w - padL - padR);
+      var ph = Math.max(10, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var i;
+
+      fit.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.16)';
+      ctx.lineWidth = 1;
+      for (i = 0; i <= 4; i++) {
+        var fx = x0 + pw * i / 4;
+        var fy = y0 - ph * i / 4;
+        ctx.beginPath();
+        ctx.moveTo(fx, padT);
+        ctx.lineTo(fx, y0);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x0, fy);
+        ctx.lineTo(x0 + pw, fy);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 理论直线 v = H0 d */
+      ctx.save();
+      ctx.strokeStyle = '#ffb03d';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(255,176,61,.5)';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.moveTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0 - ph * (70 * maxD / maxV));
+      ctx.stroke();
+      ctx.restore();
+
+      /* 星系散点：距离随时间整体放大，速度同步增加 */
+      for (i = 0; i < 24; i++) {
+        var base = 30 + i * 15;
+        var d = base * a;
+        var v = 70 * d * (1 + 0.05 * Math.sin(i * 1.7));
+        var pxx = x0 + pw * (d / maxD);
+        var pyy = y0 - ph * (v / maxV);
+        ctx.save();
+        ctx.fillStyle = '#35e0c8';
+        ctx.shadowColor = 'rgba(53,224,200,.8)';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.arc(pxx, pyy, 3.6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      /* 坐标轴刻度与标注 */
+      ctx.fillStyle = 'rgba(143,166,196,.8)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'center';
+      for (i = 0; i <= 4; i++) {
+        ctx.fillText(String(Math.round(maxD * i / 4)), x0 + pw * i / 4, y0 + 18);
+      }
+      ctx.textAlign = 'right';
+      for (i = 0; i <= 2; i++) {
+        var vv = Math.round(maxV * i / 2 / 1000);
+        ctx.fillText(vv + 'k', x0 - 8, y0 - ph * i / 2 + 4);
+      }
+      ctx.textAlign = 'center';
+      ctx.fillText('距离 d（Mpc）', x0 + pw / 2, y0 + 38);
+      ctx.save();
+      ctx.translate(16, padT + ph / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('速度 v（km/s）', 0, 0);
+      ctx.restore();
+
+      ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(255,176,61,.9)';
+      ctx.fillText('v = 70 d', x0 + pw * 0.6, padT + 12);
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.fillText('t = ' + trim(t, 1) + ' 十亿年　a = ' + trim(a, 2), 14, 18);
+
+      var sampleD = 105 * a;
+      var sampleV = 70 * sampleD * (1 + 0.05 * Math.sin(5 * 1.7));
+      if (fitReadout) {
+        fitReadout.textContent = '第 6 个星系：d ≈ ' + trim(sampleD, 0) + ' Mpc，v ≈ ' +
+          trim(sampleV / 1000, 1) + '×10³ km/s';
+      }
+    }
+
+    drawHubble(currentT);
+    drawFit(currentT);
+
+    if (fit) {
+      fit.onResize(function () { drawFit(currentT); });
+    }
+
+    /* ---------- 自测 ---------- */
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '红移 z 是怎么变成退行速度的？',
+        options: [
+          { text: '低红移时 z ≈ v/c，所以 v ≈ cz。', correct: true, why: '红移是波长的相对拉长量，在速度远小于光速时正好等于速度与光速之比，两边乘 c 就得到速度。' },
+          { text: '红移就是速度本身，z 的数值直接以 km/s 计。', correct: false, why: 'z 是两个波长相除得到的比例，没有单位，不可能直接是 km/s。只有乘以光速才变成速度。' },
+          { text: '红移越大，说明星系的温度越高。', correct: false, why: '谱线整体平移反映的是光源相对观测者的运动，与温度无关。温度影响的是谱线强度和宽度，不是整组谱线的位置。' },
+          { text: '红移是光在旅途中被星际尘埃吸收造成的。', correct: false, why: '尘埃吸收会让光变暗、变红（变暗效应），但不会把一条条谱线按同一比例整体平移。红移是系统性的位置移动。' }
+        ]
+      },
+      {
+        q: '所有星系都在远离我们，为什么不能说明我们在宇宙中心？',
+        options: [
+          { text: '因为均匀膨胀中，任何一点看出去都会得到同样的 v = H₀d。', correct: true, why: '整个空间按同一比例放大时，距离翻倍、速度也翻倍，这条规律对每个星系都成立。没有一个点会被观测挑出来。' },
+          { text: '因为我们其实在宇宙的边缘，边缘看到的现象和中心一样。', correct: false, why: '“边缘”并不是特殊位置。关键在于空间没有中心点，而不是我们恰好处在某个位置。' },
+          { text: '因为星系是在空间里向四面八方飞散，地球恰好位于爆炸点。', correct: false, why: '膨胀是空间本身在伸展，不是星系从某个爆炸点飞出去。若真是飞散，远处的速度分布会和观测不符。' },
+          { text: '因为银河系的引力把其他星系推开了。', correct: false, why: '引力是吸引，不是排斥；而且星系间的距离远大于引力能束缚的范围，退行不是被银河系推出来的。' }
+        ]
+      },
+      {
+        q: 'H₀ ≈ 70 km/s/Mpc 这个单位应该怎么读？',
+        options: [
+          { text: '每百万秒差距每秒 70 公里：距离每增加 1 Mpc，退行速度增加 70 km/s。', correct: true, why: 'H₀ 是“速度除以距离”的比例。分母是距离，所以读成“每百万秒差距，每秒 70 公里”。' },
+          { text: '宇宙整体每秒膨胀 70 公里。', correct: false, why: '漏掉了“每百万秒差距”。70 km/s 只是每单位距离上的速度增量，不是某个固定的整体速度。' },
+          { text: '每过一百万年，宇宙膨胀 70 公里。', correct: false, why: '单位里的 Mpc 是距离单位百万秒差距，不是时间。把 Mpc 读成“百万年”就完全错了。' },
+          { text: '哈勃常数就是一个固定的速度，约 70 km/s。', correct: false, why: 'H₀ 的量纲是速度除以距离，也就是 1/时间；它的倒数才是时间（约 140 亿年）。它不是速度。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

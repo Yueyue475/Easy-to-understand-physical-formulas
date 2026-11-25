@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 4 阶段 · 电流旁边的磁针为什么会动？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="4-1" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 10 课 / 共 27 课 · 约 9 分钟</p>
+        <h1>电流旁边的磁针为什么会动？</h1>
+        <p class="lede">一根通电的导线没有铁、没有摩擦、也没有碰磁针，磁针却自己转了。19 世纪的人第一次看到这一幕时，最困惑的不是“它转了”，而是“凭什么”。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>在 1820 年以前，电和磁在教科书的分类里属于两个互不相干的家族。电，是摩擦过的琥珀、莱顿瓶里能打人的东西；磁，是天然磁石、指南针里那股总指向北方的力量。人们把两者都想象成某种看不见的“流体”：电流体从带电体流出来，磁流体从磁极流出来。两套流体各自遵守自己的规则，彼此不打招呼。</p>
+        <p>库仑在 1785 年前后用扭秤测出电荷之间、磁极之间的力，两条定律几乎一样，都与距离平方成反比。这反倒加深了误解，人们只当它是巧合；安培后来做出一系列漂亮实验，起初也把电流之间的作用当作独立的“电动力”。</p>
+        <p>另一个困难是缺一台能持续供电的机器：摩擦起电只能给出瞬间火花，想做“电流一直在流”的实验根本没有条件。1800 年，伏打用铜片、锌片和浸过盐水的布片交替叠成电堆，能连续几个月稳定输出电流。整个 19 世纪电磁学的故事，都从这台“能一直亮着的电池”开始。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>到 1820 年，丹麦物理学家奥斯特手里有三样东西：能提供几安培、可换向的伏打电堆；一根被支架托住、能自由水平转动的敏感小磁针；以及一间可以摆讲台的教室。奥斯特一直相信电和磁有联系，常把这件事带进课堂，让学生和他一起看。</p>
+        <p>关键在于他把导线放在磁针<strong>上方</strong>，并让两者平行。这个摆法让电流的磁作用与地磁场方向错开，磁针才会明显偏转；若让导线正对磁针一头，反而看不出效果。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：为什么“平行放在上方”这么讲究？</summary>
+          <div class="mathbox-body">
+            <p>磁针平时指着南北，是因为地磁场在对它施加力矩。要让磁针转起来，新加的磁作用不能与地磁场同向或反向，否则指针纹丝不动；必须给它一个<strong>横向</strong>的力。</p>
+            <p>导线平行地悬在磁针正上方时，磁针处的磁场恰好是水平横向的，与地磁场垂直。两个互相垂直的力矩叠加，指针就会明显转过去。奥斯特那天真正做对的，是这个几何布置。</p>
+            <p class="caption">科学发现里常有这种细节：不是理论先到位，而是装置恰好摆对了位置。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>现在把 1820 年 4 月的那次讲台演示重演一遍。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>奥斯特把一根细导线沿南北方向架在小磁针的正上方，接通伏打电堆。磁针动了，而且不是被电火花吓了一下，是稳稳地转到一个新角度，只要电流不断，它就停在那儿。这是人类第一次在实验室里看到：电，能够直接对磁施加作用。</p>
+            <p>导线和磁针之间没有接触，也没有摩擦或热传过去；磁针只是“感觉到”上方流动的电荷。这种“感觉到”，就是后来被称为“场”的东西。</p>
+            <div class="eq">I <span class="op">≠</span> 0 <span class="op">⟹</span> 磁针偏转</div>
+            <p class="readas">读作：只要导线里有电流通过，附近的磁针就会偏转；电流一断，磁针回到原来的南北指向。</p>
+            <ul class="vars">
+              <li><b>I</b><span>导线中的电流，单位安培（A）</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步是把电堆的正负极对调，让电流反着流。磁针不但又动了，而且偏转的方向整个翻过来：原来朝东偏，现在朝西偏。这个细节极其重要，它说明磁针的行为被电流的<strong>方向</strong>牢牢控制着，而不是被“有电”这件事本身控制。</p>
+            <p>“电和磁只是碰巧相似”的说法站不住了：如果真是两套独立的流体，凭什么电流反向、磁针也跟着反向？这里已藏着一个结构性事实——磁针的指向围绕电流这个“箭头”排布。</p>
+            <div class="eq">I <span class="op">→</span> <span class="op">−</span>I <span class="op">⟹</span> 偏转方向反转</div>
+            <p class="readas">读作：把电流反一个方向，磁针的偏转方向也随之反转；偏转的大小不变，方向相反。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，把磁针挪到导线的上方、下方、左侧、右侧。结果拼出一幅图：磁针总是停在一条既垂直于导线、又垂直于半径的方向上。换句话说，它指向的是绕着导线打转的圆的切线。</p>
+            <p>把许多小磁针摆成一圈，它们会首尾相接地围住导线。这逼出一个图像：电流周围有一种环形的磁作用，绕着导线转，而不是从导线喷出去——这就是磁场。</p>
+            <p>怎么记住环绕方向？伸出右手，大拇指指向电流，四指自然弯曲的方向就是磁场绕行方向。这就是右手定则。环只有两种绕法，电流一换向，绕法就换。</p>
+            <div class="eq"><span class="vec">B</span> <span class="op">⊥</span> I，<span class="vec">B</span> <span class="op">⊥</span> <span class="vec">r</span></div>
+            <p class="readas">读作：磁感应强度 B 既垂直于电流方向，又垂直于从导线到该点的连线 r；磁力线是以导线为轴的同心圆。</p>
+            <ul class="vars">
+              <li><b>B</b><span>磁感应强度，描述磁场强弱与方向，单位特斯拉（T）</span></li>
+              <li><b>r</b><span>从导线到观测点的距离</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，安培登场。他把大量导线实验的读数汇总，寻找一条能概括所有布置的规则：沿任意闭合回路走一圈，把沿途磁场顺着回路方向累加，总和只由回路套住多少电流决定。</p>
+            <p>这个式子完全不关心回路的形状：画成圆或任意扭曲的闭合曲线，只要套住的电流一样，累加结果就一样。磁场分布可以很复杂，但它绕一圈的“总量”被电流锁住。</p>
+            <div class="eq"><span class="op">∮</span> <span class="vec">B</span> <span class="op">·</span> d<span class="vec">l</span> <span class="op">=</span> μ<span class="sub">0</span> I</div>
+            <p class="readas">读作：沿一条闭合回路绕一整圈，磁感应强度沿回路方向的累加，等于真空磁导率乘以这条回路套住的电流。</p>
+            <ul class="vars">
+              <li><b>∮B·dl</b><span>沿闭合回路的环流累加（环量）</span></li>
+              <li><b>μ₀</b><span>真空磁导率，4π×10⁻⁷ H/m，一个只由真空性质决定的常数</span></li>
+              <li><b>I</b><span>回路套住的总电流</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，把规则用在长直导线上。取以导线为圆心、半径 r 的圆形回路，圆上各点磁场大小相同、方向顺着圆。累加一圈就是 B 乘周长 2πr，令它等于 μ₀I，直接解出 B。</p>
+            <p>结果很干净：B 与电流成正比，与距离成反比。距离翻倍，磁场减半；距离变十倍，只剩十分之一。1/r 比平方反比温和，所以通电导线的影响能伸得比较远。</p>
+            <div class="eq">B <span class="op">=</span> <span class="frac"><span class="num">μ<span class="sub">0</span> I</span><span class="den">2πr</span></span></div>
+            <p class="readas">读作：长直导线在距离 r 处产生的磁感应强度，等于真空磁导率乘电流，再除以 2π 乘距离。</p>
+            <ul class="vars">
+              <li><b>B</b><span>距离导线 r 处的磁感应强度（T）</span></li>
+              <li><b>I</b><span>导线中的电流（A）</span></li>
+              <li><b>r</b><span>到导线的垂直距离（m）</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>两个演示都由 B = μ₀I/(2πr) 驱动：一个看磁场的空间形状，一个画 B 随距离的变化。读数都带单位。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · 导线周围的环形磁场</span>
+              <span class="demo-tag">右手定则</span>
+            </div>
+            <p class="demo-desc">灰蓝色的圆是导线横截面，从屏幕里穿出来（⊙ 表示朝你，⊗ 表示离你而去）。紫色的同心圆是磁力线，它们的绕行方向随电流反号而反转。右侧那枚小磁针会停在当地磁场的方向上。</p>
+            <canvas id="loopCanvas" data-height="340" aria-label="通电直导线周围环形磁场与小磁针演示"></canvas>
+            <div id="currentSlider"></div>
+            <div id="distSlider"></div>
+            <div class="readout" id="loopReadout"></div>
+            <p class="hint">试试：把电流拖到负值，看磁力线绕行方向和小磁针一起翻面；再把距离拉到 8 cm，看读数掉到多少。</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 磁场随距离按 1/r 衰减</span>
+              <span class="demo-tag">B ∝ 1/r</span>
+            </div>
+            <p class="demo-desc">横轴是离导线的距离，纵轴是该处的磁感应强度，采用对数坐标。同一条垂线标出你当前选的位置；橙点在双对数图上的一条直线上滑动，斜率就是 −1。</p>
+            <canvas id="curveCanvas" data-height="300" aria-label="长直导线磁场随距离衰减曲线"></canvas>
+            <div class="readout" id="curveReadout"></div>
+            <p class="hint">试试：把电流固定为 1 A，依次把距离设成 1 cm、2 cm、4 cm，看 B 是不是每步减半。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>取一根普通实验导线，通 1 A 的电流。在离它 1 cm 处，磁场有多大？</p>
+        <div class="eq">B <span class="op">=</span> <span class="frac"><span class="num">4π×10<span class="sup">−7</span> × 1</span><span class="den">2π × 0.01</span></span> <span class="op">=</span> 2×10<span class="sup">−5</span> <span class="dim">T</span></div>
+        <p class="readas">读作：真空磁导率乘以 1 安培，再除以 2π 乘 0.01 米，得到 2 乘 10 的负 5 次方特斯拉。</p>
+        <p>2×10⁻⁵ T 单独看没感觉，和地磁场一比就有意思了。地磁场约 5×10⁻⁵ T，所以 1 A 导线在 1 cm 处的磁场已达地磁场的 0.4 倍。磁针本被地磁场按在南北，旁边多了一股一半大的横向磁场，当然要被拽偏。</p>
+        <p>把电流加到 10 A，同一位置的磁场变成 2×10⁻⁴ T，是地磁场的四倍。这时磁针的偏转已经非常明显，几乎横过来。奥斯特那根导线只需要几安培，就能让全班看见，靠的正是“让局部磁场超过地磁场”这个量级对比。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>奥斯特的论文在 1820 年 7 月发表，同一年就传遍欧洲。安培立刻跟进，用数学把电流之间的作用写清楚；法拉第受到这件事的强烈刺激，开始追问一个更大的问题：既然电流能产生磁，那么磁能不能反过来产生电？</p>
+        <p>这个追问在 1831 年得到回答，那就是电磁感应。而电磁感应又会把麦克斯韦引向一个更大胆的猜想：电和磁不仅能互相产生，还能互相“点火”，一路传下去。到那时，光也要被卷进来。不过在那之前，得先解决一个更基础的问题：力到底是怎么隔着空间传过去的？那就是下一课法拉第的力线。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var MU0 = 4 * Math.PI * 1e-7;
+    var EARTH = 5e-5;
+
+    var state = { I: 1, d: 2 };
+
+    function fieldAt(I, dcm) {
+      var r = dcm / 100;
+      return MU0 * Math.abs(I) / (2 * Math.PI * r);
+    }
+
+    var SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+    function supStr(n) {
+      var s = String(n).replace(/-/g, '⁻');
+      var out = '';
+      for (var i = 0; i < s.length; i++) {
+        var c = s.charAt(i);
+        out += (c === '⁻') ? '⁻' : SUP.charAt(Number(c));
+      }
+      return out;
+    }
+    function sci(v) {
+      if (!(v > 0)) return '0';
+      var e = Math.floor(Math.log(v) / Math.LN10);
+      var m = v / Math.pow(10, e);
+      if (m >= 9.995) { m /= 10; e += 1; }
+      return m.toFixed(2) + '×10' + supStr(e);
+    }
+
+    var loop = PH.canvas('loopCanvas');
+    var curve = PH.canvas('curveCanvas');
+    var loopReadout = document.getElementById('loopReadout');
+    var curveReadout = document.getElementById('curveReadout');
+
+    function drawArrowHead(ctx, x, y, dx, dy, size) {
+      var ang = Math.atan2(dy, dx);
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x - size * Math.cos(ang - 0.45), y - size * Math.sin(ang - 0.45));
+      ctx.moveTo(x, y);
+      ctx.lineTo(x - size * Math.cos(ang + 0.45), y - size * Math.sin(ang + 0.45));
+      ctx.stroke();
+    }
+
+    function drawLoop() {
+      if (!loop) return;
+      var ctx = loop.ctx;
+      var w = loop.w;
+      var h = loop.h;
+      var cx = w * 0.38;
+      var cy = h * 0.52;
+      var Rmax = Math.min(w * 0.40, h * 0.40);
+      var dir = state.I >= 0 ? 1 : -1;
+      var i;
+
+      loop.clear();
+
+      /* 同心磁力线 */
+      for (i = 1; i <= 7; i++) {
+        var rp = Rmax * (i / 8);
+        var alpha = 0.12 + 0.55 / (0.6 + 0.4 * i);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(169,139,255,' + alpha.toFixed(2) + ')';
+        ctx.lineWidth = i === 1 ? 1.8 : 1.2;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rp, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+        if (state.I !== 0) {
+          ctx.save();
+          ctx.strokeStyle = 'rgba(169,139,255,' + Math.min(0.95, alpha + 0.2).toFixed(2) + ')';
+          ctx.lineWidth = 1.4;
+          for (var k = 0; k < 3; k++) {
+            var ang = Math.PI * 0.18 + k * Math.PI * 0.66;
+            var ax = cx + rp * Math.cos(ang);
+            var ay = cy + rp * Math.sin(ang);
+            var tx = Math.sin(ang) * dir;
+            var ty = -Math.cos(ang) * dir;
+            drawArrowHead(ctx, ax, ay, tx, ty, 7);
+          }
+          ctx.restore();
+        }
+      }
+
+      /* 导线横截面 */
+      ctx.save();
+      ctx.fillStyle = '#0d1726';
+      ctx.strokeStyle = '#4ea8ff';
+      ctx.lineWidth = 2.4;
+      ctx.shadowColor = 'rgba(78,168,255,.8)';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#4ea8ff';
+      ctx.fillStyle = '#4ea8ff';
+      ctx.lineWidth = 2;
+      if (state.I > 0) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, 2.6, 0, Math.PI * 2);
+        ctx.fill();
+      } else if (state.I < 0) {
+        ctx.beginPath();
+        ctx.moveTo(cx - 4, cy - 4);
+        ctx.lineTo(cx + 4, cy + 4);
+        ctx.moveTo(cx + 4, cy - 4);
+        ctx.lineTo(cx - 4, cy + 4);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      /* 观测点与小磁针 */
+      var aP = -0.62;
+      var rPx = Rmax * (state.d / 8);
+      var px = cx + rPx * Math.cos(aP);
+      var py = cy + rPx * Math.sin(aP);
+      var ux = Math.sin(aP) * dir;
+      var uy = -Math.cos(aP) * dir;
+      var qx = px;
+      var qy = py;
+      if (rPx < 50) {
+        qx = cx + Math.cos(aP) * 50;
+        qy = cy + Math.sin(aP) * 50;
+      }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.4)';
+      ctx.setLineDash([4, 5]);
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(px, py);
+      if (qx !== px || qy !== py) {
+        ctx.moveTo(px, py);
+        ctx.lineTo(qx, qy);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#35e0c8';
+      ctx.beginPath();
+      ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = 'rgba(53,224,200,.85)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('P', px + 5, py - 5);
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(9,16,28,.9)';
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(qx, qy, 23, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      if (state.I !== 0) {
+        ctx.save();
+        ctx.fillStyle = 'rgba(143,166,196,.32)';
+        ctx.beginPath();
+        ctx.moveTo(qx - ux * 15, qy - uy * 15);
+        ctx.lineTo(qx - uy * 4, qy + ux * 4);
+        ctx.lineTo(qx + uy * 4, qy - ux * 4);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = '#ffb03d';
+        ctx.shadowColor = 'rgba(255,176,61,.7)';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.moveTo(qx + ux * 16, qy + uy * 16);
+        ctx.lineTo(qx - uy * 4.4, qy + ux * 4.4);
+        ctx.lineTo(qx + uy * 4.4, qy - ux * 4.4);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = '#ffb03d';
+        ctx.font = '11px ui-monospace, Consolas, monospace';
+        ctx.fillText('N', qx + ux * 24 - 4, qy + uy * 24 + 4);
+        ctx.restore();
+      }
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(214,230,255,.9)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('导线截面：' + (state.I > 0 ? '⊙ 电流朝向你' : (state.I < 0 ? '⊗ 电流离你而去' : '电流为零')), 12, 20);
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.fillText('紫色圆：磁力线（越靠里越密）', 12, h - 32);
+      ctx.fillText('P 为观测点，r = ' + state.d.toFixed(1) + ' cm', 12, h - 14);
+      ctx.restore();
+    }
+
+    function drawCurve() {
+      if (!curve) return;
+      var ctx = curve.ctx;
+      var w = curve.w;
+      var h = curve.h;
+      var padL = 62;
+      var padR = 18;
+      var padT = 22;
+      var padB = 42;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, h - padT - padB);
+      var x0 = padL;
+      var y0 = padT + ph;
+      var yMin = 1e-6;
+      var yMax = 1e-3;
+      var rMin = 0.5;
+      var rMax = 10;
+      var i;
+
+      function gx(rcm) {
+        return x0 + pw * Math.log(rcm / rMin) / Math.log(rMax / rMin);
+      }
+      function gy(B) {
+        var t = Math.log(B / yMin) / Math.log(yMax / yMin);
+        if (t < 0) t = 0;
+        if (t > 1) t = 1;
+        return y0 - ph * t;
+      }
+
+      curve.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.14)';
+      ctx.lineWidth = 1;
+      for (i = -6; i <= -3; i++) {
+        var gyy = gy(Math.pow(10, i));
+        ctx.beginPath();
+        ctx.moveTo(x0, gyy);
+        ctx.lineTo(x0 + pw, gyy);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = 'rgba(143,166,196,.45)';
+      ctx.beginPath();
+      ctx.moveTo(x0, padT);
+      ctx.lineTo(x0, y0);
+      ctx.lineTo(x0 + pw, y0);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('10⁻⁶', padL - 8, gy(1e-6) + 4);
+      ctx.fillText('10⁻⁵', padL - 8, gy(1e-5) + 4);
+      ctx.fillText('10⁻⁴', padL - 8, gy(1e-4) + 4);
+      ctx.fillText('10⁻³', padL - 8, gy(1e-3) + 4);
+      ctx.textAlign = 'left';
+
+      var xt = [0.5, 1, 2, 5, 10];
+      for (i = 0; i < xt.length; i++) {
+        ctx.fillText(String(xt[i]), gx(xt[i]) - 8, y0 + 20);
+      }
+      ctx.fillText('r / cm', x0 + pw - 34, y0 + 38);
+      ctx.save();
+      ctx.translate(14, padT + 84);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('B / T', 0, 0);
+      ctx.restore();
+      ctx.restore();
+
+      if (state.I !== 0) {
+        ctx.save();
+        ctx.strokeStyle = '#35e0c8';
+        ctx.lineWidth = 2.2;
+        ctx.shadowColor = 'rgba(53,224,200,.5)';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        for (i = 0; i <= 120; i++) {
+          var rr = rMin * Math.pow(rMax / rMin, i / 120);
+          var bb = fieldAt(state.I, rr);
+          var X = gx(rr);
+          var Y = gy(bb);
+          if (i === 0) ctx.moveTo(X, Y);
+          else ctx.lineTo(X, Y);
+        }
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      var Bnow = fieldAt(state.I, state.d);
+      var px = gx(state.d);
+      var py = gy(Bnow);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.5)';
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(px, y0);
+      ctx.lineTo(px, py);
+      ctx.lineTo(x0, py);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(px, py, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(53,224,200,.85)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('双对数图：斜率 −1  ⇔  B ∝ 1/r', padL + pw - 8, padT + 16);
+      ctx.textAlign = 'left';
+      ctx.restore();
+    }
+
+    function paint() {
+      drawLoop();
+      drawCurve();
+      var B = fieldAt(state.I, state.d);
+      var ratio = B / EARTH;
+      var dirText = state.I > 0 ? '⊙ 朝向你' : (state.I < 0 ? '⊗ 离你而去' : '电流为零');
+      if (loopReadout) {
+        loopReadout.textContent = 'I = ' + state.I.toFixed(1) + ' A（' + dirText + '）　d = ' +
+          state.d.toFixed(1) + ' cm　B = ' + sci(B) + ' T ≈ 地磁场的 ' + ratio.toFixed(2) + ' 倍';      }
+      if (curveReadout) {
+        curveReadout.textContent = 'I = ' + state.I.toFixed(1) + ' A　→　' +
+          (state.I === 0 ? 'B = 0 T（电流断了，曲线消失）' : '该点 B = ' + sci(B) + ' T');
+      }
+    }
+
+    PH.slider({
+      mount: '#currentSlider',
+      label: '电流 I（负值表示反向）',
+      min: -10,
+      max: 10,
+      step: 0.5,
+      value: 1,
+      unit: 'A',
+      fmt: function (v) { return v.toFixed(1); },
+      onInput: function (v) { state.I = v; paint(); }
+    });
+
+    PH.slider({
+      mount: '#distSlider',
+      label: '观测点到导线的距离 r',
+      min: 0.5,
+      max: 8,
+      step: 0.1,
+      value: 2,
+      unit: 'cm',
+      fmt: function (v) { return v.toFixed(1); },
+      onInput: function (v) { state.d = v; paint(); }
+    });
+
+    paint();
+    if (loop) loop.onResize(function () { drawLoop(); });
+    if (curve) curve.onResize(function () { drawCurve(); });
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '奥斯特 1820 年的实验，最核心地说明了什么？',
+        options: [
+          { text: '磁针会吸引导线里的电流，所以磁针动了。', correct: false, why: '磁针并没有把导线拉过去；现象发生在导线外部的空间里。用“吸引”解释不了磁针为什么只是偏转、而且方向随电流反向而反向。' },
+          { text: '通电导线会在周围空间里产生磁场，这个磁场使磁针偏转。', correct: true, why: '这是奥斯特实验的直接含义，也是电与磁第一次被证明有因果联系。断掉电流磁针就复位，说明磁场随电流一起消失。' },
+          { text: '磁针的磁场在导线中感应出了电流。', correct: false, why: '那是电磁感应，由法拉第在 1831 年发现。奥斯特的装置里是电堆驱动电流、磁针被动偏转，方向正好相反。' },
+          { text: '电流把磁针里的“磁流体”抽了出来，所以指针转向。', correct: false, why: '“磁流体”是当时流行的错误图像。磁针里没有任何东西被抽走；改变电流方向，偏转就反向，用流体转移解释不通。' }
+        ]
+      },
+      {
+        q: '用右手定则判断长直导线周围磁场的方向，正确做法是？',
+        options: [
+          { text: '大拇指指向磁场方向，四指弯曲方向指向电流方向。', correct: false, why: '把两者对调了。磁场是绕着导线转的，不可能用一根直拇指表示；拇指必须留给电流。' },
+          { text: '大拇指指向电流方向，四指自然弯曲的方向就是磁力线绕行的方向。', correct: true, why: '电流穿过掌心方向由拇指标出，四指卷起来正好围住导线，这就是磁力线的环绕方向；电流反号，四指绕向也反过来。' },
+          { text: '手掌摊平朝向磁针，手指所指就是磁场方向。', correct: false, why: '这是凭空造出来的用法。判定环绕方向靠的是四指的弯曲，而不是手掌朝向。' },
+          { text: '食指指电流、中指指磁场，拇指指的就是磁场方向。', correct: false, why: '这是判断洛伦兹力 F = qv×B 的右手三指法则，拇指给出的是力，不是磁力线怎么绕。' }
+        ]
+      },
+      {
+        q: '长直导线产生的磁场大小 B 与距离 r 的关系是？',
+        options: [
+          { text: 'B 与 r 成正比，离得越远磁场越强。', correct: false, why: '这与实验正好相反，也与 ∮B·dl = μ₀I 矛盾：回路越大，环量仍固定，磁场只能变弱。' },
+          { text: 'B 与 r² 成反比，和点电荷的电场一样。', correct: false, why: '平方反比属于点电荷的球对称情形。长直导线是柱对称，套一圈得到的周长是 2πr，所以衰减只有 1/r。' },
+          { text: 'B 与 r 成反比，距离翻倍磁场减半。', correct: true, why: 'B = μ₀I/(2πr)。这是把安培环路定理用在圆形回路上直接解出来的结果，演示里双对数图斜率正好是 −1。' },
+          { text: 'B 与 r 无关，导线外处处一样强。', correct: false, why: '“处处一样”只在理想螺线管内部近似成立。长直导线外部磁场随距离明显减弱，1 cm 处和 8 cm 处差八倍。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

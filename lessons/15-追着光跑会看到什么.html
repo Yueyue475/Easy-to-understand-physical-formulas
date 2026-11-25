@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 5 阶段 · 追着光跑会看到什么？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="5-2" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 15 课 / 共 27 课 · 约 12 分钟</p>
+        <h1>追着光跑会看到什么？</h1>
+        <p class="lede">十六岁的爱因斯坦想到一个问题：如果我跑得和光一样快，伸手去追那束光，会看到什么？这个看似孩子气的问题，最后拆掉了“同时”这两个字。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>1895 年前后，十六岁的爱因斯坦在瑞士阿劳读书。他后来回忆，那时他一直在想：如果以光速追着一束光跑，会看到什么？按牛顿力学，你会追上它，光相对于你停住，成为一道原地振荡、却不前进的电磁波。</p>
+        <p>可麦克斯韦方程不允许这样的东西存在。方程里，真空光速由两个电磁常数决定，与光源怎么运动无关；而且一道“停住”的光波，在方程里根本没有解。更麻烦的是，牛顿力学说速度可以随便叠加，麦克斯韦方程却说光速是固定的。两块各自都很成功的地基，在这里对不上了。</p>
+        <p>爱因斯坦后来写道，这个念头跟了他十年。他不是在等一个更精密的实验，而是在等一个能同时保住这两块地基的说法。最后他发现，必须放弃的既不是牛顿的力学，也不是麦克斯韦的方程，而是一个谁都没怀疑过的东西：所有人共享的“同时”。</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>第一件工具是<strong>光速不变</strong>：真空中的光速，对任何匀速观察者都是同一个 c。这不是“光很倔”，而是麦克斯韦方程的要求；上一课干涉仪的零结果也正好与它相容。</p>
+        <p>第二件工具是<strong>相对性原理</strong>。伽利略指出：在匀速封闭船舱里，无法用任何力学实验判断船是停着还是在走。爱因斯坦把它推广到所有物理规律：所有惯性系里定律形式相同，没有哪个参考系“真正静止”。</p>
+        <p>第三件工具是<strong>光子钟</strong>：两片平行镜子相距 h，一束光上下弹跳，每来回一次算“滴答”一次。它不用弹簧或摆锤，只靠光速和几何，特别适合审问时间。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：光走斜线，为什么就变慢了？</summary>
+          <div class="mathbox-body">
+            <p>把光子钟放在一辆匀速前进的车上。车上的人看，光只上下走，路径是一条竖线；地面上的人看，镜子在往前跑，光必须斜着追，路径是一条斜线。</p>
+            <p>斜线比竖线长。可光速对两个人都是同一个 c，走更长的路就要花更多时间。于是“车上的一秒”和“地面上的一秒”不再是同一段长度。</p>
+            <svg viewBox="0 0 340 190" role="img" aria-label="光子钟斜线路径的直角三角形">
+              <line x1="30" y1="150" x2="300" y2="150" stroke="rgba(143,166,196,.4)" stroke-width="2"/>
+              <line x1="30" y1="40" x2="300" y2="150" stroke="#ff6b9d" stroke-width="2"/>
+              <line x1="30" y1="40" x2="30" y2="150" stroke="#35e0c8" stroke-width="2"/>
+              <line x1="30" y1="150" x2="300" y2="150" stroke="#35e0c8" stroke-width="2"/>
+              <text x="18" y="100" fill="#35e0c8" font-size="12" font-family="monospace">h</text>
+              <text x="150" y="168" fill="#ffb03d" font-size="12" font-family="monospace">v·t/2</text>
+              <text x="180" y="80" fill="#ff6b9d" font-size="12" font-family="monospace">c·t/2</text>
+              <rect x="26" y="142" width="10" height="10" fill="none" stroke="rgba(214,230,255,.55)"/>
+            </svg>
+            <p class="caption">半个来回构成一个直角三角形：两条直角边是 h 与 v·t/2，斜边是光走的路程 c·t/2。勾股定理把三者锁在一起。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>下面五步，从“追光”这个思想实验出发，最后落到一条可以测量的公式。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，先承认追不上。不是“你跑得不够快”，而是任何有质量的物体都达不到光速。可这个思想实验仍然有价值：它逼你回答，当你无限接近光速时，光相对于你到底还剩多少速度。</p>
+            <p>经典答案说剩 c−v，越追越少，最后归零；麦克斯韦方程说，不管怎么追，测出来都是 c。两个答案不可能都对。爱因斯坦选了后者。</p>
+            <div class="eq">c<span class="sup">′</span> <span class="op">=</span> c <span class="dim">（不随观察者速度改变）</span></div>
+            <p class="readas">读作：换一个匀速运动的观察者，测到的真空光速仍然是 c。速度不再按“快的减慢的”那样相加。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，速度不能简单相加，第一个被牵连的竟然是“同时”。想象一列匀速前进的车厢，正中央有一盏灯闪了一下。车上的人说：光到前后两端的距离一样，光速又一样，所以两端<strong>同时</strong>被照亮。</p>
+            <p>站台上的人看到的不是这样。在他眼里，光发出的那一刻，车厢后端正朝光源迎过来，前端却在往前逃。光速对他也一样，所以光先到后端，后到前端。两个人都没有看错，只是“同时”这件事本身依赖参考系。</p>
+            <p>这不是视觉延迟。即使扣掉光传到眼睛的时间，结论也不变：一个参考系里同时的异地事件，在另一个参考系里可以一先一后。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，把光子钟立在车上，先看它静止时的读数。镜子相距 h，光从下镜到上镜再回来，一共走 2h。光速是 c，所以一个来回用时：</p>
+            <div class="eq">t<span class="sub">0</span> <span class="op">=</span> <span class="frac"><span class="num">2h</span><span class="den">c</span></span></div>
+            <p class="readas">读作：静止的光子钟每滴答一次，用时等于两倍镜距除以光速。这个 t₀ 是跟着钟一起运动的人量到的时间。</p>
+            <ul class="vars">
+              <li><b>t₀</b><span>车上的人量到的“一次滴答”</span></li>
+              <li><b>h</b><span>两片镜子之间的距离</span></li>
+              <li><b>c</b><span>光速</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，让钟随车前进。地面上的人看到，光两次碰镜之间，水平方向跟着车走了 v·t/2；光的实际路程是斜边。半个来回的直角三角形，两条直角边是 h 和 v·t/2，斜边是 c·t/2。</p>
+            <div class="eq">( c·t/2 )<span class="sup">2</span> <span class="op">=</span> h<span class="sup">2</span> <span class="op">+</span> ( v·t/2 )<span class="sup">2</span></div>
+            <p class="readas">读作：光走斜线的路程平方，等于竖直距离平方加上水平位移平方。这就是勾股定理，只不过三条边都是用“速度乘时间”写出来的。</p>
+            <p>把两边同乘 4，整理出 t：t = 2h/√(c²−v²)。再把分子分母同除以 c，并用 t₀=2h/c 代进去，就得到时间膨胀的公式。</p>
+            <div class="eq">t <span class="op">=</span> <span class="frac"><span class="num">t<span class="sub">0</span></span><span class="den"><span class="sqrt">1 <span class="op">−</span> v<span class="sup">2</span>/c<span class="sup">2</span></span></span></span> <span class="op">=</span> γ t<span class="sub">0</span></div>
+            <p class="readas">读作：地面上的钟走过 t，车上的钟只走过 t₀，两者差一个 γ 因子。v 越接近 c，分母越小，γ 越大，地面等得越久。</p>
+            <ul class="vars">
+              <li><b>t</b><span>地面上量到的时间</span></li>
+              <li><b>t₀</b><span>车上量到的固有时间</span></li>
+              <li><b>γ</b><span>1/√(1−v²/c²)，洛伦兹因子，永远不小于 1</span></li>
+            </ul>
+            <p>注意这里没有用到任何关于“钟的机械结构”的假设。钟可以是光子、摆锤、原子振动，甚至人的心跳；只要光速不变，所有计时机制都必须按同一个比例变慢。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，尺子也跟着变。量一根运动尺子的长度，必须“同时”读出两端坐标；可“同时”是相对的，地面认为同时的两个读数，在尺子自己的参考系里并不同时。算进去，运动的尺子沿运动方向就短一截。</p>
+            <div class="eq">L <span class="op">=</span> <span class="frac"><span class="num">L<span class="sub">0</span></span><span class="den">γ</span></span> <span class="op">=</span> L<span class="sub">0</span> <span class="sqrt">1 <span class="op">−</span> v<span class="sup">2</span>/c<span class="sup">2</span></span></div>
+            <p class="readas">读作：运动尺子的长度，等于它静止时的长度除以 γ。速度越大，短得越多；垂直于运动方向的宽度不变。</p>
+            <p>时间变慢和尺子变短不是两个独立的怪现象，而是同一个几何的两面：它们都是在保证“光速对所有人都一样”的前提下，重新分配时间和空间读数。上一课洛伦兹用来打补丁的那套数学，在这里变成了时空的几何。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>左边是车上的人看到的光子钟：光笔直上下。右边是地面上的人看到的同一只钟：镜子在跑，光只能斜着追，路径被拉成锯齿。下面的两个计数器记录两只钟各走了多少下。</p>
+
+        <div class="lab-grid">
+          <div class="demo" style="grid-column:1 / -1">
+            <div class="demo-head">
+              <span class="demo-title">演示 · 光子钟：运动的钟走得慢</span>
+              <span class="demo-tag">t = γt₀</span>
+            </div>
+            <p class="demo-desc">速度滑块改变车厢速度。v=0 时，两边的光路都是竖线，计数器同步；v 越大，右边的斜线越斜，车上钟的滴答数越落后于地上钟。读数里的 γ 就是两者的比例。</p>
+            <canvas id="clockCanvas" data-height="430" aria-label="光子钟时间膨胀动画与计数器"></canvas>
+            <div id="speedSlider"></div>
+            <div class="demo-controls">
+              <button type="button" class="btn ghost" id="resetBtn">重置计数</button>
+              <span class="view-state" id="gammaState">γ = 1.000</span>
+            </div>
+            <div class="readout" id="clockReadout"></div>
+            <p class="hint">试试：把速度拖到 0.80c，等地上钟走到 10 下，看车上钟是不是只走到 6 下；再把速度拖回 0，两条光路都变回竖线。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>先算 γ。取 v=0.8c，速度比是 0.8，平方是 0.64：</p>
+        <div class="eq">γ <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den"><span class="sqrt">1 <span class="op">−</span> 0.64</span></span></span> <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den">0.6</span></span> <span class="op">≈</span> 1.667</div>
+        <p class="readas">读作：洛伦兹因子约等于 1.667。运动的钟走过 1 秒，地面上已经过了 1.667 秒；反过来说，地面过 1 秒，它只走了 0.6 秒。用“周期被拉长”的说法，就是慢了约 67%。</p>
+        <p>这个效应不是只属于思想实验。宇宙线撞进大气层，会产生一种叫 μ 子（缪子）的粒子。它静止时的平均寿命只有 2.2 微秒，按 0.99c 飞行，就算不衰变也只能走约 0.65 公里，根本到不了地面。可它实际能穿行几公里甚至更远。</p>
+        <div class="eq">τ <span class="op">=</span> γ τ<span class="sub">0</span> <span class="op">≈</span> 7.09 <span class="op">×</span> 2.2 <span class="dim">μs</span> <span class="op">≈</span> 15.6 <span class="dim">μs</span></div>
+        <p class="readas">读作：以 0.99c 飞行时，μ 子的寿命在地面参考系里被拉长到约 15.6 微秒，平均能飞约 4.6 公里。到达地面的 μ 子往往能量更高、γ 更大，所以能穿过十几公里的大气层。</p>
+        <p>从 μ 子自己的角度看，故事完全不同：它只活了 2.2 微秒，是大气层在运动方向上被压薄了，十几公里缩成了几公里。两种说法算出的“能不能到达地面”完全一致。这不是巧合，而是相对论必须满足的自洽性。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>1905 年之前，“同时”被当成不言自明的事实：宇宙有一只统一的钟。狭义相对论拿掉了这个假设，时间成了每个观察者自己的读数；空间和时间不再是两本独立的账，而是同一张四维几何图上的两个方向。</p>
+        <p>这套结论后来进入了工程。GPS 卫星以约 3.9 km/s 飞行，钟每天比地面慢约 7 微秒，引力又让它快约 45 微秒，相抵后仍有净差。若不修正，定位误差每天会累积到十公里量级——导航实际在用这一课的时间膨胀。</p>
+        <p>同一时期，另一场危机正在黑体辐射里发酵。下一课，我们去看一个加热的铁块，怎样把“能量连续变化”这个信念烧出一个洞。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var clk = PH.canvas('clockCanvas');
+    var readout = document.getElementById('clockReadout');
+    var gammaState = document.getElementById('gammaState');
+
+    var vc = 0.8;
+    var gamma = 1 / Math.sqrt(1 - vc * vc);
+    var T0 = 0.7;          /* 静止钟一次滴答的动画时长（秒） */
+    var labT = 0;
+    var tau = 0;
+    var lastT = 0;
+
+    function tri(phase) {
+      var f = phase - Math.floor(phase);
+      return f < 0.5 ? f * 2 : 2 - 2 * f;
+    }
+
+    function drawClock() {
+      if (!clk) return;
+      var ctx = clk.ctx;
+      var w = clk.w;
+      var h = clk.h;
+      var yTop = 82;
+      var yBot = 232;
+      var midX = w * 0.5;
+      var leftX = w * 0.24;
+      var xMin = w * 0.58;
+      var xMax = w - 58;
+      var plateW = Math.min(64, w * 0.13);
+      var phase = tau / T0;
+      var f = tri(phase);
+
+      clk.clear();
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.05)';
+      ctx.fillRect(0, 52, w, 196);
+      ctx.restore();
+
+      /* 标题与分栏 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(214,230,255,.88)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('车上的人看到：光垂直上下', 16, 26);
+      ctx.textAlign = 'right';
+      ctx.fillText('地面上的人看到：光走斜线', w - 16, 26);
+      ctx.textAlign = 'left';
+      ctx.strokeStyle = 'rgba(143,166,196,.18)';
+      ctx.beginPath();
+      ctx.moveTo(midX, 44);
+      ctx.lineTo(midX, 286);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(143,166,196,.75)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.fillText('静止的钟', 16, 46);
+      ctx.fillText('运动的钟', midX + 14, 46);
+      ctx.restore();
+
+      /* 左：静止的光子钟 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.55)';
+      ctx.lineWidth = 4;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(leftX - plateW / 2, yTop);
+      ctx.lineTo(leftX + plateW / 2, yTop);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(leftX - plateW / 2, yBot);
+      ctx.lineTo(leftX + plateW / 2, yBot);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(53,224,200,.28)';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([4, 5]);
+      ctx.beginPath();
+      ctx.moveTo(leftX, yTop);
+      ctx.lineTo(leftX, yBot);
+      ctx.stroke();
+      ctx.restore();
+
+      var yL = yTop + f * (yBot - yTop);
+      ctx.save();
+      ctx.fillStyle = '#ff6b9d';
+      ctx.shadowColor = '#ff6b9d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(leftX, yL, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 右：运动的光子钟 */
+      var vPx = vc * 62;
+      var passDur = vPx > 1 ? (xMax - xMin) / vPx : Infinity;
+      var passStart = isFinite(passDur) ? Math.floor(labT / passDur) * passDur : 0;
+      var carX = xMin + (isFinite(passDur) ? vPx * (labT - passStart) : (xMax - xMin) * 0.35);
+
+      /* 斜线轨迹 */
+      if (vPx > 1 && labT - passStart > 0.03) {
+        var N = 120;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(53,224,200,.55)';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        var k;
+        for (k = 0; k <= N; k++) {
+          var tt = passStart + (labT - passStart) * k / N;
+          var ph = tri((tt / gamma) / T0);
+          var xx = xMin + vPx * (tt - passStart);
+          var yy = yTop + ph * (yBot - yTop);
+          if (k === 0) ctx.moveTo(xx, yy);
+          else ctx.lineTo(xx, yy);
+        }
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      /* 镜子 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.7)';
+      ctx.lineWidth = 4;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(carX - plateW / 2, yTop);
+      ctx.lineTo(carX + plateW / 2, yTop);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(carX - plateW / 2, yBot);
+      ctx.lineTo(carX + plateW / 2, yBot);
+      ctx.stroke();
+      ctx.restore();
+
+      /* 车厢轮廓 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(78,168,255,.35)';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([5, 5]);
+      ctx.strokeRect(carX - plateW * 0.78, yTop - 18, plateW * 1.56, yBot - yTop + 36);
+      ctx.restore();
+
+      var yR = yTop + f * (yBot - yTop);
+      ctx.save();
+      ctx.fillStyle = '#ff6b9d';
+      ctx.shadowColor = '#ff6b9d';
+      ctx.shadowBlur = 14;
+      ctx.beginPath();
+      ctx.arc(carX, yR, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      /* 箭头标注速度 */
+      if (vc > 0.02) {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,176,61,.8)';
+        ctx.lineWidth = 1.5;
+        var ay = yTop - 30;
+        ctx.beginPath();
+        ctx.moveTo(carX - 26, ay);
+        ctx.lineTo(carX + 16, ay);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(carX + 16, ay);
+        ctx.lineTo(carX + 9, ay - 4);
+        ctx.moveTo(carX + 16, ay);
+        ctx.lineTo(carX + 9, ay + 4);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(255,176,61,.9)';
+        ctx.font = '10px ui-monospace, Consolas, monospace';
+        ctx.fillText('v', carX + 20, ay + 4);
+        ctx.restore();
+      }
+
+      /* 计数器 */
+      var groundTicks = Math.floor(labT / T0);
+      var carTicks = Math.floor(tau / T0);
+
+      function counterBox(x0, width, y0, label, count, color) {
+        ctx.save();
+        ctx.fillStyle = 'rgba(14,23,38,.85)';
+        ctx.strokeStyle = 'rgba(110,180,255,.18)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.rect(x0, y0, width, 84);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(143,166,196,.85)';
+        ctx.font = '10.5px ui-monospace, Consolas, monospace';
+        ctx.fillText(label + '（次）', x0 + 12, y0 + 19);
+        ctx.fillStyle = color;
+        ctx.font = '26px ui-monospace, Consolas, monospace';
+        ctx.fillText(String(count), x0 + 12, y0 + 51);
+
+        var maxDots = Math.max(4, Math.floor((width - 24) / 9));
+        var dots = Math.min(count, maxDots);
+        var step = maxDots > 1 ? (width - 24) / (maxDots - 1) : 0;
+        for (var i = 0; i < maxDots; i++) {
+          ctx.beginPath();
+          ctx.fillStyle = i < dots ? color : 'rgba(143,166,196,.16)';
+          ctx.arc(x0 + 12 + i * step, y0 + 69, 2.8, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      var boxW = (w - 60) / 2;
+      counterBox(16, boxW, 322, '车上人的钟', carTicks, '#ff6b9d');
+      counterBox(16 + boxW + 28, boxW, 322, '地上人的钟', groundTicks, '#35e0c8');
+
+      /* 底部说明 */
+      ctx.save();
+      ctx.fillStyle = 'rgba(169,139,255,.9)';
+      ctx.font = '11px ui-monospace, Consolas, monospace';
+      ctx.fillText('同一段地面时间，车上钟只走了 1/γ。γ = ' + gamma.toFixed(3), 16, 422);
+      ctx.restore();
+    }
+
+    function paint() {
+      if (gammaState) gammaState.textContent = 'γ = ' + gamma.toFixed(3);
+      drawClock();
+      if (!readout) return;
+      var g = Math.floor(labT / T0);
+      var c = Math.floor(tau / T0);
+      readout.textContent = 'v = ' + vc.toFixed(2) + 'c　γ = ' + gamma.toFixed(3) +
+        '　车上钟 ' + c + ' 次　地上钟 ' + g + ' 次' +
+        (g > 0 ? '（比值 ' + (c / g).toFixed(2) + '，理论 1/γ = ' + (1 / gamma).toFixed(2) + '）' : '');
+    }
+
+    var speedSlider = PH.slider({
+      mount: '#speedSlider',
+      label: '车厢速度 v（以光速 c 为单位）',
+      min: 0,
+      max: 0.95,
+      step: 0.01,
+      value: 0.8,
+      fmt: function (v) { return v.toFixed(2) + ' c'; },
+      onInput: function (v) {
+        vc = v;
+        gamma = 1 / Math.sqrt(1 - vc * vc);
+        labT = 0;
+        tau = 0;
+        paint();
+      }
+    });
+
+    var resetBtn = document.getElementById('resetBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        labT = 0;
+        tau = 0;
+        paint();
+      });
+    }
+
+    paint();
+    PH.anim(function (t, dt) {
+      if (dt > 0) {
+        labT += dt;
+        tau += dt / gamma;
+      }
+      lastT = t;
+      drawClock();
+    }, { autoplay: true, speed: 1 });
+
+    if (clk) {
+      clk.onResize(function () { drawClock(); });
+    }
+
+    setInterval(function () {
+      if (!readout) return;
+      var g = Math.floor(labT / T0);
+      var c = Math.floor(tau / T0);
+      readout.textContent = 'v = ' + vc.toFixed(2) + 'c　γ = ' + gamma.toFixed(3) +
+        '　车上钟 ' + c + ' 次　地上钟 ' + g + ' 次' +
+        (g > 0 ? '（比值 ' + (c / g).toFixed(2) + '，理论 1/γ = ' + (1 / gamma).toFixed(2) + '）' : '');
+    }, 500);
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '为什么“光速对所有人都一样”会逼出“同时性相对”？',
+        options: [
+          { text: '因为不同观察者的眼睛反应速度不一样。', correct: false, why: '这是生理或视觉延迟，扣掉它结论也不变。同时性相对是测量结果，不是看见的先后。' },
+          { text: '因为光速固定，而不同观察者看到的光走过的距离不同，所以两端“同时被照亮”这件事只能对其中一个人成立。', correct: true, why: '车厢中央闪光：车上人看两端距离相等，光同时到达；站台人看后端迎着光、前端背着光，光先到后端。两人的光速都是 c，距离不同，时间就不同。' },
+          { text: '因为车厢太长，光跑不完。', correct: false, why: '车厢再长，光也会到达，只是时间不同。问题不在长度够不够，而在两端距离在不同参考系里不相等。' },
+          { text: '因为麦克斯韦方程只在静止的参考系里成立。', correct: false, why: '恰好相反，相对性原理要求所有惯性系里物理规律形式相同；麦克斯韦方程也必须对每个惯性观察者成立，这正是矛盾的起点。' }
+        ]
+      },
+      {
+        q: 'γ = 1/√(1−v²/c²) 这个因子说明了什么？',
+        options: [
+          { text: '它说明光速会随速度变大。', correct: false, why: 'γ 里虽然有 c，但它的作用是让运动钟的时间和长度改变，光速本身仍是 c，不随 v 变。' },
+          { text: '它说明运动的钟周期变长、沿运动方向的尺子变短，且 v 越接近 c 效应越强。', correct: true, why: 't=γt₀、L=L₀/γ。v=0 时 γ=1，没有效应；v=0.8c 时 γ≈1.667；v 趋近 c 时 γ 趋于无穷。' },
+          { text: '它只对光子适用，对普通物体无效。', correct: false, why: 'γ 来自时空几何，与具体物体无关。μ 子、GPS 卫星、人的心跳都按同一个因子变慢。' },
+          { text: '它说明速度可以无限叠加，最终超过光速。', correct: false, why: '正好相反。γ 随 v 增大而发散，把有质量物体加速到 c 需要无限能量，所以速度不能无限叠加到超过光速。' }
+        ]
+      },
+      {
+        q: 'μ 子静止寿命只有 2.2 微秒，为什么能穿过十几公里的大气层到达地面？',
+        options: [
+          { text: '因为 μ 子在实际飞行时寿命本来就会变成 15.6 微秒，与速度无关。', correct: false, why: '15.6 微秒是 0.99c 时在地面参考系里测到的寿命，是时间膨胀的结果；静止寿命仍是 2.2 微秒。' },
+          { text: '因为 μ 子的速度超过光速，所以时间对它倒流。', correct: false, why: '有质量粒子不能超过光速。μ 子的速度接近 c，但没有超过；相对论也不允许时间倒流。' },
+          { text: '因为地面参考系看它的寿命被拉长，而 μ 子自己看大气层变薄了，两种描述给出同样的到达概率。', correct: true, why: '时间膨胀与长度收缩是同一件事的两种坐标描述。0.99c 时 γ≈7.09，寿命变为约 15.6 微秒；在 μ 子系里则是大气厚度除以 γ。两者必须一致。' },
+          { text: '因为大气层其实只有几百米厚。', correct: false, why: '大气层有十几公里厚。μ 子能到达地面不是因为大气变薄了，而是因为相对论效应改变了“寿命”或“厚度”的读数。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 4 阶段 · 光会不会就是电磁波？ | 物理公式重演</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-lesson="4-3" data-root="../">
+  <div class="wrap">
+    <nav class="lesson-nav-top" aria-label="课程导航"></nav>
+
+    <main class="lesson-body">
+      <header class="lesson-head">
+        <div class="stage-badge"></div>
+        <p class="lesson-meta">第 12 课 / 共 27 课 · 约 11 分钟</p>
+        <h1>光会不会就是电磁波？</h1>
+        <p class="lede">电的规律、磁的规律、光的规律，本来是三本互不相干的书。麦克斯韦把前两本合起来一算，算出的速度却和第三本里的光速撞上了。</p>
+      </header>
+
+      <section id="stuck">
+        <h2>他当时卡在哪</h2>
+        <p>到 1860 年前后，电学和磁学各自积累了一堆可靠规律：库仑的平方反比、安培的电流作用、法拉第的电磁感应。它们都能写成公式，却像三块边缘对不上的拼图：电就是电，磁就是磁，只在奥斯特和法拉第的实验里偶然碰一下，没有理论说明它们为什么必须在一起。</p>
+        <p>光的情况更孤立。人们正在争论光是微粒还是波：托马斯·杨在 1801 年前后用双缝干涉支持波动说，菲涅耳在 1810 年代把波动理论做了出来，干涉和衍射都算得很准。可如果光是波，它波动的到底是什么？声波靠空气，水波靠水，光波靠什么？没有人能回答。光被当成完全独立的“另一种东西”。</p>
+        <p>偏偏这个时候，光速已经被测出来了。斐索在 1849 年用旋转齿轮的方法，让光跑一段 8 公里多的往返路程，测得光速约为 3.15×10⁸ m/s。这个数字带着明显的误差，却已经足够精确到可以和别的物理量比较。问题因此变得尖锐：如果哪天从电和磁的常数里也算出一个速度，它会不会恰好是这个数？</p>
+      </section>
+
+      <section id="tools">
+        <h2>手上有什么工具</h2>
+        <p>麦克斯韦手里有两样关键的武器。第一是法拉第留下的电磁感应：1831 年，法拉第发现磁场的<strong>变化</strong>会在附近的导线里推动电荷，产生电流。这件事的意义被麦克斯韦看得很重——它不是“磁铁吸引电荷”，而是“变化的磁场在空间里造出了电场”，哪怕那里没有导线，电场也照样存在。</p>
+        <p>第二是麦克斯韦的数学。他 1855 年读到法拉第的《电学实验研究》，随后写出《论法拉第的力线》，用方程把力线图翻译成可计算的语言：把定性的图像变成每一点都有确定数值的场，并让方程自洽。1861 年他发现，只写法拉第那一半，方程会自相矛盾；要闭合，必须补上一项全新的东西。</p>
+
+        <details class="mathbox">
+          <summary>数学小站：什么是“波速”？</summary>
+          <div class="mathbox-body">
+            <p>先把“波”说白：波不是物质在往前跑，而是“一个形状在往前搬家”。水面上的隆起一路向前，水本身只上下起伏。所谓波速，就是那个形状每秒前进多少米——它描写的是形状的移动，不是有东西被运走。</p>
+            <p>再看两个词。波长 λ 是相邻两个波峰之间的距离，像一级台阶的宽度；频率 f 是每一秒有多少个波峰从你面前经过，像每秒踏过几级台阶。每经过一个波峰，形状正好前进一个波长；一秒经过 f 个波峰，形状就前进 f 个波长。</p>
+            <p><strong>v = λ · f</strong>：读作“波速等于波长乘以频率”——一步迈一个波长，一秒迈 f 步，迈出来的总长度就是每秒前进的距离。</p>
+            <svg viewBox="0 0 360 120" role="img" aria-label="正弦波示意图：标出一个波长 λ 与波形前进的方向">
+              <line x1="24" y1="58" x2="336" y2="58" stroke="rgba(143,166,196,.22)" stroke-dasharray="4 6"/>
+              <line x1="55" y1="16" x2="55" y2="104" stroke="rgba(143,166,196,.38)" stroke-dasharray="4 5"/>
+              <line x1="155" y1="16" x2="155" y2="104" stroke="rgba(143,166,196,.38)" stroke-dasharray="4 5"/>
+              <polyline points="30,58 35,50.6 40,43.9 45,38.6 50,35.2 55,34 60,35.2 65,38.6 70,43.9 75,50.6 80,58 85,65.4 90,72.1 95,77.4 100,80.8 105,82 110,80.8 115,77.4 120,72.1 125,65.4 130,58 135,50.6 140,43.9 145,38.6 150,35.2 155,34 160,35.2 165,38.6 170,43.9 175,50.6 180,58 185,65.4 190,72.1 195,77.4 200,80.8 205,82 210,80.8 215,77.4 220,72.1 225,65.4 230,58 235,50.6 240,43.9 245,38.6 250,35.2 255,34 260,35.2 265,38.6 270,43.9 275,50.6 280,58 285,65.4 290,72.1 295,77.4 300,80.8 305,82 310,80.8 315,77.4 320,72.1 325,65.4 330,58" fill="none" stroke="#35e0c8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <line x1="55" y1="98" x2="155" y2="98" stroke="#8fa6c4" stroke-width="1.2"/>
+              <polyline points="55,98 63,94 63,102" fill="none" stroke="#8fa6c4" stroke-width="1.2"/>
+              <polyline points="155,98 147,94 147,102" fill="none" stroke="#8fa6c4" stroke-width="1.2"/>
+              <text x="105" y="114" fill="#8fa6c4" font-size="11" text-anchor="middle" font-family="ui-monospace,Consolas,monospace">λ</text>
+              <line x1="250" y1="22" x2="320" y2="22" stroke="#8fa6c4" stroke-width="1.2"/>
+              <polyline points="320,22 312,18 312,26" fill="none" stroke="#8fa6c4" stroke-width="1.2"/>
+              <text x="250" y="13" fill="#8fa6c4" font-size="10" font-family="ui-monospace,Consolas,monospace">传播方向</text>
+            </svg>
+            <p class="caption">λ 是相邻两个波峰的距离，箭头是波形前进的方向。波长固定时，f 越大，每秒经过的波峰越多，波形就跑得越快。</p>
+            <p>拿绿光试一次：它每秒振动 5.6×10¹⁴ 次，相邻波峰相距 532 nm，即 5.32×10⁻⁷ m。两者相乘得 5.32×10⁻⁷ × 5.6×10¹⁴ ≈ 3.0×10⁸ m/s，正是光速。</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="derivation">
+        <h2>一步步重演推导</h2>
+        <p>这一课的核心只有一件事：把电和磁的规律摆在一起，看它们能不能自己“接力”。点“下一步”，一次看一步。</p>
+
+        <div id="steps">
+          <div class="step" data-step>
+            <p>第一步，是法拉第的发现。让磁铁在线圈里插进拔出，或让另一个线圈的电流通断，线圈里就会出现电流。关键不在“磁铁能生电”，而在只有磁场<strong>变化</strong>时才有电：磁铁静静待着，检流计不动；一抽一插，指针就摆。</p>
+            <p>麦克斯韦把它读成一句话：变化的磁场会在周围空间产生电场。这个电场不需要导线承载，它直接存在于空间里，导线只是恰好放在那里，让电荷被推着走。</p>
+            <div class="eq"><span class="op">∮</span> <span class="vec">E</span> <span class="op">·</span> d<span class="vec">l</span> <span class="op">=</span> <span class="op">−</span> <span class="frac"><span class="num">dΦ<span class="sub">B</span></span><span class="den">dt</span></span></div>
+            <p class="readas">读作：沿闭合回路绕一圈，电场的累加等于穿过该回路的磁通量对时间的变化率，前面带一个负号（楞次定律的方向）。</p>
+            <ul class="vars">
+              <li><b>E</b><span>感应出的电场</span></li>
+              <li><b>Φ<sub>B</sub></b><span>穿过回路的磁通量</span></li>
+              <li><b>t</b><span>时间</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第二步，补上对称的另一半：变化的电场能不能生磁场？当时还没有人直接看到。麦克斯韦是在写方程时被迫加上这一项的——只写法拉第那一半，给电容器充电时，导线周围有磁场，两板之间却没有电流，磁场会莫名其妙断掉，方程就矛盾了。</p>
+            <p>他提出，两板之间变化的电场本身就等效于一股电流，把它叫做<strong>位移电流</strong>。它不涉及电荷的移动，却和真正的电流一样能在周围产生磁场。加上这一项，磁场的环路方程就完整了。这一项是纯理论推出来的，不是实验的直接总结。</p>
+            <div class="eq"><span class="op">∮</span> <span class="vec">B</span> <span class="op">·</span> d<span class="vec">l</span> <span class="op">=</span> μ<span class="sub">0</span> I <span class="op">+</span> μ<span class="sub">0</span> ε<span class="sub">0</span> <span class="frac"><span class="num">dΦ<span class="sub">E</span></span><span class="den">dt</span></span></div>
+            <p class="readas">读作：沿闭合回路绕一圈，磁场的累加等于 μ₀ 乘真实电流，再加上 μ₀ε₀ 乘电场通量的变化率。第二项就是位移电流的贡献。</p>
+            <ul class="vars">
+              <li><b>I</b><span>真实电流（电荷的流动）</span></li>
+              <li><b>Φ<sub>E</sub></b><span>穿过回路的电通量</span></li>
+              <li><b>ε₀</b><span>真空介电常数，8.85×10⁻¹² F/m</span></li>
+              <li><b>μ₀</b><span>真空磁导率，4π×10⁻⁷ H/m</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第三步，让两者互相“点火”。某处电场突然变化，按第二条方程在周围造出磁场；新磁场又在变化，按第一条方程在更远处造出电场；新电场再变化，再造磁场……一环扣一环，扰动自己向前推进。</p>
+            <p>这个过程不需要电荷、导线，甚至不需要介质。传递扰动的不是物质在振动，而是电场和磁场本身互相激发。这就是电磁波，第一个“场自己就是波”的例子。</p>
+          </div>
+
+          <div class="step" data-step>
+            <p>第四步，把上面的接力写成波动方程。数学上，两条方程联立之后，电场和磁场各自都满足同一个形式的波动方程。波动方程里有一个参数，直接就是波传播速度的平方。麦克斯韦把它认出来：速度只由两个常数决定，一个是真空介电常数 ε₀，一个是真空磁导率 μ₀。</p>
+            <p>这个结果反常：声速取决于空气的温度和密度，水波速度取决于水深和重力，都是介质的具体性质；电磁波的速度却只由真空的两个电磁常数决定，与频率、振幅、材料无关。</p>
+            <div class="eq">c <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den"><span class="sqrt">μ<span class="sub">0</span> ε<span class="sub">0</span></span></span></span></div>
+            <p class="readas">读作：电磁波在真空中的速度，等于真空磁导率与真空介电常数乘积的平方根的倒数。</p>
+            <ul class="vars">
+              <li><b>c</b><span>电磁波在真空中的传播速度（m/s）</span></li>
+              <li><b>μ₀</b><span>真空磁导率，4π×10⁻⁷ H/m</span></li>
+              <li><b>ε₀</b><span>真空介电常数，8.85×10⁻¹² F/m</span></li>
+            </ul>
+          </div>
+
+          <div class="step" data-step>
+            <p>第五步，代入数字。这两个常数是测出来的：ε₀ 来自静电力的测量，μ₀ 来自电流之间作用力的测量，两者原本都属于“电学”和“磁学”，和光毫无关系。把它们相乘、开方、取倒数，得到的数字让麦克斯韦停了笔。</p>
+            <p>算出来约 3.0×10⁸ m/s，而斐索测得 3.15×10⁸ m/s。两者只差百分之几，落在当时误差范围内。一个从电学和磁学算出的速度撞上了实测光速，麦克斯韦由此断言：光就是电磁波。这不是类比，是数值上的同一。</p>
+            <div class="eq">c <span class="op">=</span> <span class="frac"><span class="num">1</span><span class="den"><span class="sqrt">4π×10<span class="sup">−7</span> × 8.85×10<span class="sup">−12</span></span></span></span> <span class="op">≈</span> 3.0×10<span class="sup">8</span> <span class="dim">m/s</span></div>
+            <p class="readas">读作：把 μ₀ 和 ε₀ 的数值代进去，得到约 3.0 乘 10 的 8 次方米每秒，与实测光速在误差内一致。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab">
+        <h2>动手看看</h2>
+        <p>演示 A 里的波速完全由两个常数算出来，不是画上去的动画节奏：改变 ε 和 μ 的相对值，波长和速度会一起变，读数给出真实的 c。演示 B 让你换频率，看波速是否跟着变。</p>
+
+        <div class="lab-grid">
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 A · E 与 B 互相点火</span>
+              <span class="demo-tag">c = 1/√(μ₀ε₀)</span>
+            </div>
+            <p class="demo-desc">波沿 x 轴向右传播。蓝色是电场 E（竖直），紫色是磁场 B（沿深度方向），两者互相垂直、同相：E 最大时 B 也最大。拖动下面两个滑块改变介质的相对常数，波速随之变化，波长也跟着伸缩。</p>
+            <canvas id="waveCanvas" data-height="340" aria-label="电磁波中电场与磁场互相垂直同相传播的演示"></canvas>
+            <div id="epsSlider"></div>
+            <div id="muSlider"></div>
+            <div class="readout" id="waveReadout"></div>
+            <p class="hint">试试：把 εᵣ 从 1 拖到 4，速度减半、波长也减半；读数里的 c 是不是变成了真空光速的一半？</p>
+          </div>
+
+          <div class="demo">
+            <div class="demo-head">
+              <span class="demo-title">演示 B · 换频率，波速变不变</span>
+              <span class="demo-tag">c 与频率无关</span>
+            </div>
+            <p class="demo-desc">同样在真空中，把频率从无线电波一路拉到伽马射线。波长会跨过十几个数量级，但右侧算出的波速始终是同一个数——这正是“c 只由常数决定”的直接体现。</p>
+            <canvas id="specCanvas" data-height="300" aria-label="电磁波谱频率与波长演示"></canvas>
+            <div id="freqSlider"></div>
+            <div class="readout" id="specReadout"></div>
+            <p class="hint">试试：把频率拉大一百倍，波长会缩到原来的百分之一，但 c 一动不动。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="numbers">
+        <h2>代进真实数字</h2>
+        <p>现代对光速的精确值是 299792458 m/s。1983 年国际计量大会干脆把米定义为“光在 1/299792458 秒内走过的距离”，光速从此成了定义值，不再需要测量。</p>
+        <div class="eq">c <span class="op">=</span> 299792458 <span class="dim">m/s</span></div>
+        <p class="readas">读作：每秒约三十万公里。这个数字不是凑出来的，它由 μ₀ 和 ε₀ 的取值决定，而 μ₀ 与 ε₀ 又由电学和磁学的实验定出。</p>
+        <p>换算成更好感受的尺度：地球赤道周长约 40075 公里，光一秒能绕 299792 ÷ 40075 ≈ 7.5 圈。你眨一次眼大约 0.3 秒，光在这段时间里已经绕地球两圈多。太阳到地球的平均距离约 1.5 亿公里，光走完这段路要 500 秒左右，也就是 8 分 20 秒。你看到的太阳，是 8 分钟以前的太阳。</p>
+        <p>再看麦克斯韦当年的那次计算。他用的 μ₀ 和 ε₀ 精度有限，算出的速度与斐索的测量相差几个百分点。以 19 世纪中叶的实验水平，这已经是很强的证据：两个来自完全不同实验领域的常数，组合出来的速度恰好落在光速上。这种“巧合”的概率，比任何一条单独的实验曲线都更令人信服。</p>
+      </section>
+
+      <section id="impact">
+        <h2>这个结论当年改变了什么</h2>
+        <p>麦克斯韦在 1865 年正式发表这套理论时，电磁波还只是一个数学预言。直到 1887 年，赫兹用火花隙产生电磁波，用另一段导线做接收器，证明了这种波确实存在，并且以光速传播。无线电、雷达、微波炉、X 光，后来全都长在这套方程上。</p>
+        <p>更深的改变发生在“光是什么”这个问题上。光不再是一种独立的流体或微粒，而是电磁场的一种运动状态。可这也带来一个新麻烦：既然光是波，它总得在某种东西里振动吧？19 世纪的人几乎一致地回答：有一种充满宇宙的介质，叫以太。下一课，我们就去看人们怎么去找它，又怎么扑了个空。</p>
+      </section>
+
+      <section id="quiz">
+        <h2>自测</h2>
+        <p>不用翻回去，凭刚才的理解选。选错会告诉你错在哪。</p>
+        <div id="quizBox"></div>
+      </section>
+
+      <footer class="lesson-foot">
+        <div class="lesson-nav-bottom" aria-label="上一课与下一课"></div>
+        <div class="lesson-actions">
+          <button type="button" class="btn" data-mark-read>标记已读</button>
+          <a class="btn ghost" href="../index.html">返回目录</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../assets/course.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    PH.stage(document.querySelector('.stage-badge'));
+    PH.nav();
+    PH.steps(document.getElementById('steps'));
+
+    var C0 = 299792458;
+    var SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+    function supStr(n) {
+      var s = String(n).replace(/-/g, '⁻');
+      var out = '';
+      for (var i = 0; i < s.length; i++) {
+        var c = s.charAt(i);
+        out += (c === '⁻') ? '⁻' : SUP.charAt(Number(c));
+      }
+      return out;
+    }
+    function sci(v, digits) {
+      if (!(v > 0)) return '0';
+      var e = Math.floor(Math.log(v) / Math.LN10);
+      var m = v / Math.pow(10, e);
+      if (m >= 9.995) { m /= 10; e += 1; }
+      return m.toFixed(digits == null ? 2 : digits) + '×10' + supStr(e);
+    }
+    function fmtLen(m) {
+      if (m >= 1e3) return (m / 1e3).toFixed(2) + ' km';
+      if (m >= 1) return m.toFixed(2) + ' m';
+      if (m >= 1e-2) return (m * 100).toFixed(1) + ' cm';
+      if (m >= 1e-6) return (m * 1e6).toFixed(1) + ' µm';
+      if (m >= 1e-9) return (m * 1e9).toFixed(1) + ' nm';
+      return (m * 1e12).toFixed(1) + ' pm';
+    }
+
+    var waveC = PH.canvas('waveCanvas');
+    var waveReadout = document.getElementById('waveReadout');
+    var epsR = 1;
+    var muR = 1;
+    var lastT = 0;
+
+    function speedNow() {
+      return C0 / Math.sqrt(epsR * muR);
+    }
+
+    function drawWave(t) {
+      if (!waveC) return;
+      var ctx = waveC.ctx;
+      var w = waveC.w;
+      var h = waveC.h;
+      var x0 = 72;
+      var x1 = w - 44;
+      var axisY = h * 0.54;
+      var ampE = Math.min(66, h * 0.20);
+      var ampB = ampE * 0.9;
+      var ux = -0.48;
+      var uy = 0.62;
+      var ratio = 1 / Math.sqrt(epsR * muR);
+      var lambdaPx = 250 * ratio;
+      var c = speedNow();
+      var x;
+
+      waveC.clear();
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(143,166,196,.35)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x0, axisY);
+      ctx.lineTo(x1, axisY);
+      ctx.stroke();
+
+      ctx.strokeStyle = 'rgba(143,166,196,.28)';
+      ctx.beginPath();
+      ctx.moveTo(x0, axisY);
+      ctx.lineTo(x0 + ux * 62, axisY + uy * 62);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('x（传播方向）', x1 - 108, h - 16);
+      ctx.fillText('y', x0 + 8, axisY - ampE - 8);
+      ctx.fillText('z', x0 + ux * 70 - 10, axisY + uy * 70 + 8);
+      ctx.restore();
+
+      /* 竖直的电场 */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(78,168,255,.16)';
+      ctx.lineWidth = 1;
+      var stepPx = 4;
+      var k;
+      for (k = 0, x = x0; x <= x1; x += stepPx, k++) {
+        var ph = 2 * Math.PI * ((x - x0) / lambdaPx) - 0.9 * Math.PI * 2 * t * 0.5;
+        var ey = -Math.sin(ph) * ampE;
+        if (k % 4 === 0) {
+          ctx.beginPath();
+          ctx.moveTo(x, axisY);
+          ctx.lineTo(x, axisY + ey);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = '#4ea8ff';
+      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(78,168,255,.55)';
+      ctx.shadowBlur = 9;
+      ctx.beginPath();
+      for (x = x0; x <= x1; x += 2) {
+        var p2 = 2 * Math.PI * ((x - x0) / lambdaPx) - 0.9 * Math.PI * 2 * t * 0.5;
+        var y2 = axisY - Math.sin(p2) * ampE;
+        if (x === x0) ctx.moveTo(x, y2);
+        else ctx.lineTo(x, y2);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      /* 深度方向的磁场 */
+      ctx.save();
+      ctx.strokeStyle = '#a98bff';
+      ctx.lineWidth = 2;
+      ctx.shadowColor = 'rgba(169,139,255,.55)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for (x = x0; x <= x1; x += 2) {
+        var p3 = 2 * Math.PI * ((x - x0) / lambdaPx) - 0.9 * Math.PI * 2 * t * 0.5;
+        var bz = Math.sin(p3) * ampB;
+        var bx = x + ux * bz;
+        var by = axisY + uy * bz;
+        if (x === x0) ctx.moveTo(bx, by);
+        else ctx.lineTo(bx, by);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#4ea8ff';
+      ctx.font = '13px ui-monospace, Consolas, monospace';
+      ctx.fillText('E', x0 + 10, axisY - ampE - 20);
+      ctx.fillStyle = '#a98bff';
+      ctx.fillText('B', x0 + ux * (ampB + 26) - 6, axisY + uy * (ampB + 26));
+      ctx.fillStyle = 'rgba(214,230,255,.85)';
+      ctx.font = '12px ui-monospace, Consolas, monospace';
+      ctx.fillText('c = ' + (c / 1e8).toFixed(3) + '×10⁸ m/s　（真空光速的 ' + (c / C0).toFixed(2) + ' 倍）', 12, 20);
+      ctx.fillStyle = 'rgba(143,166,196,.65)';
+      ctx.fillText('E ⊥ B ⊥ 传播方向，同相振荡', 12, h - 14);
+      ctx.restore();
+    }
+
+    function paintWave() {
+      drawWave(lastT);
+      if (waveReadout) {
+        var c = speedNow();
+        var f = 5e14;
+        var lam = c / f;
+        waveReadout.textContent = 'εᵣ = ' + epsR.toFixed(2) + '　μᵣ = ' + muR.toFixed(2) +
+          '　→　c = ' + sci(c, 3) + ' m/s（真空光速的 ' + (c / C0).toFixed(2) +
+          ' 倍）；若 f = 5.0×10¹⁴ Hz，则 λ = ' + fmtLen(lam) + '。';
+      }
+    }
+
+    PH.slider({
+      mount: '#epsSlider',
+      label: '介质相对介电常数 εᵣ',
+      min: 1,
+      max: 4,
+      step: 0.05,
+      value: 1,
+      fmt: function (v) { return v.toFixed(2); },
+      onInput: function (v) { epsR = v; paintWave(); }
+    });
+
+    PH.slider({
+      mount: '#muSlider',
+      label: '介质相对磁导率 μᵣ',
+      min: 1,
+      max: 4,
+      step: 0.05,
+      value: 1,
+      fmt: function (v) { return v.toFixed(2); },
+      onInput: function (v) { muR = v; paintWave(); }
+    });
+
+    paintWave();
+    PH.anim(function (t) {
+      lastT = t;
+      drawWave(t);
+    }, { autoplay: true, speed: 1 });
+    if (waveC) {
+      waveC.onResize(function () { drawWave(lastT); });
+    }
+
+    var specC = PH.canvas('specCanvas');
+    var specReadout = document.getElementById('specReadout');
+
+    var BANDS = [
+      { lo: 4, hi: 9, name: '无线电波', color: 'rgba(78,168,255,.28)' },
+      { lo: 9, hi: 12, name: '微波', color: 'rgba(53,224,200,.24)' },
+      { lo: 12, hi: 14.633, name: '红外', color: 'rgba(255,176,61,.22)' },
+      { lo: 14.633, hi: 14.875, name: '可见光', color: 'rgba(255,255,255,.55)' },
+      { lo: 14.875, hi: 16.477, name: '紫外', color: 'rgba(169,139,255,.32)' },
+      { lo: 16.477, hi: 19.477, name: 'X 射线', color: 'rgba(169,139,255,.5)' },
+      { lo: 19.477, hi: 22, name: 'γ 射线', color: 'rgba(255,95,109,.4)' }
+    ];
+
+    function bandName(lf) {
+      for (var i = 0; i < BANDS.length; i++) {
+        if (lf >= BANDS[i].lo && lf <= BANDS[i].hi) return BANDS[i].name;
+      }
+      return '电磁波';
+    }
+
+    function drawSpec(lf) {
+      if (!specC) return;
+      var ctx = specC.ctx;
+      var w = specC.w;
+      var h = specC.h;
+      var padL = 48;
+      var padR = 22;
+      var padT = 26;
+      var padB = 34;
+      var pw = Math.max(20, w - padL - padR);
+      var ph = Math.max(20, h - padT - padB);
+      var y0 = padT + ph;
+      var i;
+
+      function gy(logf) { return y0 - ph * (logf - 4) / 18; }
+
+      specC.clear();
+
+      for (i = 0; i < BANDS.length; i++) {
+        var b = BANDS[i];
+        var yTop = gy(b.hi);
+        var yBot = gy(b.lo);
+        ctx.save();
+        ctx.fillStyle = b.color;
+        ctx.fillRect(padL, yTop, pw, Math.max(1.5, yBot - yTop));
+        if (b.name !== '可见光') {
+          ctx.fillStyle = 'rgba(214,230,255,.9)';
+          ctx.font = '11px ui-monospace, Consolas, monospace';
+          ctx.fillText(b.name, padL + 10, (yTop + yBot) / 2 + 4);
+        }
+        ctx.restore();
+      }
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,255,255,.75)';
+      ctx.lineWidth = 1;
+      var vy = (gy(14.633) + gy(14.875)) / 2;
+      ctx.beginPath();
+      ctx.moveTo(padL + pw - 70, vy);
+      ctx.lineTo(padL + pw + 4, vy);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(214,230,255,.85)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText('可见光', padL + pw - 74, vy + 4);
+      ctx.restore();
+
+      var ticks = [4, 8, 12, 16, 20];
+      ctx.save();
+      ctx.fillStyle = 'rgba(143,166,196,.7)';
+      ctx.font = '10px ui-monospace, Consolas, monospace';
+      ctx.textAlign = 'right';
+      for (i = 0; i < ticks.length; i++) {
+        ctx.fillText('10' + supStr(ticks[i]), padL - 8, gy(ticks[i]) + 4);
+      }
+      ctx.textAlign = 'left';
+      ctx.fillText('频率 f / Hz（越往上越高）', padL, padT - 8);
+      ctx.restore();
+
+      var yM = gy(lf);
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,176,61,.85)';
+      ctx.setLineDash([5, 5]);
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(padL, yM);
+      ctx.lineTo(padL + pw, yM);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = '#ffb03d';
+      ctx.shadowColor = '#ffb03d';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(padL + pw - 6, yM, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function updateSpec(lf) {
+      drawSpec(lf);
+      if (!specReadout) return;
+      var f = Math.pow(10, lf);
+      var lam = C0 / f;
+      specReadout.textContent = 'f = ' + sci(f, 2) + ' Hz　（' + bandName(lf) +
+        '）　λ = c/f = ' + fmtLen(lam) + '　c 恒为 2.998×10⁸ m/s';
+    }
+
+    var freqSlider = PH.slider({
+      mount: '#freqSlider',
+      label: '频率 f（对数刻度）',
+      min: 4,
+      max: 22,
+      step: 0.1,
+      value: 14.7,
+      unit: 'Hz',
+      fmt: function (v) {
+        var s = v.toFixed(1).replace('.', '·');
+        var out = '';
+        var map = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹', '·': '·', '-': '⁻' };
+        for (var k = 0; k < s.length; k++) out += map[s.charAt(k)] || s.charAt(k);
+        return '10' + out;
+      },
+      onInput: function (v) { updateSpec(v); }
+    });
+
+    updateSpec(14.7);
+    if (specC) {
+      specC.onResize(function () {
+        updateSpec(freqSlider ? freqSlider.value : 14.7);
+      });
+    }
+
+    PH.quiz(document.getElementById('quizBox'), [
+      {
+        q: '位移电流这一项是谁、怎么补上的？',
+        options: [
+          { text: '法拉第，通过铁屑实验直接测出来的。', correct: false, why: '法拉第的贡献是电磁感应，即变化的磁场产生电场；位移电流在他去世后才由麦克斯韦提出。' },
+          { text: '麦克斯韦，为了让方程自洽而纯理论地引入的。', correct: true, why: '他发现只写法拉第那一半，给电容器充电时磁场会在两板之间断掉；补上变化的电场等效于电流这一项，方程才闭合。' },
+          { text: '赫兹，用火花实验发现电磁波时顺带补上的。', correct: false, why: '赫兹在 1887 年用实验证实电磁波存在，比麦克斯韦提出位移电流晚了二十多年，他是验证者而不是提出者。' },
+          { text: '奥斯特，在讲台上看到磁针偏转后补上的。', correct: false, why: '奥斯特 1820 年的发现是电流产生磁场，属于稳恒电流，与“变化的电场”无关。' }
+        ]
+      },
+      {
+        q: '电磁波为什么能在真空中传播，不需要空气或以太？',
+        options: [
+          { text: '因为真空里其实有极稀薄的空气在振动。', correct: false, why: '真空就是抽掉了空气。而且电磁波在真空中的速度是固定的，不随残余气体多少变化。' },
+          { text: '因为变化的电场能产生磁场，变化的磁场又能产生电场，两者互相激发，场本身就能向前传播。', correct: true, why: '接力发生在场与场之间，不需要物质介质。这正是麦克斯韦方程组给出的机制，也是“场”成为实体的关键一步。' },
+          { text: '因为光其实是粒子流，粒子不需要介质也能飞。', correct: false, why: '粒子说同样不解释干涉、衍射这些波动行为；而且这个说法没有回答“变化的电场和磁场如何互相激发”。' },
+          { text: '因为宇宙空间里充满了以太，以太就是介质。', correct: false, why: '以太是当时的假说，后来被迈克耳孙-莫雷实验否定。电磁波不需要它，去掉以太后理论依然成立。' }
+        ]
+      },
+      {
+        q: '在真空里，电磁波的速度 c 由什么决定？',
+        options: [
+          { text: '由光源的运动速度决定，光源越快光越快。', correct: false, why: '这是经典速度叠加的直觉。迈克耳孙-莫雷实验和后来的相对论都表明，真空光速与光源运动无关。' },
+          { text: '由波的频率决定，频率越高速度越快。', correct: false, why: '演示 B 里频率跨了十几个数量级，c 一直不变。真空中所有频率的电磁波速度相同。' },
+          { text: '由真空的 μ₀ 和 ε₀ 决定，c = 1/√(μ₀ε₀)。', correct: true, why: '这两个常数来自静电力和电流作用的测量，和光没有关系，却组合出了光速。这正是麦克斯韦断定光是电磁波的依据。' },
+          { text: '由观察者站在哪个方向看决定。', correct: false, why: '真空光速对任何惯性观察者都相同，这是相对论的基本假设之一；方向不会改变它的大小。' }
+        ]
+      }
+    ]);
+
+    PH.trackRead();
+  });
+  </script>
+</body>
+</html>
